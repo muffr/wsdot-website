@@ -1,0 +1,105 @@
+/* WSDOT homepage main CSS print style document */
+html{font-size:100%;/* IE hack */}
+body{font-family:Verdana, Arial, Helvetica, sans-serif;font-size:62.5%;}
+a{color:#000;text-decoration:none;}
+a:visited{color:#000;}
+p,ul,ol,dl{font-size:1.2em;}
+h1,h2,h3,h4,h5,h6{padding:0em;margin:0em;}
+h1{font-family:Arial,Helvetica,sans-serif;font-size:1.8em;line-height:1.5em;}
+h1 a{color:#000000;text-decoration:none;}
+h1 a:visited {color:#000000;}
+h2 {font-size:1.5em;}
+h3 {font-size:1.25em;}
+h4 {font-size:1em;}
+
+.cl{clear:left;}
+.cr{clear:right;}
+.cb{clear:both;}
+img{border:0px;}
+.skip{display:none;}
+.topban {display:none;}
+.emailupdates {display:none;}
+.search {display:none;}
+.mainban {display:none;}
+.backtotop {display:none;}
+#ctl00_MainContentPlaceHolder_RightColumnInfoBoxes {display:none;}
+#ctl00_MainContentPlaceHolder_NewsHomeLink {display:none;}
+#AddThis {display:none;}
+
+#wrapper{width:100%;background-color:#ffffff;}
+#main {width:100%;margin-top:15px;}
+
+/* Feature box image container */
+#slides { width: 306px; height: 310px; background-color: #fff;}
+#slides div { width: 275px; padding:10px 14px;}
+#slides div img {margin: 0px; width: 275px; height: 170px; padding: 0px; background: #fff }
+div.nav {display:none;}
+
+/*** Bottom of page navigation and copyright notice ***/
+.footer{width:100%;margin-top:10px;}
+.bottomnav{display:none;}
+.copyright{padding:10px 0px;font-size:1em;color:#7d7d7d;text-align:center;}
+
+.jobsnowbg {display:none;}
+.arrabg {display:none;}
+.goodtogobg {display:none;}
+
+.leftcolumn{margin-top:15px;margin-right:5px;}
+.leftcolumn h3{font-size:1.4em;font-weight:bold;color:#003366;}
+.leftcolumn h4{font-size:1.3em;font-weight:bold;color:#003366;}
+.middlecolumn{margin-top:15px;margin-right:5px;}
+.rightcolumn{margin-top:30px;}
+.rightcolumn a {text-decoration:underline;}
+.rightcolumn a:hover {text-decoration:none;}
+
+.leftnav{display:none;}
+.breadcrumbs {display:none;}
+
+.projectstatusbox {width:400px; float:left;margin:25px 0;border:1px solid #ccc;}
+.projectstatusbox h4.header{font-size:1.5em;line-height:2.5em;padding:0 10px;}
+.projectstatusbox .content {padding:0 10px;}
+
+/*** Hide WSF advertising ***/
+#ad300 {display:none;}
+#ad728 {display:none;}
+#ad728_2 {display:none;}
+
+/***WSF VRS**/
+
+#reservation_container{	width:760px;padding-top:10px;float:right;}
+#res_main{width:770px;float: left;	position:relative; display:inline; overflow:visible;}
+#res_summary{width:720px;margin:0 auto;margin:20px auto 10px auto;border:1px solid #999; display:inline; overflow:visible;position:relative;z-index: 1000;}
+#res_summary2{width:720px;margin:0 auto;margin:10px auto;border:1px solid #999;	-moz-border-radius: 10px;	-webkit-border-radius: 10px;border-radius: 10px;padding: 0 0 10px 0;}
+#res_summaryCancel{	width:720px;margin:0 auto;margin:10px auto;	border:1px solid #999;-moz-border-radius: 10px;	-webkit-border-radius: 10px;border-radius: 10px;padding: 0 0 10px 0;}
+.res_summary_header{height:25px;background: url(../images/grey_bkg2.jpg) repeat-x #f2f2f2;}
+.res_summary_header2{height:25px;background: url(../images/grey_bkg2.jpg) repeat-x #f2f2f2;-moz-border-top-left-radius: 10px;-webkit-border-top-left-radius: 10px;border-top-left-radius: 10px;-moz-border-top-right-radius: 10px;-webkit-border-top-right-radius: 10px;	border-top-right-radius: 10px;margin: 0 0 10px 0;}
+.res_summary_details{width:100%;border-bottom:#ccc solid 1px;margin: 0 0 5px 0;}
+.res_summary_details p, .res_summary_deposit p, res_summary_approximate p, res_summary_vehicle p{padding:5px 0; font-size:98%; margin:0;}
+.res_summary_vehicle{float:left;width:50%;padding: 0 0 0 10px;}
+.res_summary_vessel{float:left;	width:50%;	padding: 0 0 0 10px;}
+.res_summary_depart{float:left; width:50%;padding:5px 0 0 15px;}
+.res_summary_deposit{float:right;width:40%; font-weight:bold; text-align:right;padding-right:10px;}
+.res_summary_approximate{float:right;width:40%;	font-weight:bold;text-align:right;padding: 0 10px 0 0;}
+.res_summary_buttons{width:40%;}
+.summary_buttons{width:20%; float:right;}
+.summary_buttons3{width:30%; float:right;}
+.res_summary_total{width:50%; float:right; font-size:152%; font-weight:bold; text-align:right;}
+.res_summary_status{float:left;width:50%;padding: 0 0 0 10px;}
+#reservation_container_confirm{width:760px;padding-top:40px; float:right;}
+.res_confirm_header{height:25px; border-bottom:solid 1px #01513f;}
+#res_confirmation {width:720px;margin: 30px auto 0 auto;}
+.customer_name{margin:5px 0;}
+.confirmation_number{margin:5px 0;}
+.confirmation_reminder{width:500px; float:left; margin:0 0 0 20px;}
+.wsf_internal{width:720px;margin:0 0 0 20px;display:inline; overflow:visible;}
+.line{*zoom:1;}
+.unit{float:left;}
+.size1of4{width:25%;}
+.lastUnit{display:table-cell;float:none;width:auto;*display:block;*zoom:1;_position:relative;_left:-3px;_margin-right:-3px;}
+@media screen and (max-width: 319px) {.unit{float: none !important; width: auto !important;}}
+.button {display:none;}
+hr {display:none;}
+#watermark_cancelled{ display:visible;width:720px;position:absolute;z-index:-1;}
+.admin_leftnav{display:none;}
+.admin_nav{display:none;}
+#login{display:none;}

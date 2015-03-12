@@ -1,0 +1,4 @@
+name = Site Deployment
+description = Deployment module used to automate changes to this site.
+core = 7.x
+version = "7.x-1.x-dev"
