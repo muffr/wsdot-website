@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Install file for Deploy Update
+ * Install file for the Site Deployment update
  */
 
 /**
@@ -9,17 +9,26 @@
  */
 function site_deployment_update_7000() {
   module_enable(array('views', 'views_ui', 'module_filter', 'admin_menu_toolbar', 'admin_menu',
-                               'webform', 'date', 'date_api', 'ckeditor', 'link', 'email',
-                               'devel', 'devel_generate', 'features', 'workbench', 'entity',
-                               'entityreference', 'panels', 'panels_mini', 'panels_node', 'panels_ipe',
-                               'page_manager', 'views_content', 'wysiwyg_filter', 'file_entity',
-                               'media', 'media_wysiwyg', 'media_wysiwyg_view_mode', 'job_scheduler',
-                               'feeds', 'feeds_ui', 'feeds_tamper', 'feeds_tamper_ui',
-                               'hierarchical_select', 'hs_taxonomy', 'context', 'context_layouts',
-                               'context_ui', 'taxonomy_manager', 'wsdot_taxonomies'));
+                      'webform', 'date', 'date_api', 'ckeditor', 'link', 'email',
+                      'devel', 'devel_generate', 'features', 'workbench', 'entity',
+                      'entityreference', 'panels', 'panels_mini', 'panels_node', 'panels_ipe',
+                      'page_manager', 'views_content', 'wysiwyg_filter', 'file_entity',
+                      'media', 'media_wysiwyg', 'media_wysiwyg_view_mode', 'job_scheduler',
+                      'feeds', 'feeds_ui', 'feeds_tamper', 'feeds_tamper_ui',
+                      'hierarchical_select', 'hs_taxonomy', 'context', 'context_layouts',
+                      'context_ui', 'taxonomy_manager', 'wsdot_taxonomies'));
 
   module_disable(array('toolbar'));
   
   theme_enable(array('wsdot_classic'));
   theme_disable(array('bartik'));
+}
+
+/**
+ * 2nd Deployment: Enable initial install additional modules and features.
+ */
+function site_deployment_update_7001() {
+  module_enable(array('scheduler', 'menu_block', 'menu_block_export', 'page_title', 'taxonomy_menu',
+                      'workbench_access', 'workbench_moderation', 'workbench_media',
+                      'masquerade', 'wsdot_taxonomies'));
 }

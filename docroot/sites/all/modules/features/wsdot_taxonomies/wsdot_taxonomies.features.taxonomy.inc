@@ -78,5 +78,28 @@ function wsdot_taxonomies_taxonomy_default_vocabularies() {
         ),
       ),
     ),
+    'subjects' => array(
+      'name' => 'Subjects',
+      'machine_name' => 'subjects',
+      'description' => 'Term list based on Web site structure and hierarchy',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
   );
 }
