@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WSDOT Park and Ride View feature.
+ */
+
+include_once 'wsdot_park_and_ride_view.features.inc';
