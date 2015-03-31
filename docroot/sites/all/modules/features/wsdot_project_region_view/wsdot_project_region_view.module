@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WSDOT Project Region View feature.
+ */
+
+include_once 'wsdot_project_region_view.features.inc';
