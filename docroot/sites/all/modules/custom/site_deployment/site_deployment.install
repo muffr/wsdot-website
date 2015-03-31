@@ -32,3 +32,10 @@ function site_deployment_update_7001() {
                       'workbench_access', 'workbench_moderation', 'workbench_media',
                       'masquerade', 'wsdot_taxonomies'));
 }
+
+/**
+ * 3rd Deployment: Enable diff module.
+ */
+function site_deployment_update_7001() {
+  module_enable(array('diff'));
+}

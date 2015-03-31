@@ -1,0 +1,13 @@
+name = Roadwork by County and Regions Feature
+description = This view contains two views for the Roadwork content type - County and Region
+core = 7.x
+package = WSDOT Content
+version = 7.x-1.1
+project = roadwork_by_county_and_regions_feature
+dependencies[] = ctools
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = roadwork_by_county
+features[views_view][] = roadwork_by_region
+project path = sites/all/modules/features
