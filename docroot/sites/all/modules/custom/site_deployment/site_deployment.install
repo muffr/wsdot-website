@@ -36,6 +36,6 @@ function site_deployment_update_7001() {
 /**
  * 3rd Deployment: Enable diff module.
  */
-function site_deployment_update_7001() {
+function site_deployment_update_7002() {
   module_enable(array('diff'));
 }
