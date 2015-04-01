@@ -147,6 +147,52 @@ function wsdot_taxonomies_taxonomy_default_vocabularies() {
         ),
       ),
     ),
+    'project_phases' => array(
+      'name' => 'Project Phases',
+      'machine_name' => 'project_phases',
+      'description' => 'Like the moon, projects have phases. Project phases don\'t make werewolves, though.',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
+    'protect_category' => array(
+      'name' => 'Protect Categories',
+      'machine_name' => 'protect_category',
+      'description' => 'Hierarchical Taxonomy of WSDOT Project Categories',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
     'regions' => array(
       'name' => 'Regions',
       'machine_name' => 'regions',

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WSDOT Taxonomy term Panels feature.
+ */
+
+include_once 'wsdot_taxonomy_term_panels.features.inc';

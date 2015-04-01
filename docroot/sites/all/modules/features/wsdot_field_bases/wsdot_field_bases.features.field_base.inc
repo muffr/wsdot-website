@@ -467,7 +467,7 @@ function wsdot_field_bases_field_default_field_bases() {
     'locked' => 0,
     'module' => 'image',
     'settings' => array(
-      'default_image' => FALSE,
+      'default_image' => 0,
       'uri_scheme' => 'public',
     ),
     'translatable' => 0,
@@ -549,7 +549,7 @@ function wsdot_field_bases_field_default_field_bases() {
   // Exported field_base: 'field_map'
   $field_bases['field_map'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => 2,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_map',
@@ -677,35 +677,6 @@ function wsdot_field_bases_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_phase'
-  $field_bases['field_phase'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_phase',
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        'planning' => 'Planning',
-        'planning_design' => 'Planning design',
-        'design' => 'Design',
-        'design_construction' => 'Design construction',
-        'construction' => 'Construction',
-        'complete' => 'Complete',
-      ),
-      'allowed_values_function' => '',
-    ),
-    'translatable' => 0,
-    'type' => 'list_text',
-  );
-
   // Exported field_base: 'field_project_id'
   $field_bases['field_project_id'] = array(
     'active' => 1,
@@ -725,6 +696,32 @@ function wsdot_field_bases_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'text',
+  );
+
+  // Exported field_base: 'field_project_phase'
+  $field_bases['field_project_phase'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_project_phase',
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'project_phases',
+          'parent' => 0,
+        ),
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
   );
 
   // Exported field_base: 'field_project_reference'
@@ -857,11 +854,9 @@ function wsdot_field_bases_field_default_field_bases() {
     ),
     'locked' => 0,
     'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
+    'settings' => array(),
     'translatable' => 0,
-    'type' => 'text',
+    'type' => 'text_long',
   );
 
   // Exported field_base: 'field_status_date'
