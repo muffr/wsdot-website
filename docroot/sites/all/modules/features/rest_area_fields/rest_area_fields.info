@@ -1,0 +1,12 @@
+name = Rest Area Fields
+core = 7.x
+package = WSDOT Features
+version = 7.x-1.0
+project = rest_area_fields
+dependencies[] = features
+dependencies[] = geolocation
+dependencies[] = list
+features[features_api][] = api:2
+features[field_base][] = field_amenities
+features[field_base][] = field_direction
+features[field_base][] = field_geolocation
