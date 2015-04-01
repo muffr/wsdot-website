@@ -77,6 +77,19 @@ function wsdot_projects_view_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'project-titles';
+
+  /* Display: Content pane */
+  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $handler->display->display_options['argument_input'] = array(
+    'field_regions_tid' => array(
+      'type' => 'user',
+      'context' => 'entity:field_collection_item.archived',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Regions (field_regions)',
+    ),
+  );
   $export['project_titles'] = $view;
 
   return $export;

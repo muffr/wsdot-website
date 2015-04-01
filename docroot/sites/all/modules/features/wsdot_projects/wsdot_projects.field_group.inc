@@ -21,10 +21,10 @@ function wsdot_projects_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Status',
-    'weight' => '17',
+    'weight' => '1',
     'children' => array(
-      0 => 'field_status',
-      1 => 'field_status_date',
+      0 => 'field_status_date',
+      1 => 'field_status',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

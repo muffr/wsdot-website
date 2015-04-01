@@ -156,7 +156,7 @@ function wsdot_projects_field_default_field_instances() {
     'bundle' => 'project',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'This is a body field. Please don\'t abuse it.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -178,20 +178,21 @@ function wsdot_projects_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'body',
     'label' => 'Body',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
-      'display_summary' => TRUE,
+      'display_summary' => 1,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'rows' => 20,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 3,
+      'weight' => 2,
     ),
   );
 
@@ -228,7 +229,7 @@ function wsdot_projects_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 6,
+      'weight' => 9,
     ),
     'workbench_access_field' => 0,
   );
@@ -272,7 +273,7 @@ function wsdot_projects_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 16,
+      'weight' => 5,
     ),
     'workbench_access_field' => 0,
   );
@@ -310,7 +311,7 @@ function wsdot_projects_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 10,
     ),
     'workbench_access_field' => 0,
   );
@@ -348,7 +349,7 @@ function wsdot_projects_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 9,
+      'weight' => 12,
     ),
     'workbench_access_field' => 0,
   );
@@ -383,10 +384,13 @@ function wsdot_projects_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 5,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 8,
     ),
     'workbench_access_field' => 0,
   );
@@ -444,7 +448,7 @@ function wsdot_projects_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 14,
+      'weight' => 15,
     ),
     'workbench_access_field' => 0,
   );
@@ -459,8 +463,8 @@ function wsdot_projects_field_default_field_instances() {
         'label' => 'above',
         'module' => 'image',
         'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
+          'image_link' => 'file',
+          'image_style' => 'project_map_thumbnail',
         ),
         'type' => 'image',
         'weight' => 12,
@@ -495,7 +499,7 @@ function wsdot_projects_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 13,
+      'weight' => 3,
     ),
     'workbench_access_field' => 0,
   );
@@ -533,45 +537,7 @@ function wsdot_projects_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 10,
-    ),
-    'workbench_access_field' => 0,
-  );
-
-  // Exported field_instance: 'node-project-field_phase'
-  $field_instances['node-project-field_phase'] = array(
-    'bundle' => 'project',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 10,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_phase',
-    'label' => 'Phase',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 12,
+      'weight' => 13,
     ),
     'workbench_access_field' => 0,
   );
@@ -612,9 +578,46 @@ function wsdot_projects_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 11,
+      'weight' => 14,
     ),
     'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-project-field_project_phase'
+  $field_instances['node-project-field_project_phase'] = array(
+    'bundle' => 'project',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 17,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_project_phase',
+    'label' => 'Phase',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 6,
+    ),
   );
 
   // Exported field_instance: 'node-project-field_regions'
@@ -650,7 +653,7 @@ function wsdot_projects_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 8,
+      'weight' => 11,
     ),
     'workbench_access_field' => 0,
   );
@@ -667,7 +670,7 @@ function wsdot_projects_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 9,
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -681,24 +684,24 @@ function wsdot_projects_field_default_field_instances() {
     'label' => 'Status',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'size' => 60,
+        'rows' => 5,
       ),
-      'type' => 'text_textfield',
-      'weight' => 44,
+      'type' => 'text_textarea',
+      'weight' => 46,
     ),
-    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-project-field_status_date'
   $field_instances['node-project-field_status_date'] = array(
     'bundle' => 'project',
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -744,8 +747,8 @@ function wsdot_projects_field_default_field_instances() {
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
-      'type' => 'date_popup',
-      'weight' => 43,
+      'type' => 'date_select',
+      'weight' => 45,
     ),
     'workbench_access_field' => 0,
   );
@@ -786,7 +789,7 @@ function wsdot_projects_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 4,
+      'weight' => 7,
     ),
     'workbench_access_field' => 0,
   );
@@ -830,7 +833,7 @@ function wsdot_projects_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 15,
+      'weight' => 4,
     ),
     'workbench_access_field' => 0,
   );
@@ -856,6 +859,7 @@ function wsdot_projects_field_default_field_instances() {
   t('Status');
   t('Status Date');
   t('Tags');
+  t('This is a body field. Please don\'t abuse it.');
   t('Title');
 
   return $field_instances;

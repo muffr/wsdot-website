@@ -1,0 +1,11 @@
+name = WSDOT Taxonomy term Panels
+description = This feature manages Panel variants used to display taxonomy terms
+core = 7.x
+package = WSDOT Panels
+version = 7.x-1.0
+project = wsdot_taxonomy_term_panels
+dependencies[] = ctools
+dependencies[] = page_manager
+features[ctools][] = page_manager:pages_default:1
+features[features_api][] = api:2
+features[page_manager_handlers][] = term_view__regions
