@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Rest Area Cotent Type feature.
+ */
+
+include_once 'rest_area_cotent_type.features.inc';
