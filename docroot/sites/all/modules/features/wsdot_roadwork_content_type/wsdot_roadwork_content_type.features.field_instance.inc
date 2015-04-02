@@ -10,19 +10,19 @@
 function wsdot_roadwork_content_type_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-roadwork-field_contact'
-  $field_instances['node-roadwork-field_contact'] = array(
+  // Exported field_instance: 'node-roadwork-body'
+  $field_instances['node-roadwork-body'] = array(
     'bundle' => 'roadwork',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -32,21 +32,66 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_contact',
-    'label' => 'contact',
-    'required' => 1,
+    'field_name' => 'body',
+    'label' => 'Body',
+    'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'display_summary' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 1,
+        'rows' => 20,
+        'summary_rows' => 5,
       ),
-      'type' => 'text_textarea',
-      'weight' => 5,
+      'type' => 'text_textarea_with_summary',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-roadwork-field_contact_info'
+  $field_instances['node-roadwork-field_contact_info'] = array(
+    'bundle' => 'roadwork',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 11,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_contact_info',
+    'label' => 'External contact',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 8,
     ),
   );
 
@@ -73,7 +118,7 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_counties',
-    'label' => 'county',
+    'label' => 'Counties',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -83,63 +128,23 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 3,
     ),
   );
 
-  // Exported field_instance: 'node-roadwork-field_description'
-  $field_instances['node-roadwork-field_description'] = array(
-    'bundle' => 'roadwork',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Explain what is going on, for example, bridge cleaning, shoulder repair, tree maintenance, temporary repairs following previous roadway settlement, etc. Also, any other descriptive text can be added here.',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_description',
-    'label' => 'description',
-    'required' => 1,
-    'settings' => array(
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 1,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance: 'node-roadwork-field_highway'
-  $field_instances['node-roadwork-field_highway'] = array(
+  // Exported field_instance: 'node-roadwork-field_external_project'
+  $field_instances['node-roadwork-field_external_project'] = array(
     'bundle' => 'roadwork',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
+        'label' => 'above',
+        'module' => 'link',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_plain',
-        'weight' => 1,
+        'type' => 'link_default',
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -149,8 +154,65 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_highway',
-    'label' => 'highway',
+    'field_name' => 'field_external_project',
+    'label' => 'External project',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'default',
+      'title' => 'optional',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 11,
+    ),
+  );
+
+  // Exported field_instance: 'node-roadwork-field_highways'
+  $field_instances['node-roadwork-field_highways'] = array(
+    'bundle' => 'roadwork',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_highways',
+    'label' => 'Highways',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -159,8 +221,8 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 2,
+      'type' => 'options_buttons',
+      'weight' => 5,
     ),
   );
 
@@ -187,7 +249,7 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_milepost',
-    'label' => 'milepost',
+    'label' => 'Milepost',
     'required' => 0,
     'settings' => array(
       'text_processing' => 0,
@@ -200,23 +262,25 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
         'size' => 255,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 2,
     ),
   );
 
-  // Exported field_instance: 'node-roadwork-field_region'
-  $field_instances['node-roadwork-field_region'] = array(
+  // Exported field_instance: 'node-roadwork-field_project_ref'
+  $field_instances['node-roadwork-field_project_ref'] = array(
     'bundle' => 'roadwork',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_plain',
-        'weight' => 5,
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -226,9 +290,50 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_region',
-    'label' => 'region',
-    'required' => 1,
+    'field_name' => 'field_project_ref',
+    'label' => 'Project',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'node-roadwork-field_regions'
+  $field_instances['node-roadwork-field_regions'] = array(
+    'bundle' => 'roadwork',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_regions',
+    'label' => 'Regions',
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -236,25 +341,26 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_select',
+      'type' => 'options_buttons',
       'weight' => 6,
     ),
-    'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-roadwork-field_roadwork_name'
-  $field_instances['node-roadwork-field_roadwork_name'] = array(
+  // Exported field_instance: 'node-roadwork-field_user_reference'
+  $field_instances['node-roadwork-field_user_reference'] = array(
     'bundle' => 'roadwork',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'inline',
-        'module' => 'link',
-        'settings' => array(),
-        'type' => 'link_default',
-        'weight' => 0,
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -264,52 +370,37 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_roadwork_name',
-    'label' => 'roadwork name',
+    'field_name' => 'field_user_reference',
+    'label' => 'Contact',
     'required' => 0,
     'settings' => array(
-      'absolute_url' => 1,
-      'attributes' => array(
-        'class' => '',
-        'configurable_class' => 0,
-        'configurable_title' => 0,
-        'rel' => '',
-        'target' => 'default',
-        'title' => '',
-      ),
-      'display' => array(
-        'url_cutoff' => '',
-      ),
-      'enable_tokens' => 0,
-      'rel_remove' => 'default',
-      'title' => 'optional',
-      'title_label_use_field_label' => 0,
-      'title_maxlength' => 255,
-      'title_value' => '',
-      'url' => 'optional',
       'user_register_form' => FALSE,
-      'validate_url' => 1,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'link',
-      'settings' => array(),
-      'type' => 'link_field',
-      'weight' => 1,
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 7,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Explain what is going on, for example, bridge cleaning, shoulder repair, tree maintenance, temporary repairs following previous roadway settlement, etc. Also, any other descriptive text can be added here.');
+  t('Body');
+  t('Contact');
+  t('Counties');
+  t('External contact');
+  t('External project');
+  t('Highways');
+  t('Milepost');
+  t('Project');
+  t('Regions');
   t('When entering milepost, please indicate as follows, with milepost spelled out, for example: "Eastbound from milepost 1.7 to 9.5" or "Both directions from milepost 21 to 46.5".');
-  t('contact');
-  t('county');
-  t('description');
-  t('highway');
-  t('milepost');
-  t('region');
-  t('roadwork name');
 
   return $field_instances;
 }

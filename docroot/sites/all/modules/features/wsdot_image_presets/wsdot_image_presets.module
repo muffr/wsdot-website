@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WSDOT Image Presets feature.
+ */
+
+include_once 'wsdot_image_presets.features.inc';
