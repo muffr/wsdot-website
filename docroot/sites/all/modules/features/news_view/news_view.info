@@ -1,0 +1,12 @@
+name = News View
+description = Powers the News. With power.
+core = 7.x
+package = WSDOT Views
+version = 7.x-1.0
+project = news_view
+dependencies[] = views
+dependencies[] = views_content
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = news
+features_exclude[dependencies][ctools] = ctools
