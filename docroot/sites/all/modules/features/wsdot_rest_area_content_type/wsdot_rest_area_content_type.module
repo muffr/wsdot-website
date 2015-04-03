@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WSDOT Rest Area Content Type feature.
+ */
+
+include_once 'wsdot_rest_area_content_type.features.inc';

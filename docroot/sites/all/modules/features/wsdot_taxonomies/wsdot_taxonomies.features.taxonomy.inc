@@ -9,6 +9,29 @@
  */
 function wsdot_taxonomies_taxonomy_default_vocabularies() {
   return array(
+    'amenities' => array(
+      'name' => 'Amenities',
+      'machine_name' => 'amenities',
+      'description' => 'Rest Area Amenities',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
     'cities' => array(
       'name' => 'Cities',
       'machine_name' => 'cities',
