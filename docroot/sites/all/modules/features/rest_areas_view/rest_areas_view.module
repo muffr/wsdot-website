@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Rest Areas View feature.
+ */
+
+include_once 'rest_areas_view.features.inc';
