@@ -147,6 +147,29 @@ function wsdot_taxonomies_taxonomy_default_vocabularies() {
         ),
       ),
     ),
+    'mountain_passes' => array(
+      'name' => 'Mountain Passes',
+      'machine_name' => 'mountain_passes',
+      'description' => 'Mountain Passes',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
     'organizations' => array(
       'name' => 'Organizations',
       'machine_name' => 'organizations',
