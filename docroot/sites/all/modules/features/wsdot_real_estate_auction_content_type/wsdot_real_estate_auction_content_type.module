@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WSDOT Real Estate Auction Content Type feature.
+ */
+
+include_once 'wsdot_real_estate_auction_content_type.features.inc';
