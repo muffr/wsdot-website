@@ -66,8 +66,9 @@ class WebformConditionals {
     // Generate T-Orders for each page
     $new_entry = array('in' => array(), 'out' => array(), 'rgid' => -1);
     $page_num = 0;
-    $sorted = array();
-    $page_map = array();
+    // If the first component is a page break, then no component is on page 1. Create empty arrays for page 1.
+    $sorted = array(1 => array());
+    $page_map = array(1 => array());
     $component = reset($components);
     while ($component) {
       $cid = $component['cid'];
@@ -282,7 +283,7 @@ class WebformConditionals {
     module_load_include('inc', 'webform', 'includes/webform.conditionals');
     
     $components = $this->node->webform['components'];
-    $conditionals = array_values($this->node->webform['conditionals']);
+    $conditionals = $this->node->webform['conditionals'];
     $operators = webform_conditional_operators();
 
 
