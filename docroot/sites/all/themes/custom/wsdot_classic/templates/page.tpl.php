@@ -52,7 +52,7 @@
 
   <div id="main">
     <h2><?php print $title; ?></h2>
-
+    <?php print render($page['help']); ?>
     <?php print render($page['content']) ?>
   </div>
   <div class="cl"></div>
@@ -60,13 +60,10 @@
 <div class="corners-bottom"></div>
 <div class="corners-top"></div>
 <div class="footer">
-  <ul class="bottomnav">
-    <li class="first"><a href="http://www.wsdot.wa.gov/traffic/">Traffic &amp; Cameras</a></li>
-    <li><a href="http://www.wsdot.wa.gov/search/">Search</a></li>
-    <li><a href="http://www.wsdot.wa.gov/contact/">Contact Us</a></li>
-    <li><a href="http://www.wsdot.wa.gov/siteindex/">Site Index</a></li>
-    <li><a href="http://www.wsdot.wa.gov/policy/privacy.htm">Privacy Policy</a></li>
-    <li class="last"><a href="http://www.wsdot.wa.gov/accessibility">Accessibility / Title VI</a> </li>
-  </ul>
+
+  <?php if ($page['footer']): ?>
+    <?php print render($page['footer']); ?>
+  <?php endif; ?>
+
   <div class="copyright">Copyright WSDOT &copy; <?php echo date("Y") ?></div>
 </div>

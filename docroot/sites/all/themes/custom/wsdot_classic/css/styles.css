@@ -1,4 +1,4 @@
-* WSDOT CSS style document */
+/* WSDOT CSS style document */
 html{font-size:100%;}
 body{font-family:Verdana, Arial, Helvetica, sans-serif;font-size:62.5%;margin:0em;padding:0em;background-color:#f2f2f2;}
 a{color:#036;}
@@ -121,7 +121,7 @@ input.searchButton {height: 23px;margin: 0;font-family: "trebuchet ms",helvetica
 /*.leftnavbox h4{font-size:1.3em;line-height:2.5em; font-weight:bold;border-bottom:1px solid #ccc;}*/
 .greyBg{background:#fff url(../images/back/gradients_bg.png) repeat-x left 0px;}
 .blueBg{background:#fff url(../images/back/gradients_bg.png) repeat-x left 0px;}
-.leftnav{display:block;width:168px;float:left;}
+.leftnav{display:table-cell;width:168px;}
 .leftnav ul{margin:0em 0em 0em .5em;padding-left:0em;font-size:1.2em;}
 /*.leftnav li{font-size:1em;background:url(http://www.wsdot.wa.gov/media/images/back/bullet.gif) no-repeat 0em .7em;padding:0em 0em .3em .75em;}*/
 .leftnavbox{width:150px;margin-bottom:0px;}
@@ -180,14 +180,14 @@ div.nav a {background:transparent url(../images/back/navigator.png) no-repeat sc
 .copyright{padding:10px 0px;font-size:1em;color:#636363;text-align:center;}
 
 /*** Main content ***/
-#main{width:760px;margin:15px 10px 10px 10px;float:left;}
+#main {display: table-cell; padding: 15px 10px 10px 10px;}
 #main ul ul, ol ol, ul ol, ol ul, ol p, ul p {font-size: 1em;}
 #main li {line-height:1.5em;font-size: 1.2em;}
 #main p {margin: 1em 0;line-height:1.5em;font-size: 1.2em;}
 #main .contentbox .content p {margin: 0.5em 0;line-height:1.5em;}
 /*#main .content p {margin:0;}*/
 #main td p {margin:0;}
-#main h2 {font-size:1.7em;}
+#main h2 {font-size:1.7em; margin-bottom: 15px;}
 #main h4{font-weight:bold;color:#036;}
 #main h5 {font-weight:bold;color:#000;}
 /*#main dl, ul {list-style:none;margin:1.5em 2em;padding:0em;}*/
@@ -333,4 +333,27 @@ div.nav a {background:transparent url(../images/back/navigator.png) no-repeat sc
     line-height: 1.5;
     padding: 0.2em 0.4em;
     text-decoration: none;
+}
+
+/* Styles specific for Drupal */
+h2.pane-title, h4.pane-title {
+    padding: 0 10px;
+    line-height: 2.5em;
+    border-bottom: 1px solid #ccc;
+    font-size:1.3em;
+    line-height:2.5em;
+    font-weight:bold;
+    background:#fff url(../images/back/gradients_bg.png) repeat-x left 0px;
+}
+
+.item-list {
+    padding: 10px;
+}
+
+.more-link {
+    padding-right: 10px;
+}
+
+.block-title {
+    margin-bottom: 15px;
 }
