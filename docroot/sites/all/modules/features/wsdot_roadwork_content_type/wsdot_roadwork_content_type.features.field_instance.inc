@@ -48,6 +48,49 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-roadwork-field_active'
+  $field_instances['node-roadwork-field_active'] = array(
+    'bundle' => 'roadwork',
+    'default_value' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 14,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_active',
+    'label' => 'Active',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
       'weight' => 1,
     ),
   );
@@ -91,7 +134,7 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -128,7 +171,7 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -222,7 +265,7 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -262,7 +305,7 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
         'size' => 255,
       ),
       'type' => 'text_textfield',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -342,7 +385,7 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -385,12 +428,13 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Active');
   t('Body');
   t('Contact');
   t('Counties');
