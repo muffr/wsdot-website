@@ -45,7 +45,7 @@ function roadwork_view_views_default_views() {
   $handler->display->display_options['sorts']['changed']['id'] = 'changed';
   $handler->display->display_options['sorts']['changed']['table'] = 'node';
   $handler->display->display_options['sorts']['changed']['field'] = 'changed';
-  /* Contextual filter: Content: Regions (field_regions) */
+  /* Contextual filter: Field: Regions (field_regions) */
   $handler->display->display_options['arguments']['field_regions_tid']['id'] = 'field_regions_tid';
   $handler->display->display_options['arguments']['field_regions_tid']['table'] = 'field_data_field_regions';
   $handler->display->display_options['arguments']['field_regions_tid']['field'] = 'field_regions_tid';
@@ -75,7 +75,7 @@ function roadwork_view_views_default_views() {
     'roadwork' => 'roadwork',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Counties (field_counties) */
+  /* Filter criterion: Field: Counties (field_counties) */
   $handler->display->display_options['filters']['field_counties_tid']['id'] = 'field_counties_tid';
   $handler->display->display_options['filters']['field_counties_tid']['table'] = 'field_data_field_counties';
   $handler->display->display_options['filters']['field_counties_tid']['field'] = 'field_counties_tid';
@@ -107,7 +107,7 @@ function roadwork_view_views_default_views() {
   );
   $handler->display->display_options['filters']['field_highways_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_highways_tid']['vocabulary'] = 'highways';
-  /* Filter criterion: Content: Regions (field_regions) */
+  /* Filter criterion: Field: Regions (field_regions) */
   $handler->display->display_options['filters']['field_regions_tid']['id'] = 'field_regions_tid';
   $handler->display->display_options['filters']['field_regions_tid']['table'] = 'field_data_field_regions';
   $handler->display->display_options['filters']['field_regions_tid']['field'] = 'field_regions_tid';
@@ -123,6 +123,13 @@ function roadwork_view_views_default_views() {
   );
   $handler->display->display_options['filters']['field_regions_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_regions_tid']['vocabulary'] = 'regions';
+  /* Filter criterion: Content: Active (field_active) */
+  $handler->display->display_options['filters']['field_active_value']['id'] = 'field_active_value';
+  $handler->display->display_options['filters']['field_active_value']['table'] = 'field_data_field_active';
+  $handler->display->display_options['filters']['field_active_value']['field'] = 'field_active_value';
+  $handler->display->display_options['filters']['field_active_value']['value'] = array(
+    1 => '1',
+  );
 
   /* Display: Page by Region */
   $handler = $view->new_display('page', 'Page by Region', 'page');
@@ -215,7 +222,7 @@ function roadwork_view_views_default_views() {
   );
   $handler->display->display_options['fields']['field_images']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Regions (field_regions) */
+  /* Contextual filter: Field: Regions (field_regions) */
   $handler->display->display_options['arguments']['field_regions_tid']['id'] = 'field_regions_tid';
   $handler->display->display_options['arguments']['field_regions_tid']['table'] = 'field_data_field_regions';
   $handler->display->display_options['arguments']['field_regions_tid']['field'] = 'field_regions_tid';
@@ -244,7 +251,7 @@ function roadwork_view_views_default_views() {
   /* Display: Page by County */
   $handler = $view->new_display('page', 'Page by County', 'page_1');
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Counties (field_counties) */
+  /* Contextual filter: Field: Counties (field_counties) */
   $handler->display->display_options['arguments']['field_counties_tid']['id'] = 'field_counties_tid';
   $handler->display->display_options['arguments']['field_counties_tid']['table'] = 'field_data_field_counties';
   $handler->display->display_options['arguments']['field_counties_tid']['field'] = 'field_counties_tid';
@@ -259,7 +266,7 @@ function roadwork_view_views_default_views() {
   );
   $handler->display->display_options['arguments']['field_counties_tid']['validate_options']['type'] = 'convert';
   $handler->display->display_options['arguments']['field_counties_tid']['validate_options']['transform'] = TRUE;
-  /* Contextual filter: Content: Regions (field_regions) */
+  /* Contextual filter: Field: Regions (field_regions) */
   $handler->display->display_options['arguments']['field_regions_tid']['id'] = 'field_regions_tid';
   $handler->display->display_options['arguments']['field_regions_tid']['table'] = 'field_data_field_regions';
   $handler->display->display_options['arguments']['field_regions_tid']['field'] = 'field_regions_tid';
