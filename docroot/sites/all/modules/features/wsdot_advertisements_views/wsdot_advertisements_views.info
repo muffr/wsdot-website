@@ -1,0 +1,12 @@
+name = WSDOT Advertisements Views
+description = Creates the views for the Open and Closed Consultant Services Advertisements pages
+core = 7.x
+package = WSDOT Views
+version = 7.x-1.0
+project = wsdot_advertisements_views
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = advertisements
+features[views_view][] = closed_advertisements
+features_exclude[dependencies][ctools] = ctools

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WSDOT Advertisements Views feature.
+ */
+
+include_once 'wsdot_advertisements_views.features.inc';
