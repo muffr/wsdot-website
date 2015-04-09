@@ -75,13 +75,22 @@ function roadwork_view_views_default_views() {
     'roadwork' => 'roadwork',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Date of Work - end date (field_start_date:value2) */
+  $handler->display->display_options['filters']['field_start_date_value2']['id'] = 'field_start_date_value2';
+  $handler->display->display_options['filters']['field_start_date_value2']['table'] = 'field_data_field_start_date';
+  $handler->display->display_options['filters']['field_start_date_value2']['field'] = 'field_start_date_value2';
+  $handler->display->display_options['filters']['field_start_date_value2']['operator'] = '>';
+  $handler->display->display_options['filters']['field_start_date_value2']['group'] = 1;
+  $handler->display->display_options['filters']['field_start_date_value2']['granularity'] = 'minute';
+  $handler->display->display_options['filters']['field_start_date_value2']['default_date'] = 'now';
   /* Filter criterion: Field: Counties (field_counties) */
   $handler->display->display_options['filters']['field_counties_tid']['id'] = 'field_counties_tid';
   $handler->display->display_options['filters']['field_counties_tid']['table'] = 'field_data_field_counties';
   $handler->display->display_options['filters']['field_counties_tid']['field'] = 'field_counties_tid';
+  $handler->display->display_options['filters']['field_counties_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_counties_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_counties_tid']['expose']['operator_id'] = 'field_counties_tid_op';
-  $handler->display->display_options['filters']['field_counties_tid']['expose']['label'] = 'Counties (field_counties)';
+  $handler->display->display_options['filters']['field_counties_tid']['expose']['label'] = 'County';
   $handler->display->display_options['filters']['field_counties_tid']['expose']['operator'] = 'field_counties_tid_op';
   $handler->display->display_options['filters']['field_counties_tid']['expose']['identifier'] = 'field_counties_tid';
   $handler->display->display_options['filters']['field_counties_tid']['expose']['remember_roles'] = array(
@@ -95,9 +104,11 @@ function roadwork_view_views_default_views() {
   $handler->display->display_options['filters']['field_highways_tid']['id'] = 'field_highways_tid';
   $handler->display->display_options['filters']['field_highways_tid']['table'] = 'field_data_field_highways';
   $handler->display->display_options['filters']['field_highways_tid']['field'] = 'field_highways_tid';
+  $handler->display->display_options['filters']['field_highways_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_highways_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_highways_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_highways_tid']['expose']['operator_id'] = 'field_highways_tid_op';
-  $handler->display->display_options['filters']['field_highways_tid']['expose']['label'] = 'Highways (field_highways)';
+  $handler->display->display_options['filters']['field_highways_tid']['expose']['label'] = 'Highway';
   $handler->display->display_options['filters']['field_highways_tid']['expose']['operator'] = 'field_highways_tid_op';
   $handler->display->display_options['filters']['field_highways_tid']['expose']['identifier'] = 'field_highways_tid';
   $handler->display->display_options['filters']['field_highways_tid']['expose']['remember_roles'] = array(
@@ -105,15 +116,15 @@ function roadwork_view_views_default_views() {
     1 => 0,
     11 => 0,
   );
-  $handler->display->display_options['filters']['field_highways_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_highways_tid']['vocabulary'] = 'highways';
   /* Filter criterion: Field: Regions (field_regions) */
   $handler->display->display_options['filters']['field_regions_tid']['id'] = 'field_regions_tid';
   $handler->display->display_options['filters']['field_regions_tid']['table'] = 'field_data_field_regions';
   $handler->display->display_options['filters']['field_regions_tid']['field'] = 'field_regions_tid';
+  $handler->display->display_options['filters']['field_regions_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_regions_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_regions_tid']['expose']['operator_id'] = 'field_regions_tid_op';
-  $handler->display->display_options['filters']['field_regions_tid']['expose']['label'] = 'Regions (field_regions)';
+  $handler->display->display_options['filters']['field_regions_tid']['expose']['label'] = 'Region';
   $handler->display->display_options['filters']['field_regions_tid']['expose']['operator'] = 'field_regions_tid_op';
   $handler->display->display_options['filters']['field_regions_tid']['expose']['identifier'] = 'field_regions_tid';
   $handler->display->display_options['filters']['field_regions_tid']['expose']['remember_roles'] = array(
@@ -130,6 +141,7 @@ function roadwork_view_views_default_views() {
   $handler->display->display_options['filters']['field_active_value']['value'] = array(
     1 => '1',
   );
+  $handler->display->display_options['filters']['field_active_value']['group'] = 1;
 
   /* Display: Page by Region */
   $handler = $view->new_display('page', 'Page by Region', 'page');

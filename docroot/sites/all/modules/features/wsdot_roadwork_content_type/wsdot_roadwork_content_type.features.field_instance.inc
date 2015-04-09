@@ -22,7 +22,7 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -48,7 +48,7 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -67,7 +67,7 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -112,7 +112,7 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
-        'weight' => 11,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -133,7 +133,7 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -149,7 +149,7 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 6,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -170,7 +170,7 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -186,7 +186,7 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 13,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -243,7 +243,7 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 8,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -262,9 +262,12 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
       'type' => 'options_buttons',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -280,7 +283,7 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -304,7 +307,7 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
         'size' => 255,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -322,7 +325,7 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 12,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -363,7 +366,7 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 9,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -384,7 +387,60 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 7,
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-roadwork-field_start_date'
+  $field_instances['node-roadwork-field_start_date'] = array(
+    'bundle' => 'roadwork',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_start_date',
+    'label' => 'Date of Work',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 5,
+        'input_format' => 'M j Y - g:i:sa',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'text_parts' => array(),
+        'year_range' => '-0:+4',
+      ),
+      'type' => 'date_select',
+      'weight' => 2,
     ),
   );
 
@@ -402,7 +458,7 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 10,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -427,7 +483,7 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -437,6 +493,7 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
   t('Body');
   t('Contact');
   t('Counties');
+  t('Date of Work');
   t('External contact');
   t('External project');
   t('Highways');
