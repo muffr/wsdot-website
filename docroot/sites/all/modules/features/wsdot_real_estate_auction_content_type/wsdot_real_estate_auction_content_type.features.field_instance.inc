@@ -81,7 +81,7 @@ function wsdot_real_estate_auction_content_type_field_default_field_instances() 
     'label' => 'Abbreviated Legal and Acquisition Information',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 1,
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -118,7 +118,7 @@ function wsdot_real_estate_auction_content_type_field_default_field_instances() 
     'entity_type' => 'node',
     'field_name' => 'field_counties',
     'label' => 'Counties',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -154,7 +154,7 @@ function wsdot_real_estate_auction_content_type_field_default_field_instances() 
     'entity_type' => 'node',
     'field_name' => 'field_ic_number',
     'label' => 'IC Number',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'text_processing' => 0,
       'user_register_form' => FALSE,
@@ -246,7 +246,7 @@ function wsdot_real_estate_auction_content_type_field_default_field_instances() 
     'label' => 'Improvements',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 1,
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -286,7 +286,7 @@ function wsdot_real_estate_auction_content_type_field_default_field_instances() 
     'label' => 'Location and Size',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 1,
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -366,7 +366,7 @@ function wsdot_real_estate_auction_content_type_field_default_field_instances() 
     'label' => 'Special Conditions',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 1,
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
