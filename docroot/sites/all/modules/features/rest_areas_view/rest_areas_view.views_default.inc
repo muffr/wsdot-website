@@ -32,23 +32,19 @@ function rest_areas_view_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
     'title' => 'title',
-    'field_rest_areas_amenities' => 'field_rest_areas_amenities',
     'field_counties' => 'field_counties',
-    'field_highway_direction' => 'field_highway_direction',
-    'field_geolocation_lat_long' => 'field_geolocation_lat_long',
     'field_highways' => 'field_highways',
+    'field_highway_direction' => 'field_highway_direction',
     'field_milepost' => 'field_milepost',
+    'field_geolocation_lat_long' => 'field_geolocation_lat_long',
+    'field_rest_areas_amenities' => 'field_rest_areas_amenities',
+    'field_image' => 'field_image',
   );
-  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['default'] = 'title';
   $handler->display->display_options['style_options']['info'] = array(
     'title' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_rest_areas_amenities' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -58,21 +54,14 @@ function rest_areas_view_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_highway_direction' => array(
+    'field_highways' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_geolocation_lat_long' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_highways' => array(
+    'field_highway_direction' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -86,6 +75,25 @@ function rest_areas_view_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
+    'field_geolocation_lat_long' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_rest_areas_amenities' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_image' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
   );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -93,7 +101,7 @@ function rest_areas_view_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Counties */
+  /* Field: Field: Counties */
   $handler->display->display_options['fields']['field_counties']['id'] = 'field_counties';
   $handler->display->display_options['fields']['field_counties']['table'] = 'field_data_field_counties';
   $handler->display->display_options['fields']['field_counties']['field'] = 'field_counties';
@@ -106,10 +114,11 @@ function rest_areas_view_views_default_views() {
   $handler->display->display_options['fields']['field_highway_direction']['id'] = 'field_highway_direction';
   $handler->display->display_options['fields']['field_highway_direction']['table'] = 'field_data_field_highway_direction';
   $handler->display->display_options['fields']['field_highway_direction']['field'] = 'field_highway_direction';
-  /* Field: Content: Milepost */
+  /* Field: Content: Location */
   $handler->display->display_options['fields']['field_milepost']['id'] = 'field_milepost';
   $handler->display->display_options['fields']['field_milepost']['table'] = 'field_data_field_milepost';
   $handler->display->display_options['fields']['field_milepost']['field'] = 'field_milepost';
+  $handler->display->display_options['fields']['field_milepost']['label'] = 'Milepost';
   /* Field: Content: Geolocation */
   $handler->display->display_options['fields']['field_geolocation_lat_long']['id'] = 'field_geolocation_lat_long';
   $handler->display->display_options['fields']['field_geolocation_lat_long']['table'] = 'field_data_field_geolocation_lat_long';
@@ -122,10 +131,11 @@ function rest_areas_view_views_default_views() {
   $handler->display->display_options['fields']['field_rest_areas_amenities']['type'] = 'ds_taxonomy_view_mode';
   $handler->display->display_options['fields']['field_rest_areas_amenities']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_rest_areas_amenities']['separator'] = '';
-  /* Sort criterion: Content: Title */
-  $handler->display->display_options['sorts']['title']['id'] = 'title';
-  $handler->display->display_options['sorts']['title']['table'] = 'node';
-  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -140,15 +150,15 @@ function rest_areas_view_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'rest_area' => 'rest_area',
   );
-  /* Filter criterion: Content: Counties (field_counties) */
+  /* Filter criterion: Field: Counties (field_counties) */
   $handler->display->display_options['filters']['field_counties_tid']['id'] = 'field_counties_tid';
   $handler->display->display_options['filters']['field_counties_tid']['table'] = 'field_data_field_counties';
   $handler->display->display_options['filters']['field_counties_tid']['field'] = 'field_counties_tid';
   $handler->display->display_options['filters']['field_counties_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_counties_tid']['expose']['operator_id'] = 'field_counties_tid_op';
-  $handler->display->display_options['filters']['field_counties_tid']['expose']['label'] = 'Counties';
+  $handler->display->display_options['filters']['field_counties_tid']['expose']['label'] = 'County';
   $handler->display->display_options['filters']['field_counties_tid']['expose']['operator'] = 'field_counties_tid_op';
-  $handler->display->display_options['filters']['field_counties_tid']['expose']['identifier'] = 'counites';
+  $handler->display->display_options['filters']['field_counties_tid']['expose']['identifier'] = 'counties';
   $handler->display->display_options['filters']['field_counties_tid']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
@@ -174,10 +184,9 @@ function rest_areas_view_views_default_views() {
   $handler->display->display_options['filters']['field_highways_tid']['id'] = 'field_highways_tid';
   $handler->display->display_options['filters']['field_highways_tid']['table'] = 'field_data_field_highways';
   $handler->display->display_options['filters']['field_highways_tid']['field'] = 'field_highways_tid';
-  $handler->display->display_options['filters']['field_highways_tid']['value'] = '';
   $handler->display->display_options['filters']['field_highways_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_highways_tid']['expose']['operator_id'] = 'field_highways_tid_op';
-  $handler->display->display_options['filters']['field_highways_tid']['expose']['label'] = 'Highways';
+  $handler->display->display_options['filters']['field_highways_tid']['expose']['label'] = 'Highway';
   $handler->display->display_options['filters']['field_highways_tid']['expose']['operator'] = 'field_highways_tid_op';
   $handler->display->display_options['filters']['field_highways_tid']['expose']['identifier'] = 'highways';
   $handler->display->display_options['filters']['field_highways_tid']['expose']['remember_roles'] = array(
@@ -193,7 +202,10 @@ function rest_areas_view_views_default_views() {
   $handler->display->display_options['path'] = 'safety/restareas';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Safety Rest Areas';
+  $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['rest_areas'] = $view;
 
   return $export;
