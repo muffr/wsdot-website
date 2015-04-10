@@ -21,7 +21,7 @@ function wsdot_roadwork_content_type_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Related projects',
-    'weight' => '10',
+    'weight' => '11',
     'children' => array(
       0 => 'field_project_ref',
       1 => 'field_external_project',
