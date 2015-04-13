@@ -35,6 +35,7 @@ features[field_instance][] = node-project-body
 features[field_instance][] = node-project-field_cities
 features[field_instance][] = node-project-field_contact_info
 features[field_instance][] = node-project-field_counties
+features[field_instance][] = node-project-field_design_build
 features[field_instance][] = node-project-field_funding_types
 features[field_instance][] = node-project-field_highways
 features[field_instance][] = node-project-field_images

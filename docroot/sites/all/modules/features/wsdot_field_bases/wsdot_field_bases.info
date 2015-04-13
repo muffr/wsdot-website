@@ -39,6 +39,7 @@ features[field_base][] = field_counties
 features[field_base][] = field_county
 features[field_base][] = field_county_term_reference
 features[field_base][] = field_date
+features[field_base][] = field_design_build
 features[field_base][] = field_direction
 features[field_base][] = field_due_date
 features[field_base][] = field_external_project

@@ -32,6 +32,7 @@ function wsdot_projects_field_group_info() {
       6 => 'field_project_id',
       7 => 'field_regions',
       8 => 'field_tags',
+      9 => 'field_design_build',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
