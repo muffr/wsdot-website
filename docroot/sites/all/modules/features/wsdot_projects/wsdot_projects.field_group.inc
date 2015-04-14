@@ -20,7 +20,7 @@ function wsdot_projects_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'project_metadata',
+    'label' => 'Project Metadata',
     'weight' => '8',
     'children' => array(
       0 => 'field_cities',
@@ -35,12 +35,13 @@ function wsdot_projects_field_group_info() {
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'Project Metadata',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-project-metadata field-group-fieldset',
         'required_fields' => 1,
+        'classes' => 'group-project-metadata field-group-fieldset',
+        'description' => '',
       ),
+      'formatter' => 'collapsible',
     ),
   );
   $export['group_project_metadata|node|project|form'] = $field_group;

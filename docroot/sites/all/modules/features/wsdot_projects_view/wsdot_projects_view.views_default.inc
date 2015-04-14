@@ -46,7 +46,7 @@ function wsdot_projects_view_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Content: Regions (field_regions) */
+  /* Contextual filter: Field: Regions (field_regions) */
   $handler->display->display_options['arguments']['field_regions_tid']['id'] = 'field_regions_tid';
   $handler->display->display_options['arguments']['field_regions_tid']['table'] = 'field_data_field_regions';
   $handler->display->display_options['arguments']['field_regions_tid']['field'] = 'field_regions_tid';
@@ -94,6 +94,15 @@ function wsdot_projects_view_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
   $handler->display->display_options['argument_input'] = array(
     'field_regions_tid' => array(
       'type' => 'context',
@@ -114,6 +123,8 @@ function wsdot_projects_view_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'node';
@@ -151,7 +162,7 @@ function wsdot_projects_view_views_default_views() {
   );
   $handler->display->display_options['fields']['field_images']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Regions (field_regions) */
+  /* Contextual filter: Field: Regions (field_regions) */
   $handler->display->display_options['arguments']['field_regions_tid']['id'] = 'field_regions_tid';
   $handler->display->display_options['arguments']['field_regions_tid']['table'] = 'field_data_field_regions';
   $handler->display->display_options['arguments']['field_regions_tid']['field'] = 'field_regions_tid';
