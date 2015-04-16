@@ -312,7 +312,7 @@ function wsdot_projects_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 6,
+      'weight' => 7,
     ),
     'workbench_access_field' => 0,
   );
@@ -364,6 +364,55 @@ function wsdot_projects_field_default_field_instances() {
       'weight' => 12,
     ),
     'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance: 'node-project-field_design_build'
+  $field_instances['node-project-field_design_build'] = array(
+    'bundle' => 'project',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 17,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_design_build',
+    'label' => 'Design-build',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 16,
+    ),
   );
 
   // Exported field_instance: 'node-project-field_funding_types'
@@ -548,7 +597,7 @@ function wsdot_projects_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 9,
+      'weight' => 5,
     ),
   );
 
@@ -1113,7 +1162,7 @@ function wsdot_projects_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 5,
+      'weight' => 6,
     ),
     'workbench_access_field' => 0,
   );
@@ -1125,6 +1174,7 @@ function wsdot_projects_field_default_field_instances() {
   t('Cities');
   t('Contact');
   t('Counties');
+  t('Design-build');
   t('Email');
   t('External contact');
   t('Funding types');
