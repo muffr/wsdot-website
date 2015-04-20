@@ -1,7 +1,7 @@
-name = Plan Sheet Content Type
+name = WSDOT Plan Sheet Content Type
 core = 7.x
 package = WSDOT Content
-version = 7.x-1.1
+version = 7.x-1.2
 project = plan_sheet_content_type
 dependencies[] = features
 dependencies[] = list
