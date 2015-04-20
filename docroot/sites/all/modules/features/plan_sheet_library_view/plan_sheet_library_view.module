@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Plan Sheet Library View feature.
+ */
+
+include_once 'plan_sheet_library_view.features.inc';
