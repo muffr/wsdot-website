@@ -12,6 +12,13 @@ regions[help] = Help
 regions[content] = Content
 regions[sidebar_first] = Left sidebar
 regions[sidebar_second] = Right sidebar
+
+regions[agencylinks_first] = Agency links first
+regions[agencylinks_second] = Agency links second
+regions[agencylinks_third] = Agency links third
+regions[agencylinks_fourth] = Agency links fourth
+regions[agencylinks_fifth] = Agency links fifth
+
 regions[footer] = Footer
 
 ; Required core regions

@@ -66,6 +66,32 @@
   <div class="cl"></div>
 </div>
 <div class="corners-bottom"></div>
+
+  <?php if ($page['agencylinks_first'] || $page['agencylinks_second'] || $page['agencylinks_third'] || $page['agencylinks_fourth'] || $page['agencylinks_fifth']): ?>
+    <div class="corners-top"></div>
+      <div class="secondary">
+
+        <div class="agencylinks" style="border-left: none;">
+          <?php print render($page['agencylinks_first']); ?>
+        </div>
+        <div class="agencylinks">      
+          <?php print render($page['agencylinks_second']); ?>
+        </div>
+        <div class="agencylinks">      
+          <?php print render($page['agencylinks_third']); ?>
+        </div>
+        <div class="agencylinks">
+          <?php print render($page['agencylinks_fourth']); ?>
+        </div>
+        <div class="agencylinks">
+          <?php print render($page['agencylinks_fifth']); ?>
+        </div>
+        <div class="cl"></div>
+
+      </div>
+    <div class="corners-bottom"></div>
+  <?php endif; ?>
+
 <div class="corners-top"></div>
 <div class="footer">
 

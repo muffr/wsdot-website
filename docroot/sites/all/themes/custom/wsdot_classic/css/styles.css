@@ -62,8 +62,8 @@ a.facebook{background: url(../images/back/facebook.png) top left no-repeat;paddi
 .jobsnowbg a{background:url(../images/back/jobsnow_sm.gif) no-repeat left top;display:block;height:81px;overflow:hidden;text-decoration:none;width:113px;}
 .arrabg {margin-right:40px;width:81px;float:right;padding-top:8px;padding-bottom:7px;}
 .arrabg a{background:url(../images/back/arra.gif) no-repeat left top;display:block;height:81px;overflow:hidden;text-decoration:none;width:81px;}
-.goodtogobg {width:90px;height:48px;float:right;margin:12px 12px;}
-.goodtogobg a{background:url(../images/back/goodtogo.jpg) no-repeat left top;display:block;width:90px;height:57px;}
+.goodtogobg {float:right;background:url(../images/back/goodtogo.jpg) no-repeat left top;display:block;width:90px;height:57px;}
+/*.goodtogobg a{background:url(../images/back/goodtogo.jpg) no-repeat left top;display:block;width:90px;height:57px;}*/
 .censusbg {	margin-left:15px;width:125px;float:left;padding-top:8px;padding-bottom:7px;}
 .censusbg a{background:url(../images/back/Census2010.gif) no-repeat left top;display:block;height:71px;overflow:hidden;text-decoration:none;width:125px;}
 
@@ -163,7 +163,7 @@ div.nav a {background:transparent url(../images/back/navigator.png) no-repeat sc
 .secondary h3 {font-size:1.25em;color:#000;}
 .secondary a {text-decoration:underline;}
 .secondary a:hover {text-decoration:none;}
-.secondary li {padding-bottom:0.5em;font-size:.9em;}
+.secondary li {padding-bottom:0.5em;font-size:1em;}
 
 .footer{width:945px;margin:0px auto;padding:10px;height:auto;background: url(../images/back/gradients_bg.png) repeat-x left -100px;color:#636363;}
 .footer h3 {font-size:1.25em;color:#636363;}
@@ -198,6 +198,7 @@ div.nav a {background:transparent url(../images/back/navigator.png) no-repeat sc
 /*.content li{font-size:1em;background:url(http://www.wsdot.wa.gov/media/images/back/bullet.gif) no-repeat 0em .8em;padding:.1em 0em .3em .75em;}*/
 /*.content li.last {font-size:1em;background:url(http://www.wsdot.wa.gov/media/images/back/bullet.gif) no-repeat 0em 1.3em;padding:.6em 0em .3em .75em;}*/
 /*.content ol li{font-size:1em;padding:.1em 0em .3em .75em;}*/
+.widgetdata .content li {margin: 0 0 0.25em 1.5em; padding: 0;}
 
 .leftcolumn{margin-top:15px;margin-right:5px;}
 .middlecolumn{margin-top:15px;margin-right:5px;}
@@ -243,14 +244,14 @@ div.nav a {background:transparent url(../images/back/navigator.png) no-repeat sc
 .static h2 {font-size:1.5em;margin:0;padding:9px 10px;color:#000;}
 .widget h2 a {font-weight:bold;color:#000;text-decoration:none;}
 .widget h2 a:hover {text-decoration:none;color:#898989;}
-.widgetset {position:relative;background-color:#fff;float:left;width:306px;height:auto;}
-.widgetdata {border-top:1px solid #ccc;clear:both;width:306px;padding-bottom:10px;}
+/*.widgetset {position:relative;background-color:#fff;float:left;height:auto;}*/
+.widgetdata {padding:10px;}
 .widgetdata h3 {padding:5px 10px;background-color:#eee;font-size:1em;text-transform:uppercase;border-top:1px solid #fff;font-weight:bold;}
-.widgetdata h4 {padding:5px 10px;font-size:1em;text-transform:uppercase;font-weight:bold;}
+.widgetdata h4 {padding:10px 0px;font-size:1em;text-transform:uppercase;font-weight:bold;}
 .widgetdata h3 a {color:#000;padding-left:0px;text-decoration:underline;}
 .widgetdata h3 a:hover {text-decoration:none;}
-.widgetdata ul, .widgetdata p {list-style:none;padding:8px 10px;margin:0;}
-.widgetdata .twocol li{font-size:1em;background:url(../images/back/bullet.gif) no-repeat 0em 8px;padding:.1em 0em .3em .75em;float:left;width:128px;}
+.widgetdata ul, .widgetdata p {margin:0 0 0.75em 0; padding: 0;}
+.widgetdata .twocol li{float:left;width:118px;margin: 0 0 0.25em 1.5em; padding: 0;}
 .widgetdata .threecol li{font-size:1em;background:url(../images/back/bullet.gif) no-repeat 0em 8px;padding:.1em 0em .3em .75em;float:left;width:80px;}
 .widgetdata .threecol_icons li{font-size:1em;padding:0px 0px 5px 7px;float:left;width:80px;}
 
@@ -305,7 +306,7 @@ div.nav a {background:transparent url(../images/back/navigator.png) no-repeat sc
 /* Regions map */
 #regions {width: 149px; height: 100px; background: url(../images/map/regions_map.png); margin:0; padding: 0; position: relative;}
 #regions li {margin:0;padding:0;list-style:none;display:block;position:absolute;background:url();}
-#regions a {display: block;}
+#regions a {display: block; color: transparent;}
 #regions-northwest {left: 30px; top: 1px; width: 43px; height: 63px;}
 #regions-olympic {left: 0px; top: 17px; width: 54px; height: 48px;}
 #regions-southwest {left: 10px; top: 64px; width: 80px; height: 36px;}

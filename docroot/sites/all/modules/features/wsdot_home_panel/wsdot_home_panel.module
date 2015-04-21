@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WSDOT Home Panel feature.
+ */
+
+include_once 'wsdot_home_panel.features.inc';
