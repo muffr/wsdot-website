@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WSDOT Plan Sheet Library Panels feature.
+ */
+
+include_once 'wsdot_plan_sheet_library_panels.features.inc';
