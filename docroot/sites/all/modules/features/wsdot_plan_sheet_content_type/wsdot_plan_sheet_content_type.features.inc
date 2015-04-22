@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * plan_sheet_content_type.features.inc
+ * wsdot_plan_sheet_content_type.features.inc
  */
 
 /**
  * Implements hook_node_info().
  */
-function plan_sheet_content_type_node_info() {
+function wsdot_plan_sheet_content_type_node_info() {
   $items = array(
     'plan_sheet' => array(
       'name' => t('Plan Sheet'),

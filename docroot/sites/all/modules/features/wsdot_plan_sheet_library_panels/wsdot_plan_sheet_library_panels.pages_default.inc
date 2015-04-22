@@ -15,22 +15,24 @@ function wsdot_plan_sheet_library_panels_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Plan Sheet Library';
   $page->admin_description = 'The Plan Sheet Library provides drawings of site-specific details and experimental designs that are precluded from adoption as Standard Plans. These drawings fully comply with present design criteria, and each has a narrative explaining the intended use and some of the possible impacts associated with its usage.';
-  $page->path = 'plan-sheet-library';
+  $page->path = 'design/standards/plan-sheet-library';
   $page->access = array();
   $page->menu = array(
-    'type' => 'normal',
+    'type' => 'none',
     'title' => 'Plan Sheet Library',
-    'weight' => '0',
     'name' => 'main-menu',
+    'weight' => '0',
     'parent' => array(
       'type' => 'none',
       'title' => '',
-      'weight' => 0,
       'name' => 'navigation',
+      'weight' => '0',
     ),
   );
   $page->arguments = array();
-  $page->conf = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
   $page->default_handlers = array();
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */

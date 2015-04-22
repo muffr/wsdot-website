@@ -7,6 +7,6 @@
 /**
  * Implements hook_views_api().
  */
-function plan_sheet_library_view_views_api($module = NULL, $api = NULL) {
+function wsdot_plan_sheet_library_view_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * plan_sheet_content_type.features.field_instance.inc
+ * wsdot_plan_sheet_content_type.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function plan_sheet_content_type_field_default_field_instances() {
+function wsdot_plan_sheet_content_type_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance:

@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Plan Sheet Content Type feature.
- */
-
-include_once 'plan_sheet_content_type.features.inc';

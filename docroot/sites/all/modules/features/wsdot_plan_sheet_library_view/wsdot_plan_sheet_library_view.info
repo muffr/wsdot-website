@@ -1,8 +1,8 @@
-name = Plan Sheet Library View
+name = WSDOT Plan Sheet Library View
 core = 7.x
 package = WSDOT Views
 version = 7.x-1.0
-project = plan_sheet_library_view
+project = wsdot_plan_sheet_library_view
 dependencies[] = views
 dependencies[] = views_content
 features[ctools][] = views:views_default:3.0
