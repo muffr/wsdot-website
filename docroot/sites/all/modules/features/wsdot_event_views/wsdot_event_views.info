@@ -1,0 +1,15 @@
+name = WSDOT Event Views
+core = 7.x
+package = WSDOT Views
+version = 7.x-1.0
+project = wsdot_event_views
+dependencies[] = calendar
+dependencies[] = date_views
+dependencies[] = panels
+dependencies[] = views
+dependencies[] = views_content
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = calendar
+features[views_view][] = event_view
+features_exclude[dependencies][ctools] = ctools
