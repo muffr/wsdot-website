@@ -1,0 +1,14 @@
+name = WSDOT Wetland Monitoring Reports Panels
+core = 7.x
+package = WSDOT Panels
+version = 7.x-1.0
+project = wsdot_wetland_monitoring_reports_panels
+dependencies[] = ctools
+dependencies[] = ds
+dependencies[] = page_manager
+features[ctools][] = ds:ds:1
+features[ctools][] = page_manager:pages_default:1
+features[ds_field_settings][] = node|wetland_monitoring_reports|default
+features[ds_layout_settings][] = node|wetland_monitoring_reports|default
+features[features_api][] = api:2
+features[page_manager_pages][] = wetland_monitoring_reports_home_page

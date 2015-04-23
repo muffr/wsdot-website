@@ -1,0 +1,12 @@
+name = WSDOT Wetland Monitoring Reports Views
+core = 7.x
+package = WSDOT Views
+version = 7.x-1.0
+project = wsdot_wetland_monitoring_reports_views
+dependencies[] = views
+dependencies[] = views_content
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = wetland_reports_north_central_region
+features[views_view][] = wetlands_reports_nothwest_region
+features_exclude[dependencies][ctools] = ctools

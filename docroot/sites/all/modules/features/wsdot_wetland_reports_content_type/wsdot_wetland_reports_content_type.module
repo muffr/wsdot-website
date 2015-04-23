@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WSDOT Wetland Reports Content Type feature.
+ */
+
+include_once 'wsdot_wetland_reports_content_type.features.inc';
