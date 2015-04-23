@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WSDOT Event Content Type feature.
+ */
+
+include_once 'wsdot_event_content_type.features.inc';
