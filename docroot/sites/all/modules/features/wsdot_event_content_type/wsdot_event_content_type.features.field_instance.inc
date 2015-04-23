@@ -188,7 +188,7 @@ function wsdot_event_content_type_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'size' => 255,
+        'size' => 60,
       ),
       'type' => 'text_textfield',
       'weight' => 3,
@@ -229,7 +229,7 @@ function wsdot_event_content_type_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'size' => 255,
+        'size' => 60,
       ),
       'type' => 'text_textfield',
       'weight' => 4,
