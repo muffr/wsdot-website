@@ -116,6 +116,7 @@ function roadwork_view_views_default_views() {
     1 => 0,
     11 => 0,
   );
+  $handler->display->display_options['filters']['field_highways_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_highways_tid']['vocabulary'] = 'highways';
   /* Filter criterion: Field: Regions (field_regions) */
   $handler->display->display_options['filters']['field_regions_tid']['id'] = 'field_regions_tid';
@@ -134,7 +135,7 @@ function roadwork_view_views_default_views() {
   );
   $handler->display->display_options['filters']['field_regions_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_regions_tid']['vocabulary'] = 'regions';
-  /* Filter criterion: Content: Active (field_active) */
+  /* Filter criterion: Content: Open (field_active) */
   $handler->display->display_options['filters']['field_active_value']['id'] = 'field_active_value';
   $handler->display->display_options['filters']['field_active_value']['table'] = 'field_data_field_active';
   $handler->display->display_options['filters']['field_active_value']['field'] = 'field_active_value';
