@@ -47,3 +47,10 @@ function site_deployment_update_7003() {
   module_enable(array('flexslider', 'flexslider_example', 'flexslider_fields', 'flexslider_views',
                       'strongarm'));
 }
+
+/**
+ * 5th Deployment: Enable Chosen module.
+ */
+function site_deployment_update_7004() {
+  module_enable(array('chosen'));
+}
