@@ -158,6 +158,7 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_counties',
     'label' => 'Counties',
@@ -168,7 +169,9 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => 1,
+      ),
       'type' => 'options_select',
       'weight' => 5,
     ),
@@ -252,6 +255,7 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_highways',
     'label' => 'Highways',
@@ -263,10 +267,9 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
+        'apply_chosen' => 1,
       ),
-      'type' => 'options_buttons',
+      'type' => 'options_select',
       'weight' => 7,
     ),
   );
@@ -292,6 +295,7 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_milepost',
     'label' => 'Milepost',
@@ -304,7 +308,7 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'size' => 255,
+        'size' => 60,
       ),
       'type' => 'text_textfield',
       'weight' => 4,
@@ -334,6 +338,7 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_project_ref',
     'label' => 'Project',
@@ -343,13 +348,11 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'entityreference',
+      'module' => 'options',
       'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
+        'apply_chosen' => 1,
       ),
-      'type' => 'entityreference_autocomplete',
+      'type' => 'options_select',
       'weight' => 10,
     ),
   );
@@ -467,6 +470,7 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_user_reference',
     'label' => 'Contact',
@@ -476,13 +480,11 @@ function wsdot_roadwork_content_type_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'entityreference',
+      'module' => 'options',
       'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
+        'apply_chosen' => 1,
       ),
-      'type' => 'entityreference_autocomplete',
+      'type' => 'options_select',
       'weight' => 9,
     ),
   );
