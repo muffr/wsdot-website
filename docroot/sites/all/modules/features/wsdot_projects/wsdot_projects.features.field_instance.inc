@@ -10,7 +10,8 @@
 function wsdot_projects_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'field_collection_item-field_contact_info-field_contact_email'
+  // Exported field_instance:
+  // 'field_collection_item-field_contact_info-field_contact_email'
   $field_instances['field_collection_item-field_contact_info-field_contact_email'] = array(
     'bundle' => 'field_contact_info',
     'default_value' => NULL,
@@ -44,7 +45,8 @@ function wsdot_projects_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'field_collection_item-field_contact_info-field_contact_firstlast'
+  // Exported field_instance:
+  // 'field_collection_item-field_contact_info-field_contact_firstlast'
   $field_instances['field_collection_item-field_contact_info-field_contact_firstlast'] = array(
     'bundle' => 'field_contact_info',
     'default_value' => NULL,
@@ -79,7 +81,8 @@ function wsdot_projects_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'field_collection_item-field_contact_info-field_contact_phone'
+  // Exported field_instance:
+  // 'field_collection_item-field_contact_info-field_contact_phone'
   $field_instances['field_collection_item-field_contact_info-field_contact_phone'] = array(
     'bundle' => 'field_contact_info',
     'default_value' => NULL,
@@ -116,7 +119,8 @@ function wsdot_projects_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'field_collection_item-field_contact_info-field_contact_title'
+  // Exported field_instance:
+  // 'field_collection_item-field_contact_info-field_contact_title'
   $field_instances['field_collection_item-field_contact_info-field_contact_title'] = array(
     'bundle' => 'field_contact_info',
     'default_value' => NULL,
@@ -244,6 +248,7 @@ function wsdot_projects_field_default_field_instances() {
         'weight' => 16,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_cities',
     'label' => 'Cities',
@@ -254,8 +259,10 @@ function wsdot_projects_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
+      'settings' => array(
+        'apply_chosen' => 1,
+      ),
+      'type' => 'options_select',
       'weight' => 13,
     ),
     'workbench_access_field' => 0,
@@ -349,6 +356,7 @@ function wsdot_projects_field_default_field_instances() {
         'weight' => 10,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_counties',
     'label' => 'Counties',
@@ -359,7 +367,9 @@ function wsdot_projects_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => 1,
+      ),
       'type' => 'options_select',
       'weight' => 12,
     ),
@@ -379,9 +389,8 @@ function wsdot_projects_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
+        'type' => 'hidden',
         'weight' => 17,
       ),
       'featured' => array(
@@ -447,6 +456,7 @@ function wsdot_projects_field_default_field_instances() {
         'weight' => 12,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_funding_types',
     'label' => 'Funding types',
@@ -457,8 +467,10 @@ function wsdot_projects_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
+      'settings' => array(
+        'apply_chosen' => 1,
+      ),
+      'type' => 'options_select',
       'weight' => 9,
     ),
     'workbench_access_field' => 0,
@@ -497,6 +509,7 @@ function wsdot_projects_field_default_field_instances() {
         'weight' => 13,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_highways',
     'label' => 'Highways',
@@ -506,12 +519,11 @@ function wsdot_projects_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
+        'apply_chosen' => 1,
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'options_select',
       'weight' => 11,
     ),
     'workbench_access_field' => 0,
@@ -679,12 +691,18 @@ function wsdot_projects_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'image',
+        'module' => 'colorbox',
         'settings' => array(
-          'image_link' => 'file',
-          'image_style' => 'project_map_thumbnail',
+          'colorbox_caption' => 'auto',
+          'colorbox_caption_custom' => '',
+          'colorbox_gallery' => 'post',
+          'colorbox_gallery_custom' => '',
+          'colorbox_image_style' => '',
+          'colorbox_multivalue_index' => NULL,
+          'colorbox_node_style' => 'project_map_thumbnail',
+          'colorbox_node_style_first' => '',
         ),
-        'type' => 'image',
+        'type' => 'colorbox',
         'weight' => 3,
       ),
       'featured' => array(
@@ -728,12 +746,25 @@ function wsdot_projects_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'media',
       'settings' => array(
-        'preview_image_style' => 'medium',
-        'progress_indicator' => 'throbber',
+        'allowed_schemes' => array(
+          'public' => 'public',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'project_document' => 0,
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'upload' => 0,
+        ),
       ),
-      'type' => 'image_image',
+      'type' => 'media_generic',
       'weight' => 4,
     ),
     'workbench_access_field' => 0,
@@ -771,6 +802,7 @@ function wsdot_projects_field_default_field_instances() {
         'weight' => 9,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_modes',
     'label' => 'Modes',
@@ -781,8 +813,10 @@ function wsdot_projects_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
+      'settings' => array(
+        'apply_chosen' => 1,
+      ),
+      'type' => 'options_select',
       'weight' => 14,
     ),
     'workbench_access_field' => 0,
@@ -887,7 +921,9 @@ function wsdot_projects_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
       'type' => 'options_select',
       'weight' => 3,
     ),
@@ -925,6 +961,7 @@ function wsdot_projects_field_default_field_instances() {
         'weight' => 4,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_regions',
     'label' => 'Regions',
@@ -935,8 +972,10 @@ function wsdot_projects_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
+      'settings' => array(
+        'apply_chosen' => 1,
+      ),
+      'type' => 'options_select',
       'weight' => 10,
     ),
     'workbench_access_field' => 0,
@@ -1146,6 +1185,7 @@ function wsdot_projects_field_default_field_instances() {
         'weight' => 5,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_user_reference',
     'label' => 'Contact',
@@ -1155,13 +1195,11 @@ function wsdot_projects_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'entityreference',
+      'module' => 'options',
       'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
+        'apply_chosen' => 1,
       ),
-      'type' => 'entityreference_autocomplete',
+      'type' => 'options_select',
       'weight' => 6,
     ),
     'workbench_access_field' => 0,
