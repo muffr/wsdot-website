@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WSDOT Home Page News Articles Nodequeue feature.
+ */
+
+include_once 'wsdot_home_page_news_articles_nodequeue.features.inc';
