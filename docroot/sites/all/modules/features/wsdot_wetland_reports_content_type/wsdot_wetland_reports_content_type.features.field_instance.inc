@@ -19,9 +19,9 @@ function wsdot_wetland_reports_content_type_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'hs_taxonomy',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'hs_taxonomy_term_reference_hierarchical_text',
+        'type' => 'taxonomy_term_reference_plain',
         'weight' => 4,
       ),
       'teaser' => array(
@@ -44,7 +44,7 @@ function wsdot_wetland_reports_content_type_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 1,
+      'weight' => 3,
     ),
   );
 
@@ -80,7 +80,7 @@ function wsdot_wetland_reports_content_type_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 2,
     ),
   );
 
@@ -88,9 +88,14 @@ function wsdot_wetland_reports_content_type_field_default_field_instances() {
   // 'node-wetland_monitoring_reports-field_report_link'
   $field_instances['node-wetland_monitoring_reports-field_report_link'] = array(
     'bundle' => 'wetland_monitoring_reports',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'title' => 'Report (pdf 00 kb)',
+        'url' => 'http://www.wsdot.wa.gov/sample.pdf',
+      ),
+    ),
     'deleted' => 0,
-    'description' => 'Add the text for the wetland report, including the pdf designation, and link it up. For example: (Springbrook Bank Unit C, pdf 5.5 mb). Include the pdf designation as part of the link.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -139,7 +144,7 @@ function wsdot_wetland_reports_content_type_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 2,
+      'weight' => 4,
     ),
   );
 
@@ -158,7 +163,6 @@ function wsdot_wetland_reports_content_type_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
-          'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -190,18 +194,16 @@ function wsdot_wetland_reports_content_type_field_default_field_instances() {
         'input_format' => 'Y M j - g:i:sa',
         'input_format_custom' => '',
         'label_position' => 'none',
-        'repeat_collapsed' => 0,
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
       'type' => 'date_text',
-      'weight' => 4,
+      'weight' => 1,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Add the text for the wetland report, including the pdf designation, and link it up. For example: (Springbrook Bank Unit C, pdf 5.5 mb). Include the pdf designation as part of the link.');
   t('Counties');
   t('Regions');
   t('Report Link');
