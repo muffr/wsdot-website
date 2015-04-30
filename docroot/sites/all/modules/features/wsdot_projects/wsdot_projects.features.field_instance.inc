@@ -178,6 +178,13 @@ function wsdot_projects_field_default_field_instances() {
         'type' => 'text_summary_or_trimmed',
         'weight' => 2,
       ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
       'rss' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -235,6 +242,12 @@ function wsdot_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 19,
       ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
+      ),
       'rss' => array(
         'label' => 'above',
         'settings' => array(),
@@ -286,6 +299,12 @@ function wsdot_projects_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 17,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
       ),
       'rss' => array(
         'label' => 'above',
@@ -343,6 +362,12 @@ function wsdot_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 16,
       ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
+      ),
       'rss' => array(
         'label' => 'above',
         'settings' => array(),
@@ -399,6 +424,12 @@ function wsdot_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -438,6 +469,12 @@ function wsdot_projects_field_default_field_instances() {
         'weight' => 21,
       ),
       'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 21,
+      ),
+      'full' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -494,6 +531,12 @@ function wsdot_projects_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 18,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
       ),
       'rss' => array(
         'label' => 'above',
@@ -553,6 +596,15 @@ function wsdot_projects_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 1,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'file_entity',
+        'settings' => array(
+          'file_view_mode' => 'default',
+        ),
+        'type' => 'file_rendered',
+        'weight' => 4,
       ),
       'rss' => array(
         'label' => 'above',
@@ -633,6 +685,13 @@ function wsdot_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 22,
       ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 6,
+      ),
       'rss' => array(
         'label' => 'above',
         'settings' => array(),
@@ -710,6 +769,22 @@ function wsdot_projects_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 13,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'colorbox',
+        'settings' => array(
+          'colorbox_caption' => 'auto',
+          'colorbox_caption_custom' => '',
+          'colorbox_gallery' => 'post',
+          'colorbox_gallery_custom' => '',
+          'colorbox_image_style' => '',
+          'colorbox_multivalue_index' => NULL,
+          'colorbox_node_style' => 'project_map_thumbnail',
+          'colorbox_node_style_first' => '',
+        ),
+        'type' => 'colorbox',
+        'weight' => 3,
       ),
       'rss' => array(
         'label' => 'above',
@@ -789,6 +864,12 @@ function wsdot_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 24,
       ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 24,
+      ),
       'rss' => array(
         'label' => 'above',
         'settings' => array(),
@@ -841,6 +922,12 @@ function wsdot_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 23,
       ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 23,
+      ),
       'rss' => array(
         'label' => 'above',
         'settings' => array(),
@@ -877,7 +964,11 @@ function wsdot_projects_field_default_field_instances() {
   // Exported field_instance: 'node-project-field_project_phase'
   $field_instances['node-project-field_project_phase'] = array(
     'bundle' => 'project',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'tid' => 1941,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -897,6 +988,16 @@ function wsdot_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 15,
       ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'ds',
+        'settings' => array(
+          'taxonomy_term_reference_view_mode' => 'full',
+          'use_content_language' => 1,
+        ),
+        'type' => 'ds_taxonomy_view_mode',
+        'weight' => 2,
+      ),
       'rss' => array(
         'label' => 'above',
         'module' => 'taxonomy',
@@ -911,10 +1012,11 @@ function wsdot_projects_field_default_field_instances() {
         'weight' => 7,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_project_phase',
     'label' => 'Phase',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -943,6 +1045,12 @@ function wsdot_projects_field_default_field_instances() {
         'weight' => 20,
       ),
       'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 20,
+      ),
+      'full' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1001,6 +1109,13 @@ function wsdot_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 14,
       ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
       'rss' => array(
         'label' => 'above',
         'module' => 'text',
@@ -1052,6 +1167,12 @@ function wsdot_projects_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 12,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'rss' => array(
         'label' => 'above',
@@ -1120,6 +1241,12 @@ function wsdot_projects_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 10,
       ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 22,
+      ),
       'rss' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1171,6 +1298,12 @@ function wsdot_projects_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 11,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
       ),
       'rss' => array(
         'label' => 'above',
