@@ -220,7 +220,7 @@ div.nav a {background:transparent url(../images/back/navigator.png) no-repeat sc
 .orangeBg{background:#fff url(../images/back/gradients_bg.png) repeat-x left 0px;}
 
 /*** Project status box ***/
-.projectstatusbox {width:445px;border:1px solid #ccc;background-color:#f2f2df;}
+.projectstatusbox {width:445px;border:1px solid #ccc;background-color:#f2f2df;margin-bottom: 30px;}
 .projectstatusbox h4.header{font-size:1.3em;line-height:2.5em; font-weight:bold;border-bottom:1px solid #ccc;padding:0 10px;}
 .projectstatusbox .content {padding:0 10px;}
 /*.projectstatusbox .content ul{list-style:none;margin:0em .3em 0em .3em;padding:0em;}*/
@@ -366,11 +366,13 @@ h2.pane-title, h4.pane-title {
 
 .ds-2col--node-project > .group-left {
   float: left; /* LTR */
-  width: 65%;
+  width: 70%;
+  margin-top: 10px;
 }
 
 .ds-2col--node-project > .group-right {
   float: left; /* LTR */
-  width: 30%;
+  width: 25%;
   margin-left: 5%;
+  margin-top: 10px;
 }
