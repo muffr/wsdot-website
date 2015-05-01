@@ -580,11 +580,18 @@ function wsdot_projects_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'file_entity',
+        'module' => 'colorbox',
         'settings' => array(
-          'file_view_mode' => 'default',
+          'colorbox_caption' => 'auto',
+          'colorbox_caption_custom' => '',
+          'colorbox_gallery' => 'page',
+          'colorbox_gallery_custom' => '',
+          'colorbox_image_style' => '',
+          'colorbox_multivalue_index' => NULL,
+          'colorbox_node_style' => 'project_photo_thumbnail',
+          'colorbox_node_style_first' => '',
         ),
-        'type' => 'file_rendered',
+        'type' => 'colorbox',
         'weight' => 4,
       ),
       'featured' => array(

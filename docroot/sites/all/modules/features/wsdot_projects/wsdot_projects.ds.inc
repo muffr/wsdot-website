@@ -38,6 +38,11 @@ function wsdot_projects_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_images' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
   );
   $export['node|project|default'] = $ds_fieldsetting;
 
