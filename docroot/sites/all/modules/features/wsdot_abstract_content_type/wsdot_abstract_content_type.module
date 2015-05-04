@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WSDOT Abstract Content Type feature.
+ */
+
+include_once 'wsdot_abstract_content_type.features.inc';
