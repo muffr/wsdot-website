@@ -41,11 +41,28 @@ function news_view_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sort criterion: Field: Publication Date (field_date) */
+  /* Sort criterion: Field: Date -  start date (field_date) */
   $handler->display->display_options['sorts']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['sorts']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['sorts']['field_date_value']['field'] = 'field_date_value';
   $handler->display->display_options['sorts']['field_date_value']['order'] = 'DESC';
+  /* Contextual filter: Field: Regions (field_regions) */
+  $handler->display->display_options['arguments']['field_regions_tid']['id'] = 'field_regions_tid';
+  $handler->display->display_options['arguments']['field_regions_tid']['table'] = 'field_data_field_regions';
+  $handler->display->display_options['arguments']['field_regions_tid']['field'] = 'field_regions_tid';
+  $handler->display->display_options['arguments']['field_regions_tid']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['field_regions_tid']['title'] = '%1 Region News';
+  $handler->display->display_options['arguments']['field_regions_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_regions_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_regions_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_regions_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_regions_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_regions_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_regions_tid']['validate_options']['vocabularies'] = array(
+    'regions' => 'regions',
+  );
+  $handler->display->display_options['arguments']['field_regions_tid']['validate_options']['type'] = 'convert';
+  $handler->display->display_options['arguments']['field_regions_tid']['validate_options']['transform'] = TRUE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -61,7 +78,7 @@ function news_view_views_default_views() {
     'news_article' => 'news_article',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Field: Publication Date (field_date) */
+  /* Filter criterion: Field: Date -  start date (field_date) */
   $handler->display->display_options['filters']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['filters']['field_date_value']['field'] = 'field_date_value';
@@ -91,7 +108,7 @@ function news_view_views_default_views() {
     'news_article' => 'news_article',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Field: Publication Date (field_date) */
+  /* Filter criterion: Field: Date -  start date (field_date) */
   $handler->display->display_options['filters']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['filters']['field_date_value']['field'] = 'field_date_value';
