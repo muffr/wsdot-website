@@ -8,6 +8,9 @@
  * Implements hook_ctools_plugin_api().
  */
 function wsdot_news_article_content_type_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "panelizer" && $api == "panelizer") {
+    return array("version" => "1");
+  }
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -21,7 +24,7 @@ function wsdot_news_article_content_type_node_info() {
     'news_article' => array(
       'name' => t('News Article'),
       'base' => 'node_content',
-      'description' => t('Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.'),
+      'description' => t('Use <em>news articles</em> for press releases.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
