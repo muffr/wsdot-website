@@ -1,8 +1,8 @@
 name = WSDOT Park and Ride View
 description = Manages the Park and Ride view
 core = 7.x
-package = WSDOT Content
-version = 7.x-1.0
+package = WSDOT Views
+version = 7.x-1.1
 project = wsdot_park_and_ride_view
 dependencies[] = views
 features[ctools][] = views:views_default:3.0
