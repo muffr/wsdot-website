@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * roadwork_view.features.field_base.inc
+ * wsdot_roadwork_view.features.field_base.inc
  */
 
 /**
  * Implements hook_field_default_field_bases().
  */
-function roadwork_view_field_default_field_bases() {
+function wsdot_roadwork_view_field_default_field_bases() {
   $field_bases = array();
 
   // Exported field_base: 'field_active'

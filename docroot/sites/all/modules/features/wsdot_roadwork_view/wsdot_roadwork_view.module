@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WSDOT Roadwork View feature.
+ */
+
+include_once 'wsdot_roadwork_view.features.inc';
