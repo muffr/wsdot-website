@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * rest_areas_view.views_default.inc
+ * wsdot_rest_areas_view.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function rest_areas_view_views_default_views() {
+function wsdot_rest_areas_view_views_default_views() {
   $export = array();
 
   $view = new view();
@@ -200,7 +200,6 @@ function rest_areas_view_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'safety/restareas';
-  $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Safety Rest Areas';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';
