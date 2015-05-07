@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * news_view.views_default.inc
+ * wsdot_news_view.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function news_view_views_default_views() {
+function wsdot_news_view_views_default_views() {
   $export = array();
 
   $view = new view();

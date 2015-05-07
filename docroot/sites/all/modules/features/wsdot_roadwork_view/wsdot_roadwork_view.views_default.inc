@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * roadwork_view.views_default.inc
+ * wsdot_roadwork_view.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function roadwork_view_views_default_views() {
+function wsdot_roadwork_view_views_default_views() {
   $export = array();
 
   $view = new view();

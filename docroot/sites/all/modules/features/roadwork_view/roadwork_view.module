@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Roadwork View feature.
- */
-
-include_once 'roadwork_view.features.inc';

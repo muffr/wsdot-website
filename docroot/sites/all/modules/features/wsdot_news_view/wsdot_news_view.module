@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WSDOT News View feature.
+ */
+
+include_once 'wsdot_news_view.features.inc';

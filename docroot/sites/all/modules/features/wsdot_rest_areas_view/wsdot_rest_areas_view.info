@@ -1,9 +1,9 @@
-name = Rest Areas View
+name = WSDOT Rest Areas View
 description = View showing all the safety rest areas
 core = 7.x
 package = WSDOT Views
-version = 7.x-1.1
-project = rest_areas_view
+version = 7.x-1.3
+project = wsdot_rest_areas_view
 dependencies[] = views
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WSDOT Rest Areas View feature.
+ */
+
+include_once 'wsdot_rest_areas_view.features.inc';
