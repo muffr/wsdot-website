@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WSDOT Features View feature.
+ */
+
+include_once 'wsdot_features_view.features.inc';

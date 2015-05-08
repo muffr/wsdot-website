@@ -754,3 +754,69 @@ h2.pane-title, h4.pane-title {
   margin-left: 5%;
   margin-top: 10px;
 }
+
+/* Flex Slider */
+#slideshow {
+	margin-bottom: 3.5em;
+	border: none;
+}
+
+#slideshow h3 {
+	padding: 5px 10px;
+	font-size: 0.85em;
+	font-weight: bold;
+	text-transform: uppercase;
+	border-top: 1px solid #fff;
+	background-color: #eee;
+}
+
+#slideshow p {
+	margin: 10px 0 0 0;
+	padding: 0 10px;
+	font-size: 1em;
+	line-height: 1.35;
+}
+
+.flex-control-nav {
+	bottom: -3em;
+}
+
+.flex-control-paging li a {
+	width: 8px;
+	height: 8px;
+	bottom: -2em;
+	border-radius: 4px;
+	background-color: #ccc;
+	box-shadow: none;
+	cursor: pointer;
+}
+
+.flex-control-paging li a.flex-active,flex-control-paging li a:hover {
+	background-color: #888;
+}
+
+.flex-direction-nav a {
+	display: block;
+	position: absolute;
+	width: 28px;
+	height: 55px;
+	top: 65px;
+	margin: 0;
+	padding: 0;
+	text-shadow: none;
+	font-size: 0;
+}
+
+.flex-direction-nav a:after,.flex-direction-nav a:before {
+	display: none !important;	
+}
+
+.flex-direction-nav .flex-next {
+	background-image: url(../images/slideshow_next.png);
+	margin-right: -10px;
+}
+
+.flex-direction-nav .flex-prev {
+	background-image: url(../images/slideshow_prev.png);
+	margin-left: -10px;
+}
