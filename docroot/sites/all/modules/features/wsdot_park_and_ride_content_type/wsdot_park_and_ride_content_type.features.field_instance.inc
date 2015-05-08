@@ -135,7 +135,8 @@ function wsdot_park_and_ride_content_type_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-park_and_ride_lots-field_city_term_reference'
+  // Exported field_instance:
+  // 'node-park_and_ride_lots-field_city_term_reference'
   $field_instances['node-park_and_ride_lots-field_city_term_reference'] = array(
     'bundle' => 'park_and_ride_lots',
     'default_value' => NULL,
@@ -156,6 +157,7 @@ function wsdot_park_and_ride_content_type_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_city_term_reference',
     'label' => 'City term reference',
@@ -164,13 +166,12 @@ function wsdot_park_and_ride_content_type_field_default_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
+      'active' => 1,
+      'module' => 'options',
       'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
+        'apply_chosen' => '',
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'options_select',
       'weight' => 11,
     ),
   );
@@ -215,7 +216,8 @@ function wsdot_park_and_ride_content_type_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-park_and_ride_lots-field_county_term_reference'
+  // Exported field_instance:
+  // 'node-park_and_ride_lots-field_county_term_reference'
   $field_instances['node-park_and_ride_lots-field_county_term_reference'] = array(
     'bundle' => 'park_and_ride_lots',
     'default_value' => NULL,
@@ -236,6 +238,7 @@ function wsdot_park_and_ride_content_type_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_county_term_reference',
     'label' => 'County term reference',
@@ -244,13 +247,12 @@ function wsdot_park_and_ride_content_type_field_default_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
+      'active' => 1,
+      'module' => 'options',
       'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
+        'apply_chosen' => '',
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'options_select',
       'weight' => 12,
     ),
   );
@@ -478,7 +480,8 @@ function wsdot_park_and_ride_content_type_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-park_and_ride_lots-field_transit_provider_term_refe'
+  // Exported field_instance:
+  // 'node-park_and_ride_lots-field_transit_provider_term_refe'
   $field_instances['node-park_and_ride_lots-field_transit_provider_term_refe'] = array(
     'bundle' => 'park_and_ride_lots',
     'default_value' => NULL,
@@ -499,6 +502,7 @@ function wsdot_park_and_ride_content_type_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_transit_provider_term_refe',
     'label' => 'Transit Provider term reference',
@@ -507,13 +511,12 @@ function wsdot_park_and_ride_content_type_field_default_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
+      'active' => 1,
+      'module' => 'options',
       'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
+        'apply_chosen' => '',
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'options_select',
       'weight' => 13,
     ),
   );
