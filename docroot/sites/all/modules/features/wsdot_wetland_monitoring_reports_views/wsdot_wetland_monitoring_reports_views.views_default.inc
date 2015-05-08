@@ -22,24 +22,62 @@ function wsdot_wetland_monitoring_reports_views_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Wetland Monitoring Reports';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['row_options']['view_mode'] = 'full';
-  $handler->display->display_options['row_options']['links'] = FALSE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'field_regions',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+    1 => array(
+      'field' => 'field_counties',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  /* Field: Field: File */
+  $handler->display->display_options['fields']['field_file']['id'] = 'field_file';
+  $handler->display->display_options['fields']['field_file']['table'] = 'field_data_field_file';
+  $handler->display->display_options['fields']['field_file']['field'] = 'field_file';
+  $handler->display->display_options['fields']['field_file']['label'] = '';
+  $handler->display->display_options['fields']['field_file']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_file']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_file']['delta_offset'] = '0';
+  /* Field: Field: Regions */
+  $handler->display->display_options['fields']['field_regions']['id'] = 'field_regions';
+  $handler->display->display_options['fields']['field_regions']['table'] = 'field_data_field_regions';
+  $handler->display->display_options['fields']['field_regions']['field'] = 'field_regions';
+  $handler->display->display_options['fields']['field_regions']['label'] = '';
+  $handler->display->display_options['fields']['field_regions']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_regions']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_regions']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_regions']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Field: Counties */
+  $handler->display->display_options['fields']['field_counties']['id'] = 'field_counties';
+  $handler->display->display_options['fields']['field_counties']['table'] = 'field_data_field_counties';
+  $handler->display->display_options['fields']['field_counties']['field'] = 'field_counties';
+  $handler->display->display_options['fields']['field_counties']['label'] = '';
+  $handler->display->display_options['fields']['field_counties']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_counties']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_counties']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_counties']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_counties']['delta_offset'] = '0';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -113,9 +151,8 @@ function wsdot_wetland_monitoring_reports_views_views_default_views() {
   $handler->display->display_options['filters']['field_counties_tid']['vocabulary'] = 'counties';
   $handler->display->display_options['filters']['field_counties_tid']['error_message'] = FALSE;
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'wetland-reports';
+  /* Display: Content pane */
+  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
   $export['wetland_reports'] = $view;
 
   return $export;

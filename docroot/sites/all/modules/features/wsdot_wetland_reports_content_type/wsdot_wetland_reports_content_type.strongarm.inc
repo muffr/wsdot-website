@@ -50,7 +50,7 @@ function wsdot_wetland_reports_content_type_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '5',
+          'weight' => '6',
         ),
       ),
       'display' => array(),
