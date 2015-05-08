@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WSDOT Wetland Monitoring Reports Views feature.
+ */
+
+include_once 'wsdot_wetland_monitoring_reports_views.features.inc';
