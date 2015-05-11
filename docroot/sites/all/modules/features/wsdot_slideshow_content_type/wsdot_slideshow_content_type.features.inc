@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * wsdot_features_content_type.features.inc
+ * wsdot_slideshow_content_type.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function wsdot_features_content_type_ctools_plugin_api($module = NULL, $api = NULL) {
+function wsdot_slideshow_content_type_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -16,9 +16,9 @@ function wsdot_features_content_type_ctools_plugin_api($module = NULL, $api = NU
 /**
  * Implements hook_node_info().
  */
-function wsdot_features_content_type_node_info() {
+function wsdot_slideshow_content_type_node_info() {
   $items = array(
-    'feature' => array(
+    'slideshow' => array(
       'name' => t('Slideshow Item'),
       'base' => 'node_content',
       'description' => '',

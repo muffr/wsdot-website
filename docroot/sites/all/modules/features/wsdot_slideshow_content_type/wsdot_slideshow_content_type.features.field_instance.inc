@@ -1,18 +1,18 @@
 <?php
 /**
  * @file
- * wsdot_features_content_type.features.field_instance.inc
+ * wsdot_slideshow_content_type.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function wsdot_features_content_type_field_default_field_instances() {
+function wsdot_slideshow_content_type_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-feature-field_description'
-  $field_instances['node-feature-field_description'] = array(
-    'bundle' => 'feature',
+  // Exported field_instance: 'node-slideshow-field_description'
+  $field_instances['node-slideshow-field_description'] = array(
+    'bundle' => 'slideshow',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -51,9 +51,9 @@ function wsdot_features_content_type_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feature-field_image'
-  $field_instances['node-feature-field_image'] = array(
-    'bundle' => 'feature',
+  // Exported field_instance: 'node-slideshow-field_image'
+  $field_instances['node-slideshow-field_image'] = array(
+    'bundle' => 'slideshow',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -115,9 +115,9 @@ function wsdot_features_content_type_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feature-field_link'
-  $field_instances['node-feature-field_link'] = array(
-    'bundle' => 'feature',
+  // Exported field_instance: 'node-slideshow-field_link'
+  $field_instances['node-slideshow-field_link'] = array(
+    'bundle' => 'slideshow',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
