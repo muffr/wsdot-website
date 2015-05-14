@@ -820,3 +820,13 @@ h2.pane-title, h4.pane-title {
 	background-image: url(../images/slideshow_prev.png);
 	margin-left: -10px;
 }
+
+/* Social Media */
+
+.social_media_share_widget {
+	margin-top: 3em;
+}
+
+.widgets-element-horizontal,.widgets-style-horizontal {
+	margin-right: 1em;	
+}

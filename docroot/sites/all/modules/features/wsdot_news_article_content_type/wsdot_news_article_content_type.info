@@ -1,7 +1,7 @@
 name = WSDOT News Article Content Type
 core = 7.x
 package = WSDOT Content
-version = 7.x-1.1
+version = 7.x-1.2
 project = wsdot_news_article_content_type
 dependencies[] = ctools
 dependencies[] = date
