@@ -1,0 +1,11 @@
+name = WSDOT Migration
+description = Migration from Microsoft CMS 2002
+core = 7.x
+package = Migration
+
+dependencies[] = migrate
+dependencies[] = migrate_extras
+
+files[] = wsdot_migrate.migrate.inc
+files[] = base.inc
+files[] = taxonomy.inc
