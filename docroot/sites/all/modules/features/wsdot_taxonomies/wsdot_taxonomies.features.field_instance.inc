@@ -64,6 +64,40 @@ function wsdot_taxonomies_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'taxonomy_term-cities-field_counties'
+  $field_instances['taxonomy_term-cities-field_counties'] = array(
+    'bundle' => 'cities',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_counties',
+    'label' => 'Counties',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'options_buttons',
+      'weight' => 32,
+    ),
+  );
+
   // Exported field_instance: 'taxonomy_term-counties-field_regions'
   $field_instances['taxonomy_term-counties-field_regions'] = array(
     'bundle' => 'counties',
@@ -217,6 +251,7 @@ function wsdot_taxonomies_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Alternate contact');
   t('Contact');
+  t('Counties');
   t('Image');
   t('Regions');
 

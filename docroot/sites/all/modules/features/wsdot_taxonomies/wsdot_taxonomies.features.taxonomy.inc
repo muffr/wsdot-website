@@ -262,10 +262,10 @@ function wsdot_taxonomies_taxonomy_default_vocabularies() {
         ),
       ),
     ),
-    'subjects' => array(
-      'name' => 'Subjects',
-      'machine_name' => 'subjects',
-      'description' => 'Term list based on Web site structure and hierarchy',
+    'site_structure' => array(
+      'name' => 'Site Structure',
+      'machine_name' => 'site_structure',
+      'description' => 'Hierarchical term list based on WSDOT classic Web site structure.',
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
