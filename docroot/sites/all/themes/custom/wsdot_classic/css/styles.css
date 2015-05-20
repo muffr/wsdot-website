@@ -821,12 +821,133 @@ h2.pane-title, h4.pane-title {
 	margin-left: -10px;
 }
 
+/* Styles for Roadwork View */
+.bottom-spacing {
+	margin-bottom: 3em;
+}
+.date-display-start {
+	font-size: 1em;
+}
+.date-display-end {
+	font-size: 1em;
+} 
+.views-field-field-highways {
+	font-size: 1em;
+}
+.views-field-field-counties {
+	font-size: 1em;
+}
+.views-field-field-regions {
+	font-size: 1em;
+}
+.views-field-field-milepost {
+	font-size: 1.2em;
+}
+.views-field-field-external-project {
+	font-size: 1.2em;
+}
+.views-field-field-project-ref {
+	font-size: 1.2em;
+}
+.views-field-field-contact-info {
+	font-size: 1.2em;
+}
+.field .field-name-field-contact-phone .field-type-phone {
+	font-size: 1.2em;
+}
+.field .field-name-field-contact-firstlast .field-type-text .field-label-above {
+	font-size: 1.2em;
+}
+.DescriptionHdr {
+	font-weight: bold;
+	font-size: 1.2em;
+}
+.DescriptionText {
+	font-size: 1.2em;
+}	
+.ExternalContactFields {
+	font-size: .8em;
+	display: block;
+}
+h4.RoadworkTitle {
+	Margin: 1em 0;
+}
+/* Styles for Roadwork Content Type */
+
+.field-name-field-regions .label-inline, .field-name-field-highways .label-inline, .field-name-field-counties .label-inline, .field-name-field-contact-info .label-inline, .field-name-field-description .label-inline {
+	font-weight: bold;
+	display: inline-block;
+	font-size: 1.2em;
+}
+.field-name-field-location .label-inline {
+	display: inline-block;
+	font-size: 1.2em;
+}
+.field-name-field-location .field-name-field-milepost {
+	font-size: 1.2em;
+	display: inline-block;
+}
+.field-name-field-description label-inline {
+	font-size: 1em;
+	display: inline-block;
+}
+.field-name-field-description p {
+	display: inline;
+}
+.field-name-field-project-ref .label-inline {
+	font-weight: bold;
+	display: inline-block;
+}
+.field-name-field-project-ref {
+	font-size: 1.2em;
+}
+.field-name-field-user-reference .label-inline {
+	font-weight: bold;
+	display: inline-block;
+}
+.field-name-field-user-reference  {
+	font-size: 1.2em;
+}
+.field-name-field-external-project .label-inline {
+	font-weight: bold;
+	display: inline-block;
+}
+.field-name-field-external-project {
+	font-size: 1.2em;
+}
+.field-name-field-contact-title {
+	
+	margin-left: 1em;
+}
+.field-name-field-contact-phone {
+	
+	margin-left: 1em;
+}
+.field-name-field-contact-firstlast {
+	
+	margin-left: 1em;
+}
+.field-name-field-contact-email {
+
+	margin-left: 1em;
+}
+.field-name-field-work-schedule .label-inline {
+	font-size: 1em;
+	display: inline-block;
+}
+.field-name-field-regions, .field-name-field-highways, .field-name-field-counties {
+	font-size: 85%;
+	margin-right: 1em;
+	display: inline-block;
+}
+.field-collection-item-field-contact-info {
+	font-size: 1.2em;
+}
 /* Social Media */
 
 .social-media-share-widget {
 	margin-top: 3em;
 }
-
 .widgets-element-horizontal,.widgets-style-horizontal {
 	margin-right: 1em;	
 }
