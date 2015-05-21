@@ -23,7 +23,7 @@ function wsdot_abstract_content_type_ds_field_settings_info() {
       'format' => 'default',
     ),
     'changed_date' => array(
-      'weight' => '11',
+      'weight' => '12',
       'label' => 'inline',
       'format' => 'ds_post_date_long',
     ),
@@ -69,14 +69,6 @@ function wsdot_abstract_content_type_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_date' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'lb-el' => 'h3',
-        ),
-      ),
-    ),
     'field_description' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -85,7 +77,7 @@ function wsdot_abstract_content_type_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_publication_number' => array(
+    'field_number_of_pages' => array(
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
@@ -93,7 +85,7 @@ function wsdot_abstract_content_type_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_number_of_pages' => array(
+    'field_publication_number' => array(
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
@@ -126,24 +118,26 @@ function wsdot_abstract_content_type_ds_layout_settings_info() {
         0 => 'title',
         1 => 'field_description',
         2 => 'field_date',
-        3 => 'field_publication_number',
-        4 => 'field_publication_version',
-        5 => 'field_authors',
-        6 => 'field_contact_info',
-        7 => 'field_originator',
-        8 => 'field_number_of_pages',
-        9 => 'field_subjects',
-        10 => 'field_related_publications',
-        11 => 'changed_date',
+        3 => 'field_publication_date',
+        4 => 'field_publication_number',
+        5 => 'field_publication_version',
+        6 => 'field_authors',
+        7 => 'field_contact_info',
+        8 => 'field_originator',
+        9 => 'field_number_of_pages',
+        10 => 'field_subjects',
+        11 => 'field_related_publications',
+        12 => 'changed_date',
       ),
       'right' => array(
-        12 => 'field_chapter',
+        13 => 'field_chapter',
       ),
     ),
     'fields' => array(
       'title' => 'left',
       'field_description' => 'left',
       'field_date' => 'left',
+      'field_publication_date' => 'left',
       'field_publication_number' => 'left',
       'field_publication_version' => 'left',
       'field_authors' => 'left',
@@ -179,7 +173,7 @@ function wsdot_abstract_content_type_ds_layout_settings_info() {
     'regions' => array(
       'left' => array(
         0 => 'field_description',
-        1 => 'field_date',
+        1 => 'field_publication_date',
         2 => 'field_publication_number',
         3 => 'field_publication_version',
         4 => 'field_number_of_pages',
@@ -195,7 +189,7 @@ function wsdot_abstract_content_type_ds_layout_settings_info() {
     ),
     'fields' => array(
       'field_description' => 'left',
-      'field_date' => 'left',
+      'field_publication_date' => 'left',
       'field_publication_number' => 'left',
       'field_publication_version' => 'left',
       'field_number_of_pages' => 'left',

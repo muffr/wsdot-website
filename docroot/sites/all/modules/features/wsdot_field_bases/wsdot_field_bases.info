@@ -80,6 +80,7 @@ features[field_base][] = field_project_id
 features[field_base][] = field_project_phase
 features[field_base][] = field_project_ref
 features[field_base][] = field_project_reference
+features[field_base][] = field_publication_date
 features[field_base][] = field_publication_info
 features[field_base][] = field_publication_number
 features[field_base][] = field_publication_type

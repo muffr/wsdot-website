@@ -62,9 +62,7 @@ function wsdot_abstract_content_type_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_publications';
-  $strongarm->value = array(
-    0 => 'main-menu',
-  );
+  $strongarm->value = array();
   $export['menu_options_publications'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -80,7 +78,6 @@ function wsdot_abstract_content_type_strongarm() {
   $strongarm->name = 'node_options_publications';
   $strongarm->value = array(
     0 => 'status',
-    1 => 'promote',
   );
   $export['node_options_publications'] = $strongarm;
 
@@ -88,7 +85,7 @@ function wsdot_abstract_content_type_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_publications';
-  $strongarm->value = '2';
+  $strongarm->value = '1';
   $export['node_preview_publications'] = $strongarm;
 
   $strongarm = new stdClass();
