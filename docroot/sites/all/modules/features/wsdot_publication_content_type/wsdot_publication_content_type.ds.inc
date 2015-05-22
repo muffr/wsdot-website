@@ -1,20 +1,20 @@
 <?php
 /**
  * @file
- * wsdot_abstract_content_type.ds.inc
+ * wsdot_publication_content_type.ds.inc
  */
 
 /**
  * Implements hook_ds_field_settings_info().
  */
-function wsdot_abstract_content_type_ds_field_settings_info() {
+function wsdot_publication_content_type_ds_field_settings_info() {
   $export = array();
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
-  $ds_fieldsetting->id = 'node|publications|default';
+  $ds_fieldsetting->id = 'node|publication|default';
   $ds_fieldsetting->entity_type = 'node';
-  $ds_fieldsetting->bundle = 'publications';
+  $ds_fieldsetting->bundle = 'publication';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
     'title' => array(
@@ -36,13 +36,13 @@ function wsdot_abstract_content_type_ds_field_settings_info() {
       ),
     ),
   );
-  $export['node|publications|default'] = $ds_fieldsetting;
+  $export['node|publication|default'] = $ds_fieldsetting;
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
-  $ds_fieldsetting->id = 'node|publications|full';
+  $ds_fieldsetting->id = 'node|publication|full';
   $ds_fieldsetting->entity_type = 'node';
-  $ds_fieldsetting->bundle = 'publications';
+  $ds_fieldsetting->bundle = 'publication';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
     'field_authors' => array(
@@ -94,7 +94,7 @@ function wsdot_abstract_content_type_ds_field_settings_info() {
       ),
     ),
   );
-  $export['node|publications|full'] = $ds_fieldsetting;
+  $export['node|publication|full'] = $ds_fieldsetting;
 
   return $export;
 }
@@ -102,14 +102,14 @@ function wsdot_abstract_content_type_ds_field_settings_info() {
 /**
  * Implements hook_ds_layout_settings_info().
  */
-function wsdot_abstract_content_type_ds_layout_settings_info() {
+function wsdot_publication_content_type_ds_layout_settings_info() {
   $export = array();
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
-  $ds_layout->id = 'node|publications|default';
+  $ds_layout->id = 'node|publication|default';
   $ds_layout->entity_type = 'node';
-  $ds_layout->bundle = 'publications';
+  $ds_layout->bundle = 'publication';
   $ds_layout->view_mode = 'default';
   $ds_layout->layout = 'ds_2col_fluid';
   $ds_layout->settings = array(
@@ -160,13 +160,13 @@ function wsdot_abstract_content_type_ds_layout_settings_info() {
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
   );
-  $export['node|publications|default'] = $ds_layout;
+  $export['node|publication|default'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
-  $ds_layout->id = 'node|publications|full';
+  $ds_layout->id = 'node|publication|full';
   $ds_layout->entity_type = 'node';
-  $ds_layout->bundle = 'publications';
+  $ds_layout->bundle = 'publication';
   $ds_layout->view_mode = 'full';
   $ds_layout->layout = 'ds_2col_fluid';
   $ds_layout->settings = array(
@@ -211,7 +211,7 @@ function wsdot_abstract_content_type_ds_layout_settings_info() {
     'layout_link_attribute' => 'content',
     'layout_link_custom' => '',
   );
-  $export['node|publications|full'] = $ds_layout;
+  $export['node|publication|full'] = $ds_layout;
 
   return $export;
 }

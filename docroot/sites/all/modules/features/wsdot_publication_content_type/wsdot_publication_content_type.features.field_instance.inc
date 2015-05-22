@@ -1,18 +1,18 @@
 <?php
 /**
  * @file
- * wsdot_abstract_content_type.features.field_instance.inc
+ * wsdot_publication_content_type.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function wsdot_abstract_content_type_field_default_field_instances() {
+function wsdot_publication_content_type_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-publications-field_authors'
-  $field_instances['node-publications-field_authors'] = array(
-    'bundle' => 'publications',
+  // Exported field_instance: 'node-publication-field_authors'
+  $field_instances['node-publication-field_authors'] = array(
+    'bundle' => 'publication',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Full name of Authors and Contributors to the document',
@@ -58,9 +58,9 @@ function wsdot_abstract_content_type_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-publications-field_chapter'
-  $field_instances['node-publications-field_chapter'] = array(
-    'bundle' => 'publications',
+  // Exported field_instance: 'node-publication-field_chapter'
+  $field_instances['node-publication-field_chapter'] = array(
+    'bundle' => 'publication',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -122,9 +122,9 @@ function wsdot_abstract_content_type_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-publications-field_contact_info'
-  $field_instances['node-publications-field_contact_info'] = array(
-    'bundle' => 'publications',
+  // Exported field_instance: 'node-publication-field_contact_info'
+  $field_instances['node-publication-field_contact_info'] = array(
+    'bundle' => 'publication',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -171,9 +171,9 @@ function wsdot_abstract_content_type_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-publications-field_description'
-  $field_instances['node-publications-field_description'] = array(
-    'bundle' => 'publications',
+  // Exported field_instance: 'node-publication-field_description'
+  $field_instances['node-publication-field_description'] = array(
+    'bundle' => 'publication',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Use only the description field and not the summary field',
@@ -220,9 +220,9 @@ function wsdot_abstract_content_type_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-publications-field_number_of_pages'
-  $field_instances['node-publications-field_number_of_pages'] = array(
-    'bundle' => 'publications',
+  // Exported field_instance: 'node-publication-field_number_of_pages'
+  $field_instances['node-publication-field_number_of_pages'] = array(
+    'bundle' => 'publication',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Number of pages of Publication. Do not include size.',
@@ -268,9 +268,9 @@ function wsdot_abstract_content_type_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-publications-field_originator'
-  $field_instances['node-publications-field_originator'] = array(
-    'bundle' => 'publications',
+  // Exported field_instance: 'node-publication-field_originator'
+  $field_instances['node-publication-field_originator'] = array(
+    'bundle' => 'publication',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'The company or organization that created or authored the document. Within WSDOT, this may be the office and division.',
@@ -316,9 +316,9 @@ function wsdot_abstract_content_type_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-publications-field_publication_date'
-  $field_instances['node-publications-field_publication_date'] = array(
-    'bundle' => 'publications',
+  // Exported field_instance: 'node-publication-field_publication_date'
+  $field_instances['node-publication-field_publication_date'] = array(
+    'bundle' => 'publication',
     'deleted' => 0,
     'description' => 'Date that the document was created or published',
     'display' => array(
@@ -383,9 +383,9 @@ function wsdot_abstract_content_type_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-publications-field_publication_number'
-  $field_instances['node-publications-field_publication_number'] = array(
-    'bundle' => 'publications',
+  // Exported field_instance: 'node-publication-field_publication_number'
+  $field_instances['node-publication-field_publication_number'] = array(
+    'bundle' => 'publication',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'The alphanumeric identifier for the publication. Does not include version number',
@@ -431,9 +431,9 @@ function wsdot_abstract_content_type_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-publications-field_publication_type'
-  $field_instances['node-publications-field_publication_type'] = array(
-    'bundle' => 'publications',
+  // Exported field_instance: 'node-publication-field_publication_type'
+  $field_instances['node-publication-field_publication_type'] = array(
+    'bundle' => 'publication',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -476,9 +476,9 @@ function wsdot_abstract_content_type_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-publications-field_publication_version'
-  $field_instances['node-publications-field_publication_version'] = array(
-    'bundle' => 'publications',
+  // Exported field_instance: 'node-publication-field_publication_version'
+  $field_instances['node-publication-field_publication_version'] = array(
+    'bundle' => 'publication',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'For manuals this is the publication number plus the version number',
@@ -524,9 +524,9 @@ function wsdot_abstract_content_type_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-publications-field_related_publications'
-  $field_instances['node-publications-field_related_publications'] = array(
-    'bundle' => 'publications',
+  // Exported field_instance: 'node-publication-field_related_publications'
+  $field_instances['node-publication-field_related_publications'] = array(
+    'bundle' => 'publication',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Link to the abstract page of the Publication not the document itself.',
@@ -589,9 +589,9 @@ function wsdot_abstract_content_type_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-publications-field_subjects'
-  $field_instances['node-publications-field_subjects'] = array(
-    'bundle' => 'publications',
+  // Exported field_instance: 'node-publication-field_subjects'
+  $field_instances['node-publication-field_subjects'] = array(
+    'bundle' => 'publication',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',

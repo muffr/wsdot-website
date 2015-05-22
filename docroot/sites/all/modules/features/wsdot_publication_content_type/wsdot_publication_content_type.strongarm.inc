@@ -1,19 +1,19 @@
 <?php
 /**
  * @file
- * wsdot_abstract_content_type.strongarm.inc
+ * wsdot_publication_content_type.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function wsdot_abstract_content_type_strongarm() {
+function wsdot_publication_content_type_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'field_bundle_settings_node__publications';
+  $strongarm->name = 'field_bundle_settings_node__publication';
   $strongarm->value = array(
     'view_modes' => array(
       'teaser' => array(
@@ -56,44 +56,44 @@ function wsdot_abstract_content_type_strongarm() {
       'display' => array(),
     ),
   );
-  $export['field_bundle_settings_node__publications'] = $strongarm;
+  $export['field_bundle_settings_node__publication'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_options_publications';
+  $strongarm->name = 'menu_options_publication';
   $strongarm->value = array();
-  $export['menu_options_publications'] = $strongarm;
+  $export['menu_options_publication'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_parent_publications';
+  $strongarm->name = 'menu_parent_publication';
   $strongarm->value = 'main-menu:0';
-  $export['menu_parent_publications'] = $strongarm;
+  $export['menu_parent_publication'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_options_publications';
+  $strongarm->name = 'node_options_publication';
   $strongarm->value = array(
     0 => 'status',
   );
-  $export['node_options_publications'] = $strongarm;
+  $export['node_options_publication'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_preview_publications';
+  $strongarm->name = 'node_preview_publication';
   $strongarm->value = '1';
-  $export['node_preview_publications'] = $strongarm;
+  $export['node_preview_publication'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_submitted_publications';
+  $strongarm->name = 'node_submitted_publication';
   $strongarm->value = 1;
-  $export['node_submitted_publications'] = $strongarm;
+  $export['node_submitted_publication'] = $strongarm;
 
   return $export;
 }

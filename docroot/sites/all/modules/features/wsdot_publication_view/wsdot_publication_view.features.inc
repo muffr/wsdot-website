@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * wsdot_manuals_view.features.inc
+ * wsdot_publication_view.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function wsdot_manuals_view_ctools_plugin_api($module = NULL, $api = NULL) {
+function wsdot_publication_view_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
   }
@@ -16,6 +16,6 @@ function wsdot_manuals_view_ctools_plugin_api($module = NULL, $api = NULL) {
 /**
  * Implements hook_views_api().
  */
-function wsdot_manuals_view_views_api($module = NULL, $api = NULL) {
+function wsdot_publication_view_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }

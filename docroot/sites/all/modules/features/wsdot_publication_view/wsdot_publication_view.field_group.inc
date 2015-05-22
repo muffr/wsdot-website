@@ -1,22 +1,22 @@
 <?php
 /**
  * @file
- * wsdot_manuals_view.field_group.inc
+ * wsdot_publication_view.field_group.inc
  */
 
 /**
  * Implements hook_field_group_info().
  */
-function wsdot_manuals_view_field_group_info() {
+function wsdot_publication_view_field_group_info() {
   $export = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_revision_history|node|abstracts|form';
+  $field_group->identifier = 'group_revision_history|node|publication|form';
   $field_group->group_name = 'group_revision_history';
   $field_group->entity_type = 'node';
-  $field_group->bundle = 'abstracts';
+  $field_group->bundle = 'publication';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
@@ -39,7 +39,7 @@ function wsdot_manuals_view_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_revision_history|node|abstracts|form'] = $field_group;
+  $export['group_revision_history|node|publication|form'] = $field_group;
 
   return $export;
 }

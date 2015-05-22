@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * wsdot_manuals_view.features.field_instance.inc
+ * wsdot_publication_view.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function wsdot_manuals_view_field_default_field_instances() {
+function wsdot_publication_view_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance: 'file-project_document-field_project_ref'

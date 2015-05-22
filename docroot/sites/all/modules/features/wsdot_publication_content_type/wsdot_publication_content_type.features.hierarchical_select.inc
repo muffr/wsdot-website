@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * wsdot_abstract_content_type.features.hierarchical_select.inc
+ * wsdot_publication_content_type.features.hierarchical_select.inc
  */
 
 /**
  * Implements hook_hierarchical_select_default_configs().
  */
-function wsdot_abstract_content_type_hierarchical_select_default_configs() {
+function wsdot_publication_content_type_hierarchical_select_default_configs() {
 $configs = array();
 $config = array(
   'config_id'       => 'taxonomy-field_subjects',

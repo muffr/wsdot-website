@@ -1,0 +1,17 @@
+name = WSDOT Publication View
+description = View for Publication Content Type 
+core = 7.x
+package = WSDOT Views
+version = 7.x-1.0
+project = wsdot_publication_view
+dependencies[] = ctools
+dependencies[] = entityreference
+dependencies[] = features
+dependencies[] = field_group
+dependencies[] = hs_taxonomy
+dependencies[] = views
+dependencies[] = wsdot_field_bases
+features[ctools][] = field_group:field_group:1
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = publication

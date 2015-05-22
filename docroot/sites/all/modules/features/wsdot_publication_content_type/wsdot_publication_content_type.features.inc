@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * wsdot_abstract_content_type.features.inc
+ * wsdot_publication_content_type.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function wsdot_abstract_content_type_ctools_plugin_api($module = NULL, $api = NULL) {
+function wsdot_publication_content_type_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "ds" && $api == "ds") {
     return array("version" => "1");
   }
@@ -22,10 +22,10 @@ function wsdot_abstract_content_type_ctools_plugin_api($module = NULL, $api = NU
 /**
  * Implements hook_node_info().
  */
-function wsdot_abstract_content_type_node_info() {
+function wsdot_publication_content_type_node_info() {
   $items = array(
-    'publications' => array(
-      'name' => t('Publications'),
+    'publication' => array(
+      'name' => t('Publication'),
       'base' => 'node_content',
       'description' => t(' Metadata for documents - manuals and research reports maybe more'),
       'has_title' => '1',

@@ -1,21 +1,21 @@
 <?php
 /**
  * @file
- * wsdot_manuals_view.views_default.inc
+ * wsdot_publication_view.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function wsdot_manuals_view_views_default_views() {
+function wsdot_publication_view_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'publications';
+  $view->name = 'publication';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Publications';
+  $view->human_name = 'Publication';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -96,7 +96,7 @@ function wsdot_manuals_view_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'publications' => 'publications',
+    'publication' => 'publication',
   );
   /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_document_type_value']['id'] = 'field_document_type_value';
@@ -205,7 +205,7 @@ function wsdot_manuals_view_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'publications' => 'publications',
+    'publication' => 'publication',
   );
   /* Filter criterion: Content: Publication Type (field_publication_type) */
   $handler->display->display_options['filters']['field_publication_type_value']['id'] = 'field_publication_type_value';
@@ -258,7 +258,7 @@ function wsdot_manuals_view_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'publications' => 'publications',
+    'publication' => 'publication',
   );
   /* Filter criterion: Content: Publication Type (field_publication_type) */
   $handler->display->display_options['filters']['field_publication_type_value']['id'] = 'field_publication_type_value';
@@ -268,7 +268,7 @@ function wsdot_manuals_view_views_default_views() {
     'Engineering Manuals' => 'Engineering Manuals',
   );
   $handler->display->display_options['path'] = 'publications/manuals';
-  $export['publications'] = $view;
+  $export['publication'] = $view;
 
   return $export;
 }
