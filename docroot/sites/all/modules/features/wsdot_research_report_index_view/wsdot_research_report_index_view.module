@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WSDOT Research Report Index View feature.
+ */
+
+include_once 'wsdot_research_report_index_view.features.inc';
