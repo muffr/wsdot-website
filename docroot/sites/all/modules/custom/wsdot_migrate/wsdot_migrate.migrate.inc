@@ -27,6 +27,11 @@ function wsdot_migrate_migrate_api() {
     ),
 
     'migrations' => array(
+      'user' => array(
+        'class_name' => 'WSDOTUser',
+        'group_name' => 'wsdot',
+        'description' => 'Import of users',
+      ),
       // Maximum reusability - the Node table covers all content types, so we
       // can share one class for all node migrations.
       'news' => array(
@@ -35,7 +40,7 @@ function wsdot_migrate_migrate_api() {
         'description' => 'Import of news articles',
         'type_guid' => '',
         'destination_type' => 'news_article',
-//        'dependencies' => array('user'),
+        'dependencies' => array('user'),
       ),
     ),
   );

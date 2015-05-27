@@ -110,8 +110,8 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
     $this->addFieldMapping('created', 'CreatedWhen');
     $this->addFieldMapping('changed', 'ModifiedWhen');
 
-/*    $this->addFieldMapping('uid', 'OwnerId')
-      ->sourceMigration('user');*/
+    $this->addFieldMapping('uid', 'OwnerId')
+      ->sourceMigration('user');
 
     $this->addUnmigratedDestinations(array(
       'IsLocked',
@@ -168,14 +168,7 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
 
     return TRUE;
   }
-
-  public function prepare($node, $row) {
-
-  }
-
-  public function complete($node, $row) {
-
-  }
+  
 }
 
 class WSDOTNewsArticle extends WSDOTNode {
