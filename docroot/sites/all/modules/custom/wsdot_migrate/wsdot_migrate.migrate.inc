@@ -19,10 +19,6 @@ function wsdot_migrate_migrate_api() {
       // to each one individually.
       'wsdot' => array(
         'title' => t('WSDOT imports'),
-        // Define $conf['wsdot_source_db_credentials'] in the local settings.php
-        // (not to be committed to the code repo). See MigrateSourceMSSQL
-        // for documentation of the contents.
-        'db_credentials' => variable_get('wsdot_source_db_credentials', array()),
       ),
     ),
 

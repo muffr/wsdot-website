@@ -16,12 +16,6 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
   public function __construct($arguments) {
     parent::__construct($arguments);
 
-    $mssql_query = "SELECT *
-              FROM Node
-              WHERE TemplateGUID={$arguments['type_guid']}";
-    $mssql_count_query = "SELECT COUNT(*)
-                    FROM Node
-                    WHERE TemplateGUID={$arguments['type_guid']}}";
     $fields = array(
       'id' => t('Unique ID of the content item'),
       'IsLocked' => t(''),
@@ -127,24 +121,7 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
     }
 
     // Add fields from the NodeProperty table.
-    // We need a fresh mssql connection, otherwise we'll screw up the outer
-    // query
-/*    static $connection;
-    if (!isset($connection)) {
-      $credentials = $this->arguments['db_credentials'];
-      $connection = mssql_connect($credentials['servername'], $credentials['username'],
-        $credentials['password'], TRUE);
-    }
-    $query = "SELECT *
-              FROM NodeProperty
-              WHERE NodeID={$row->id}";
-    $result = mssql_query($query, $connection);
-    if ($result) {
-      while ($property_row = mssql_fetch_object($result)) {
-        $row->{$property_row['PropName']} = $property_row['PropValue'];
-      }
-    }
-*/
+
     $result = Database::getConnection('default', 'migrate')
       ->select('NodeProperty', 'np')
       ->fields('np', array('PropName', 'PropValue'))
@@ -164,11 +141,11 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
       $row->{$placeholder_row->PropName} = $placeholder_row->PropValue;
     }
 
-    // .
+    // Deal with NodeResource.
 
     return TRUE;
   }
-  
+
 }
 
 class WSDOTNewsArticle extends WSDOTNode {
