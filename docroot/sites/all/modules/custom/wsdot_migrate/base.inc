@@ -11,8 +11,9 @@
 abstract class WSDOTMigrationBase extends Migration {
   public function __construct($arguments) {
     parent::__construct($arguments);
-    if (empty($this->arguments['db_credentials'])) {
-      throw new Exception(t('No source DB credentials are available'));
-    }
+
+    $this->sourceOptions = array(
+      'map_joinable' => FALSE,
+    );
   }
 }

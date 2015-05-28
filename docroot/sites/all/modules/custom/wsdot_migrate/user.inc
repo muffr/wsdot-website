@@ -23,7 +23,7 @@ class WSDOTUser extends WSDOTMigrationBase {
       ->select('AEUser', 'u')
       ->fields('u');
 
-    $this->source = new MigrateSourceSQL($query, $fields);
+    $this->source = new MigrateSourceSQL($query, $fields, NULL, $this->sourceOptions);
 
     $this->destination = new MigrateDestinationUser();
 
