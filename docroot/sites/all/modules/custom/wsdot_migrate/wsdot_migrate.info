@@ -8,5 +8,6 @@ dependencies[] = migrate_extras
 
 files[] = wsdot_migrate.migrate.inc
 files[] = base.inc
+files[] = file.inc
 files[] = node.inc
 files[] = user.inc

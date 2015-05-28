@@ -23,6 +23,11 @@ function wsdot_migrate_migrate_api() {
     ),
 
     'migrations' => array(
+      'file' => array(
+        'class_name' => 'WSDOTFile',
+        'group_name' => 'wsdot',
+        'description' => 'Import of files',
+      ),
       'user' => array(
         'class_name' => 'WSDOTUser',
         'group_name' => 'wsdot',
