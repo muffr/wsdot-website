@@ -39,7 +39,7 @@ function wsdot_migrate_migrate_api() {
         'class_name' => 'WSDOTNewsArticle',
         'group_name' => 'wsdot',
         'description' => 'Import of news articles',
-        'type_guid' => '',
+        'type_guid' => '{78FF8841-6880-444C-9BFA-56732F591D17}',
         'destination_type' => 'news_article',
         'dependencies' => array('user'),
       ),

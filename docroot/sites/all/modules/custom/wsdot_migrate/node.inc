@@ -77,14 +77,22 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
       'OuterScriptFile' => t(''),
       'UseOuterScriptForPostings' => t(''),
       'DefaultPostingName' => t(''),
+      'body' => t('Node body as contructed from placeholder content'),
+      'ContentNodeId' => t('Id of the related node which points to the HTML content'),
+      'ContentNodeName' => t('Name from the related node, used in URL construction'),
     );
 
     $query = Database::getConnection('default', 'migrate')
       ->select('Node', 'n')
       ->fields('n')
-      ->condition('TemplateGUID', $arguments['type_guid'])
+      ->condition('n.TemplateGUID', $arguments['type_guid'])
       // We assume the row with the NULL archive source is the current revision.
-      ->isNull('ArchiveSourceGUID');
+      ->isNull('n.ArchiveSourceGUID');
+    // The FollowGUID (may? always?) point to another node row, which contains
+    // the Name we need, and also has the Id that points to the HTML content.
+    $query->leftJoin('Node', 'n2', 'n.FollowGUID=n2.NodeGUID');
+    $query->addField('n2', 'Id', 'ContentNodeId');
+    $query->addField('n2', 'Name', 'ContentNodeName');
 
     $this->source = new MigrateSourceSQL($query, $fields, NULL, $this->sourceOptions);
 
@@ -93,7 +101,7 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
     $this->map = new MigrateSQLMap(
       $this->machineName,
       array(
-        'id' => array(
+        'Id' => array(
           'type' => 'int',
           'unsigned' => TRUE,
           'not null' => TRUE,
@@ -109,6 +117,8 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
 
     $this->addFieldMapping('uid', 'OwnerId')
       ->sourceMigration('user');
+
+    $this->addFieldMapping('body', 'body');
 
     $this->addUnmigratedDestinations(array(
       'IsLocked',
@@ -127,7 +137,7 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
     $result = Database::getConnection('default', 'migrate')
       ->select('NodeProperty', 'np')
       ->fields('np', array('PropName', 'PropValue'))
-      ->condition('NodeID', $row->id)
+      ->condition('NodeID', $row->ContentNodeId)
       ->execute();
     foreach ($result as $property_row) {
       $row->{$property_row->PropName} = $property_row->PropValue;
@@ -137,8 +147,8 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
     $result = Database::getConnection('default', 'migrate')
       ->select('NodeResource', 'nr')
       ->fields('nr')
-      ->condition('NodeID', $row->id)
-      ->orderBy('id')
+      ->condition('NodeID', $row->ContentNodeId)
+      ->orderBy('Id')
       ->execute();
     // ResourceBlobID references blobs (files)
     $this->resourceLinks = array();
@@ -147,7 +157,7 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
         // @todo handle blobs
       }
       else {
-        $this->resourceLinks[$resource_row->id] = $resource_row->URL;
+        $this->resourceLinks[$resource_row->Id] = $resource_row->URL;
       }
     }
 
@@ -155,16 +165,17 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
     $result = Database::getConnection('default', 'migrate')
       ->select('NodePlaceholderContent', 'npc')
       ->fields('npc')
-      ->condition('NodeID', $row->id)
-      ->orderBy('PlaceholderId', 'id')
+      ->condition('NodeID', $row->ContentNodeId)
+      ->orderBy('PlaceholderId', 'Id')
       ->execute();
     $row->body = '';
     $placeholder_content = array();
     // Make it simpler to handle on placeholder at a time.
     foreach ($result as $placeholder_row) {
-      $placeholder_content[$placeholder_row->PlaceholderID][$placeholder_row->id] =
+      $placeholder_content[$placeholder_row->PlaceholderID][$placeholder_row->Id] =
         $placeholder_row;
     }
+
     foreach ($placeholder_content as $placeholder_id => $placeholder_detail) {
       // We expect each placeholder_id to have one HTML row and multiple
       // ControlProp rows. We will fetch the HTML and parse it for references to
@@ -196,10 +207,19 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
    * @param array $matches
    */
   protected function handleResource(array $matches) {
-    $control_prop_name = $matches[1];
-    $resource_id = $this->controlProps[$control_prop_name];
-    $url = $this->resourceLinks[$resource_id];
-    return $url;
+    // Default to the original contents.
+    $result = $matches[0];
+
+    if (!empty($matches[1])) {
+      $control_prop_name = $matches[1];
+      if (!empty($this->controlProps[$control_prop_name])) {
+        $resource_id = $this->controlProps[$control_prop_name];
+        if (!empty($this->resourceLinks[$resource_id])) {
+          $result = $this->resourceLinks[$resource_id];
+        }
+      }
+    }
+    return $result;
   }
 }
 
