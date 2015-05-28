@@ -13,6 +13,9 @@
  * content types with a simple parameterized class.
  */
 abstract class WSDOTNode extends WSDOTMigrationBase {
+  protected $controlProps = array();
+  protected $resourceLinks = array();
+
   public function __construct($arguments) {
     parent::__construct($arguments);
 
@@ -121,7 +124,6 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
     }
 
     // Add fields from the NodeProperty table.
-
     $result = Database::getConnection('default', 'migrate')
       ->select('NodeProperty', 'np')
       ->fields('np', array('PropName', 'PropValue'))
@@ -131,21 +133,74 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
       $row->{$property_row->PropName} = $property_row->PropValue;
     }
 
+    // Deal with NodeResource.
+    $result = Database::getConnection('default', 'migrate')
+      ->select('NodeResource', 'nr')
+      ->fields('nr')
+      ->condition('NodeID', $row->id)
+      ->orderBy('id')
+      ->execute();
+    // ResourceBlobID references blobs (files)
+    $this->resourceLinks = array();
+    foreach ($result as $resource_row) {
+      if ($resource_row->ResourceBlobId) {
+        // @todo handle blobs
+      }
+      else {
+        $this->resourceLinks[$resource_row->id] = $resource_row->URL;
+      }
+    }
+
     // Add fields from the NodePlaceholderContent table.
     $result = Database::getConnection('default', 'migrate')
       ->select('NodePlaceholderContent', 'npc')
-      ->fields('npc', array('PropName', 'PropValue'))
+      ->fields('npc')
       ->condition('NodeID', $row->id)
+      ->orderBy('PlaceholderId', 'id')
       ->execute();
+    $row->body = '';
+    $placeholder_content = array();
+    // Make it simpler to handle on placeholder at a time.
     foreach ($result as $placeholder_row) {
-      $row->{$placeholder_row->PropName} = $placeholder_row->PropValue;
+      $placeholder_content[$placeholder_row->PlaceholderID][$placeholder_row->id] =
+        $placeholder_row;
     }
-
-    // Deal with NodeResource.
+    foreach ($placeholder_content as $placeholder_id => $placeholder_detail) {
+      // We expect each placeholder_id to have one HTML row and multiple
+      // ControlProp rows. We will fetch the HTML and parse it for references to
+      // control props, which is turn reference resources - we will use those
+      // resources to rewrite the references.
+      $this->controlProps = array();
+      $html = '';
+      foreach ($placeholder_detail as $id => $placeholder_row) {
+        if ($placeholder_row->PropName == 'HTML') {
+          $html .= $placeholder_row->PropValue;
+        }
+        else {
+          $this->controlProps[$placeholder_row->PropName] = $placeholder_row->ResourceId;
+        }
+      }
+      // Replace each resource reference with a real URL.
+      $html = preg_replace_callback('|<!--\* *Resource *= *"(.*?)" -->|i',
+                                    array($this, 'handleResource'),
+                                    $html);
+      $row->body .= $html;
+    }
 
     return TRUE;
   }
 
+  /**
+   * Translate resource references to real targets.
+   *
+   * @param array $matches
+   */
+  protected function handleResource(array $matches) {
+    $control_prop_name = $matches[1];
+    $resource_id = $this->controlProps[$control_prop_name];
+    $url = $this->resourceLinks[$resource_id];
+    return $url;
+  }
 }
 
 class WSDOTNewsArticle extends WSDOTNode {
