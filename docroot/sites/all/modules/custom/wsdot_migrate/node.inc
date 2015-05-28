@@ -83,7 +83,7 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
       // We assume the row with the NULL archive source is the current revision.
       ->isNull('ArchiveSourceGUID');
 
-    $this->source = new MigrateSourceSQL($query, $fields);
+    $this->source = new MigrateSourceSQL($query, $fields, NULL, $this->sourceOptions);
 
     $this->destination = new MigrateDestinationNode($arguments['destination_type']);
 
