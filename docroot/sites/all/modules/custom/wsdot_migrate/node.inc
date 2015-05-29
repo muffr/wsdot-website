@@ -210,6 +210,13 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
     'US97A' => '',
   );
 
+  /**
+   * Cache paths computed by following parent GUIDs.
+   *
+   * @var array
+   */
+  protected $paths = array();
+
   public function __construct($arguments) {
     parent::__construct($arguments);
 
@@ -237,6 +244,7 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
       'Highway' => t(''),
       'MetaKeywords' => t(''),
       'PageTitle' => t(''),
+      'legacy_url' => t('Path computed by following ParentGUIDs'),
     );
 
     $query = Database::getConnection('default', 'migrate')
@@ -245,6 +253,7 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
         'CreatedWhen', 'EffectiveDate', 'DisplayName', 'LastChangeTime'))
       ->condition('n.TemplateGUID', $arguments['type_guid'])
       ->condition('n.ApprovalStatus', 1)
+      ->condition('n.CreatedWhen', '2014-01-01', '>=')
       // We assume the row with the NULL archive source is the current revision.
       ->isNull('n.ArchiveSourceGUID');
     // The FollowGUID points to another node row, which contains the Name we
@@ -265,6 +274,7 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
           'unsigned' => TRUE,
           'not null' => TRUE,
           'description' => 'Node ID',
+          'alias' => 'n',
         )
       ),
       MigrateDestinationNode::getKeySchema()
@@ -284,8 +294,7 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
     $this->addFieldMapping('field_highways', 'Highway');
     $this->addFieldMapping('field_regions', 'Office');
 
-    $this->addFieldMapping('path')
-      ->description('Figure out how to build the legacy URL');
+    $this->addFieldMapping('path', 'legacy_url');
 
     $this->addFieldMapping('pathauto')
       ->defaultValue(0);
@@ -418,7 +427,33 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
       $row->body .= $html;
     }
 
+    // Follow parents to work out the path structure.
+    $row->legacy_url = $this->getPathComponents($row->ParentGUID). '/' .
+      $row->ContentNodeName . '.htm';
+
     return TRUE;
+  }
+
+  protected function getPathComponents($parent_guid) {
+    if (!isset($this->paths[$parent_guid])) {
+      $row = Database::getConnection('default', 'migrate')
+        ->select('Node', 'n')
+        ->fields('n', array('Name', 'ParentGUID'))
+        ->condition('NodeGUID', $parent_guid)
+        ->execute()
+        ->fetchObject();
+
+      // Ignore the /Server/Channels component of the path.
+      if ($row->ParentGUID && $row->ParentGUID != '{E4D19123-9DD3-11D1-B44E-006097071264}') {
+        $this->paths[$parent_guid] = $this->getPathComponents($row->ParentGUID);
+      }
+      else {
+        $this->paths[$parent_guid] = '';
+      }
+      $this->paths[$parent_guid] .= '/' . $row->Name;
+      $this->paths[$parent_guid] = ltrim($this->paths[$parent_guid], '/');
+    }
+    return $this->paths[$parent_guid];
   }
 
   /**
