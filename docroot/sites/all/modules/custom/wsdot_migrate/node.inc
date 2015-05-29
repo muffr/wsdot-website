@@ -289,7 +289,8 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
 
     $this->addFieldMapping('body', 'body');
     $this->addFieldMapping('body:summary', '_Description');
-
+    $this->addFieldMapping('body:format')
+        ->defaultValue('wysiwyg');
     $this->addFieldMapping('field_mountain_passes', 'Pass');
     $this->addFieldMapping('field_highways', 'Highway');
     $this->addFieldMapping('field_regions', 'Office');
