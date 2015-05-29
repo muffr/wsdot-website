@@ -217,11 +217,12 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
    */
   protected $paths = array();
 
+  protected $sourceFields = array();
+
   public function __construct($arguments) {
     parent::__construct($arguments);
 
-    // @todo: Move to member variable so derived classes can append to it.
-    $fields = array(
+    $this->sourceFields .= array(
       'Id' => t('Unique ID of the content item'),
       'NodeGUID' => t('Unique GUID of this item'),
       'ParentGUID' => t('GUID of the parent (part of folder structure)'),
@@ -233,18 +234,11 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
       'body' => t('Node body as contructed from placeholder content'),
       'ContentNodeId' => t('Id of the related node which points to the HTML content'),
       'ContentNodeName' => t('Name from the related node, used in URL construction'),
+      'legacy_url' => t('Path computed by following ParentGUIDs'),
       // Dynamic properties (from the NodeProperty table).
-      // @todo: Move any of these which are specific to news articles to
-      // WSDOTNewsArticle.
       '_Description' => t('Teaser'),
-      'Area' => t(''),
-      'Office' => t(''),
-      'Category' => t(''),
-      'Pass' => t(''),
-      'Highway' => t(''),
       'MetaKeywords' => t(''),
       'PageTitle' => t(''),
-      'legacy_url' => t('Path computed by following ParentGUIDs'),
     );
 
     $query = Database::getConnection('default', 'migrate')
@@ -262,7 +256,8 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
     $query->addField('n2', 'Id', 'ContentNodeId');
     $query->addField('n2', 'Name', 'ContentNodeName');
 
-    $this->source = new MigrateSourceSQL($query, $fields, NULL, $this->sourceOptions);
+    $this->source = new MigrateSourceSQL($query, $this->sourceFields, NULL,
+                                         $this->sourceOptions);
 
     $this->destination = new MigrateDestinationNode($arguments['destination_type']);
 
@@ -291,9 +286,6 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
     $this->addFieldMapping('body:summary', '_Description');
     $this->addFieldMapping('body:format')
         ->defaultValue('wysiwyg');
-    $this->addFieldMapping('field_mountain_passes', 'Pass');
-    $this->addFieldMapping('field_highways', 'Highway');
-    $this->addFieldMapping('field_regions', 'Office');
 
     $this->addFieldMapping('path', 'legacy_url');
 
@@ -301,16 +293,11 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
       ->defaultValue(0);
 
     $this->addUnmigratedSources(array(
-      'Area',
-      'Category',
       'MetaKeywords',
       'PageTitle',
     ));
 
-    $this->addUnmigratedDestinations(array(
-      'field_cities',
-      'field_subjects',
-    ));
+
   }
 
   /**
@@ -482,8 +469,54 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
 
 class WSDOTNewsArticle extends WSDOTNode {
   public function __construct($arguments) {
+    // Set our specific source fields before calling the parent, so they can
+    // be passed to the source plugin.
+    $this->sourceFields .= array(
+      'Area' => t(''),
+      'Office' => t(''),
+      'Category' => t(''),
+      'Pass' => t(''),
+      'Highway' => t(''),
+    );
     parent::__construct($arguments);
 
     // Field mappings specific to news articles.
+    $this->addFieldMapping('field_mountain_passes', 'Pass');
+    $this->addFieldMapping('field_highways', 'Highway');
+    $this->addFieldMapping('field_regions', 'Office');
+
+    $this->addUnmigratedSources(array(
+      'Area',
+      'Category',
+    ));
+
+    $this->addUnmigratedDestinations(array(
+      'field_cities',
+      'field_subjects',
+    ));
+  }
+}
+
+class WSDOTPage extends WSDOTNode {
+  public function __construct($arguments) {
+    // Set our specific source fields before calling the parent, so they can
+    // be passed to the source plugin.
+    $this->sourceFields .= array(
+      'ChannelTitle' => t(''),
+      'LeftNavBoxHeader' => t(''),
+      'LocalLeftNav' => t(''),
+      'ShowLeftNav' => t(''),
+    );
+    parent::__construct($arguments);
+
+    // Field mappings specific to pages.
+
+    $this->addUnmigratedSources(array(
+      'ChannelTitle',
+      'LeftNavBoxHeader',
+      'LocalLeftNav',
+      'ShowLeftNav',
+    ));
+
   }
 }

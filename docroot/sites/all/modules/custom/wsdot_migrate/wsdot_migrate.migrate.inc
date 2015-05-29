@@ -33,14 +33,20 @@ function wsdot_migrate_migrate_api() {
         'group_name' => 'wsdot',
         'description' => 'Import of users',
       ),
-      // Maximum reusability - the Node table covers all content types, so we
-      // can share one class for all node migrations.
       'news' => array(
         'class_name' => 'WSDOTNewsArticle',
         'group_name' => 'wsdot',
         'description' => 'Import of news articles',
         'type_guid' => '{78FF8841-6880-444C-9BFA-56732F591D17}',
         'destination_type' => 'news_article',
+        'dependencies' => array('user'),
+      ),
+      'page' => array(
+        'class_name' => 'WSDOTPage',
+        'group_name' => 'wsdot',
+        'description' => 'Import of default standard pages',
+        'type_guid' => '{DFF8BE08-33C2-4C8B-912F-75DA9E798298}',
+        'destination_type' => 'page',
         'dependencies' => array('user'),
       ),
     ),
