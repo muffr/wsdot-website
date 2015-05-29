@@ -38,7 +38,7 @@ class WSDOTFile extends WSDOTMigrationBase {
       // We assume the row with the NULL archive source is the current revision.
       ->isNull('n.ArchiveSourceGUID');
     $query->distinct();
-    $query->orderBy('n.CreatedWhen');
+    $query->orderBy('b.BlobTimeCreated');
 
     $this->source = new MigrateSourceSQL($query, $fields, NULL,
                                          $this->sourceOptions);
@@ -62,8 +62,8 @@ class WSDOTFile extends WSDOTMigrationBase {
     // ensure that delta migrations pick up not only new content, but also
     // content that was modified since our previous import.
     $this->highwaterField = array(
-      'name' => 'CreatedWhen',
-      'alias' => 'n',
+      'name' => 'BlobTimeCreated',
+      'alias' => 'b',
     );
 
     $this->addFieldMapping('value', 'BlobData');

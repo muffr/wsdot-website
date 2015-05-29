@@ -501,7 +501,7 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
           if ($file) {
             $result = file_create_url($file->uri);
             // Strip the path down to be relative to the webroot.
-            $result = preg_replace('|^https?://[^/]+/|i', '', $result);
+            $result = preg_replace('|^https?://[^/]+|i', '', $result);
           }
         }
       }
