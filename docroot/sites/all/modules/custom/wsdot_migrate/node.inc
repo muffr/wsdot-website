@@ -402,7 +402,7 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
     $placeholder_content = array();
     // Make it simpler to handle on placeholder at a time.
     foreach ($result as $placeholder_row) {
-      $placeholder_content[$placeholder_row->PlaceholderID][$placeholder_row->Id] =
+      $placeholder_content[$placeholder_row->PlaceholderId][$placeholder_row->Id] =
         $placeholder_row;
     }
 
@@ -421,8 +421,9 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
           $this->controlProps[$placeholder_row->PropName] = $placeholder_row->ResourceId;
         }
       }
+
       // Replace each resource reference with a real URL.
-      $html = preg_replace_callback('|<!--\* *Resource *= *"(.*?)" -->|i',
+      $html = preg_replace_callback('|<!--\* *Resource *= *"(.*?)" *-->|i',
                                     array($this, 'handleResource'),
                                     $html);
       $row->body .= $html;
