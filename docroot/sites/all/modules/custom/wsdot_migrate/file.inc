@@ -34,7 +34,7 @@ class WSDOTFile extends WSDOTMigrationBase {
     // Filter down to only blobs being referenced by nodes being migrated.
     $query->innerJoin('Node', 'n', 'nr.NodeId=n.Id');
     $query->condition('n.ApprovalStatus', 1)
-      ->condition('n.CreatedWhen', variable_get('migrate_earliest_date', '2014-01-01'), '>=')
+      ->condition('n.CreatedWhen', $arguments['earliest_date'], '>=')
       // We assume the row with the NULL archive source is the current revision.
       ->isNull('n.ArchiveSourceGUID');
     $query->distinct();

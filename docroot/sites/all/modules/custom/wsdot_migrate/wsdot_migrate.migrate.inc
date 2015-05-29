@@ -27,6 +27,9 @@ function wsdot_migrate_migrate_api() {
         'class_name' => 'WSDOTFile',
         'group_name' => 'wsdot',
         'description' => 'Import of files',
+        // The file earliest_date should be the earliest of all the individual
+        // content earliest dates.
+        'earliest_date' => '2012-01-01',
       ),
       'user' => array(
         'class_name' => 'WSDOTUser',
@@ -40,6 +43,7 @@ function wsdot_migrate_migrate_api() {
         'type_guid' => '{78FF8841-6880-444C-9BFA-56732F591D17}',
         'destination_type' => 'news_article',
         'dependencies' => array('user'),
+        'earliest_date' => '2014-01-01',
       ),
       'page' => array(
         'class_name' => 'WSDOTPage',
@@ -48,6 +52,7 @@ function wsdot_migrate_migrate_api() {
         'type_guid' => '{DFF8BE08-33C2-4C8B-912F-75DA9E798298}',
         'destination_type' => 'page',
         'dependencies' => array('user'),
+        'earliest_date' => '2012-01-01',
       ),
     ),
   );
