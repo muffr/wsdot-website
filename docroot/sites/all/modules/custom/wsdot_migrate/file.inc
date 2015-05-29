@@ -29,7 +29,7 @@ class WSDOTFile extends WSDOTMigrationBase {
     $query = Database::getConnection('default', 'migrate')
       ->select('BlobTable', 'b')
       ->fields('b');
-    $query->innerJoin('NodeResource', 'nr', 'b.BlogId=nr.ResourceBlobId');
+    $query->innerJoin('NodeResource', 'nr', 'b.BlobId=nr.ResourceBlobId');
     $query->fields('nr', array('Name'));
 
     $this->source = new MigrateSourceSQL($query, $fields, NULL,
