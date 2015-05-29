@@ -24,8 +24,19 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
    * Links from the NodeResource table for the current item.
    *
    * @var array
+   *  Keyed by resource ID, value is a URL.
    */
   protected $resourceLinks = array();
+
+  /**
+   * For the current item being imported, map blob IDs to the corresponding
+   * Drupal file ID.
+   *
+   * @var array
+   *  Keyed by resource ID, value is a fid.
+   */
+  protected $resourceBlobs = array();
+
   /**
    * Mapping of legacy office names to the equivalent Drupal region term names.
    *
@@ -247,7 +258,7 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
         'CreatedWhen', 'EffectiveDate', 'DisplayName', 'LastChangeTime'))
       ->condition('n.TemplateGUID', $arguments['type_guid'])
       ->condition('n.ApprovalStatus', 1)
-      ->condition('n.CreatedWhen', '2014-01-01', '>=')
+      ->condition('n.CreatedWhen', variable_get('migrate_earliest_date', '2014-01-01'), '>=')
       // We assume the row with the NULL archive source is the current revision.
       ->isNull('n.ArchiveSourceGUID');
     // The FollowGUID points to another node row, which contains the Name we
@@ -382,7 +393,17 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
     $this->resourceLinks = array();
     foreach ($result as $resource_row) {
       if ($resource_row->ResourceBlobId) {
-        // @todo handle blobs
+        // Handle blobs. Find the Drupal fid corresponding to ResourceBlobId.
+        // sourceMigration() won't work to translate it, because that isn't
+        // applied until after prepareRow, so we need to look up the map table
+        // ourselves. Save the relationship, so handleResource can replace
+        // a ControlProp reference to this resource with a relative URL.
+        $this->resourceBlobs[$resource_row->Id] =
+          db_select('migrate_map_file', 'map')
+            ->fields('map', array('destid1'))
+            ->condition('sourceid1', $resource_row->ResourceBlobId)
+            ->execute()
+            ->fetchField();
       }
       else {
         $this->resourceLinks[$resource_row->Id] = $resource_row->URL;
@@ -469,8 +490,19 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
       $control_prop_name = $matches[1];
       if (!empty($this->controlProps[$control_prop_name])) {
         $resource_id = $this->controlProps[$control_prop_name];
+        // If the resource is a link, return the URL.
         if (!empty($this->resourceLinks[$resource_id])) {
           $result = $this->resourceLinks[$resource_id];
+        }
+        // If the resource is a blob (file), fetch the Drupal uri of the
+        // file and translate to a URL for the web.
+        elseif (!empty($this->resourceBlobs[$resource_id])) {
+          $file = file_load($this->resourceBlobs[$resource_id]);
+          if ($file) {
+            $result = file_create_url($file->uri);
+            // Strip the path down to be relative to the webroot.
+            $result = preg_replace('|^https?://[^/]+/|i', '', $result);
+          }
         }
       }
     }

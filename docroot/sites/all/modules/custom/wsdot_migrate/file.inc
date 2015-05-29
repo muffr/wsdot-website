@@ -31,7 +31,14 @@ class WSDOTFile extends WSDOTMigrationBase {
       ->fields('b');
     $query->innerJoin('NodeResource', 'nr', 'b.BlobId=nr.ResourceBlobId');
     $query->fields('nr', array('Name'));
-    $query->orderBy('BlobTimeCreated');
+    // Filter down to only blobs being referenced by nodes being migrated.
+    $query->innerJoin('Node', 'n', 'nr.NodeId=n.Id');
+    $query->condition('n.ApprovalStatus', 1)
+      ->condition('n.CreatedWhen', variable_get('migrate_earliest_date', '2014-01-01'), '>=')
+      // We assume the row with the NULL archive source is the current revision.
+      ->isNull('n.ArchiveSourceGUID');
+    $query->distinct();
+    $query->orderBy('n.CreatedWhen');
 
     $this->source = new MigrateSourceSQL($query, $fields, NULL,
                                          $this->sourceOptions);
@@ -55,8 +62,8 @@ class WSDOTFile extends WSDOTMigrationBase {
     // ensure that delta migrations pick up not only new content, but also
     // content that was modified since our previous import.
     $this->highwaterField = array(
-      'name' => 'BlobTimeCreated',
-      'alias' => 'b',
+      'name' => 'CreatedWhen',
+      'alias' => 'n',
     );
 
     $this->addFieldMapping('value', 'BlobData');
