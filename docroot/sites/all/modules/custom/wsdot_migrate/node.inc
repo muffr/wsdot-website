@@ -13,83 +13,242 @@
  * content types with a simple parameterized class.
  */
 abstract class WSDOTNode extends WSDOTMigrationBase {
+  /**
+   * Control properties for the current placeholder in the current item.
+   *
+   * @var array
+   */
   protected $controlProps = array();
+
+  /**
+   * Links from the NodeResource table for the current item.
+   *
+   * @var array
+   */
   protected $resourceLinks = array();
+  /**
+   * Mapping of legacy office names to the equivalent Drupal region term names.
+   *
+   * @var array
+   */
+  protected $regionMap = array(
+    // @todo: Fill in the equivalent Drupal term names.
+    'Eastern' => '',
+    'Ferries' => '',
+    'Headquarters' => '',
+    'Local Programs' => '',
+    'NC' => '',
+    'North Central' => '',
+    'Northwest' => '',
+    'NW' => '',
+    'Olympic' => '',
+    'OR' => '',
+    'PTR' => '',
+    'SC' => '',
+    'South Central' => '',
+    'Southwest' => '',
+    'Statewide' => '',
+    'SW' => '',
+  );
+
+  /**
+   * Mapping of legacy highway names to the equivalent Drupal term names.
+   *
+   * @var array
+   */
+  protected $highwayMap = array(
+    // @todo: Fill in the equivalent Drupal term names.
+    '101' => '',
+    '104' => '',
+    '106' => '',
+    '107' => '',
+    '11' => '',
+    '112' => '',
+    '12' => '',
+    '14' => '',
+    '16' => '',
+    '161' => '',
+    '162' => '',
+    '164' => '',
+    '167' => '',
+    '18' => '',
+    '181' => '',
+    '2' => '',
+    '20' => '',
+    '205' => '',
+    '21' => '',
+    '3' => '',
+    '303' => '',
+    '305' => '',
+    '405' => '',
+    '405 and 520' => '',
+    '405_520' => '',
+    '410' => '',
+    '5' => '',
+    '5, 205' => '',
+    '504' => '',
+    '509' => '',
+    '515' => '',
+    '516' => '',
+    '520' => '',
+    '522' => '',
+    '527' => '',
+    '529' => '',
+    '530' => '',
+    '539' => '',
+    '542' => '',
+    '546' => '',
+    '548' => '',
+    '9' => '',
+    '9/92' => '',
+    '90' => '',
+    '900' => '',
+    '92' => '',
+    '99' => '',
+    'Chinook Pass' => '',
+    'I-205' => '',
+    'I-405' => '',
+    'I-405/SR 167' => '',
+    'I-5' => '',
+    'I-5 and I-90' => '',
+    'I-5/SR 16' => '',
+    'I-5/SR 520/SR 99' => '',
+    'I-82' => '',
+    'I-90' => '',
+    'Interstate 5' => '',
+    'None' => '',
+    'NSC' => '',
+    'SR 100' => '',
+    'SR 104' => '',
+    'SR 105' => '',
+    'SR 112' => '',
+    'SR 116' => '',
+    'SR 123' => '',
+    'SR 14' => '',
+    'SR 142' => '',
+    'SR 150' => '',
+    'SR 153' => '',
+    'SR 16' => '',
+    'SR 161' => '',
+    'SR 162' => '',
+    'SR 167' => '',
+    'SR 171' => '',
+    'SR 18' => '',
+    'SR 20' => '',
+    'SR 202' => '',
+    'SR 203' => '',
+    'SR 21' => '',
+    'SR 21-Keller Ferry' => '',
+    'SR 215' => '',
+    'SR 22' => '',
+    'SR 241' => '',
+    'SR 243' => '',
+    'SR 26' => '',
+    'SR 27' => '',
+    'SR 272' => '',
+    'SR 28' => '',
+    'SR 285' => '',
+    'SR 3' => '',
+    'SR 303' => '',
+    'SR 305' => '',
+    'SR 4' => '',
+    'SR 401' => '',
+    'SR 410' => '',
+    'SR 410 / SR 123' => '',
+    'SR 410 and SR 123' => '',
+    'SR 411' => '',
+    'SR 433' => '',
+    'SR 500' => '',
+    'SR 501' => '',
+    'SR 502' => '',
+    'SR 503' => '',
+    'SR 504' => '',
+    'SR 505' => '',
+    'SR 507' => '',
+    'SR 508' => '',
+    'SR 509' => '',
+    'SR 510' => '',
+    'SR 516' => '',
+    'SR 520' => '',
+    'SR 520/I-5' => '',
+    'SR 520/SR 202' => '',
+    'SR 522' => '',
+    'SR 529' => '',
+    'SR 530' => '',
+    'SR 531' => '',
+    'SR 532' => '',
+    'SR 539' => '',
+    'SR 542' => '',
+    'SR 542 SR 547' => '',
+    'SR 546' => '',
+    'SR 548' => '',
+    'SR 6' => '',
+    'SR 7' => '',
+    'SR 823' => '',
+    'SR 9' => '',
+    'SR 92' => '',
+    'SR 99' => '',
+    'SR 99 and SR 520' => '',
+    'SR522' => '',
+    'SR99' => '',
+    'State Route 20' => '',
+    'State Route 520' => '',
+    'State Route 9' => '',
+    'State Route 99' => '',
+    'US 101' => '',
+    'US 12' => '',
+    'US 195' => '',
+    'US 2' => '',
+    'US 2/97' => '',
+    'US 395' => '',
+    'US 395 SR 20' => '',
+    'US 395-NSC' => '',
+    'US 395/NSC' => '',
+    'US 97' => '',
+    'US 97A' => '',
+    'US101' => '',
+    'US97A' => '',
+  );
 
   public function __construct($arguments) {
     parent::__construct($arguments);
 
+    // @todo: Move to member variable so derived classes can append to it.
     $fields = array(
-      'id' => t('Unique ID of the content item'),
-      'IsLocked' => t(''),
-      'IsCheckedOut' => t(''),
-      'IsCheckedOutVersion' => t(''),
-      'HasCheckedInVersion' => t(''),
-      'CheckedInVersionHasExisted' => t(''),
-      'IsShortcut' => t(''),
-      'IsBeingInserted' => t(''),
-      'IsHighPriority' => t(''),
-      'SameRightsAsParent' => t(''),
-      'ReadyForApproval' => t(''),
-      'ApprovalStatus' => t(''),
-      'Type' => t(''),
-      'SortOrdinal' => t(''),
-      'NodeGUID' => t(''),
-      'ParentGUID' => t(''),
-      'FollowGUID' => t(''),
-      'DeletedWhen' => t(''),
-      'DeletedByUserid' => t(''),
-      'CreatedByUserid' => t(''),
+      'Id' => t('Unique ID of the content item'),
+      'NodeGUID' => t('Unique GUID of this item'),
+      'ParentGUID' => t('GUID of the parent (part of folder structure)'),
+      'CreatedByUserId' => t('User who originally created this item'),
       'CreatedWhen' => t('Creation date'),
-      'ModifiedByUserid' => t(''),
-      'ModifiedWhen' => t('Modification date'),
-      'OwnerId' => t(''),
-      'ApprovedByUserId' => t(''),
-      'EffectiveDate' => t(''),
-      'ExpiryDate' => t(''),
-      'TemplateGUID' => t('GUID representing the content type'),
-      'ArchiveSourceGUID' => t(''),
-      'ApprovedWhen' => t(''),
-      'ArchivedWhen' => t(''),
-      'LockUserId' => t(''),
-      'LockMachinename' => t(''),
-      'Name' => t(''),
-      'TemplateType' => t(''),
-      'DirectoryService' => t(''),
-      'DirectoryGUID' => t(''),
-      'IsHiddenModePublished' => t(''),
-      'IsRobotFollowable' => t(''),
-      'IsRobotIndexable' => t(''),
-      'DisplayName' => t('The content title?'),
-      'LastChangeTime' => t(''),
-      'PageDefinitionGUID' => t(''),
-      'DeletedByClientId' => t(''),
-      'CreatedByClientId' => t(''),
-      'ModifiedByClientId' => t(''),
-      'ApprovedByClientId' => t(''),
-      'OwnerClientId' => t(''),
-      'LockClientId' => t(''),
-      'CheckedOutByUserId' => t(''),
-      'CheckedOutByMachine' => t(''),
-      'TemplateAspPath' => t(''),
-      'SchemaXML' => t(''),
-      'UserRoleType' => t(''),
-      'OuterScriptFile' => t(''),
-      'UseOuterScriptForPostings' => t(''),
-      'DefaultPostingName' => t(''),
+      'EffectiveDate' => t('Published date as displayed on the site?'),
+      'DisplayName' => t('The content title'),
+      'LastChangeTime' => t('Modification date'),
       'body' => t('Node body as contructed from placeholder content'),
       'ContentNodeId' => t('Id of the related node which points to the HTML content'),
       'ContentNodeName' => t('Name from the related node, used in URL construction'),
+      // Dynamic properties (from the NodeProperty table).
+      // @todo: Move any of these which are specific to news articles to
+      // WSDOTNewsArticle.
+      '_Description' => t('Teaser'),
+      'Area' => t(''),
+      'Office' => t(''),
+      'Category' => t(''),
+      'Pass' => t(''),
+      'Highway' => t(''),
+      'MetaKeywords' => t(''),
+      'PageTitle' => t(''),
     );
 
     $query = Database::getConnection('default', 'migrate')
       ->select('Node', 'n')
-      ->fields('n')
+      ->fields('n', array('Id', 'NodeGUID', 'ParentGUID', 'CreatedByUserId',
+        'CreatedWhen', 'EffectiveDate', 'DisplayName', 'LastChangeTime'))
       ->condition('n.TemplateGUID', $arguments['type_guid'])
+      ->condition('n.ApprovalStatus', 1)
       // We assume the row with the NULL archive source is the current revision.
       ->isNull('n.ArchiveSourceGUID');
-    // The FollowGUID (may? always?) point to another node row, which contains
-    // the Name we need, and also has the Id that points to the HTML content.
+    // The FollowGUID points to another node row, which contains the Name we
+    // need, and also has the Id that points to the HTML content.
     $query->leftJoin('Node', 'n2', 'n.FollowGUID=n2.NodeGUID');
     $query->addField('n2', 'Id', 'ContentNodeId');
     $query->addField('n2', 'Name', 'ContentNodeName');
@@ -113,15 +272,34 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
 
     $this->addFieldMapping('title', 'DisplayName');
     $this->addFieldMapping('created', 'CreatedWhen');
-    $this->addFieldMapping('changed', 'ModifiedWhen');
+    $this->addFieldMapping('changed', 'LastChangeTime');
 
-    $this->addFieldMapping('uid', 'OwnerId')
+    $this->addFieldMapping('uid', 'CreatedByUserId')
       ->sourceMigration('user');
 
     $this->addFieldMapping('body', 'body');
+    $this->addFieldMapping('body:summary', '_Description');
+
+    $this->addFieldMapping('field_mountain_passes', 'Pass');
+    $this->addFieldMapping('field_highways', 'Highway');
+    $this->addFieldMapping('field_regions', 'Office');
+
+    $this->addFieldMapping('path')
+      ->description('Figure out how to build the legacy URL');
+
+    $this->addFieldMapping('pathauto')
+      ->defaultValue(0);
+
+    $this->addUnmigratedSources(array(
+      'Area',
+      'Category',
+      'MetaKeywords',
+      'PageTitle',
+    ));
 
     $this->addUnmigratedDestinations(array(
-      'IsLocked',
+      'field_cities',
+      'field_subjects',
     ));
   }
 
@@ -141,6 +319,48 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
       ->execute();
     foreach ($result as $property_row) {
       $row->{$property_row->PropName} = $property_row->PropValue;
+    }
+
+    // Highways need to be split to multiple values and normalized to the new
+    // vocabulary.
+    if (!empty($row->Highway)) {
+      // Break up comma-separated multiple values...
+      $highways = explode(',', $row->Highway);
+      $row->Highway = array();
+      foreach ($highways as $highway) {
+        // ...and remove any extraneous spaces.
+        $highway = trim($highway);
+
+        // Translate to the new name.
+        if (!empty($this->highwayMap[$highway])) {
+          $row->Highway[] = $this->highwayMap[$highway];
+        }
+        else {
+          $this->queueMessage(t('Highway value !highway not mapped',
+                                array('!highway' => $highway)));
+        }
+      }
+    }
+
+    // Offices need to be split to multiple values and normalized to the regions
+    // vocabulary.
+    if (!empty($row->Office)) {
+      // Break up hyphen-separated multiple values...
+      $offices = explode('-', $row->Office);
+      $row->Office = array();
+      foreach ($offices as $office) {
+        // ...and remove any extraneous spaces.
+        $office = trim($office);
+
+        // Translate to the new name.
+        if (!empty($this->regionMap[$office])) {
+          $row->Office[] = $this->regionMap[$highway];
+        }
+        else {
+          $this->queueMessage(t('Office value !office not mapped',
+                                array('!office' => $office)));
+        }
+      }
     }
 
     // Deal with NodeResource.
