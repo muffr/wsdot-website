@@ -255,6 +255,9 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
     $query->leftJoin('Node', 'n2', 'n.FollowGUID=n2.NodeGUID');
     $query->addField('n2', 'Id', 'ContentNodeId');
     $query->addField('n2', 'Name', 'ContentNodeName');
+    // To use highwater marks (see below), we must process in order of the
+    // highwater mark field.
+    $query->orderBy('LastChangeTime');
 
     $this->source = new MigrateSourceSQL($query, $this->sourceFields, NULL,
                                          $this->sourceOptions);
@@ -273,6 +276,14 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
         )
       ),
       MigrateDestinationNode::getKeySchema()
+    );
+
+    // By declaring the last-modified timestamp as our highwater field, we
+    // ensure that delta migrations pick up not only new content, but also
+    // content that was modified since our previous import.
+    $this->highwaterField = array(
+      'name' => 'LastChangeTime',
+      'alias' => 'n',
     );
 
     $this->addFieldMapping('title', 'DisplayName');
