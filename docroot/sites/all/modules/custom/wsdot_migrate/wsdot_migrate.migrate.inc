@@ -31,6 +31,8 @@ function wsdot_migrate_migrate_api() {
         // content earliest dates.
         'earliest_date' => '2012-01-01',
       ),
+      // @todo: Temporary - we expect to replace this with a migration from
+      // LDAP.
       'user' => array(
         'class_name' => 'WSDOTUser',
         'group_name' => 'wsdot',
