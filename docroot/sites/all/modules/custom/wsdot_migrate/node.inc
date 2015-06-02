@@ -228,14 +228,19 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
    */
   protected $paths = array();
 
+  /**
+   * Source fields available for field mapping in this migration.
+   *
+   * @var array
+   *  keys are source field machine names, values are descriptions.
+   */
   protected $sourceFields = array();
 
   public function __construct($arguments) {
     parent::__construct($arguments);
 
-    $this->sourceFields .= array(
+    $this->sourceFields += array(
       'Id' => t('Unique ID of the content item'),
-      'NodeGUID' => t('Unique GUID of this item'),
       'ParentGUID' => t('GUID of the parent (part of folder structure)'),
       'CreatedByUserId' => t('User who originally created this item'),
       'CreatedWhen' => t('Creation date'),
@@ -254,12 +259,17 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
 
     $query = Database::getConnection('default', 'migrate')
       ->select('Node', 'n')
-      ->fields('n', array('Id', 'NodeGUID', 'ParentGUID', 'CreatedByUserId',
+      ->fields('n', array('Id', 'ParentGUID', 'CreatedByUserId',
         'CreatedWhen', 'EffectiveDate', 'DisplayName', 'LastChangeTime'))
+      // Select nodes of a given template (equivalent to Drupal content type).
       ->condition('n.TemplateGUID', $arguments['type_guid'])
+      // Import published nodes only.
       ->condition('n.ApprovalStatus', 1)
+      // Import only nodes created since a given date.
       ->condition('n.CreatedWhen', $arguments['earliest_date'], '>=')
-      // We assume the row with the NULL archive source is the current revision.
+      // There are multiple rows in Node for a given logical piece of content,
+      // representing multiple revisions. We assume the row with the NULL
+      // archiveSourceGUID is the current revision.
       ->isNull('n.ArchiveSourceGUID');
     // The FollowGUID points to another node row, which contains the Name we
     // need, and also has the Id that points to the HTML content.
@@ -300,6 +310,11 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
     $this->addFieldMapping('title', 'DisplayName');
     $this->addFieldMapping('created', 'CreatedWhen');
     $this->addFieldMapping('changed', 'LastChangeTime');
+    $this->addFieldMapping(NULL, 'EffectiveDate')
+      ->description('Is this the displayed date? Do we need a field for it?');
+
+    $this->addFieldMapping('status')
+      ->defaultValue(NODE_PUBLISHED);
 
     $this->addFieldMapping('uid', 'CreatedByUserId')
       ->sourceMigration('user');
@@ -314,11 +329,31 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
     $this->addFieldMapping('pathauto')
       ->defaultValue(0);
 
+    $this->addFieldMapping(NULL, 'ParentGUID')
+      ->description('Used to construct the folder path');
+    $this->addFieldMapping(NULL, 'ContentNodeId')
+      ->description('Id of the second Node row, which points to the content');
+    $this->addFieldMapping(NULL, 'ContentNodeName')
+      ->description('Used in construction of the legacy path');
+
+    $this->addUnmigratedDestinations(array(
+      'body:language',
+      'comment',
+      'is_new',
+      'language',
+      'log',
+      'promote',
+      'revision',
+      'revision_uid',
+      'sticky',
+      'tnid',
+      'translate',
+    ));
+
     $this->addUnmigratedSources(array(
       'MetaKeywords',
       'PageTitle',
     ));
-
 
   }
 
@@ -373,7 +408,7 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
 
         // Translate to the new name.
         if (!empty($this->regionMap[$office])) {
-          $row->Office[] = $this->regionMap[$highway];
+          $row->Office[] = $this->regionMap[$office];
         }
         else {
           $this->queueMessage(t('Office value !office not mapped',
@@ -382,14 +417,13 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
       }
     }
 
-    // Deal with NodeResource.
+    // NodeResource references links to be inserted, as well as related blobs.
     $result = Database::getConnection('default', 'migrate')
       ->select('NodeResource', 'nr')
       ->fields('nr')
       ->condition('NodeID', $row->ContentNodeId)
       ->orderBy('Id')
       ->execute();
-    // ResourceBlobID references blobs (files)
     $this->resourceLinks = array();
     foreach ($result as $resource_row) {
       if ($resource_row->ResourceBlobId) {
@@ -406,20 +440,24 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
             ->fetchField();
       }
       else {
+        // Handle links - the necessary value is right at hand.
         $this->resourceLinks[$resource_row->Id] = $resource_row->URL;
       }
     }
 
-    // Add fields from the NodePlaceholderContent table.
+    // Add fields from the NodePlaceholderContent table. This contains the
+    // node content (in the HTML properties), and control properties which
+    // reference the resources above.
     $result = Database::getConnection('default', 'migrate')
       ->select('NodePlaceholderContent', 'npc')
-      ->fields('npc')
+      ->fields('npc', array('Id', 'PlaceholderId', 'PropName', 'PropValue'))
       ->condition('NodeID', $row->ContentNodeId)
       ->orderBy('PlaceholderId', 'Id')
       ->execute();
     $row->body = '';
     $placeholder_content = array();
-    // Make it simpler to handle on placeholder at a time.
+    // Group by individual placeholders to make it simpler to handle one
+    // placeholder at a time.
     foreach ($result as $placeholder_row) {
       $placeholder_content[$placeholder_row->PlaceholderId][$placeholder_row->Id] =
         $placeholder_row;
@@ -428,7 +466,7 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
     foreach ($placeholder_content as $placeholder_id => $placeholder_detail) {
       // We expect each placeholder_id to have one HTML row and multiple
       // ControlProp rows. We will fetch the HTML and parse it for references to
-      // control props, which is turn reference resources - we will use those
+      // control props, which in turn reference resources - we will use those
       // resources to rewrite the references.
       $this->controlProps = array();
       $html = '';
@@ -441,22 +479,34 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
         }
       }
 
-      // Replace each resource reference with a real URL.
+      // Replace each resource reference with a real URL. Note we are capturing
+      // the control property name (ControlProp0, ControlProp1, etc.).
       $html = preg_replace_callback('|<!--\* *Resource *= *"(.*?)" *-->|i',
                                     array($this, 'handleResource'),
                                     $html);
       $row->body .= $html;
     }
 
-    // Follow parents to work out the path structure.
+    // Follow parents to work out the legacy path structure so we can preserve
+    // it in Drupal.
     $row->legacy_url = $this->getPathComponents($row->ParentGUID). '/' .
       $row->ContentNodeName . '.htm';
 
     return TRUE;
   }
 
+  /**
+   * Determine the folder structure for the URL path.
+   *
+   * @param string $parent_guid
+   *
+   * @return string
+   */
   protected function getPathComponents($parent_guid) {
+    // A given directory path will be used by many pieces of content, so cache
+    // each one to minimize database queries.
     if (!isset($this->paths[$parent_guid])) {
+      // Find the parent of the current row.
       $row = Database::getConnection('default', 'migrate')
         ->select('Node', 'n')
         ->fields('n', array('Name', 'ParentGUID'))
@@ -464,7 +514,8 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
         ->execute()
         ->fetchObject();
 
-      // Ignore the /Server/Channels component of the path.
+      // Ignore the /Server/Channels component of the path - the GUID here is
+      // the Channels GUID.
       if ($row->ParentGUID && $row->ParentGUID != '{E4D19123-9DD3-11D1-B44E-006097071264}') {
         $this->paths[$parent_guid] = $this->getPathComponents($row->ParentGUID);
       }
@@ -472,6 +523,7 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
         $this->paths[$parent_guid] = '';
       }
       $this->paths[$parent_guid] .= '/' . $row->Name;
+      // Strip the leading slash - Drupal aliases must not begin with a slash.
       $this->paths[$parent_guid] = ltrim($this->paths[$parent_guid], '/');
     }
     return $this->paths[$parent_guid];
@@ -486,8 +538,13 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
     // Default to the original contents.
     $result = $matches[0];
 
+    // $matches[1] is the control property name - ControlProp0, etc.
     if (!empty($matches[1])) {
       $control_prop_name = $matches[1];
+      // The property name should correspond to a row in the placeholder content
+      // table for the same placeholder the HTML we're parsing is in. It points
+      // at a resource ID, which we lookup against the resource table data we
+      // previously extracted for this node.
       if (!empty($this->controlProps[$control_prop_name])) {
         $resource_id = $this->controlProps[$control_prop_name];
         // If the resource is a link, return the URL.
@@ -503,7 +560,19 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
             // Strip the path down to be relative to the webroot.
             $result = preg_replace('|^https?://[^/]+|i', '', $result);
           }
+          else {
+            $this->queueMessage(t('Could not load the file with ID !fid',
+                                  array('!fid' => $this->resourceBlobs[$resource_id])));
+          }
         }
+        else {
+          $this->queueMessage(t('Could not find resource with ID !id',
+                                array('!id' => $resource_id)));
+        }
+      }
+      else {
+        $this->queueMessage(t('Could not find control property !name',
+                              array('!name' => $control_prop_name)));
       }
     }
     return $result;
@@ -514,7 +583,7 @@ class WSDOTNewsArticle extends WSDOTNode {
   public function __construct($arguments) {
     // Set our specific source fields before calling the parent, so they can
     // be passed to the source plugin.
-    $this->sourceFields .= array(
+    $this->sourceFields += array(
       'Area' => t(''),
       'Office' => t(''),
       'Category' => t(''),
@@ -534,8 +603,13 @@ class WSDOTNewsArticle extends WSDOTNode {
     ));
 
     $this->addUnmigratedDestinations(array(
-      'field_cities',
-      'field_subjects',
+      'field_cities', 'field_cities:source_type', 'field_cities:create_term',
+        'field_cities:ignore_case',
+      'field_highways:source_type', 'field_highways:create_term', 'field_highways:ignore_case',
+      'field_mountain_passes:source_type', 'field_mountain_passes:create_term', 'field_mountain_passes:ignore_case',
+      'field_regions:source_type', 'field_regions:create_term', 'field_regions:ignore_case',
+      'field_subjects', 'field_subjects:source_type', 'field_subjects:create_term',
+        'field_subjects:ignore_case',
     ));
   }
 }
@@ -544,7 +618,7 @@ class WSDOTPage extends WSDOTNode {
   public function __construct($arguments) {
     // Set our specific source fields before calling the parent, so they can
     // be passed to the source plugin.
-    $this->sourceFields .= array(
+    $this->sourceFields += array(
       'ChannelTitle' => t(''),
       'LeftNavBoxHeader' => t(''),
       'LocalLeftNav' => t(''),
@@ -553,6 +627,11 @@ class WSDOTPage extends WSDOTNode {
     parent::__construct($arguments);
 
     // Field mappings specific to pages.
+
+    $this->addUnmigratedDestinations(array(
+      'field_subjects', 'field_subjects:source_type', 'field_subjects:create_term',
+        'field_subjects:ignore_case',
+    ));
 
     $this->addUnmigratedSources(array(
       'ChannelTitle',
