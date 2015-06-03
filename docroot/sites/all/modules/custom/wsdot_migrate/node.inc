@@ -254,7 +254,6 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
       // Dynamic properties (from the NodeProperty table).
       '_Description' => t('Teaser'),
       'MetaKeywords' => t(''),
-      'PageTitle' => t(''),
     );
 
     $query = Database::getConnection('default', 'migrate')
@@ -265,14 +264,13 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
       ->condition('n.TemplateGUID', $arguments['type_guid'], 'IN')
       // Import published nodes only.
       ->condition('n.ApprovalStatus', 1)
-      // Import only nodes created since a given date.
-      ->condition('n.CreatedWhen', $arguments['earliest_date'], '>=')
       // There are multiple rows in Node for a given logical piece of content,
       // representing multiple revisions. We assume the row with the NULL
       // archiveSourceGUID is the current revision.
       ->isNull('n.ArchiveSourceGUID');
     // earliest_date is optional
     if (isset($arguments['earliest_date'])) {
+      // Import only nodes created since a given date.
       $query->condition('n.CreatedWhen', $arguments['earliest_date'], '>=');
     }
     // The FollowGUID points to another node row, which contains the Name we
@@ -356,7 +354,6 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
 
     $this->addUnmigratedSources(array(
       'MetaKeywords',
-      'PageTitle',
     ));
 
   }
@@ -495,7 +492,7 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
     // it in Drupal.
     $row->legacy_url = $this->getPathComponents($row->ParentGUID). '/' .
       $row->ContentNodeName . '.htm';
-
+drush_print_r($row);
     return TRUE;
   }
 
@@ -591,6 +588,7 @@ class WSDOTNewsArticle extends WSDOTNode {
       'Area' => t(''),
       'Office' => t(''),
       'Category' => t(''),
+      'PageTitle' => t(''),
       'Pass' => t(''),
       'Highway' => t(''),
     );
@@ -604,6 +602,7 @@ class WSDOTNewsArticle extends WSDOTNode {
     $this->addUnmigratedSources(array(
       'Area',
       'Category',
+      'PageTitle',
     ));
 
     $this->addUnmigratedDestinations(array(
@@ -626,6 +625,7 @@ class WSDOTPage extends WSDOTNode {
       'ChannelTitle' => t(''),
       'LeftNavBoxHeader' => t(''),
       'LocalLeftNav' => t(''),
+      'PageTitle' => t(''),
       'ShowLeftNav' => t(''),
     );
     parent::__construct($arguments);
@@ -641,6 +641,7 @@ class WSDOTPage extends WSDOTNode {
       'ChannelTitle',
       'LeftNavBoxHeader',
       'LocalLeftNav',
+      'PageTitle',
       'ShowLeftNav',
     ));
 
@@ -652,13 +653,107 @@ class WSDOTPublication extends WSDOTNode {
     // Set our specific source fields before calling the parent, so they can
     // be passed to the source plugin.
     $this->sourceFields += array(
+      'Author' => '',
+      'ChannelTitle' => '',
+      'FileName' => '',
+      'LastModified' => '',
+      'LinkFullManual' => '',
+      'Location' => '',
+      'NumberOfPages' => '',
+      'Originator' => '',
+      'PublicationNumber' => '',
+      'PublishedDate' => '',
+      'Subject' => '',
+      'Version' => '',
     );
     parent::__construct($arguments);
 
-    // Field mappings specific to pages.
+    // Field mappings specific to publications.
+
+    // Incoming Author values look like "Brian W. Mar, John F. Ferguson, Eugene B. Welch."
+    // We convert to an array with separator(). This would leave spaces as in
+    // " John F. Ferguson", so strip those with trim(). Finally, we don't want
+    // to keep that trailing period, so we strip that.
+    $this->addFieldMapping('field_authors', 'Author')
+      ->separator(',')
+      ->callbacks('trim')
+      ->callbacks(array($this, 'stripPeriod'));
+
+    // Ditto for subjects (example: "
+    $this->addFieldMapping('field_subjects', 'Subject')
+      ->separator(',')
+      ->callbacks('trim')
+      ->callbacks(array($this, 'stripPeriod'));
+    // Automatically create subject terms that don't already exist.
+    $this->addFieldMapping('field_subjects:create_term')
+      ->defaultValue(TRUE);
+    // Make sure we don't get terms that differ only in case.
+    $this->addFieldMapping('field_subjects:ignore_case')
+      ->defaultValue(TRUE);
+
+    $this->addFieldMapping('field_number_of_pages', 'NumberOfPages');
+    $this->addFieldMapping('field_originator', 'Originator');
+    $this->addFieldMapping('field_publication_number', 'PublicationNumber');
+    $this->addFieldMapping('field_publication_date', 'PublishedDate');
+    $this->addFieldMapping('field_publication_version', 'Version');
+
+    $this->addFieldMapping('field_chapter')
+      ->description('Figure out how to tie blobs to this');
+    $this->addFieldMapping(NULL, 'FileName')
+      ->description('Is this involved in populating field_chapter? Or perhaps this ties to field_related_publications?');
+    $this->addFieldMapping('field_related_publications')
+      ->description('Where does this come from?');
+
+    $this->addFieldMapping(NULL, 'LastModified')
+      ->description('Presumably the date the publication was last modified, which is different from when the node was last modified - there should be a specific field to hold this');
+
+    $this->addFieldMapping(NULL, 'Location')
+      ->description('Full URL of file attachments - not necessary in Drupal?');
+
+    $this->addFieldMapping('field_publication_type')
+      ->description('How do we determine the type?');
+
+    $this->addUnmigratedDestinations(array(
+      'field_authors:language',
+      'field_contact_info', 'field_contact_info:revision_id',
+      'field_number_of_pages:language',
+      'field_originator:language',
+      'field_publication_date:timezone', 'field_publication_date:rrule',
+        'field_publication_date:to',
+      'field_publication_number:language',
+      'field_publication_version:language',
+      'field_subjects:source_type',
+    ));
 
     $this->addUnmigratedSources(array(
+      'ChannelTitle',
+      'LinkFullManual',
     ));
+  }
+
+  /**
+   * Some author values end in periods - remove them.
+   *
+   * @param $value
+   *
+   * @return string
+   */
+  protected function stripPeriod($value) {
+    return rtrim($value, '.');
+  }
+}
+
+class WSDOTProject extends WSDOTNode {
+  public function __construct($arguments) {
+    // Set our specific source fields before calling the parent, so they can
+    // be passed to the source plugin.
+    $this->sourceFields += array(
+      // No additional source field for projects.
+    );
+    parent::__construct($arguments);
+
+    // Field mappings specific to projects.
+
 
   }
 }

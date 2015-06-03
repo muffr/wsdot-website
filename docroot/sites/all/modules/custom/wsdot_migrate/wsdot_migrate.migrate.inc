@@ -65,6 +65,15 @@ function wsdot_migrate_migrate_api() {
         'destination_type' => 'publication',
         'dependencies' => array('user'),
       ),
+      'project' => array(
+        'class_name' => 'WSDOTProject',
+        'group_name' => 'wsdot',
+        'description' => 'Import of projects',
+        'type_guid' => array('{66EA195A-46C1-4072-86AE-0480A7693696}',
+          '{302FD56C-9930-4A45-969C-29901D086242}'),
+        'destination_type' => 'project',
+        'dependencies' => array('user'),
+      ),
     ),
   );
 
