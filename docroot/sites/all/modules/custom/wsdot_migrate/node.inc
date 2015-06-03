@@ -262,7 +262,7 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
       ->fields('n', array('Id', 'ParentGUID', 'CreatedByUserId',
         'CreatedWhen', 'EffectiveDate', 'DisplayName', 'LastChangeTime'))
       // Select nodes of a given template (equivalent to Drupal content type).
-      ->condition('n.TemplateGUID', $arguments['type_guid'])
+      ->condition('n.TemplateGUID', $arguments['type_guid'], 'IN')
       // Import published nodes only.
       ->condition('n.ApprovalStatus', 1)
       // Import only nodes created since a given date.
@@ -271,6 +271,10 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
       // representing multiple revisions. We assume the row with the NULL
       // archiveSourceGUID is the current revision.
       ->isNull('n.ArchiveSourceGUID');
+    // earliest_date is optional
+    if (isset($arguments['earliest_date'])) {
+      $query->condition('n.CreatedWhen', $arguments['earliest_date'], '>=');
+    }
     // The FollowGUID points to another node row, which contains the Name we
     // need, and also has the Id that points to the HTML content.
     $query->leftJoin('Node', 'n2', 'n.FollowGUID=n2.NodeGUID');
@@ -638,6 +642,22 @@ class WSDOTPage extends WSDOTNode {
       'LeftNavBoxHeader',
       'LocalLeftNav',
       'ShowLeftNav',
+    ));
+
+  }
+}
+
+class WSDOTPublication extends WSDOTNode {
+  public function __construct($arguments) {
+    // Set our specific source fields before calling the parent, so they can
+    // be passed to the source plugin.
+    $this->sourceFields += array(
+    );
+    parent::__construct($arguments);
+
+    // Field mappings specific to pages.
+
+    $this->addUnmigratedSources(array(
     ));
 
   }
