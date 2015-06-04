@@ -492,7 +492,7 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
     // it in Drupal.
     $row->legacy_url = $this->getPathComponents($row->ParentGUID). '/' .
       $row->ContentNodeName . '.htm';
-drush_print_r($row);
+
     return TRUE;
   }
 
@@ -748,12 +748,110 @@ class WSDOTProject extends WSDOTNode {
     // Set our specific source fields before calling the parent, so they can
     // be passed to the source plugin.
     $this->sourceFields += array(
-      // No additional source field for projects.
+      '2005PartnerFunding' => t(''),
+      'ChannelTitle' => t(''),
+      'FlickrFeedURL' => t(''),
+      'LeftNavBoxHeader' => t(''),
+      'LeftNavName' => t(''),
+      'ListId' => t(''),
+      'NickelImage' => t(''),
+      'PageTitle' => t(''),
+      'ProjectPageId' => t(''),
+      'ShowCommonMessagingLeftNav' => t(''),
+      'ShowCongestionBenefits' => t(''),
+      'ShowCostEscalation' => t(''),
+      'ShowCountdownTimer' => t(''),
+      'ShowEconomicIncentive' => t(''),
+      'ShowEnvironmentBenefits' => t(''),
+      'ShowFinancialTable' => t(''),
+      'ShowFlickrLightbox' => t(''),
+      'ShowLeftNav' => t(''),
+      'ShowMonthlyUpdateLeftNav' => t(''),
+      'ShowQprLeftNav' => t(''),
+      'ShowSafetyBenefits' => t(''),
+      'ShowSignageDisclaimer' => t(''),
+      'TimerStartDate' => t(''),
     );
     parent::__construct($arguments);
 
     // Field mappings specific to projects.
+    $this->addFieldMapping('field_cities')
+      ->description('Where would this come from?');
+    $this->addFieldMapping('field_contact_info')
+      ->description('Where would this come from?');
+    $this->addFieldMapping('field_counties')
+      ->description('Where would this come from?');
+    $this->addFieldMapping('field_funding_types')
+      ->description('Where would this come from?');
+    $this->addFieldMapping('field_highways')
+      ->description('Where would this come from?');
+    $this->addFieldMapping('field_link')
+      ->description('Where would this come from?');
+    $this->addFieldMapping('field_map')
+      ->description('Where would this come from?');
+    $this->addFieldMapping('field_modes')
+      ->description('Where would this come from?');
+    $this->addFieldMapping('field_regions')
+      ->description('Where would this come from?');
+    $this->addFieldMapping('field_status_date')
+      ->description('Where would this come from?');
+    $this->addFieldMapping('field_tags')
+      ->description('Where would this come from?');
+    $this->addFieldMapping('field_status')
+      ->description('Where would this come from?');
+    $this->addFieldMapping('field_user_reference')
+      ->description('Where would this come from?');
+    $this->addFieldMapping('field_project_phase')
+      ->description('Where would this come from?');
+    $this->addFieldMapping('field_images')
+      ->description('Where would this come from?');
+    $this->addFieldMapping('field_design_build')
+      ->description('Where would this come from?');
 
+    $this->addFieldMapping(NULL, '2005PartnerFunding')
+      ->description('Do we need this? If so, where does it go?');
+    $this->addFieldMapping(NULL, 'NickelImage')
+      ->description('Do we need this? If so, where does it go?');
+    $this->addFieldMapping(NULL, 'ShowSafetyBenefits')
+      ->description('Do we need this? If so, where does it go?');
+    $this->addFieldMapping(NULL, 'ShowCongestionBenefits')
+      ->description('Do we need this? If so, where does it go?');
+    $this->addFieldMapping(NULL, 'ShowEnvironmentBenefits')
+      ->description('Do we need this? If so, where does it go?');
+    $this->addFieldMapping(NULL, 'ShowCostEscalation')
+      ->description('Do we need this? If so, where does it go?');
+    $this->addFieldMapping(NULL, 'ShowEconomicIncentive')
+      ->description('Do we need this? If so, where does it go?');
+    $this->addFieldMapping(NULL, 'ChannelTitle')
+      ->description('Do we need this? If so, where does it go?');
+    $this->addFieldMapping(NULL, 'TimerStartDate')
+      ->description('Do we need this? If so, where does it go?');
+    $this->addFieldMapping(NULL, 'ShowCountdownTimer')
+      ->description('Do we need this? If so, where does it go?');
+    $this->addFieldMapping(NULL, 'ShowFinancialTable')
+      ->description('Do we need this? If so, where does it go?');
+    $this->addFieldMapping(NULL, 'FlickrFeedURL')
+      ->description('Do we need this? If so, where does it go?');
+    $this->addFieldMapping(NULL, 'ShowFlickrLightbox')
+      ->description('Do we need this? If so, where does it go?');
+    $this->addFieldMapping(NULL, 'ShowSignageDisclaimer')
+      ->description('Do we need this? If so, where does it go?');
 
+    $this->addFieldMapping('field_project_id', 'ProjectPageId');
+
+    $this->addUnmigratedDestinations(array(
+
+    ));
+
+    $this->addUnmigratedSources(array(
+      'LeftNavBoxHeader',
+      'LeftNavName',
+      'ListId',
+      'PageTitle',
+      'ShowCommonMessagingLeftNav',
+      'ShowLeftNav',
+      'ShowMonthlyUpdateLeftNav',
+      'ShowQprLeftNav',
+    ));
   }
 }

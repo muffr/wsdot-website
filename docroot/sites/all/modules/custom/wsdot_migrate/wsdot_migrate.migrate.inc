@@ -27,9 +27,6 @@ function wsdot_migrate_migrate_api() {
         'class_name' => 'WSDOTFile',
         'group_name' => 'wsdot',
         'description' => 'Import of files',
-        // The file earliest_date should be the earliest of all the individual
-        // content earliest dates.
-        'earliest_date' => '2012-01-01',
       ),
       // @todo: Temporary - we expect to replace this with a migration from
       // LDAP.
