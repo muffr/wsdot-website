@@ -30,6 +30,13 @@ function moveable_bridges_view_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'We\'re sorry. There are no bridges that match your search.';
+  $handler->display->display_options['empty']['area']['format'] = 'wysiwyg';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -143,6 +150,10 @@ function moveable_bridges_view_views_default_views() {
   );
   $handler->display->display_options['filters']['field_highways_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_highways_tid']['vocabulary'] = 'highways';
+
+  /* Display: Content pane */
+  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $handler->display->display_options['inherit_panels_path'] = '1';
   $export['moveable_bridges'] = $view;
 
   return $export;

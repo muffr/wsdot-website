@@ -114,6 +114,13 @@ function structurally_deficient_bridges_view_views_default_views() {
       'empty_column' => 0,
     ),
   );
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'We\'re sorry. There are no bridges that match your search.';
+  $handler->display->display_options['empty']['area']['format'] = 'wysiwyg';
   /* Field: Content: Bridge Category */
   $handler->display->display_options['fields']['field_bridge_category']['id'] = 'field_bridge_category';
   $handler->display->display_options['fields']['field_bridge_category']['table'] = 'field_data_field_bridge_category';
@@ -239,6 +246,10 @@ function structurally_deficient_bridges_view_views_default_views() {
   );
   $handler->display->display_options['filters']['field_highways_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_highways_tid']['vocabulary'] = 'highways';
+
+  /* Display: Content pane */
+  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $handler->display->display_options['inherit_panels_path'] = '1';
   $export['structurally_deficient_bridges'] = $view;
 
   return $export;
