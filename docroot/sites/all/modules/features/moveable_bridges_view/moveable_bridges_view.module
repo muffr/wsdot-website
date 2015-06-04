@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Moveable Bridges View feature.
+ */
+
+include_once 'moveable_bridges_view.features.inc';

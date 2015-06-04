@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Historic Bridges View feature.
+ */
+
+include_once 'historic_bridges_view.features.inc';

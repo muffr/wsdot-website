@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Border Bridges Veiw feature.
+ */
+
+include_once 'border_bridges_veiw.features.inc';

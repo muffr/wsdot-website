@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Structurally Deficient Bridges View feature.
+ */
+
+include_once 'structurally_deficient_bridges_view.features.inc';

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Moveable Bridges Panels feature.
+ */
+
+include_once 'moveable_bridges_panels.features.inc';

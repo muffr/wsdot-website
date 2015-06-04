@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the WSDOT Field Bases feature.
  */
+
+include_once 'wsdot_field_bases.features.inc';
