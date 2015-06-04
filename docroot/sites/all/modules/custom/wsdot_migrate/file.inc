@@ -22,7 +22,6 @@ class WSDOTFile extends WSDOTMigrationBase {
       'BlobSize' => t('Size in bytes of the file'),
       'BlobMetaFlag' => t('?'),
       'BlobData' => t('The file contents'),
-      'Name' => t('File name from NodeResource table'),
       'destination_file' => t('Constructed Drupal path for file'),
     );
 
@@ -31,21 +30,10 @@ class WSDOTFile extends WSDOTMigrationBase {
     $query = Database::getConnection('default', 'migrate')
       ->select('BlobTable', 'b')
       ->fields('b', array('BlobId', 'BlobFileExt', 'BlobTimeCreated', 'BlobData'));
+    // Filter down to only blobs attached to approved content nodes.
     $query->innerJoin('NodeResource', 'nr', 'b.BlobId=nr.ResourceBlobId');
-    $query->fields('nr', array('Name'));
-
-    // Filter down to only blobs attached to approved content nodes created
-    // since the specified date. Note this will import more files than necessary -
-    // for example, if our earliest date is 2012-01-01 to accomodate the
-    // earliest pages we're migrating, and we're only importing news articles
-    // since 2014-01-01, then we will import files associated with unimported
-    // news articles. We could narrow our filter by having multiple clauses
-    // here for each specific type - that will generate a very complex query.
-    // Alternatively, there could a post-migration task to delete files which
-    // are unreferenced by any Drupal nodes.
     $query->innerJoin('Node', 'n', 'nr.NodeId=n.Id');
     $query->condition('n.ApprovalStatus', 1)
-      ->condition('n.CreatedWhen', $arguments['earliest_date'], '>=')
       // We assume the row with the NULL archive source is the current revision.
       ->isNull('n.ArchiveSourceGUID');
     // A given file may be referenced by multiple nodes, thus the joins will
@@ -90,8 +78,6 @@ class WSDOTFile extends WSDOTMigrationBase {
 
     $this->addFieldMapping(NULL, 'BlobFileExt')
       ->description('Used to construct the Drupal file name');
-    $this->addFieldMapping(NULL, 'Name')
-      ->description('Used to construct the Drupal file name');
 
     $this->addUnmigratedDestinations(array(
       'destination_dir',
@@ -117,11 +103,33 @@ class WSDOTFile extends WSDOTMigrationBase {
       return FALSE;
     }
 
+    // We construct the filename from the Name column in references from the
+    // NodeResource table. There could be more than one distinct Name, though,
+    // so we pick one (disfavoring the default "_Content").
+    $names = Database::getConnection('default', 'migrate')
+      ->select('NodeResource', 'nr')
+      ->fields('nr', array('Name'))
+      ->condition('ResourceBlobId', $row->BlobId)
+      ->distinct()
+      ->execute()
+      ->fetchCol();
+    // If there are no references to this blob, no reason to import it - ignore.
+    if (count($names) == 0) {
+      return FALSE;
+    }
+
+    // Otherwise, take the first name - unless there are multiple choices and
+    // the first one is '_Content'.
+    if (count($names) > 1 && $names[0] == '_Content') {
+      // Remove _Content as a candidate.
+      unset($names[0]);
+    }
+
     // Construct the destination file name relative to the Drupal files directory.
     // @todo: We don't really want to put them all in one directory. Add some
     // directory structure here (e.g., by hashing the file name and creating a
     // directory from the first couple of characters).
-    $row->destination_file = 'legacy_files/' . $row->Name . '.' . $row->BlobFileExt;
+    $row->destination_file = 'legacy_files/' . reset($names) . '.' . $row->BlobFileExt;
 
     return TRUE;
   }
