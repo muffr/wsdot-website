@@ -251,6 +251,7 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
       'ContentNodeId' => t('Id of the related node which points to the HTML content'),
       'ContentNodeName' => t('Name from the related node, used in URL construction'),
       'legacy_url' => t('Path computed by following ParentGUIDs'),
+      'file_references' => t('Blob Ids of files related via NodeResource'),
       // Dynamic properties (from the NodeProperty table).
       '_Description' => t('Teaser'),
       'MetaKeywords' => t(''),
@@ -328,6 +329,16 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
 
     $this->addFieldMapping('path', 'legacy_url');
 
+    // Note we would typically populate file_references with BlobId values and
+    // add ->sourceMigration('file') here. However, prepareRow() is already
+    // translating them to fids so it can rewrite embedded image references, so
+    // we don't need to invoke the translation again.
+    $this->addFieldMapping('field_file', 'file_references');
+    // Indicates that 'file_references' should be interpreted as file IDs
+    // rather than URIs (the default).
+    $this->addFieldMapping('field_file:file_class')
+      ->defaultValue('MigrateFileFid');
+
     $this->addFieldMapping('pathauto')
       ->defaultValue(0);
 
@@ -341,6 +352,8 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
     $this->addUnmigratedDestinations(array(
       'body:language',
       'comment',
+      'field_file:language', 'field_file:preserve_files', 'field_file:description',
+        'field_file:display',
       'is_new',
       'language',
       'log',
@@ -433,18 +446,24 @@ abstract class WSDOTNode extends WSDOTMigrationBase {
         // applied until after prepareRow, so we need to look up the map table
         // ourselves. Save the relationship, so handleResource can replace
         // a ControlProp reference to this resource with a relative URL.
-        $this->resourceBlobs[$resource_row->Id] =
+        $fid =
           db_select('migrate_map_file', 'map')
             ->fields('map', array('destid1'))
             ->condition('sourceid1', $resource_row->ResourceBlobId)
             ->execute()
             ->fetchField();
+        if ($fid) {
+          $this->resourceBlobs[$resource_row->Id] = $fid;
+        }
       }
       else {
         // Handle links - the necessary value is right at hand.
         $this->resourceLinks[$resource_row->Id] = $resource_row->URL;
       }
     }
+
+    // Just in case there are duplicate references in NodeResource.
+    $row->file_references = array_unique($this->resourceBlobs);
 
     // Add fields from the NodePlaceholderContent table. This contains the
     // node content (in the HTML properties), and control properties which
