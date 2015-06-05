@@ -51,6 +51,8 @@ be shared across migration types. Thus far, we've only used it to define common
 source options, but it is available should there be a need for, say, a shared
 utility function.
 
+### Nodes
+
 WSDOTNode is the base class for all the node migrations - it contains the
 query (parameterized by the `hook_migrate_api()` arguments above), common field
 mappings, and common processing in `prepareRow()`. Interesting aspects of this
@@ -80,15 +82,71 @@ which refer to these control properties, which in turn link to resources (below)
 as well as providing a bridge between file references in NodePlaceholderContent 
 and the actual file content in BlobTable.
 
-[user and file migration info] 
+### Files
+
+BlobTable contains file data, which the migration process turns into physical
+files in the Drupal public files directory. It's important to note that filenames
+are determined from the NodeResource table which relates the files to the nodes
+that reference them, and that this table can provide different names for a given
+file depending on the referencing node. Also note that a frequent file name
+from the NodeResource table is "_Default", which is not very useful. Since we're
+creating physical files which thus have to have a single name, we will arbitrarily
+take one of the NodeResource names (skipping "_Default" if there's another
+choice available).
+
+The file query results in import of all files which are referenced (via
+NodeResource) by the current revision (ArchiveSourceGUID is NULL) of published 
+nodes (ApprovalStatus=1) of any type (TemplateGUID). Since we are not importing
+all types, or even necessarily all nodes of a given type (e.g., news articles
+are filtered by date), we expect many more files than necessary will be imported. 
+A cleanup script to be run post-migration should be applied to remove files that
+are not referenced in Drupal - something like this (untested) code:
+
+```PHP
+// Select all file IDs which are unreferenced.
+$query = db_select('file_managed', 'fm')
+  ->fields('fm', array('fid'));
+$query->leftJoin('file_usage', 'fu', 'fm.fid=fu.fid');
+$query->isNull('fu.fid');
+$result = $query->execute();
+// Delete all the unreferenced files.
+foreach ($result as $row) {
+  file_delete($row->fid);
+}
+```
+
+### Users
+
+The only useful user information available from the database is usernames - for
+now, we're using these to create dummy accounts that the content can link to.
+This will need to be replaced with a migration from LDAP data to be able to 
+create fully-functional Drupal accounts.
+
+## Known to-dos
+
+- Right now all imported files are saved to a single directory, legacy_files. A
+large number of files in a single directory (empirically, more than 2500 or so)
+can present performance problems - ideally these should be broken out into 
+multiple subdirectories. It could be done during migration time - for example,
+by hashing the file names and using the first couple of characters as subdirectory
+names. Alternatively, the files can be moved after migration by a drush script.
+See https://docs.acquia.com/articles/optimizing-file-paths-organizing-files-subfolders 
+for more information.
+
+- Region and highway terms are being consolidated/renamed in the migration. 
+$regionMap and $highwayMap in node.inc need to be filled in with the Drupal
+names corresponding to each legacy name.
+
+- User migration, currently from the MS CMS database, needs to be rewritten to
+import from LDAP.
+
+- The publication and project migration mappings need review and refinement. In
+particular, the incoming data related to projects does not seem to align much
+with the Drupal fields that have been defined.
 
 ## Insertion points
 
 Here are the areas you are most likely to want to make some tweaks.
-
-[In addition to the general descriptions here, point out how to register new 
-migrations for this project, any particularly likely places you can anticipate 
-changes being made, etc.]
 
 ### Altering mappings
 Field mappings are created with `addFieldMapping(‘destination_field’, ‘source_field’)`, 
@@ -109,7 +167,9 @@ If you add
 to a field mapping, the `valueFilter` method in your migration class will be 
 called during the `applyMappings()` step – between `prepareRow()` and `prepare()` 
 (see below). This is the preferred place to make a one-to-one transformation of 
-a single field (with no reference to any other data).
+a single field (with no reference to any other data). It's particularly handy
+when multiple fields need the same transformation (see `stripPeriod` in
+`WSDOTPublication`).
 
 ```PHP
 protected function valueFilter($value) {
@@ -122,10 +182,10 @@ protected function valueFilter($value) {
 This method is called immediately after the source data is retrieved, and is the 
 first opportunity to manipulate the raw data. Use `prepareRow()` for any of the 
 following cases:
-1.	You need to reject an input row, based on some condition not easily 
+1.	You need to ignore an input row, based on some condition not easily 
 incorporated into the source query. To do this, simply return FALSE.
-2.	To add data to the source row, either by constructing it from data present 
-in the original source row or by pulling related data from elsewhere.
+2.	To add additional data to the source row, either by constructing it from 
+data present in the original source row or by pulling related data from elsewhere.
 3.	To manipulate a source field based on other data in the row.
 
 ```PHP
@@ -135,16 +195,20 @@ public function prepareRow($row) {
   if (parent::prepareRow($row) === FALSE) {
     return FALSE;
   }
+
   // Reject a row based on external status
   if ($status = $this->getStatusFromWebService($row->id) == -1) {
     return FALSE;
   }
-  else {
-    // Create a pseudo-field for the external status
+
+  // Create a pseudo-field for the external status
     $row->service_status = $status;
   }
+
   // Prepend the article type to the title
   $row->title = $row->type . ‘: ‘ . $row->title;
+
+  return TRUE;
   }
 }
 ```
@@ -161,8 +225,7 @@ manipulation on the field arrays, this would be the place.
 ```PHP
 public function prepare($node, $row) {
   parent::prepare($node, $row);
-  $node->body[LANGUAGE_NONE][‘value’] .= 
-    $node->tagline[LANGUAGE_NONE][‘value’];
+  $node->body[LANGUAGE_NONE][‘value’] .= $node->tagline[LANGUAGE_NONE][‘value’];
 }
 ```
 
@@ -194,7 +257,7 @@ Or (since most migrate commands have a shortcut)
 
 To view the status of one migration:
 
-`drush ms MySiteArticle`
+`drush ms publication`
 
 To import from all migrations:
 
@@ -205,21 +268,21 @@ drush mi --all
 
 To import from one migration (note that migration names are case-insensitive):
 
-`drush mi mysiteuser`
+`drush mi file`
 
-To import a small sample (say, 10 tag terms) from one migration:
+To import a small sample (say, 10 users) from one migration:
 
-`drush mi mysitetags --limit=10`
+`drush mi user --limit=10`
 
 To import a specific item in one migration, given its source ID (primary key 
 in the legacy system) – for example, if one particular item is generating an error:
 
-`drush mi mysiteforumcomment --idlist=1234`
+`drush mi news --idlist=1234`
 
 To reimport previously-imported items in-place (overwriting the Drupal objects 
 while maintaining their IDs), in addition to importing previously-unimported items:
 
-`drush mi mysitephoto --update`
+`drush mi project --update`
 
 Migration can, of course, be rolled back as well, deleting the imported content 
 as well as the migration housekeeping, with the same syntax as 
@@ -232,14 +295,14 @@ hit Ctl-C, which may leave the database in an inconsistent state. Rather, use
 the migrate-stop command, which will cause the migration to cleanly exit after 
 processing the current item:
 
-`drush mst mysiteblog`
+`drush mst page`
 
 Sometimes a migration’s status can be stuck in an active state when it’s no 
 longer running (e.g., if there’s a fatal error, a drush command stopped with 
 Ctrl-C, etc.). To reset the status so you can start a new operation on the 
 migration, use the `migrate-reset-status` command:
 
-`drush mrs mysitevideo`
+`drush mrs file`
 
 ## Debugging tips
 
@@ -249,14 +312,15 @@ at key points. The keyest points are `prepareRow()` (called right after fetching
 a row from the migration’s base query) and `prepare()` (called just before 
 saving the Drupal object). Inserting some `drush_print()` calls for simple 
 values, or `drush_print_r()` calls on arrays/objects (like $row and $node) is 
-very helpful.
+very helpful. If you have a debugger configured, of course, these are excellent
+places for breakpoints.
 
 What if your migration is running very slowly? While you can profile with 
 `xhprof` for full details, the Migrate module provides some simple profiling, 
 with timing of particular Migrate functions. If you run your migration with 
 timing enabled
 
-`drush mi mysitearticle --instrument=timer`
+`drush mi file --instrument=timer`
 
 when the migration completes it will report call counts and timings. Most often, 
 you will find that the bulk of the time is being spent writing to the Drupal 
@@ -274,15 +338,15 @@ public function prepareRow($row) {
     return FALSE;
   }
   // Simple cheap stuff we’re not concerned about…
-  $row->name = $row->first_name . $row->last_name;
+  $row->name = $row->first_name . ' ' . $row->last_name;
   // Suspicious expensive stuff
   migrate_instrument_start(‘Remote service call’);
   $row->extra_data = $this->callService($row->ID);
   migrate_instrument_stop(‘Remote service call’);
+  return TRUE;
 }
 ```
 
 ## Resources
 
 Migrate module documentation: http:://drupal.org/migrate
-
