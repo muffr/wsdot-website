@@ -41,7 +41,7 @@ function wsdot_migrate_migrate_api() {
         'description' => 'Import of news articles',
         'type_guid' => array('{78FF8841-6880-444C-9BFA-56732F591D17}'),
         'destination_type' => 'news_article',
-        'dependencies' => array('user'),
+        'dependencies' => array('file', 'user'),
         'earliest_date' => '2014-01-01',
       ),
       'page' => array(
@@ -50,7 +50,7 @@ function wsdot_migrate_migrate_api() {
         'description' => 'Import of default standard pages',
         'type_guid' => array('{DFF8BE08-33C2-4C8B-912F-75DA9E798298}'),
         'destination_type' => 'page',
-        'dependencies' => array('user'),
+        'dependencies' => array('file', 'user'),
         'earliest_date' => '2012-01-01',
       ),
       'publication' => array(
@@ -60,7 +60,7 @@ function wsdot_migrate_migrate_api() {
         'type_guid' => array('{320598FA-2DBE-4DF8-A6C7-E0BDAD394A3C}',
           '{46978165-408D-4F68-AEC2-1FB11FC79D59}'),
         'destination_type' => 'publication',
-        'dependencies' => array('user'),
+        'dependencies' => array('file', 'user'),
       ),
       'project' => array(
         'class_name' => 'WSDOTProject',
@@ -69,7 +69,7 @@ function wsdot_migrate_migrate_api() {
         'type_guid' => array('{66EA195A-46C1-4072-86AE-0480A7693696}',
           '{302FD56C-9930-4A45-969C-29901D086242}'),
         'destination_type' => 'project',
-        'dependencies' => array('user'),
+        'dependencies' => array('file', 'user'),
       ),
     ),
   );
