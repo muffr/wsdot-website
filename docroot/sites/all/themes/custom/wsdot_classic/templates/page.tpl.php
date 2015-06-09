@@ -2,33 +2,28 @@
 <div id="header">
   <div class="topban">
     <ul class="topnav">
-      <li><a href="http://www.wsdot.wa.gov/">WSDOT Home</a></li>
-      <li><a href="http://www.wsdot.wa.gov/contact/">Contact Us</a></li>
+      <li><a href="/">WSDOT Home</a></li>
+      <li><a href="/contact/contact-us">Contact Us</a></li>
       <li><a href="http://www.wsdot.wa.gov/goodtogo/">Good To Go!</a></li>
       <li><a href="http://www.wsdot.wa.gov/employment/">Employment</a></li>
-      <li class="first"><a href="http://www.wsdot.wa.gov/news/">News</a></li>
+      <li class="first"><a href="/news">News</a></li>
     </ul>
   </div>
   <div class="logo">
-    <h1> <a href="http://www.wsdot.wa.gov"><img src="http://www.wsdot.wa.gov/media/images/blacklogo.gif" alt="WSDOT" /></a> </h1>
+    <h1> <a href="/"><img src="http://www.wsdot.wa.gov/media/images/blacklogo.gif" alt="WSDOT" /></a> </h1>
     <div class="emailupdates"><a href="http://service.govdelivery.com/service/multi_subscribe.html?code=WADOT" onclick="window.open('http://service.govdelivery.com/service/multi_subscribe.html?code=WADOT','Popup','width=780,height=440,toolbar=no,scrollbars=yes,resizable=yes'); return false" title="Sign up for email updates">Email updates</a></div>
   </div>
 
   <div class="mainban">
     <div class="mainnav">
 
-        <?php print theme('links__system_main_menu', array(
-          'links' => $main_menu,
-          'attributes' => array(
-            'id' => 'main-menu-links',
-            'class' => array('links', 'clearfix'),
-          ),
-          'heading' => array(
-            'text' => t('Main menu'),
-            'level' => 'h2',
-            'class' => array('element-invisible'),
-          ),
-        )); ?>
+      <ul>
+        <li><a href="http://www.wsdot.wa.gov/traffic/" title="Statewide Traveler Information">Traffic &amp; Cameras</a></li>
+        <li><a href="/projects/" title="Highway, Ferry and Rail Construction Projects">Projects</a></li>
+        <li><a href="http://www.wsdot.wa.gov/business/" title="Information on Doing Business with WSDOT">Business</a></li>
+        <li><a href="http://www.wsdot.wa.gov/environment/" title="What does WSDOT do for the environment?">Environment</a></li>
+        <li><a href="http://www.wsdot.wa.gov/mapsdata.htm" title="Maps, Publications and Transportation Data">Maps &amp; Data</a></li>
+      </ul>
 
       <div class="search">
         <form id="searchform" method="get" action="http://www.wsdot.wa.gov/search/">
