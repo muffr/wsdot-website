@@ -226,6 +226,7 @@ function wsdot_news_article_content_type_field_default_field_instances() {
         'weight' => 11,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_regions',
     'label' => 'Regions',
@@ -239,7 +240,7 @@ function wsdot_news_article_content_type_field_default_field_instances() {
       'settings' => array(
         'apply_chosen' => '',
       ),
-      'type' => 'options_select',
+      'type' => 'options_buttons',
       'weight' => 4,
     ),
   );
