@@ -231,13 +231,13 @@ function wsdot_roadwork_view_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['inline'] = array(
-    'field_start_date' => 'field_start_date',
-    'field_external_project' => 'field_external_project',
-    'field_regions' => 'field_regions',
     'field_highways' => 'field_highways',
+    'field_regions' => 'field_regions',
     'field_counties' => 'field_counties',
+    'field_milepost' => 'field_milepost',
+    'field_start_date' => 'field_start_date',
   );
-  $handler->display->display_options['row_options']['separator'] = '&nbsp;&nbsp;';
+  $handler->display->display_options['row_options']['separator'] = '&nbsp;|&nbsp;';
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -251,24 +251,40 @@ function wsdot_roadwork_view_views_default_views() {
   $handler->display->display_options['fields']['title']['element_type'] = 'h4';
   $handler->display->display_options['fields']['title']['element_class'] = '.RoadworkTitle';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Work Schedule */
-  $handler->display->display_options['fields']['field_start_date']['id'] = 'field_start_date';
-  $handler->display->display_options['fields']['field_start_date']['table'] = 'field_data_field_start_date';
-  $handler->display->display_options['fields']['field_start_date']['field'] = 'field_start_date';
-  $handler->display->display_options['fields']['field_start_date']['element_label_type'] = 'strong';
-  $handler->display->display_options['fields']['field_start_date']['settings'] = array(
-    'format_type' => 'long',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
+  /* Field: Content: Highways */
+  $handler->display->display_options['fields']['field_highways']['id'] = 'field_highways';
+  $handler->display->display_options['fields']['field_highways']['table'] = 'field_data_field_highways';
+  $handler->display->display_options['fields']['field_highways']['field'] = 'field_highways';
+  $handler->display->display_options['fields']['field_highways']['label'] = 'Highway';
+  /* Field: Field: Regions */
+  $handler->display->display_options['fields']['field_regions']['id'] = 'field_regions';
+  $handler->display->display_options['fields']['field_regions']['table'] = 'field_data_field_regions';
+  $handler->display->display_options['fields']['field_regions']['field'] = 'field_regions';
+  $handler->display->display_options['fields']['field_regions']['label'] = 'Region';
+  /* Field: Field: Counties */
+  $handler->display->display_options['fields']['field_counties']['id'] = 'field_counties';
+  $handler->display->display_options['fields']['field_counties']['table'] = 'field_data_field_counties';
+  $handler->display->display_options['fields']['field_counties']['field'] = 'field_counties';
+  $handler->display->display_options['fields']['field_counties']['label'] = 'County';
+  $handler->display->display_options['fields']['field_counties']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_counties']['element_class'] = 'field-content';
+  $handler->display->display_options['fields']['field_counties']['element_label_type'] = 'span';
+  $handler->display->display_options['fields']['field_counties']['element_label_class'] = 'views-label views-label-field-counties';
+  $handler->display->display_options['fields']['field_counties']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['field_counties']['element_wrapper_class'] = 'views-field-field-counties';
+  $handler->display->display_options['fields']['field_counties']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_counties']['delta_offset'] = '0';
   /* Field: Content: Location */
   $handler->display->display_options['fields']['field_milepost']['id'] = 'field_milepost';
   $handler->display->display_options['fields']['field_milepost']['table'] = 'field_data_field_milepost';
   $handler->display->display_options['fields']['field_milepost']['field'] = 'field_milepost';
   $handler->display->display_options['fields']['field_milepost']['element_type'] = 'span';
-  $handler->display->display_options['fields']['field_milepost']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_milepost']['element_class'] = 'field-content';
+  $handler->display->display_options['fields']['field_milepost']['element_label_type'] = 'span';
+  $handler->display->display_options['fields']['field_milepost']['element_label_class'] = 'views-label views-label-field-milepost';
+  $handler->display->display_options['fields']['field_milepost']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['field_milepost']['element_wrapper_class'] = 'views-field views-field-field-milepost';
+  $handler->display->display_options['fields']['field_milepost']['element_default_classes'] = FALSE;
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -279,6 +295,17 @@ function wsdot_roadwork_view_views_default_views() {
   $handler->display->display_options['fields']['body']['element_class'] = 'DescriptionText';
   $handler->display->display_options['fields']['body']['element_label_type'] = 'span';
   $handler->display->display_options['fields']['body']['element_label_class'] = 'DescriptionHdr';
+  /* Field: Content: Work Schedule */
+  $handler->display->display_options['fields']['field_start_date']['id'] = 'field_start_date';
+  $handler->display->display_options['fields']['field_start_date']['table'] = 'field_data_field_start_date';
+  $handler->display->display_options['fields']['field_start_date']['field'] = 'field_start_date';
+  $handler->display->display_options['fields']['field_start_date']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
   /* Field: Field: Project */
   $handler->display->display_options['fields']['field_project_ref']['id'] = 'field_project_ref';
   $handler->display->display_options['fields']['field_project_ref']['table'] = 'field_data_field_project_ref';
@@ -303,7 +330,7 @@ function wsdot_roadwork_view_views_default_views() {
   $handler->display->display_options['fields']['field_external_project']['id'] = 'field_external_project';
   $handler->display->display_options['fields']['field_external_project']['table'] = 'field_data_field_external_project';
   $handler->display->display_options['fields']['field_external_project']['field'] = 'field_external_project';
-  $handler->display->display_options['fields']['field_external_project']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_external_project']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_external_project']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_external_project']['click_sort_column'] = 'url';
   /* Field: Field: External contact */
@@ -313,31 +340,13 @@ function wsdot_roadwork_view_views_default_views() {
   $handler->display->display_options['fields']['field_contact_info']['alter']['trim_whitespace'] = TRUE;
   $handler->display->display_options['fields']['field_contact_info']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_contact_info']['element_class'] = 'ExternalContactFields';
-  $handler->display->display_options['fields']['field_contact_info']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_contact_info']['element_label_type'] = '0';
   $handler->display->display_options['fields']['field_contact_info']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['field_contact_info']['type'] = 'field_collection_fields';
   $handler->display->display_options['fields']['field_contact_info']['settings'] = array(
     'view_mode' => 'full',
   );
-  /* Field: Field: Regions */
-  $handler->display->display_options['fields']['field_regions']['id'] = 'field_regions';
-  $handler->display->display_options['fields']['field_regions']['table'] = 'field_data_field_regions';
-  $handler->display->display_options['fields']['field_regions']['field'] = 'field_regions';
-  $handler->display->display_options['fields']['field_regions']['label'] = 'Region';
-  $handler->display->display_options['fields']['field_regions']['element_label_type'] = 'strong';
-  /* Field: Content: Highways */
-  $handler->display->display_options['fields']['field_highways']['id'] = 'field_highways';
-  $handler->display->display_options['fields']['field_highways']['table'] = 'field_data_field_highways';
-  $handler->display->display_options['fields']['field_highways']['field'] = 'field_highways';
-  $handler->display->display_options['fields']['field_highways']['label'] = 'Highway';
-  $handler->display->display_options['fields']['field_highways']['element_label_type'] = 'strong';
-  /* Field: Field: Counties */
-  $handler->display->display_options['fields']['field_counties']['id'] = 'field_counties';
-  $handler->display->display_options['fields']['field_counties']['table'] = 'field_data_field_counties';
-  $handler->display->display_options['fields']['field_counties']['field'] = 'field_counties';
-  $handler->display->display_options['fields']['field_counties']['label'] = 'County';
-  $handler->display->display_options['fields']['field_counties']['element_label_type'] = 'strong';
-  $handler->display->display_options['fields']['field_counties']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_contact_info']['delta_offset'] = '0';
   $handler->display->display_options['path'] = 'roadwork';
 
   /* Display: Content pane */
