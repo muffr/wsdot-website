@@ -59,121 +59,8 @@ function wsdot_home_panel_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-27a2d63f-2166-46b7-bc39-d6af2c85e778';
-    $pane->panel = 'left';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'nodequeue_11-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '27a2d63f-2166-46b7-bc39-d6af2c85e778';
-    $display->content['new-27a2d63f-2166-46b7-bc39-d6af2c85e778'] = $pane;
-    $display->panels['left'][0] = 'new-27a2d63f-2166-46b7-bc39-d6af2c85e778';
-    $pane = new stdClass();
-    $pane->pid = 'new-dc53af43-1385-4eeb-b22e-c8f8c9cf9fe2';
-    $pane->panel = 'left';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => 'Priorities',
-      'body' => '<div class="widgetdata">
-<ul class="content">
-	<li><a href="http://www.wsdot.wa.gov/Secretary/ResultsWSDOT.htm" rel="nofollow">Results WSDOT</a></li>
-	<li><a href="http://www.wsdot.wa.gov/Projects/PracticalDesign/" rel="nofollow">Practical Design and Solutions</a></li>
-	<li><a href="http://www.wsdot.wa.gov/publications/fulltext/secretary/ProposedReforms.pdf" rel="nofollow">Performance and Accountability through Reforms (pdf 200 kb)</a> and <a href="http://www.wsdot.wa.gov/publications/fulltext/secretary/ProposedReforms_2pg.pdf" rel="nofollow">an update on our progress (pdf 61 kb)</a></li>
-	<li><a href="http://www.wsdot.wa.gov/publications/fulltext/secretary/StateOfTransportation.pdf" rel="nofollow">State of Transportation (pdf 1.22 mb)</a></li>
-	<li><a href="http://www.wsdot.wa.gov/accountability/" rel="nofollow">Accountability</a></li>
-</ul>
-</div>',
-      'format' => 'wysiwyg',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = 'dc53af43-1385-4eeb-b22e-c8f8c9cf9fe2';
-    $display->content['new-dc53af43-1385-4eeb-b22e-c8f8c9cf9fe2'] = $pane;
-    $display->panels['left'][1] = 'new-dc53af43-1385-4eeb-b22e-c8f8c9cf9fe2';
-    $pane = new stdClass();
-    $pane->pid = 'new-a579af57-dac5-4725-bf3a-33b7b388b312';
-    $pane->panel = 'middle';
-    $pane->type = 'block';
-    $pane->subtype = 'block-11';
-    $pane->shown = FALSE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => 'High Impact Alerts',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'a579af57-dac5-4725-bf3a-33b7b388b312';
-    $display->content['new-a579af57-dac5-4725-bf3a-33b7b388b312'] = $pane;
-    $display->panels['middle'][0] = 'new-a579af57-dac5-4725-bf3a-33b7b388b312';
-    $pane = new stdClass();
-    $pane->pid = 'new-2d3450f1-4f4d-4a7c-8462-d25c9894586e';
-    $pane->panel = 'middle';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'nodequeue_1-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '2d3450f1-4f4d-4a7c-8462-d25c9894586e';
-    $display->content['new-2d3450f1-4f4d-4a7c-8462-d25c9894586e'] = $pane;
-    $display->panels['middle'][1] = 'new-2d3450f1-4f4d-4a7c-8462-d25c9894586e';
-    $pane = new stdClass();
-    $pane->pid = 'new-9a284c11-52c3-4f0c-bf13-2bf263113892';
-    $pane->panel = 'middle';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'nodequeue_6-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = '9a284c11-52c3-4f0c-bf13-2bf263113892';
-    $display->content['new-9a284c11-52c3-4f0c-bf13-2bf263113892'] = $pane;
-    $display->panels['middle'][2] = 'new-9a284c11-52c3-4f0c-bf13-2bf263113892';
-    $pane = new stdClass();
     $pane->pid = 'new-84702018-b080-437d-9070-2d2781e684f5';
-    $pane->panel = 'right';
+    $pane->panel = 'left';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
@@ -219,10 +106,10 @@ function wsdot_home_panel_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = '84702018-b080-437d-9070-2d2781e684f5';
     $display->content['new-84702018-b080-437d-9070-2d2781e684f5'] = $pane;
-    $display->panels['right'][0] = 'new-84702018-b080-437d-9070-2d2781e684f5';
+    $display->panels['left'][0] = 'new-84702018-b080-437d-9070-2d2781e684f5';
     $pane = new stdClass();
     $pane->pid = 'new-893cb5da-6e5c-46a9-a32c-6be8dc285f6b';
-    $pane->panel = 'right';
+    $pane->panel = 'left';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
@@ -254,7 +141,120 @@ function wsdot_home_panel_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = '893cb5da-6e5c-46a9-a32c-6be8dc285f6b';
     $display->content['new-893cb5da-6e5c-46a9-a32c-6be8dc285f6b'] = $pane;
-    $display->panels['right'][1] = 'new-893cb5da-6e5c-46a9-a32c-6be8dc285f6b';
+    $display->panels['left'][1] = 'new-893cb5da-6e5c-46a9-a32c-6be8dc285f6b';
+    $pane = new stdClass();
+    $pane->pid = 'new-9a284c11-52c3-4f0c-bf13-2bf263113892';
+    $pane->panel = 'left';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'nodequeue_6-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '9a284c11-52c3-4f0c-bf13-2bf263113892';
+    $display->content['new-9a284c11-52c3-4f0c-bf13-2bf263113892'] = $pane;
+    $display->panels['left'][2] = 'new-9a284c11-52c3-4f0c-bf13-2bf263113892';
+    $pane = new stdClass();
+    $pane->pid = 'new-a579af57-dac5-4725-bf3a-33b7b388b312';
+    $pane->panel = 'middle';
+    $pane->type = 'block';
+    $pane->subtype = 'block-11';
+    $pane->shown = FALSE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'High Impact Alerts',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'a579af57-dac5-4725-bf3a-33b7b388b312';
+    $display->content['new-a579af57-dac5-4725-bf3a-33b7b388b312'] = $pane;
+    $display->panels['middle'][0] = 'new-a579af57-dac5-4725-bf3a-33b7b388b312';
+    $pane = new stdClass();
+    $pane->pid = 'new-2d3450f1-4f4d-4a7c-8462-d25c9894586e';
+    $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'nodequeue_1-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '2d3450f1-4f4d-4a7c-8462-d25c9894586e';
+    $display->content['new-2d3450f1-4f4d-4a7c-8462-d25c9894586e'] = $pane;
+    $display->panels['middle'][1] = 'new-2d3450f1-4f4d-4a7c-8462-d25c9894586e';
+    $pane = new stdClass();
+    $pane->pid = 'new-dc53af43-1385-4eeb-b22e-c8f8c9cf9fe2';
+    $pane->panel = 'middle';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => 'Priorities',
+      'body' => '<div class="widgetdata">
+<ul class="content">
+	<li><a href="http://www.wsdot.wa.gov/Secretary/ResultsWSDOT.htm" rel="nofollow">Results WSDOT</a></li>
+	<li><a href="http://www.wsdot.wa.gov/Projects/PracticalDesign/" rel="nofollow">Practical Design and Solutions</a></li>
+	<li><a href="http://www.wsdot.wa.gov/publications/fulltext/secretary/ProposedReforms.pdf" rel="nofollow">Performance and Accountability through Reforms (pdf 200 kb)</a> and <a href="http://www.wsdot.wa.gov/publications/fulltext/secretary/ProposedReforms_2pg.pdf" rel="nofollow">an update on our progress (pdf 61 kb)</a></li>
+	<li><a href="http://www.wsdot.wa.gov/publications/fulltext/secretary/StateOfTransportation.pdf" rel="nofollow">State of Transportation (pdf 1.22 mb)</a></li>
+	<li><a href="http://www.wsdot.wa.gov/accountability/" rel="nofollow">Accountability</a></li>
+</ul>
+</div>',
+      'format' => 'wysiwyg',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = 'dc53af43-1385-4eeb-b22e-c8f8c9cf9fe2';
+    $display->content['new-dc53af43-1385-4eeb-b22e-c8f8c9cf9fe2'] = $pane;
+    $display->panels['middle'][2] = 'new-dc53af43-1385-4eeb-b22e-c8f8c9cf9fe2';
+    $pane = new stdClass();
+    $pane->pid = 'new-27a2d63f-2166-46b7-bc39-d6af2c85e778';
+    $pane->panel = 'right';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'nodequeue_11-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '27a2d63f-2166-46b7-bc39-d6af2c85e778';
+    $display->content['new-27a2d63f-2166-46b7-bc39-d6af2c85e778'] = $pane;
+    $display->panels['right'][0] = 'new-27a2d63f-2166-46b7-bc39-d6af2c85e778';
     $pane = new stdClass();
     $pane->pid = 'new-5d4d6882-31ae-4315-aeeb-b290836d1c49';
     $pane->panel = 'right';
@@ -287,11 +287,11 @@ function wsdot_home_panel_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '5d4d6882-31ae-4315-aeeb-b290836d1c49';
     $display->content['new-5d4d6882-31ae-4315-aeeb-b290836d1c49'] = $pane;
-    $display->panels['right'][2] = 'new-5d4d6882-31ae-4315-aeeb-b290836d1c49';
+    $display->panels['right'][1] = 'new-5d4d6882-31ae-4315-aeeb-b290836d1c49';
     $pane = new stdClass();
     $pane->pid = 'new-a0bf86f7-c7f7-457f-8c66-c89dfb005cf1';
     $pane->panel = 'right';
@@ -320,11 +320,11 @@ function wsdot_home_panel_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = 'a0bf86f7-c7f7-457f-8c66-c89dfb005cf1';
     $display->content['new-a0bf86f7-c7f7-457f-8c66-c89dfb005cf1'] = $pane;
-    $display->panels['right'][3] = 'new-a0bf86f7-c7f7-457f-8c66-c89dfb005cf1';
+    $display->panels['right'][2] = 'new-a0bf86f7-c7f7-457f-8c66-c89dfb005cf1';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
