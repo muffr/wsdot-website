@@ -50,7 +50,7 @@ function wsdot_basic_page_content_type_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 31,
+      'weight' => 2,
     ),
   );
 
@@ -65,7 +65,7 @@ function wsdot_basic_page_content_type_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 2,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -93,22 +93,22 @@ function wsdot_basic_page_content_type_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 34,
+      'weight' => 5,
     ),
   );
 
-  // Exported field_instance: 'node-page-field_subjects'
-  $field_instances['node-page-field_subjects'] = array(
+  // Exported field_instance: 'node-page-field_site_structure'
+  $field_instances['node-page-field_site_structure'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'The URL location on the site where this content should reside.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -117,10 +117,11 @@ function wsdot_basic_page_content_type_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
-    'field_name' => 'field_subjects',
-    'label' => 'Subjects',
-    'required' => 1,
+    'field_name' => 'field_site_structure',
+    'label' => 'Site Structure',
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -129,16 +130,16 @@ function wsdot_basic_page_content_type_field_default_field_instances() {
       'module' => 'hs_taxonomy',
       'settings' => array(),
       'type' => 'taxonomy_hs',
-      'weight' => 32,
+      'weight' => 4,
     ),
-    'workbench_access_field' => 0,
   );
 
   // Translatables
   // Included for use with string extractors like potx.
   t('Attachments');
   t('Body');
-  t('Subjects');
+  t('Site Structure');
+  t('The URL location on the site where this content should reside.');
 
   return $field_instances;
 }
