@@ -663,7 +663,7 @@ function wsdot_field_bases_field_default_field_bases() {
     'module' => 'file',
     'settings' => array(
       'display_default' => 0,
-      'display_field' => 0,
+      'display_field' => 1,
       'uri_scheme' => 'public',
     ),
     'translatable' => 0,
