@@ -93,7 +93,7 @@ function wsdot_basic_page_content_type_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 5,
+      'weight' => 3,
     ),
   );
 
@@ -121,7 +121,7 @@ function wsdot_basic_page_content_type_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_site_structure',
     'label' => 'Site Structure',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
