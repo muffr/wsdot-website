@@ -24,14 +24,13 @@ function wsdot_publication_content_type_field_group_info() {
     'weight' => '3',
     'children' => array(
       0 => 'field_chapter',
-      1 => 'field_description',
-      2 => 'field_number_of_pages',
-      3 => 'field_originator',
+      1 => 'field_number_of_pages',
+      2 => 'field_originator',
+      3 => 'field_publication_date',
       4 => 'field_publication_number',
       5 => 'field_publication_version',
       6 => 'field_related_publications',
-      7 => 'field_subjects',
-      8 => 'field_publication_date',
+      7 => 'body',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

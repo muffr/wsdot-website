@@ -10,6 +10,55 @@
 function wsdot_publication_content_type_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-publication-body'
+  $field_instances['node-publication-body'] = array(
+    'bundle' => 'publication',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'body',
+    'label' => 'Description',
+    'required' => 0,
+    'settings' => array(
+      'display_summary' => 0,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 20,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => 18,
+    ),
+  );
+
   // Exported field_instance: 'node-publication-field_authors'
   $field_instances['node-publication-field_authors'] = array(
     'bundle' => 'publication',
@@ -22,7 +71,7 @@ function wsdot_publication_content_type_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 5,
       ),
       'full' => array(
         'label' => 'inline',
@@ -69,7 +118,7 @@ function wsdot_publication_content_type_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 13,
+        'weight' => 11,
       ),
       'full' => array(
         'label' => 'inline',
@@ -118,7 +167,7 @@ function wsdot_publication_content_type_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 25,
+      'weight' => 23,
     ),
   );
 
@@ -136,7 +185,7 @@ function wsdot_publication_content_type_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_fields',
-        'weight' => 7,
+        'weight' => 6,
       ),
       'full' => array(
         'label' => 'inline',
@@ -171,55 +220,6 @@ function wsdot_publication_content_type_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_description'
-  $field_instances['node-publication-field_description'] = array(
-    'bundle' => 'publication',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Use only the description field and not the summary field',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
-      ),
-      'full' => array(
-        'label' => 'inline',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_description',
-    'label' => 'Description',
-    'required' => 1,
-    'settings' => array(
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 10,
-        'summary_rows' => 5,
-      ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 18,
-    ),
-  );
-
   // Exported field_instance: 'node-publication-field_number_of_pages'
   $field_instances['node-publication-field_number_of_pages'] = array(
     'bundle' => 'publication',
@@ -232,7 +232,7 @@ function wsdot_publication_content_type_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 9,
+        'weight' => 8,
       ),
       'full' => array(
         'label' => 'inline',
@@ -264,7 +264,7 @@ function wsdot_publication_content_type_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 22,
+      'weight' => 21,
     ),
   );
 
@@ -280,7 +280,7 @@ function wsdot_publication_content_type_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 7,
       ),
       'full' => array(
         'label' => 'inline',
@@ -312,7 +312,7 @@ function wsdot_publication_content_type_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 21,
+      'weight' => 20,
     ),
   );
 
@@ -333,7 +333,7 @@ function wsdot_publication_content_type_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'full' => array(
         'label' => 'above',
@@ -379,7 +379,7 @@ function wsdot_publication_content_type_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_select',
-      'weight' => 20,
+      'weight' => 19,
     ),
   );
 
@@ -395,7 +395,7 @@ function wsdot_publication_content_type_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'full' => array(
         'label' => 'above',
@@ -442,7 +442,7 @@ function wsdot_publication_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 18,
       ),
       'full' => array(
         'label' => 'above',
@@ -488,7 +488,7 @@ function wsdot_publication_content_type_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 4,
       ),
       'full' => array(
         'label' => 'above',
@@ -536,7 +536,7 @@ function wsdot_publication_content_type_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 11,
+        'weight' => 9,
       ),
       'full' => array(
         'label' => 'above',
@@ -585,55 +585,7 @@ function wsdot_publication_content_type_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 24,
-    ),
-  );
-
-  // Exported field_instance: 'node-publication-field_subjects'
-  $field_instances['node-publication-field_subjects'] = array(
-    'bundle' => 'publication',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 10,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'module' => 'ds',
-        'settings' => array(
-          'taxonomy_term_reference_view_mode' => 'full',
-          'use_content_language' => TRUE,
-        ),
-        'type' => 'ds_taxonomy_view_mode',
-        'weight' => 8,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_subjects',
-    'label' => 'Subjects',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'hs_taxonomy',
-      'settings' => array(),
-      'type' => 'taxonomy_hs',
-      'weight' => 23,
+      'weight' => 22,
     ),
   );
 
@@ -655,10 +607,8 @@ function wsdot_publication_content_type_field_default_field_instances() {
   t('Publication Type');
   t('Publication Version');
   t('Related Publications');
-  t('Subjects');
   t('The alphanumeric identifier for the publication. Does not include version number');
   t('The company or organization that created or authored the document. Within WSDOT, this may be the office and division.');
-  t('Use only the description field and not the summary field');
 
   return $field_instances;
 }
