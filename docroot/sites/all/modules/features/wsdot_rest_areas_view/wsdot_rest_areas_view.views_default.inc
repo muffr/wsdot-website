@@ -106,10 +106,11 @@ function wsdot_rest_areas_view_views_default_views() {
   $handler->display->display_options['fields']['field_counties']['table'] = 'field_data_field_counties';
   $handler->display->display_options['fields']['field_counties']['field'] = 'field_counties';
   $handler->display->display_options['fields']['field_counties']['delta_offset'] = '0';
-  /* Field: Content: Highways */
+  /* Field: Content: Highway */
   $handler->display->display_options['fields']['field_highways']['id'] = 'field_highways';
   $handler->display->display_options['fields']['field_highways']['table'] = 'field_data_field_highways';
   $handler->display->display_options['fields']['field_highways']['field'] = 'field_highways';
+  $handler->display->display_options['fields']['field_highways']['label'] = 'Highways';
   /* Field: Content: Direction */
   $handler->display->display_options['fields']['field_highway_direction']['id'] = 'field_highway_direction';
   $handler->display->display_options['fields']['field_highway_direction']['table'] = 'field_data_field_highway_direction';
@@ -180,7 +181,7 @@ function wsdot_rest_areas_view_views_default_views() {
     1 => 0,
     11 => 0,
   );
-  /* Filter criterion: Content: Highways (field_highways) */
+  /* Filter criterion: Content: Highway (field_highways) */
   $handler->display->display_options['filters']['field_highways_tid']['id'] = 'field_highways_tid';
   $handler->display->display_options['filters']['field_highways_tid']['table'] = 'field_data_field_highways';
   $handler->display->display_options['filters']['field_highways_tid']['field'] = 'field_highways_tid';
