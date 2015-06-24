@@ -143,13 +143,31 @@ function wsdot_home_panel_default_page_manager_pages() {
     $display->content['new-893cb5da-6e5c-46a9-a32c-6be8dc285f6b'] = $pane;
     $display->panels['left'][1] = 'new-893cb5da-6e5c-46a9-a32c-6be8dc285f6b';
     $pane = new stdClass();
-    $pane->pid = 'new-9a284c11-52c3-4f0c-bf13-2bf263113892';
+    $pane->pid = 'new-5d4d6882-31ae-4315-aeeb-b290836d1c49';
     $pane->panel = 'left';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'nodequeue_6-panel_pane_1';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => 'Stay Connected',
+      'body' => '<div class="widgetdata">
+<ul class="threecol_icons" style="list-style: none;">
+	<li><a class="blogger" href="http://wsdotblog.blogspot.com/" rel="nofollow">Blogger</a></li>
+	<li><a class="flickr" href="http://www.flickr.com/photos/wsdot/" rel="nofollow">Flickr</a></li>
+	<li><a class="rss" href="http://www.wsdot.wa.gov/news/rss/" rel="nofollow">RSS</a></li>
+	<li><a class="twitter" href="http://twitter.com/wsdot" rel="nofollow">Twitter</a></li>
+	<li><a class="youtube" href="http://www.youtube.com/wsdot" rel="nofollow">YouTube</a></li>
+	<li><a class="facebook" href="http://www.facebook.com/wsdot" rel="nofollow">Facebook</a></li>
+</ul>
+
+<div class="cl">&nbsp;</div>
+</div>
+',
+      'format' => 'wysiwyg',
+      'substitute' => TRUE,
+    );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -158,9 +176,42 @@ function wsdot_home_panel_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
-    $pane->uuid = '9a284c11-52c3-4f0c-bf13-2bf263113892';
-    $display->content['new-9a284c11-52c3-4f0c-bf13-2bf263113892'] = $pane;
-    $display->panels['left'][2] = 'new-9a284c11-52c3-4f0c-bf13-2bf263113892';
+    $pane->uuid = '5d4d6882-31ae-4315-aeeb-b290836d1c49';
+    $display->content['new-5d4d6882-31ae-4315-aeeb-b290836d1c49'] = $pane;
+    $display->panels['left'][2] = 'new-5d4d6882-31ae-4315-aeeb-b290836d1c49';
+    $pane = new stdClass();
+    $pane->pid = 'new-a0bf86f7-c7f7-457f-8c66-c89dfb005cf1';
+    $pane->panel = 'left';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => 'Good To Go! Tolling',
+      'body' => '<div class="widgetdata">
+<div class="goodtogobg">&nbsp;</div>
+
+<ul class="content">
+	<li><a href="http://www.wsdot.wa.gov/goodtogo/" rel="nofollow">Learn More About Tolling</a></li>
+	<li><a href="https://mygoodtogo.com/olcsc/AccountLogin.do" rel="nofollow">Pay Your Toll Bill</a></li>
+</ul>
+</div>
+',
+      'format' => 'wysiwyg',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = 'a0bf86f7-c7f7-457f-8c66-c89dfb005cf1';
+    $display->content['new-a0bf86f7-c7f7-457f-8c66-c89dfb005cf1'] = $pane;
+    $display->panels['left'][3] = 'new-a0bf86f7-c7f7-457f-8c66-c89dfb005cf1';
     $pane = new stdClass();
     $pane->pid = 'new-a579af57-dac5-4725-bf3a-33b7b388b312';
     $pane->panel = 'middle';
@@ -204,8 +255,46 @@ function wsdot_home_panel_default_page_manager_pages() {
     $display->content['new-2d3450f1-4f4d-4a7c-8462-d25c9894586e'] = $pane;
     $display->panels['middle'][1] = 'new-2d3450f1-4f4d-4a7c-8462-d25c9894586e';
     $pane = new stdClass();
-    $pane->pid = 'new-dc53af43-1385-4eeb-b22e-c8f8c9cf9fe2';
+    $pane->pid = 'new-9a284c11-52c3-4f0c-bf13-2bf263113892';
     $pane->panel = 'middle';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'nodequeue_6-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '9a284c11-52c3-4f0c-bf13-2bf263113892';
+    $display->content['new-9a284c11-52c3-4f0c-bf13-2bf263113892'] = $pane;
+    $display->panels['middle'][2] = 'new-9a284c11-52c3-4f0c-bf13-2bf263113892';
+    $pane = new stdClass();
+    $pane->pid = 'new-27a2d63f-2166-46b7-bc39-d6af2c85e778';
+    $pane->panel = 'right';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'nodequeue_11-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '27a2d63f-2166-46b7-bc39-d6af2c85e778';
+    $display->content['new-27a2d63f-2166-46b7-bc39-d6af2c85e778'] = $pane;
+    $display->panels['right'][0] = 'new-27a2d63f-2166-46b7-bc39-d6af2c85e778';
+    $pane = new stdClass();
+    $pane->pid = 'new-dc53af43-1385-4eeb-b22e-c8f8c9cf9fe2';
+    $pane->panel = 'right';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
@@ -231,100 +320,11 @@ function wsdot_home_panel_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'dc53af43-1385-4eeb-b22e-c8f8c9cf9fe2';
     $display->content['new-dc53af43-1385-4eeb-b22e-c8f8c9cf9fe2'] = $pane;
-    $display->panels['middle'][2] = 'new-dc53af43-1385-4eeb-b22e-c8f8c9cf9fe2';
-    $pane = new stdClass();
-    $pane->pid = 'new-27a2d63f-2166-46b7-bc39-d6af2c85e778';
-    $pane->panel = 'right';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'nodequeue_11-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '27a2d63f-2166-46b7-bc39-d6af2c85e778';
-    $display->content['new-27a2d63f-2166-46b7-bc39-d6af2c85e778'] = $pane;
-    $display->panels['right'][0] = 'new-27a2d63f-2166-46b7-bc39-d6af2c85e778';
-    $pane = new stdClass();
-    $pane->pid = 'new-5d4d6882-31ae-4315-aeeb-b290836d1c49';
-    $pane->panel = 'right';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => 'Stay Connected',
-      'body' => '<div class="widgetdata">
-<ul class="threecol_icons" style="list-style: none;">
-	<li><a class="blogger" href="http://wsdotblog.blogspot.com/" rel="nofollow">Blogger</a></li>
-	<li><a class="flickr" href="http://www.flickr.com/photos/wsdot/" rel="nofollow">Flickr</a></li>
-	<li><a class="rss" href="http://www.wsdot.wa.gov/news/rss/" rel="nofollow">RSS</a></li>
-	<li><a class="twitter" href="http://twitter.com/wsdot" rel="nofollow">Twitter</a></li>
-	<li><a class="youtube" href="http://www.youtube.com/wsdot" rel="nofollow">YouTube</a></li>
-	<li><a class="facebook" href="http://www.facebook.com/wsdot" rel="nofollow">Facebook</a></li>
-</ul>
-
-<div class="cl">&nbsp;</div>
-</div>
-',
-      'format' => 'wysiwyg',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '5d4d6882-31ae-4315-aeeb-b290836d1c49';
-    $display->content['new-5d4d6882-31ae-4315-aeeb-b290836d1c49'] = $pane;
-    $display->panels['right'][1] = 'new-5d4d6882-31ae-4315-aeeb-b290836d1c49';
-    $pane = new stdClass();
-    $pane->pid = 'new-a0bf86f7-c7f7-457f-8c66-c89dfb005cf1';
-    $pane->panel = 'right';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => 'Good To Go! Tolling',
-      'body' => '<div class="widgetdata">
-<div class="goodtogobg">&nbsp;</div>
-
-<ul class="content">
-	<li><a href="http://www.wsdot.wa.gov/goodtogo/" rel="nofollow">Learn More About Tolling</a></li>
-	<li><a href="https://mygoodtogo.com/olcsc/AccountLogin.do" rel="nofollow">Pay Your Toll Bill</a></li>
-</ul>
-</div>
-',
-      'format' => 'wysiwyg',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = 'a0bf86f7-c7f7-457f-8c66-c89dfb005cf1';
-    $display->content['new-a0bf86f7-c7f7-457f-8c66-c89dfb005cf1'] = $pane;
-    $display->panels['right'][2] = 'new-a0bf86f7-c7f7-457f-8c66-c89dfb005cf1';
+    $display->panels['right'][1] = 'new-dc53af43-1385-4eeb-b22e-c8f8c9cf9fe2';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
