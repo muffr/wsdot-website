@@ -143,6 +143,39 @@ function wsdot_home_panel_default_page_manager_pages() {
     $display->content['new-893cb5da-6e5c-46a9-a32c-6be8dc285f6b'] = $pane;
     $display->panels['left'][1] = 'new-893cb5da-6e5c-46a9-a32c-6be8dc285f6b';
     $pane = new stdClass();
+    $pane->pid = 'new-a0bf86f7-c7f7-457f-8c66-c89dfb005cf1';
+    $pane->panel = 'left';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => 'Good To Go! Tolling',
+      'body' => '<div class="widgetdata">
+<div class="goodtogobg">&nbsp;</div>
+
+<ul class="content">
+	<li><a href="http://www.wsdot.wa.gov/goodtogo/" rel="nofollow">Learn More About Tolling</a></li>
+	<li><a href="https://mygoodtogo.com/olcsc/AccountLogin.do" rel="nofollow">Pay Your Toll Bill</a></li>
+</ul>
+</div>
+',
+      'format' => 'wysiwyg',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = 'a0bf86f7-c7f7-457f-8c66-c89dfb005cf1';
+    $display->content['new-a0bf86f7-c7f7-457f-8c66-c89dfb005cf1'] = $pane;
+    $display->panels['left'][2] = 'new-a0bf86f7-c7f7-457f-8c66-c89dfb005cf1';
+    $pane = new stdClass();
     $pane->pid = 'new-5d4d6882-31ae-4315-aeeb-b290836d1c49';
     $pane->panel = 'left';
     $pane->type = 'custom';
@@ -174,44 +207,11 @@ function wsdot_home_panel_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = '5d4d6882-31ae-4315-aeeb-b290836d1c49';
     $display->content['new-5d4d6882-31ae-4315-aeeb-b290836d1c49'] = $pane;
-    $display->panels['left'][2] = 'new-5d4d6882-31ae-4315-aeeb-b290836d1c49';
-    $pane = new stdClass();
-    $pane->pid = 'new-a0bf86f7-c7f7-457f-8c66-c89dfb005cf1';
-    $pane->panel = 'left';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => 'Good To Go! Tolling',
-      'body' => '<div class="widgetdata">
-<div class="goodtogobg">&nbsp;</div>
-
-<ul class="content">
-	<li><a href="http://www.wsdot.wa.gov/goodtogo/" rel="nofollow">Learn More About Tolling</a></li>
-	<li><a href="https://mygoodtogo.com/olcsc/AccountLogin.do" rel="nofollow">Pay Your Toll Bill</a></li>
-</ul>
-</div>
-',
-      'format' => 'wysiwyg',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $pane->uuid = 'a0bf86f7-c7f7-457f-8c66-c89dfb005cf1';
-    $display->content['new-a0bf86f7-c7f7-457f-8c66-c89dfb005cf1'] = $pane;
-    $display->panels['left'][3] = 'new-a0bf86f7-c7f7-457f-8c66-c89dfb005cf1';
+    $display->panels['left'][3] = 'new-5d4d6882-31ae-4315-aeeb-b290836d1c49';
     $pane = new stdClass();
     $pane->pid = 'new-a579af57-dac5-4725-bf3a-33b7b388b312';
     $pane->panel = 'middle';
