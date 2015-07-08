@@ -1,0 +1,11 @@
+name = WSDOT Static Left Navigation View
+description = View which displays a static left navigation block on enabled content types.
+core = 7.x
+package = WSDOT Views
+version = 7.x-1.0
+project = wsdot_static_left_navigation_view
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = static_left_navigation
+features_exclude[dependencies][ctools] = ctools

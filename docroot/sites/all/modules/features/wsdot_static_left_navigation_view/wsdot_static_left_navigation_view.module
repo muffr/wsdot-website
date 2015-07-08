@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WSDOT Static Left Navigation View feature.
+ */
+
+include_once 'wsdot_static_left_navigation_view.features.inc';
