@@ -71,7 +71,7 @@ function wsdot_publication_content_type_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'full' => array(
         'label' => 'inline',
@@ -118,7 +118,7 @@ function wsdot_publication_content_type_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 11,
+        'weight' => 13,
       ),
       'full' => array(
         'label' => 'inline',
@@ -167,7 +167,7 @@ function wsdot_publication_content_type_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 23,
+      'weight' => 25,
     ),
   );
 
@@ -185,7 +185,7 @@ function wsdot_publication_content_type_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_fields',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'full' => array(
         'label' => 'inline',
@@ -220,6 +220,55 @@ function wsdot_publication_content_type_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-publication-field_description'
+  $field_instances['node-publication-field_description'] = array(
+    'bundle' => 'publication',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Use only the description field and not the summary field',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'full' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_description',
+    'label' => 'Description',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 10,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => 18,
+    ),
+  );
+
   // Exported field_instance: 'node-publication-field_number_of_pages'
   $field_instances['node-publication-field_number_of_pages'] = array(
     'bundle' => 'publication',
@@ -232,7 +281,7 @@ function wsdot_publication_content_type_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'full' => array(
         'label' => 'inline',
@@ -264,7 +313,7 @@ function wsdot_publication_content_type_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 21,
+      'weight' => 22,
     ),
   );
 
@@ -280,7 +329,7 @@ function wsdot_publication_content_type_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'full' => array(
         'label' => 'inline',
@@ -312,7 +361,7 @@ function wsdot_publication_content_type_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 20,
+      'weight' => 21,
     ),
   );
 
@@ -333,7 +382,7 @@ function wsdot_publication_content_type_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'full' => array(
         'label' => 'above',
@@ -379,7 +428,7 @@ function wsdot_publication_content_type_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_select',
-      'weight' => 19,
+      'weight' => 20,
     ),
   );
 
@@ -395,7 +444,7 @@ function wsdot_publication_content_type_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'full' => array(
         'label' => 'above',
@@ -442,7 +491,7 @@ function wsdot_publication_content_type_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 20,
       ),
       'full' => array(
         'label' => 'above',
@@ -488,7 +537,7 @@ function wsdot_publication_content_type_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'full' => array(
         'label' => 'above',
@@ -536,7 +585,7 @@ function wsdot_publication_content_type_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 9,
+        'weight' => 11,
       ),
       'full' => array(
         'label' => 'above',
@@ -585,7 +634,7 @@ function wsdot_publication_content_type_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 22,
+      'weight' => 24,
     ),
   );
 
@@ -609,6 +658,7 @@ function wsdot_publication_content_type_field_default_field_instances() {
   t('Related Publications');
   t('The alphanumeric identifier for the publication. Does not include version number');
   t('The company or organization that created or authored the document. Within WSDOT, this may be the office and division.');
+  t('Use only the description field and not the summary field');
 
   return $field_instances;
 }

@@ -50,7 +50,7 @@ function wsdot_news_article_content_type_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '8',
+          'weight' => '7',
         ),
       ),
       'display' => array(),

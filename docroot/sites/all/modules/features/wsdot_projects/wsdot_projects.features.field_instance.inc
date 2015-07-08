@@ -338,7 +338,7 @@ function wsdot_projects_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 7,
+      'weight' => 9,
     ),
     'workbench_access_field' => 0,
   );
@@ -452,6 +452,73 @@ function wsdot_projects_field_default_field_instances() {
       ),
       'type' => 'options_onoff',
       'weight' => 16,
+    ),
+  );
+
+  // Exported field_instance: 'node-project-field_file'
+  $field_instances['node-project-field_file'] = array(
+    'bundle' => 'project',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 25,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_file',
+    'label' => 'Attachments',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 1,
+      'file_directory' => '',
+      'file_extensions' => 'pdf',
+      'filefield_paths' => array(
+        'active_updating' => 0,
+        'file_name' => array(
+          'options' => array(
+            'pathauto' => 0,
+            'transliterate' => 0,
+          ),
+          'value' => '[file:ffp-name-only-original].[file:ffp-extension-original]',
+        ),
+        'file_path' => array(
+          'options' => array(
+            'pathauto' => 0,
+            'transliterate' => 0,
+          ),
+          'value' => '[node:created:custom:Y]/[node:created:custom:m]/[node:created:custom:d]',
+        ),
+        'retroactive_update' => 0,
+      ),
+      'filefield_paths_enabled' => 1,
+      'max_filesize' => '5 MB',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 6,
     ),
   );
 
@@ -633,6 +700,7 @@ function wsdot_projects_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
+    'ds_extras_field_template' => '',
     'entity_type' => 'node',
     'field_name' => 'field_images',
     'label' => 'Images',
@@ -642,6 +710,25 @@ function wsdot_projects_field_default_field_instances() {
       'default_image' => 0,
       'file_directory' => 'images/projects',
       'file_extensions' => 'png gif jpg jpeg',
+      'filefield_paths' => array(
+        'active_updating' => 0,
+        'file_name' => array(
+          'options' => array(
+            'pathauto' => 0,
+            'transliterate' => 0,
+          ),
+          'value' => '[file:ffp-name-only-original].[file:ffp-extension-original]',
+        ),
+        'file_path' => array(
+          'options' => array(
+            'pathauto' => 0,
+            'transliterate' => 0,
+          ),
+          'value' => '[node:created:custom:Y]/[node:created:custom:m]/[node:created:custom:d]',
+        ),
+        'retroactive_update' => 0,
+      ),
+      'filefield_paths_enabled' => 1,
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
@@ -820,6 +907,25 @@ function wsdot_projects_field_default_field_instances() {
       'default_image' => 0,
       'file_directory' => 'images/maps/projects',
       'file_extensions' => 'png gif jpg jpeg',
+      'filefield_paths' => array(
+        'active_updating' => 0,
+        'file_name' => array(
+          'options' => array(
+            'pathauto' => 0,
+            'transliterate' => 0,
+          ),
+          'value' => '[file:ffp-name-only-original].[file:ffp-extension-original]',
+        ),
+        'file_path' => array(
+          'options' => array(
+            'pathauto' => 0,
+            'transliterate' => 0,
+          ),
+          'value' => '[node:created:custom:Y]/[node:created:custom:m]/[node:created:custom:d]',
+        ),
+        'retroactive_update' => 0,
+      ),
+      'filefield_paths_enabled' => 1,
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
@@ -837,7 +943,6 @@ function wsdot_projects_field_default_field_instances() {
           'audio' => 0,
           'document' => 0,
           'image' => 'image',
-          'project_document' => 0,
           'video' => 0,
         ),
         'browser_plugins' => array(
@@ -1096,6 +1201,53 @@ function wsdot_projects_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance: 'node-project-field_site_structure'
+  $field_instances['node-project-field_site_structure'] = array(
+    'bundle' => 'project',
+    'default_value' => array(
+      0 => array(
+        'tid' => 4221,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Location of this page in the website.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 26,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_site_structure',
+    'label' => 'Site Structure',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'hs_taxonomy',
+      'settings' => array(),
+      'type' => 'taxonomy_hs',
+      'weight' => 48,
+    ),
+  );
+
   // Exported field_instance: 'node-project-field_status'
   $field_instances['node-project-field_status'] = array(
     'bundle' => 'project',
@@ -1340,13 +1492,14 @@ function wsdot_projects_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 7,
     ),
     'workbench_access_field' => 0,
   );
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Attachments');
   t('Body');
   t('Camera URL');
   t('Cities');
@@ -1358,6 +1511,7 @@ function wsdot_projects_field_default_field_instances() {
   t('Funding types');
   t('Highways');
   t('Images');
+  t('Location of this page in the website.');
   t('Map');
   t('Modes');
   t('Name');
@@ -1365,6 +1519,7 @@ function wsdot_projects_field_default_field_instances() {
   t('Phone');
   t('Project ID');
   t('Regions');
+  t('Site Structure');
   t('Status');
   t('Status Date');
   t('Tags');
