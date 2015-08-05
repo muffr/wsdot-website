@@ -10,6 +10,55 @@
 function wsdot_publication_content_type_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-publication-body'
+  $field_instances['node-publication-body'] = array(
+    'bundle' => 'publication',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'body',
+    'label' => 'Description',
+    'required' => 0,
+    'settings' => array(
+      'display_summary' => 0,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 20,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => 18,
+    ),
+  );
+
   // Exported field_instance: 'node-publication-field_authors'
   $field_instances['node-publication-field_authors'] = array(
     'bundle' => 'publication',
@@ -589,54 +638,6 @@ function wsdot_publication_content_type_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-publication-field_subjects'
-  $field_instances['node-publication-field_subjects'] = array(
-    'bundle' => 'publication',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 10,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'module' => 'ds',
-        'settings' => array(
-          'taxonomy_term_reference_view_mode' => 'full',
-          'use_content_language' => TRUE,
-        ),
-        'type' => 'ds_taxonomy_view_mode',
-        'weight' => 8,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_subjects',
-    'label' => 'Subjects',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'hs_taxonomy',
-      'settings' => array(),
-      'type' => 'taxonomy_hs',
-      'weight' => 23,
-    ),
-  );
-
   // Translatables
   // Included for use with string extractors like potx.
   t('Authors');
@@ -655,7 +656,6 @@ function wsdot_publication_content_type_field_default_field_instances() {
   t('Publication Type');
   t('Publication Version');
   t('Related Publications');
-  t('Subjects');
   t('The alphanumeric identifier for the publication. Does not include version number');
   t('The company or organization that created or authored the document. Within WSDOT, this may be the office and division.');
   t('Use only the description field and not the summary field');
