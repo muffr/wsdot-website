@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WSDOT News panel feature.
+ */
+
+include_once 'wsdot_news_panel.features.inc';
