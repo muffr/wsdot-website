@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WSDOT Public NewsItem Import feature.
+ */
+
+include_once 'wsdot_public_newsitem_import.features.inc';
