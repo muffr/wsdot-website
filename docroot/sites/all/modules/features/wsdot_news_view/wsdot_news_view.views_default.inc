@@ -90,8 +90,23 @@ function wsdot_news_view_views_default_views() {
   $handler->display->display_options['filters']['field_date_value']['granularity'] = 'month';
   $handler->display->display_options['filters']['field_date_value']['year_range'] = '-3:+0';
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
+  /* Display: Content pane */
+  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '15';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -113,7 +128,6 @@ function wsdot_news_view_views_default_views() {
   $handler->display->display_options['filters']['date_filter']['id'] = 'date_filter';
   $handler->display->display_options['filters']['date_filter']['table'] = 'node';
   $handler->display->display_options['filters']['date_filter']['field'] = 'date_filter';
-  $handler->display->display_options['filters']['date_filter']['group'] = 1;
   $handler->display->display_options['filters']['date_filter']['exposed'] = TRUE;
   $handler->display->display_options['filters']['date_filter']['expose']['operator_id'] = 'date_filter_op';
   $handler->display->display_options['filters']['date_filter']['expose']['operator'] = 'date_filter_op';
@@ -124,18 +138,38 @@ function wsdot_news_view_views_default_views() {
     11 => 0,
   );
   $handler->display->display_options['filters']['date_filter']['granularity'] = 'month';
-  $handler->display->display_options['filters']['date_filter']['year_range'] = '-3:+0';
+  $handler->display->display_options['filters']['date_filter']['year_range'] = '-2:+0';
   $handler->display->display_options['filters']['date_filter']['date_fields'] = array(
     'node.created' => 'node.created',
   );
-  $handler->display->display_options['path'] = 'news';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['argument_input'] = array(
+    'field_regions_tid' => array(
+      'type' => 'context',
+      'context' => 'entity:taxonomy_term.name',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Regions (field_regions)',
+    ),
+  );
+  $handler->display->display_options['inherit_panels_path'] = '1';
 
-  /* Display: Content pane */
-  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  /* Display: Region Content pane */
+  $handler = $view->new_display('panel_pane', 'Region Content pane', 'panel_pane_2');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['display_description'] = 'News on Region pages';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '15';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'list';
@@ -181,6 +215,7 @@ function wsdot_news_view_views_default_views() {
       'label' => 'Content: Regions (field_regions)',
     ),
   );
+  $handler->display->display_options['inherit_panels_path'] = '0';
   $export['news'] = $view;
 
   return $export;
