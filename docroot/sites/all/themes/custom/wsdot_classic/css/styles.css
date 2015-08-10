@@ -328,6 +328,9 @@ h2.pane-title, h4.pane-title {
     background:#fff url(../images/back/gradients_bg.png) repeat-x left 0px;
 }
 
+/* Squash the panel-separator following the project phase image */
+#project-phase + div {margin: 0em;}
+
 .item-list {
     padding: 10px;
 }
