@@ -50,7 +50,7 @@ function wsdot_projects_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '10',
+          'weight' => '1',
         ),
         'workbench_access' => array(
           'weight' => '1',
