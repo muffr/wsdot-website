@@ -30,7 +30,7 @@ function wsdot_projects_node_info() {
     'project' => array(
       'name' => t('Project'),
       'base' => 'node_content',
-      'description' => t('A project is a thing that people do to accomplish stuff. People might want to read about them.'),
+      'description' => t('Use a <em>project</em> content type for your project pages.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',

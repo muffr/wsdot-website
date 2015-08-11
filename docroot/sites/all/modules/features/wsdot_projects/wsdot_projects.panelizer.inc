@@ -156,24 +156,22 @@ function wsdot_projects_panelizer_defaults() {
     $display->content['new-d092e9c5-7c2b-4faa-add8-68c2017223af'] = $pane;
     $display->panels['center'][1] = 'new-d092e9c5-7c2b-4faa-add8-68c2017223af';
     $pane = new stdClass();
-    $pane->pid = 'new-c29357f6-5825-43d2-98c0-31f120bb98b2';
+    $pane->pid = 'new-76e35c5b-e2ad-4b0b-8305-ed4a571b86c6';
     $pane->panel = 'center';
     $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_user_reference';
+    $pane->subtype = 'node:field_contact';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'label' => 'above',
-      'formatter' => 'entityreference_label',
+      'formatter' => 'text_default',
       'delta_limit' => 0,
       'delta_offset' => '0',
       'delta_reversed' => FALSE,
-      'formatter_settings' => array(
-        'link' => 0,
-      ),
+      'formatter_settings' => array(),
       'context' => 'panelizer',
       'override_title' => 0,
-      'override_title_text' => 'Contact',
+      'override_title_text' => '',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
@@ -184,9 +182,9 @@ function wsdot_projects_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
-    $pane->uuid = 'c29357f6-5825-43d2-98c0-31f120bb98b2';
-    $display->content['new-c29357f6-5825-43d2-98c0-31f120bb98b2'] = $pane;
-    $display->panels['center'][2] = 'new-c29357f6-5825-43d2-98c0-31f120bb98b2';
+    $pane->uuid = '76e35c5b-e2ad-4b0b-8305-ed4a571b86c6';
+    $display->content['new-76e35c5b-e2ad-4b0b-8305-ed4a571b86c6'] = $pane;
+    $display->panels['center'][2] = 'new-76e35c5b-e2ad-4b0b-8305-ed4a571b86c6';
     $pane = new stdClass();
     $pane->pid = 'new-90820125-098f-487f-9424-0c6c943f2748';
     $pane->panel = 'right';
