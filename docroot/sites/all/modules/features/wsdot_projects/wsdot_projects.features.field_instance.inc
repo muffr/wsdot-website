@@ -10,151 +10,6 @@
 function wsdot_projects_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance:
-  // 'field_collection_item-field_contact_info-field_contact_email'
-  $field_instances['field_collection_item-field_contact_info-field_contact_email'] = array(
-    'bundle' => 'field_contact_info',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'email',
-        'settings' => array(),
-        'type' => 'email_default',
-        'weight' => 2,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_contact_email',
-    'label' => 'Email',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'email',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'email_textfield',
-      'weight' => 2,
-    ),
-    'workbench_access_field' => 0,
-  );
-
-  // Exported field_instance:
-  // 'field_collection_item-field_contact_info-field_contact_firstlast'
-  $field_instances['field_collection_item-field_contact_info-field_contact_firstlast'] = array(
-    'bundle' => 'field_contact_info',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 4,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_contact_firstlast',
-    'label' => 'Name',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 0,
-    ),
-    'workbench_access_field' => 0,
-  );
-
-  // Exported field_instance:
-  // 'field_collection_item-field_contact_info-field_contact_phone'
-  $field_instances['field_collection_item-field_contact_info-field_contact_phone'] = array(
-    'bundle' => 'field_contact_info',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'phone',
-        'settings' => array(),
-        'type' => 'phone',
-        'weight' => 3,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_contact_phone',
-    'label' => 'Phone',
-    'required' => 0,
-    'settings' => array(
-      'ca_phone_parentheses' => 0,
-      'ca_phone_separator' => '-',
-      'phone_country_code' => 0,
-      'phone_default_country_code' => 1,
-      'phone_int_max_length' => 15,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'phone',
-      'settings' => array(),
-      'type' => 'phone_textfield',
-      'weight' => 3,
-    ),
-    'workbench_access_field' => 0,
-  );
-
-  // Exported field_instance:
-  // 'field_collection_item-field_contact_info-field_contact_title'
-  $field_instances['field_collection_item-field_contact_info-field_contact_title'] = array(
-    'bundle' => 'field_contact_info',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_contact_title',
-    'label' => 'Title',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 1,
-    ),
-    'workbench_access_field' => 0,
-  );
-
   // Exported field_instance: 'node-project-body'
   $field_instances['node-project-body'] = array(
     'bundle' => 'project',
@@ -1418,16 +1273,13 @@ function wsdot_projects_field_default_field_instances() {
   t('Contact');
   t('Counties');
   t('Design-build');
-  t('Email');
   t('Funding types');
   t('Highways');
   t('Images');
   t('Location of this page in the website.');
   t('Map');
   t('Modes');
-  t('Name');
   t('Phase');
-  t('Phone');
   t('Project ID');
   t('Regions');
   t('Site Structure');
@@ -1435,7 +1287,6 @@ function wsdot_projects_field_default_field_instances() {
   t('Status');
   t('Tags');
   t('This is a body field. Please don\'t abuse it.');
-  t('Title');
 
   return $field_instances;
 }
