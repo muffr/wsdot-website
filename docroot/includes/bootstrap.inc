@@ -8,7 +8,7 @@
 /**
  * The current system version.
  */
-define('VERSION', '7.38');
+define('VERSION', '7.39');
 
 /**
  * Core API compatibility.
@@ -922,31 +922,19 @@ function variable_initialize($conf = array()) {
     $variables = $cached->data;
   }
   else {
-    try {
-      // Cache miss. Avoid a stampede.
-      $name = 'variable_init';
-      if (!lock_acquire($name, 1)) {
-        // Another request is building the variable cache.
-        // Wait, then re-run this function.
-        lock_wait($name);
-        return variable_initialize($conf);
-      }
-      else {
-        // Proceed with variable rebuild.
-        $variables = array_map('unserialize', db_query('SELECT name, value FROM {variable}')->fetchAllKeyed());
-        cache_set('variables', $variables, 'cache_bootstrap');
-        lock_release($name);
-      }
+    // Cache miss. Avoid a stampede.
+    $name = 'variable_init';
+    if (!lock_acquire($name, 1)) {
+      // Another request is building the variable cache.
+      // Wait, then re-run this function.
+      lock_wait($name);
+      return variable_initialize($conf);
     }
-    catch (PDOException $e) {
-      // A PDO exception trying to acquire the lock might mean that we are
-      // running on an empty database. In that case, just redirect the user to
-      // install.php, unless we're already there.
-      if (!db_table_exists('variable') && !drupal_installation_attempted()) {
-        include_once DRUPAL_ROOT . '/includes/install.inc';
-        install_goto('install.php');
-      }
-      throw $e;
+    else {
+      // Proceed with variable rebuild.
+      $variables = array_map('unserialize', db_query('SELECT name, value FROM {variable}')->fetchAllKeyed());
+      cache_set('variables', $variables, 'cache_bootstrap');
+      lock_release($name);
     }
   }
 
