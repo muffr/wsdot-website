@@ -163,9 +163,10 @@ function wsdot_public_default_import_feeds_importer_default() {
           ),
           9 => array(
             'source' => 'site_structure',
-            'target' => 'field_site_structure',
-            'term_search' => '0',
-            'autocreate' => 0,
+            'target' => 'field_site_structure_hierarchical',
+            'hierarchy_separator' => '>>',
+            'auto_create_terms' => 1,
+            'save_term_lineage' => 1,
           ),
         ),
         'update_existing' => '2',
