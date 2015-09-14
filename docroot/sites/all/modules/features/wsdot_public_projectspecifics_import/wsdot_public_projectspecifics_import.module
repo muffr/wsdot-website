@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WSDOT Public ProjectSpecifics Import feature.
+ */
+
+include_once 'wsdot_public_projectspecifics_import.features.inc';
