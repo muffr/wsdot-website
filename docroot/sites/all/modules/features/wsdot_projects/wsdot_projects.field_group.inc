@@ -21,7 +21,7 @@ function wsdot_projects_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Project Metadata',
-    'weight' => '10',
+    'weight' => '11',
     'children' => array(
       0 => 'field_cities',
       1 => 'field_counties',
@@ -33,6 +33,7 @@ function wsdot_projects_field_group_info() {
       7 => 'field_regions',
       8 => 'field_tags',
       9 => 'field_design_build',
+      10 => 'field_site_structure',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
