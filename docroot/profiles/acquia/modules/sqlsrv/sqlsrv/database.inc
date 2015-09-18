@@ -14,49 +14,7 @@ include_once 'fastcache.inc';
 include_once 'enum.inc';
 include_once 'transaction.inc';
 include_once 'utils.inc';
-
-/**
- * Defines a behaviour scope for the database
- * driver that lasts until the object is destroyed.
- */
-class DatabaseContext {
-
-  // @var \DatabaseConnection_sqlsrv $connection;
-  var $connection;
-  
-  // @var string $state_bypass
-  var $state_bypass;
-  
-  // @var string $state_direct
-  var $state_direct;
-  
-  /**
-   * Define the behaviour of the database driver during the scope of the
-   * life of this instance.
-   *
-   * @param DatabaseConnection_sqlsrv $connection
-   *  Instance of the connection to be configured.
-   *
-   * @param mixed $bypass_queries 
-   *  Do not preprocess the query before execution.
-   *
-   * @param mixed $direct_query
-   *  Prepare statements with SQLSRV_ATTR_DIRECT_QUERY = TRUE.
-   */
-  public function __construct(\DatabaseConnection_sqlsrv $connection, $bypass_queries = FALSE, $direct_query = FALSE) {
-    $this->connection = $connection;
-    $this->state_bypass = $this->connection->bypassQueryPreprocess;
-    $this->state_direct = $this->connection->directQuery;
-    $this->connection->bypassQueryPreprocess = $bypass_queries;
-    $this->connection->directQuery = $bypass_queries;
-  }
-  
-  public function __destruct() {
-    // Restore previous driver configuration.
-    $this->connection->bypassQueryPreprocess = $this->state_bypass;
-    $this->connection->directQuery = $this->state_direct;
-  }
-}
+include_once 'context.inc';
 
 /**
  * Summary of DatabaseConnection_sqlsrv
@@ -71,9 +29,12 @@ class DatabaseConnection_sqlsrv extends DatabaseConnection {
 
   // Do not preprocess the query before execution.
   public $bypassQueryPreprocess = FALSE;
-  
+
   // Prepare statements with SQLSRV_ATTR_DIRECT_QUERY = TRUE.
   public $directQuery = FALSE;
+
+  // Wether to have or not statement caching.
+  public $statementCaching = FALSE;
 
   /**
    * Override of DatabaseConnection::driver().
@@ -92,40 +53,13 @@ class DatabaseConnection_sqlsrv extends DatabaseConnection {
   public function databaseType() {
     return 'sqlsrv';
   }
-  
-  
-  /**
-   * Get the schema() object.
-   *
-   * @return DatabaseSchema_sqlsrv
-   */
-  public function schema() {
-    return parent::schema();
-  }
-
-  /**
-   * Get the Default global isolation level.
-   * 
-   * @return mixed
-   */
-  private static function DefaultTransactionIsolationLevel() {
-    global $conf;
-    // Isolation level.
-    if (isset($conf['MSSQL_DEFAULT_ISOLATION_LEVEL'])) {
-      $level =  $conf['MSSQL_DEFAULT_ISOLATION_LEVEL'];
-      if($l = @constant($level)) {
-        return $l;
-      }
-    }
-    return FALSE;
-  }
 
   /**
    * The PDO constants do not matcc the actual isolation names
    * used in SQL.
    */
   private static function DefaultTransactionIsolationLevelInStatement() {
-    return str_replace('_', ' ', static::DefaultTransactionIsolationLevel());
+    return str_replace('_', ' ', DatabaseUtils::GetConfigConstant('MSSQL_DEFAULT_ISOLATION_LEVEL', FALSE));
   }
 
   /**
@@ -145,7 +79,7 @@ class DatabaseConnection_sqlsrv extends DatabaseConnection {
     // This driver defaults to transaction support, except if explicitly passed FALSE.
     $this->transactionSupport = !isset($connection_options['transactions']) || $connection_options['transactions'] !== FALSE;
     $this->transactionalDDLSupport = $this->transactionSupport;
-    
+
     // Build the DSN.
     $options = array();
     $options['Server'] = $connection_options['host'] . (!empty($connection_options['port']) ? ',' . $connection_options['port'] : '');
@@ -157,9 +91,13 @@ class DatabaseConnection_sqlsrv extends DatabaseConnection {
     }
 
     // Set isolation level if specified.
-    if ($level = static::DefaultTransactionIsolationLevel()) {
+    if ($level = DatabaseUtils::GetConfigConstant('MSSQL_DEFAULT_ISOLATION_LEVEL', FALSE)) {
       $options['TransactionIsolation'] = $level;
     }
+
+    // Set default direct query behaviour
+    $this->directQuery = DatabaseUtils::GetConfigBoolean('MSSQL_DEFAULT_DIRECTQUERY');
+    $this->statementCaching = DatabaseUtils::GetConfigBoolean('MSSQL_STATEMENT_CACHING');
 
     // Build the DSN
     $dsn = 'sqlsrv:';
@@ -187,25 +125,54 @@ class DatabaseConnection_sqlsrv extends DatabaseConnection {
   }
 
   /**
+   * Prepared PDO statements only makes sense if we cache them...
+   *
+   * @var mixed
+   */
+  private $statement_cache = array();
+
+  /**
    * Temporary override of DatabaseConnection::prepareQuery().
    *
    * @todo: remove that when DatabaseConnection::prepareQuery() is fixed to call
    *   $this->prepare() and not parent::prepare().
    * @status: tested, temporary
    *
-   * @param mixed $query 
-   * @param mixed $insecure 
+   * @param mixed $query
+   * @param mixed $insecure
    * @return PDOStatement
    */
-  public function prepareQuery($query, $insecure = FALSE) {
-    $query = $this->prefixTables($query);
+  public function prepareQuery($query, array $options = array()) {
+
+    // Merge default statement options. These options are
+    // only specific for this preparation and will only override
+    // the global configuration if set to different than NULL.
+    $options = array_merge(array(
+        'insecure' => FALSE,
+        'statement_caching' => $this->statementCaching,
+        'direct_query' => $this->directQuery,
+        'prefix_tables' => TRUE,
+      ), $options);
+
+    // Prefix tables. There is no global setting for this.
+    if ($options['prefix_tables'] !== FALSE) {
+      $query = $this->prefixTables($query);
+    }
+
+    // The statement caching settings only affect the storage
+    // in the cache, but if a statement is already available
+    // why not reuse it!
+    if (isset($this->statement_cache[$query])) {
+      return $this->statement_cache[$query];
+    }
 
     #region PDO Options
-    
+
     $pdo_options = array();
-    
-    // Set insecure options if requested so.
-    if ($insecure) {
+
+    // Set insecure options if requested so. There is no global
+    // setting for this, only at the statement level.
+    if ($options['insecure'] === TRUE) {
       // We have to log this, prepared statements are a security RISK.
       // watchdog('SQL Server Driver', 'An insecure query has been executed against the database. This is not critical, but worth looking into: %query', array('%query' => $query));
       // These are defined in class Connection.
@@ -236,31 +203,41 @@ class DatabaseConnection_sqlsrv extends DatabaseConnection {
     // We run the statements in "direct mode" because the way PDO prepares
     // statement in non-direct mode cause temporary tables to be destroyed
     // at the end of the statement.
-    // If you are using the PDO_SQLSRV driver and you want to execute a query that 
-    // changes a database setting (e.g. SET NOCOUNT ON), use the PDO::query method with 
+    // If you are using the PDO_SQLSRV driver and you want to execute a query that
+    // changes a database setting (e.g. SET NOCOUNT ON), use the PDO::query method with
     // the PDO::SQLSRV_ATTR_DIRECT_QUERY attribute.
     // http://blogs.iis.net/bswan/archive/2010/12/09/how-to-change-database-settings-with-the-pdo-sqlsrv-driver.aspx
-    // If a query requires the context that was set in a previous query, 
-    // you should execute your queries with PDO::SQLSRV_ATTR_DIRECT_QUERY set to True. 
-    // For example, if you use temporary tables in your queries, PDO::SQLSRV_ATTR_DIRECT_QUERY must be set 
+    // If a query requires the context that was set in a previous query,
+    // you should execute your queries with PDO::SQLSRV_ATTR_DIRECT_QUERY set to True.
+    // For example, if you use temporary tables in your queries, PDO::SQLSRV_ATTR_DIRECT_QUERY must be set
     // to True.
-    if ($this->directQuery) {
+
+    // If we are not going to cache prepared statements, always use direct queries!
+    // There is no point in preparing the statement if you are not going to cache it.
+    if (!$this->statementCaching || $options['direct_query'] == TRUE) {
       $pdo_options[PDO::SQLSRV_ATTR_DIRECT_QUERY] = TRUE;
     }
-    
-    // It creates a cursor for the query, which allows you to iterate over the result set 
-    // without fetching the whole result at once. A scrollable cursor, specifically, is one that allows 
+
+    // It creates a cursor for the query, which allows you to iterate over the result set
+    // without fetching the whole result at once. A scrollable cursor, specifically, is one that allows
     // iterating backwards.
     // https://msdn.microsoft.com/en-us/library/hh487158%28v=sql.105%29.aspx
     $pdo_options[PDO::ATTR_CURSOR] = PDO::CURSOR_SCROLL;
 
     // Lets you access rows in any order. Creates a client-side cursor query.
     $pdo_options[PDO::SQLSRV_ATTR_CURSOR_SCROLL_TYPE] = PDO::SQLSRV_CURSOR_BUFFERED;
-    
+
     #endregion
-    
+
     // Call our overriden prepare.
-    return $this->PDOPrepare($query, $pdo_options);
+    $stmt = $this->PDOPrepare($query, $pdo_options);
+
+    // If statement caching is enabled, store current statement for reuse
+    if ($options['statement_caching'] === TRUE) {
+      $this->statement_cache[$query] = $stmt;
+    }
+
+    return $stmt;
   }
 
   /**
@@ -282,7 +259,7 @@ class DatabaseConnection_sqlsrv extends DatabaseConnection {
     // backtrace plus other details that aid in debugging deadlocks
     // or long standing locks. Use in combination with MSSQL profiler.
     global $conf;
-    if (isset($conf['MSSQL_APPEND_CALLSTACK_COMMENT']) && $conf['MSSQL_APPEND_CALLSTACK_COMMENT'] == TRUE) {
+    if (DatabaseUtils::GetConfigBoolean('MSSQL_APPEND_CALLSTACK_COMMENT') == TRUE) {
       global $user;
       $trim = strlen(DRUPAL_ROOT);
       $trace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS);
@@ -351,7 +328,7 @@ class DatabaseConnection_sqlsrv extends DatabaseConnection {
    * This method gets called between 3,000 and 10,000 times
    * on cold caches. Make sure it is simple and fast.
    *
-   * @param mixed $matches 
+   * @param mixed $matches
    * @return mixed
    */
   protected function replaceReservedCallback($matches) {
@@ -391,7 +368,7 @@ class DatabaseConnection_sqlsrv extends DatabaseConnection {
    * Override of DatabaseConnection::escapeLike().
    */
   public function escapeLike($string) {
-    return addcslashes($string, '\%_[]');
+    return preg_replace('/([\\[\\]%_])/', '[$1]', $string);
   }
 
   /**
@@ -402,8 +379,6 @@ class DatabaseConnection_sqlsrv extends DatabaseConnection {
     return $this->query($query, $args, $options);
   }
 
-  private static $temporary_tables = array();
-  
   /**
    * Generates a temporary table name. Because we are using
    * global temporary tables, these are visible between
@@ -420,7 +395,7 @@ class DatabaseConnection_sqlsrv extends DatabaseConnection {
     }
     return "db_temp_" . $this->temporaryNameIndex++ . '_' . $temp_key;
   }
-  
+
   /**
    * Override of DatabaseConnection::queryTemporary().
    *
@@ -433,14 +408,14 @@ class DatabaseConnection_sqlsrv extends DatabaseConnection {
     $prefixes = $this->prefixes;
     $prefixes[$tablename] = '';
     $this->setPrefix($prefixes);
-    
+
     // Having comments in the query can be tricky and break the SELECT FROM  -> SELECT INTO conversion
     $query = $this->schema()->removeSQLComments($query);
-    
+
     // Replace SELECT xxx FROM table by SELECT xxx INTO #table FROM table.
     $query = preg_replace('/^SELECT(.*?)FROM/is', 'SELECT$1 INTO ' . $tablename . ' FROM', $query);
     $this->query($query, $args, $options);
-    
+
     return $tablename;
   }
 
@@ -474,7 +449,7 @@ class DatabaseConnection_sqlsrv extends DatabaseConnection {
         if ($insecure === TRUE || $argcount >= 2100 || ($argcount != substr_count($query, ':'))) {
           $insecure = TRUE;
         }
-        $stmt = $this->prepareQuery($query, $insecure);
+        $stmt = $this->prepareQuery($query, array('insecure' => TRUE));
         $stmt->execute($args, $options);
       }
 
@@ -495,30 +470,22 @@ class DatabaseConnection_sqlsrv extends DatabaseConnection {
       }
     }
     catch (PDOException $e) {
-      if ($options['throw_exception']) {
-        // Add additional debug information.
-        if ($stmt instanceof DatabaseStatementInterface) {
-          $e->query_string = $stmt->getQueryString();
-        }
-        else {
-          $e->query_string = $query;
-        }
-        $e->args = $args;
-        throw $e;
-      }
-      return NULL;
+      // Most database drivers will return NULL here, but some of them
+      // (e.g. the SQLite driver) may need to re-run the query, so the return
+      // value will be the same as for static::query().
+      return $this->handleQueryException($e, $stmt, $args, $options);
     }
   }
-  
+
   /**
    * Like query but with no insecure detection or query preprocessing.
    * The caller is sure that his query is MS SQL compatible! Used internally
    * from the schema class, but could be called from anywhere.
    *
-   * @param mixed $query 
-   * @param array $args 
-   * @param mixed $options 
-   * @throws PDOException 
+   * @param mixed $query
+   * @param array $args
+   * @param mixed $options
+   * @throws PDOException
    * @return mixed
    */
   public function query_direct($query, array $args = array(), $options = array()) {
@@ -528,14 +495,14 @@ class DatabaseConnection_sqlsrv extends DatabaseConnection {
     $stmt = NULL;
 
     try {
-      
+
       // Bypass query preprocessing and use direct queries.
       $ctx = new \DatabaseContext($this, TRUE, TRUE);
-      
+
       // Prepare the statement and execute it.
-      $stmt = $this->prepareQuery($query, FALSE);
+      $stmt = $this->prepareQuery($query, $options);
       $stmt->execute($args, $options);
-      
+
       // Reset the context settings.
       unset($ctx);
 
@@ -556,19 +523,43 @@ class DatabaseConnection_sqlsrv extends DatabaseConnection {
       }
     }
     catch (PDOException $e) {
-      if ($options['throw_exception']) {
-        // Add additional debug information.
-        if ($stmt instanceof DatabaseStatementInterface) {
-          $e->query_string = $stmt->getQueryString();
-        }
-        else {
-          $e->query_string = $query;
-        }
-        $e->args = $args;
-        throw $e;
-      }
-      return NULL;
+      // Most database drivers will return NULL here, but some of them
+      // (e.g. the SQLite driver) may need to re-run the query, so the return
+      // value will be the same as for static::query().
+      return $this->handleQueryException($e, $stmt, $args, $options);
     }
+  }
+
+  /**
+   * Wraps and re-throws any PDO exception thrown by static::query().
+   *
+   * @param \PDOException $e
+   *   The exception thrown by static::query().
+   * @param $query
+   *   The query executed by static::query().
+   * @param array $args
+   *   An array of arguments for the prepared statement.
+   * @param array $options
+   *   An associative array of options to control how the query is run.
+   *
+   * @return DatabaseStatementInterface|int|null
+   *   Most database drivers will return NULL when a PDO exception is thrown for
+   *   a query, but some of them may need to re-run the query, so they can also
+   *   return a \Drupal\Core\Database\StatementInterface object or an integer.
+   */
+  public function handleQueryException(\PDOException $e, $query, array $args = array(), $options = array()) {
+    if ($options['throw_exception']) {
+      // Add additional debug information.
+      if ($query instanceof DatabaseStatementInterface) {
+        $e->query_string = $query->getQueryString();
+      }
+      else {
+        $e->query_string = $query;
+      }
+      $e->args = $args;
+      throw $e;
+    }
+    return NULL;
   }
 
   /**
@@ -591,44 +582,27 @@ class DatabaseConnection_sqlsrv extends DatabaseConnection {
     }
 
     // Last chance to modify some SQL Server-specific syntax.
-    $replacements = array(
-      // Normalize SAVEPOINT syntax to the SQL Server one.
-      // '/^SAVEPOINT (.*)$/' => 'SAVE TRANSACTION $1',
-      // '/^ROLLBACK TO SAVEPOINT (.*)$/' => 'ROLLBACK TRANSACTION $1',
-      // SQL Server doesn't need an explicit RELEASE SAVEPOINT.
-      // Run a non-operaiton query to avoid a fatal error
-      // when no query is runned.
-      // '/^RELEASE SAVEPOINT (.*)$/' => 'SELECT 1 /* $0 */',
-      // TODO: For improved compatiblity with MySQL
-      // we should create a StoredProcedure that
-      // maps sp_who to a MySQL compatible approach.
-      // http://stackoverflow.com/questions/2234691/sql-server-filter-output-of-sp-who2
-      // '/^SHOW PROCESSLIST$/' => 'EXEC sp_who',
-      // List all table names
-      // '/^SHOW TABLES$/' => 'SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = \'BASE TABLE\'',
-      // List all table and view names.
-      // '/^SHOW FULL TABLES$/' => 'SELECT TABLE_NAME, TABLE_TYPE FROM INFORMATION_SCHEMA.TABLES',
-    );
+    $replacements = array();
 
     // Add prefixes to Drupal-specific functions.
     $defaultSchema = $this->schema()->GetDefaultSchema();
     foreach ($this->schema()->DrupalSpecificFunctions() as $function) {
       $replacements['/\b(?<![:.])(' . preg_quote($function) . ')\(/i'] =  "{$defaultSchema}.$1(";
     }
-    
+
     // Rename some functions.
     $funcs = array(
       'LENGTH' => 'LEN',
       'POW' => 'POWER',
     );
-    
+
     foreach ($funcs as $function => $replacement) {
-      $replacements['/\b(?<![:.])(' . preg_quote($function) . ')\(/i'] = $replacement . '('; 
+      $replacements['/\b(?<![:.])(' . preg_quote($function) . ')\(/i'] = $replacement . '(';
     }
-    
+
     // Replace the ANSI concatenation operator with SQL Server poor one.
     $replacements['/\|\|/'] =  '+';
-    
+
     // Now do all the replacements at once.
     $query = preg_replace(array_keys($replacements), array_values($replacements), $query);
 
@@ -676,12 +650,10 @@ class DatabaseConnection_sqlsrv extends DatabaseConnection {
 
   public function mapConditionOperator($operator) {
     // SQL Server doesn't need special escaping for the \ character in a string
-    // literal, because it uses '' to escape the single quote, not \'. Sadly
-    // PDO doesn't know that and interpret \' as an escaping character. We
-    // use a function call here to be safe.
+    // literal, because it uses '' to escape the single quote, not \'.
     static $specials = array(
-    'LIKE' => array('postfix' => " ESCAPE CHAR(92)"),
-    'NOT LIKE' => array('postfix' => " ESCAPE CHAR(92)"),
+    'LIKE' => array(),
+    'NOT LIKE' => array(),
     );
     return isset($specials[$operator]) ? $specials[$operator] : NULL;
   }
@@ -718,14 +690,14 @@ class DatabaseConnection_sqlsrv extends DatabaseConnection {
     if (isset($tables[$table])) {
       return $tables[$table];
     }
-    
+
     // Rescue the # prefix from the escaping.
     $is_temporary = $table[0] == '#';
     $is_temporary_global = $is_temporary && isset($table[1]) && $table[1] == '#';
-    
+
     // Any temporary table prefix will be removed.
     $result = preg_replace('/[^A-Za-z0-9_.]+/', '', $table);
-    
+
     // Restore the temporary prefix.
     if ($is_temporary) {
       if ($is_temporary_global) {
@@ -735,7 +707,7 @@ class DatabaseConnection_sqlsrv extends DatabaseConnection {
         $result = '#' . $result;
       }
     }
-    
+
     $tables[$table] = $result;
 
     return $result;
@@ -781,7 +753,9 @@ class DatabaseConnection_sqlsrv extends DatabaseConnection {
         if (empty($this->transactionLayers)) {
           break;
         }
-        $this->query_direct('ROLLBACK TRANSACTION ' . $savepoint);
+        if ($savepoint['started'] == TRUE) {
+          $this->query_direct('ROLLBACK TRANSACTION ' . $savepoint['name']);
+        }
         $this->popCommittableTransactions();
         if ($rolled_back_other_active_savepoints) {
           throw new DatabaseTransactionOutOfOrderException();
@@ -795,7 +769,7 @@ class DatabaseConnection_sqlsrv extends DatabaseConnection {
     \PDO::rollBack();
     // Restore original transaction isolation level
     if ($level = static::DefaultTransactionIsolationLevelInStatement()) {
-      if($savepoint['settings']->Get_IsolationLevel() != DatabaseTransactionIsolationLevel::Ignore()) { 
+      if($savepoint['settings']->Get_IsolationLevel() != DatabaseTransactionIsolationLevel::Ignore()) {
         if ($level != $savepoint['settings']->Get_IsolationLevel()) {
           $this->query_direct("SET TRANSACTION ISOLATION LEVEL {$level}");
         }
@@ -808,9 +782,9 @@ class DatabaseConnection_sqlsrv extends DatabaseConnection {
 
   /**
    * Summary of pushTransaction
-   * @param string $name 
-   * @param DatabaseTransactionSettings $settings 
-   * @throws DatabaseTransactionNameNonUniqueException 
+   * @param string $name
+   * @param DatabaseTransactionSettings $settings
+   * @throws DatabaseTransactionNameNonUniqueException
    * @return void
    */
   public function pushTransaction($name, $settings = NULL) {
@@ -820,11 +794,16 @@ class DatabaseConnection_sqlsrv extends DatabaseConnection {
     if (isset($this->transactionLayers[$name])) {
       throw new DatabaseTransactionNameNonUniqueException($name . " is already in use.");
     }
+    $started = FALSE;
     // If we're already in a transaction.
+    // TODO: Transaction scope Options is not working properly
+    // for first level transactions. It assumes that - always - a first level
+    // transaction must be started.
     if ($this->inTransaction()) {
       switch ($settings->Get_ScopeOption()) {
         case DatabaseTransactionScopeOption::RequiresNew():
           $this->query_direct('SAVE TRANSACTION ' . $name);
+          $started = TRUE;
           break;
         case DatabaseTransactionScopeOption::Required():
           // We are already in a transaction, do nothing.
@@ -837,17 +816,23 @@ class DatabaseConnection_sqlsrv extends DatabaseConnection {
     }
     else {
       if ($settings->Get_IsolationLevel() != DatabaseTransactionIsolationLevel::Ignore()) {
-        $current_isolation_level = strtoupper($this->schema()->UserOptions()['isolation level']);
+        $user_options = $this->schema()->UserOptions();
+        $current_isolation_level = strtoupper($user_options['isolation level']);
         // Se what isolation level was requested.
         $level = $settings->Get_IsolationLevel()->__toString();
         if (strcasecmp($current_isolation_level, $level) !== 0) {
           $this->query_direct("SET TRANSACTION ISOLATION LEVEL {$level}");
         }
       }
+      // In order to start a transaction current statement cursors
+      // must be closed.
+      foreach($this->statement_cache as $statement) {
+        $statement->closeCursor();
+      }
       \PDO::beginTransaction();
     }
     // Store the name and settings in the stack.
-    $this->transactionLayers[$name] = array('settings' => $settings, 'active' => TRUE, 'name' => $name);
+    $this->transactionLayers[$name] = array('settings' => $settings, 'active' => TRUE, 'name' => $name, 'started' => $started);
   }
 
   /**
@@ -903,8 +888,8 @@ class DatabaseConnection_sqlsrv extends DatabaseConnection {
         }
         finally {
           // Restore original transaction isolation level
-          if ($level = static::DefaultTransactionIsolationLevelInStatement()) { 
-            if($state['settings']->Get_IsolationLevel() != DatabaseTransactionIsolationLevel::Ignore()) { 
+          if ($level = static::DefaultTransactionIsolationLevelInStatement()) {
+            if($state['settings']->Get_IsolationLevel() != DatabaseTransactionIsolationLevel::Ignore()) {
               if ($level != $state['settings']->Get_IsolationLevel()->__toString()) {
                 $this->query_direct("SET TRANSACTION ISOLATION LEVEL {$level}");
               }
@@ -922,7 +907,7 @@ class DatabaseConnection_sqlsrv extends DatabaseConnection {
 }
 
 class DatabaseStatement_sqlsrv extends DatabaseStatementBase implements DatabaseStatementInterface {
-  
+
   // Flag to tell if statement should be run insecure.
   private $insecure = FALSE;
 
@@ -960,7 +945,7 @@ class DatabaseStatement_sqlsrv extends DatabaseStatementBase implements Database
     // Execute the query. Bypass parent override
     // and directly call PDOStatement implementation.
     $return = PDOStatement::execute($args);
-    
+
     if (!$return) {
       $this->throwPDOException($statement);
     }
@@ -1007,7 +992,7 @@ class DatabaseStatement_sqlsrv extends DatabaseStatementBase implements Database
         unset($this->columnNames[$k]);
       }
     }
-    
+
     return $return;
   }
 
@@ -1033,12 +1018,12 @@ class DatabaseStatement_sqlsrv extends DatabaseStatementBase implements Database
     unset($statement);
     throw $exception;
   }
-  
+
   /**
    * Experimental, do not iterate if not needed.
    *
-   * @param mixed $key_index 
-   * @param mixed $value_index 
+   * @param mixed $key_index
+   * @param mixed $value_index
    * @return array|DatabaseStatement_sqlsrv
    */
   public function fetchAllKeyed($key_index = 0, $value_index = 1) {

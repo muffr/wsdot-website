@@ -21,14 +21,16 @@ include_once 'fastcacheitem.inc';
  * the request is over.
  */
 class fastcache {
-  
+
   // @var fastcacheitem[]  $fastcacheitems
   private static $fastcacheitems = array();
+
   // @var bool $enabled
   private static $enabled = NULL;
+
   // @var bool $shutdown_registered
   private static $shutdown_registered = FALSE;
-  
+
   /**
    * Test info is loaded at database bootstrap phase
    * but this cache can be used earlier. Make sure
@@ -38,12 +40,12 @@ class fastcache {
    * @var string
    */
   private static $test_run_id;
-  
+
   /**
    * Add test prefix to current binary key, and account for atomic
    * items where $bin = NULL;
    *
-   * @param string $prefix 
+   * @param string $prefix
    */
   private static function FixKeyAndBin(&$cid, &$bin) {
     // We always need a binary, if non is specified, this item
@@ -71,11 +73,11 @@ class fastcache {
 
     $bin = static::$test_run_id . $bin;
   }
-  
+
   /**
    * Tell if cache persistence is enabled. If not, this cache
    * will behave as DRUPAL_STATIC until the end of request.
-   * 
+   *
    * Only enable this cache if the backend is DrupalWinCache
    * and the lock implementation is DrupalWinCache
    */
@@ -95,8 +97,9 @@ class fastcache {
         }
 
         global $WINCACHE_LOCK_ACTIVE;
-        // Only enabled storage if Cache Backend is DrupalWinCache and Locking backend is also Wincache based.
-        static::$enabled = is_a(_cache_get_object('fastcache'), 'DrupalWinCache') && $WINCACHE_LOCK_ACTIVE;
+        // Only enabled storage if Cache Backend is DrupalWinCache or ChainedFastBackend.
+        $object = _cache_get_object('fastcache');
+        static::$enabled = (is_a($object, \DrupalWinCache::class) || is_a($object, \ChainedFastBackend::class)) && $WINCACHE_LOCK_ACTIVE;
       }
       else {
         static::$enabled = FALSE;
@@ -138,11 +141,6 @@ class fastcache {
       if (!isset(static::$fastcacheitems[$bin])) {
         static::$fastcacheitems[$bin] = new fastcacheitem($bin);
       }
-      // Register shutdown persistence once, only if enabled!
-      if (static::$shutdown_registered == FALSE && static::Enabled()) {
-        register_shutdown_function(array('fastcache','fastcache_persist'));
-        static::$shutdown_registered = TRUE;
-      }
     }
   }
 
@@ -179,6 +177,11 @@ class fastcache {
           }
         }
       }
+      // Register shutdown persistence once, only if enabled!
+      if (static::$shutdown_registered == FALSE && static::Enabled()) {
+        register_shutdown_function(array('fastcache','fastcache_persist'));
+        static::$shutdown_registered = TRUE;
+      }
     }
     static::$fastcacheitems[$bin]->data_set($cid, $data);
   }
@@ -188,13 +191,29 @@ class fastcache {
    * if necessary.
    */
   public static function fastcache_persist () {
-    foreach (static::$fastcacheitems as $cache) {
+    // Try to be the last of the last...
+    register_shutdown_function(array('fastcache','_fastcache_persist'));
+  }
+
+  /**
+   * Persist the binaries.
+   */
+  public static function _fastcache_persist () {
+    foreach (static::$fastcacheitems as &$cache) {
       if ($cache->persist == TRUE) {
         cache_set($cache->bin, $cache->rawdata(), 'fastcache', CACHE_TEMPORARY);
         if ($cache->locked) {
           lock_release('fastcache_' . $cache->bin);
         }
       }
+      // The binaries might be utilized on other shutdown functions...
+      $cache->changed = FALSE;
+      $cache->persist = FALSE;
+      $cache->locked = FALSE;
     }
+
+    // Fastcache may be reutilized during shutdown, make sure
+    // persistence triggers run again.
+    static::$shutdown_registered = FALSE;
   }
 }
