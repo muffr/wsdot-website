@@ -331,6 +331,9 @@ h2.pane-title, h4.pane-title {
 /* Squash the panel-separator following the project phase image */
 #project-phase + div {margin: 0em;}
 
+/* Squash the p tags surrounding project map under the phase image */
+div.pane-node-field-legacy-map p:first-of-type { margin: 0em !important; }
+
 .item-list {
     padding: 10px;
 }
