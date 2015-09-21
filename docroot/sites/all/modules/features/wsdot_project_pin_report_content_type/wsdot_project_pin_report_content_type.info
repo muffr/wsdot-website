@@ -1,13 +1,17 @@
 name = WSDOT Project PIN Report Content Type
+description = Provides content for WSDOT projects monthly PIN report
 core = 7.x
 package = WSDOT Content
 version = 7.x-1.0
 dependencies[] = ctools
+dependencies[] = ds
 dependencies[] = features
 dependencies[] = strongarm
 dependencies[] = text
 dependencies[] = wsdot_field_bases
+features[ctools][] = ds:ds:1
 features[ctools][] = strongarm:strongarm:1
+features[ds_layout_settings][] = node|pin_report|default
 features[features_api][] = api:2
 features[field_instance][] = node-pin_report-body
 features[node][] = pin_report
