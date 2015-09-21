@@ -156,6 +156,39 @@ function wsdot_projects_panelizer_defaults() {
     $display->content['new-d092e9c5-7c2b-4faa-add8-68c2017223af'] = $pane;
     $display->panels['center'][1] = 'new-d092e9c5-7c2b-4faa-add8-68c2017223af';
     $pane = new stdClass();
+    $pane->pid = 'new-896aca83-3c07-45e3-8e0d-fbefe506be59';
+    $pane->panel = 'center';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_funding_table';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'entityreference_entity_view',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(
+        'view_mode' => 'default',
+        'links' => 0,
+      ),
+      'context' => 'panelizer',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '896aca83-3c07-45e3-8e0d-fbefe506be59';
+    $display->content['new-896aca83-3c07-45e3-8e0d-fbefe506be59'] = $pane;
+    $display->panels['center'][2] = 'new-896aca83-3c07-45e3-8e0d-fbefe506be59';
+    $pane = new stdClass();
     $pane->pid = 'new-76e35c5b-e2ad-4b0b-8305-ed4a571b86c6';
     $pane->panel = 'center';
     $pane->type = 'entity_field';
@@ -163,7 +196,7 @@ function wsdot_projects_panelizer_defaults() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'label' => 'above',
+      'label' => 'hidden',
       'formatter' => 'text_default',
       'delta_limit' => 0,
       'delta_offset' => '0',
@@ -180,11 +213,11 @@ function wsdot_projects_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = '76e35c5b-e2ad-4b0b-8305-ed4a571b86c6';
     $display->content['new-76e35c5b-e2ad-4b0b-8305-ed4a571b86c6'] = $pane;
-    $display->panels['center'][2] = 'new-76e35c5b-e2ad-4b0b-8305-ed4a571b86c6';
+    $display->panels['center'][3] = 'new-76e35c5b-e2ad-4b0b-8305-ed4a571b86c6';
     $pane = new stdClass();
     $pane->pid = 'new-90820125-098f-487f-9424-0c6c943f2748';
     $pane->panel = 'right';

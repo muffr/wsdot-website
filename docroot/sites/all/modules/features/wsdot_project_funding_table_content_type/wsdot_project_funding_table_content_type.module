@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WSDOT Project Funding Table Content Type feature.
+ */
+
+include_once 'wsdot_project_funding_table_content_type.features.inc';

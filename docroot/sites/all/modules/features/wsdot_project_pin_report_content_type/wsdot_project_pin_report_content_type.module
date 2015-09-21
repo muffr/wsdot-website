@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WSDOT Project PIN Report Content Type feature.
+ */
+
+include_once 'wsdot_project_pin_report_content_type.features.inc';
