@@ -1,0 +1,11 @@
+name = WSDOT Public Project Pin Report Import
+description = Imports JSON content for the Drupal Project PIN content type
+core = 7.x
+package = WSDOT Feeds
+version = 7.x-1.0
+dependencies[] = ctools
+dependencies[] = feeds
+dependencies[] = feeds_ex
+features[ctools][] = feeds:feeds_importer_default:1
+features[features_api][] = api:2
+features[feeds_importer][] = wsdot_public_project_pin_report_import

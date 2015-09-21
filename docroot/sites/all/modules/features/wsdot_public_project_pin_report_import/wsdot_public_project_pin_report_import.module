@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WSDOT Public Project Pin Report Import feature.
+ */
+
+include_once 'wsdot_public_project_pin_report_import.features.inc';
