@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WSDOT Public Project Funding Table Import feature.
+ */
+
+include_once 'wsdot_public_project_funding_table_import.features.inc';
