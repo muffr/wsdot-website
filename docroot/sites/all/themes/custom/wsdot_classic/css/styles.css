@@ -133,6 +133,12 @@ input.searchButton {height: 23px;margin: 0;font-family: "trebuchet ms",helvetica
 .leftnavbox .content a:hover{text-decoration:none;}
 .leftnavbox .content a:visited{color:#017359;}
 
+#block-views-static-left-navigation-block .content,
+#block-views-project-pin-report-block .content {width:160px; padding:0px;}
+
+#block-views-static-left-navigation-block .content ul,
+#block-views-project-pin-report-block .content ul {margin: 0 0 0 1.5em; padding: 5px 0 0 0;}
+
 /* Feature box image container */
 #slides { width: 306px; height: 280px; background-color: #fff;}
 #slides div { width: 275px; padding:10px 14px;}
@@ -206,6 +212,7 @@ div.nav a {background:transparent url(../images/back/navigator.png) no-repeat sc
 /*** Project status box ***/
 .projectstatusbox {width:500px;border:1px solid #ccc;background-color:#f2f2df;margin-bottom: 30px;}
 .projectstatusbox h4.header{font-size:1.3em;line-height:2.5em; font-weight:bold;border-bottom:1px solid #ccc;padding:0 10px;}
+.projectstatusbox .pane-content {padding: 0 10px;}
 .projectstatusbox .pane-content ul li{padding:0em 1em .3em 0em;}
 
 /*** Local home page news box ***/
