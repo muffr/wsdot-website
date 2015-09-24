@@ -1,0 +1,10 @@
+name = WSDOT Project PIN Report View
+description = View which displays a project PIN report link in the left navigation block for a project content type
+core = 7.x
+package = WSDOT Views
+version = 7.x-1.0
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = project_pin_report
+features_exclude[dependencies][ctools] = ctools
