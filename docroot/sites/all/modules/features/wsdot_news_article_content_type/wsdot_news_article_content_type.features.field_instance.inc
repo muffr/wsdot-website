@@ -10,7 +10,7 @@
 function wsdot_news_article_content_type_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-news_article-body'
+  // Exported field_instance: 'node-news_article-body'.
   $field_instances['node-news_article-body'] = array(
     'bundle' => 'news_article',
     'default_value' => NULL,
@@ -61,7 +61,7 @@ function wsdot_news_article_content_type_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_article-field_cities'
+  // Exported field_instance: 'node-news_article-field_cities'.
   $field_instances['node-news_article-field_cities'] = array(
     'bundle' => 'news_article',
     'default_value' => NULL,
@@ -107,7 +107,7 @@ function wsdot_news_article_content_type_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_article-field_file'
+  // Exported field_instance: 'node-news_article-field_file'.
   $field_instances['node-news_article-field_file'] = array(
     'bundle' => 'news_article',
     'deleted' => 0,
@@ -169,7 +169,7 @@ function wsdot_news_article_content_type_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_article-field_highways'
+  // Exported field_instance: 'node-news_article-field_highways'.
   $field_instances['node-news_article-field_highways'] = array(
     'bundle' => 'news_article',
     'default_value' => NULL,
@@ -215,7 +215,7 @@ function wsdot_news_article_content_type_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_article-field_mountain_passes'
+  // Exported field_instance: 'node-news_article-field_mountain_passes'.
   $field_instances['node-news_article-field_mountain_passes'] = array(
     'bundle' => 'news_article',
     'default_value' => NULL,
@@ -261,7 +261,7 @@ function wsdot_news_article_content_type_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_article-field_organization_term_ref'
+  // Exported field_instance: 'node-news_article-field_organization_term_ref'.
   $field_instances['node-news_article-field_organization_term_ref'] = array(
     'bundle' => 'news_article',
     'default_value' => NULL,
@@ -301,7 +301,7 @@ function wsdot_news_article_content_type_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_article-field_regions'
+  // Exported field_instance: 'node-news_article-field_regions'.
   $field_instances['node-news_article-field_regions'] = array(
     'bundle' => 'news_article',
     'default_value' => NULL,
@@ -347,7 +347,7 @@ function wsdot_news_article_content_type_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_article-field_static_left_navigation'
+  // Exported field_instance: 'node-news_article-field_static_left_navigation'.
   $field_instances['node-news_article-field_static_left_navigation'] = array(
     'bundle' => 'news_article',
     'default_value' => NULL,
