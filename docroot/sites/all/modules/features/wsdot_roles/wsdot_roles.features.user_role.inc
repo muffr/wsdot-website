@@ -94,5 +94,11 @@ function wsdot_roles_user_default_roles() {
     'weight' => 14,
   );
 
+  // Exported role: administrator.
+  $roles['administrator'] = array(
+    'name' => 'administrator',
+    'weight' => 2,
+  );
+
   return $roles;
 }
