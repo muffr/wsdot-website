@@ -1074,15 +1074,6 @@ function wsdot_permissions_user_default_permissions() {
     'module' => 'workbench_moderation',
   );
 
-  // Exported permission: 'advanced migration information'.
-  $permissions['advanced migration information'] = array(
-    'name' => 'advanced migration information',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'migrate',
-  );
-
   // Exported permission: 'assign workbench access'.
   $permissions['assign workbench access'] = array(
     'name' => 'assign workbench access',
@@ -2627,15 +2618,6 @@ function wsdot_permissions_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'masquerade',
-  );
-
-  // Exported permission: 'migration information'.
-  $permissions['migration information'] = array(
-    'name' => 'migration information',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'migrate',
   );
 
   // Exported permission: 'moderate content from draft to needs_review'.
