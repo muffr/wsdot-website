@@ -2624,6 +2624,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['moderate content from draft to needs_review'] = array(
     'name' => 'moderate content from draft to needs_review',
     'roles' => array(
+      'News Editor' => 'News Editor',
       'administrator' => 'administrator',
     ),
     'module' => 'workbench_moderation',
@@ -2632,14 +2633,18 @@ function wsdot_permissions_user_default_permissions() {
   // Exported permission: 'moderate content from needs_moderation to draft'.
   $permissions['moderate content from needs_moderation to draft'] = array(
     'name' => 'moderate content from needs_moderation to draft',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'workbench_moderation',
   );
 
   // Exported permission: 'moderate content from needs_moderation to published'.
   $permissions['moderate content from needs_moderation to published'] = array(
     'name' => 'moderate content from needs_moderation to published',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'workbench_moderation',
   );
 
@@ -2647,6 +2652,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['moderate content from needs_review to draft'] = array(
     'name' => 'moderate content from needs_review to draft',
     'roles' => array(
+      'News Editor' => 'News Editor',
       'administrator' => 'administrator',
     ),
     'module' => 'workbench_moderation',
@@ -2655,7 +2661,9 @@ function wsdot_permissions_user_default_permissions() {
   // Exported permission: 'moderate content from needs_review to needs_moderation'.
   $permissions['moderate content from needs_review to needs_moderation'] = array(
     'name' => 'moderate content from needs_review to needs_moderation',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'workbench_moderation',
   );
 
@@ -2987,6 +2995,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['view all unpublished content'] = array(
     'name' => 'view all unpublished content',
     'roles' => array(
+      'News Editor' => 'News Editor',
       'administrator' => 'administrator',
     ),
     'module' => 'workbench_moderation',
