@@ -121,9 +121,9 @@ function wsdot_news_panel_default_page_manager_pages() {
       'title' => 'Subscribe',
       'body' => '<div class="content">
 <ul>
-	<li><a class="rss" href="/News/default.xml">RSS</a>&nbsp;</li>
-	<li><a href="http://www.wsdot.wa.gov/news/rss/">What is RSS?</a></li>
-	<li><a href="http://service.govdelivery.com/service/multi_subscribe.html?code=WADOT" onclick="" title="Sign up for e-mail updates">E-mail updates</a></li>
+	<li><a class="rss" href="/news/rss.xml">RSS</a></li>
+	<li><a href="/news/rss/">What is RSS?</a></li>
+	<li><a href="http://service.govdelivery.com/service/multi_subscribe.html?code=WADOT" title="Sign up for e-mail updates">E-mail updates</a></li>
 </ul>
 </div>
 ',
