@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the WSDOT Taxonomies feature.
  */
+
+include_once 'wsdot_taxonomies.features.inc';
