@@ -1,0 +1,15 @@
+name = WSDOT Text formats
+description = Defines the HTML tags, code, and other formatting that can be used when entering text.
+core = 7.x
+package = WSDOT Configurations
+version = 7.x-1.0
+dependencies[] = ckeditor_link
+dependencies[] = features
+dependencies[] = filter
+dependencies[] = media_wysiwyg
+dependencies[] = wysiwyg_filter
+features[features_api][] = api:2
+features[filter][] = filtered_html
+features[filter][] = full_html
+features[filter][] = plain_text
+features[filter][] = wysiwyg
