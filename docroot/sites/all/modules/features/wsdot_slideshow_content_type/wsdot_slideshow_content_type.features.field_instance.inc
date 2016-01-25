@@ -10,7 +10,7 @@
 function wsdot_slideshow_content_type_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-slideshow-field_description'
+  // Exported field_instance: 'node-slideshow-field_description'.
   $field_instances['node-slideshow-field_description'] = array(
     'bundle' => 'slideshow',
     'default_value' => NULL,
@@ -51,7 +51,7 @@ function wsdot_slideshow_content_type_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-slideshow-field_image'
+  // Exported field_instance: 'node-slideshow-field_image'.
   $field_instances['node-slideshow-field_image'] = array(
     'bundle' => 'slideshow',
     'deleted' => 0,
@@ -84,6 +84,28 @@ function wsdot_slideshow_content_type_field_default_field_instances() {
       'default_image' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
+      'filefield_paths' => array(
+        'active_updating' => 0,
+        'file_name' => array(
+          'options' => array(
+            'pathauto' => 0,
+            'slashes' => 0,
+            'transliterate' => 0,
+          ),
+          'value' => '[file:ffp-name-only-original].[file:ffp-extension-original]',
+        ),
+        'file_path' => array(
+          'options' => array(
+            'pathauto' => 0,
+            'slashes' => 0,
+            'transliterate' => 0,
+          ),
+          'value' => '[node:created:custom:Y]/[node:created:custom:m]/[node:created:custom:d]',
+        ),
+        'redirect' => FALSE,
+        'retroactive_update' => 0,
+      ),
+      'filefield_paths_enabled' => 1,
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
@@ -101,7 +123,6 @@ function wsdot_slideshow_content_type_field_default_field_instances() {
           'audio' => 0,
           'document' => 0,
           'image' => 'image',
-          'project_document' => 0,
           'video' => 0,
         ),
         'browser_plugins' => array(
@@ -113,9 +134,10 @@ function wsdot_slideshow_content_type_field_default_field_instances() {
       'type' => 'media_generic',
       'weight' => 2,
     ),
+    'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-slideshow-field_link'
+  // Exported field_instance: 'node-slideshow-field_link'.
   $field_instances['node-slideshow-field_link'] = array(
     'bundle' => 'slideshow',
     'default_value' => NULL,

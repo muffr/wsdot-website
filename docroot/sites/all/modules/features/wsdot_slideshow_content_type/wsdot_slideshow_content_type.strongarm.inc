@@ -39,7 +39,6 @@ function wsdot_slideshow_content_type_strongarm() {
   $strongarm->name = 'node_options_slideshow';
   $strongarm->value = array(
     0 => 'status',
-    1 => 'promote',
   );
   $export['node_options_slideshow'] = $strongarm;
 
@@ -56,6 +55,13 @@ function wsdot_slideshow_content_type_strongarm() {
   $strongarm->name = 'node_submitted_slideshow';
   $strongarm->value = 1;
   $export['node_submitted_slideshow'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_slideshow_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_slideshow_pattern'] = $strongarm;
 
   return $export;
 }
