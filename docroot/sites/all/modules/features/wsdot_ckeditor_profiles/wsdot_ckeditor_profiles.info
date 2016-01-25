@@ -1,0 +1,11 @@
+name = WSDOT CKEditor Profiles
+description = Manages settings for CKEditor profiles
+core = 7.x
+package = WSDOT Configurations
+version = 7.x-1.0
+dependencies[] = ckeditor
+features[ckeditor_profile][] = Advanced
+features[ckeditor_profile][] = CKEditor Global Profile
+features[ckeditor_profile][] = Full
+features[ckeditor_profile][] = Wysiwyg
+features[features_api][] = api:2
