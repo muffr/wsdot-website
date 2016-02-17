@@ -30,8 +30,107 @@ function wsdot_taxonomy_term_panels_panelizer_defaults() {
   $panelizer->link_to_entity = TRUE;
   $panelizer->extra = array();
   $display = new panels_display();
-  $display->layout = 'threecol_33_34_33';
-  $display->layout_settings = array();
+  $display->layout = 'flexible';
+  $display->layout_settings = array(
+    'items' => array(
+      'canvas' => array(
+        'type' => 'row',
+        'contains' => 'column',
+        'children' => array(
+          0 => 1,
+          1 => 'main',
+          2 => 3,
+        ),
+        'parent' => NULL,
+      ),
+      'main' => array(
+        'type' => 'column',
+        'width' => '50',
+        'width_type' => '%',
+        'children' => array(
+          0 => 'main-row',
+        ),
+        'parent' => 'canvas',
+      ),
+      'main-row' => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'center',
+        ),
+        'parent' => 'main',
+      ),
+      'center' => array(
+        'type' => 'region',
+        'title' => 'Left',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => 'main-row',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+      1 => array(
+        'type' => 'column',
+        'width' => '185',
+        'width_type' => 'px',
+        'parent' => 'canvas',
+        'children' => array(
+          0 => 2,
+        ),
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+      2 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'left',
+        ),
+        'parent' => '1',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+      'left' => array(
+        'type' => 'region',
+        'title' => 'Navigation',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '2',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+      3 => array(
+        'type' => 'column',
+        'width' => '50',
+        'width_type' => '%',
+        'parent' => 'canvas',
+        'children' => array(
+          0 => 4,
+        ),
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+      4 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'right',
+        ),
+        'parent' => '3',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+      'right' => array(
+        'type' => 'region',
+        'title' => 'Right',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '4',
+        'class' => '',
+        'hide_empty' => 0,
+      ),
+    ),
+  );
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
@@ -47,10 +146,10 @@ function wsdot_taxonomy_term_panels_panelizer_defaults() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-7a84440f-94ac-4deb-aaa1-7176ded1fa70';
-    $pane->panel = 'middle';
+    $pane->pid = 'new-a083d42b-3051-4b4c-b9aa-453e6eb30b64';
+    $pane->panel = 'center';
     $pane->type = 'views_panes';
-    $pane->subtype = 'news-panel_pane_1';
+    $pane->subtype = 'news-panel_pane_2';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -66,43 +165,25 @@ function wsdot_taxonomy_term_panels_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '7a84440f-94ac-4deb-aaa1-7176ded1fa70';
-    $display->content['new-7a84440f-94ac-4deb-aaa1-7176ded1fa70'] = $pane;
-    $display->panels['middle'][0] = 'new-7a84440f-94ac-4deb-aaa1-7176ded1fa70';
+    $pane->uuid = 'a083d42b-3051-4b4c-b9aa-453e6eb30b64';
+    $display->content['new-a083d42b-3051-4b4c-b9aa-453e6eb30b64'] = $pane;
+    $display->panels['center'][0] = 'new-a083d42b-3051-4b4c-b9aa-453e6eb30b64';
     $pane = new stdClass();
-    $pane->pid = 'new-1119018d-ff76-4a70-809c-32f17dc35f31';
-    $pane->panel = 'right';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'project_titles-panel_pane_2';
+    $pane->pid = 'new-416a930b-75d5-478f-9ff6-201b65266b60';
+    $pane->panel = 'center';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'context' => array(
-        0 => 'panelizer',
-      ),
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '1119018d-ff76-4a70-809c-32f17dc35f31';
-    $display->content['new-1119018d-ff76-4a70-809c-32f17dc35f31'] = $pane;
-    $display->panels['right'][0] = 'new-1119018d-ff76-4a70-809c-32f17dc35f31';
-    $pane = new stdClass();
-    $pane->pid = 'new-f68dfd76-6edc-4461-9be7-22bed5b2c33c';
-    $pane->panel = 'right';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'project_titles-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => array(
-        0 => 'panelizer',
-      ),
+      'admin_title' => '',
+      'title' => 'Traffic and Roads',
+      'body' => '<ul>
+	<li><a href="#">Links to local construction and traffic advisories</a></li>
+</ul>
+',
+      'format' => 'wysiwyg',
+      'substitute' => 1,
     );
     $pane->cache = array();
     $pane->style = array(
@@ -112,11 +193,199 @@ function wsdot_taxonomy_term_panels_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = 'f68dfd76-6edc-4461-9be7-22bed5b2c33c';
-    $display->content['new-f68dfd76-6edc-4461-9be7-22bed5b2c33c'] = $pane;
-    $display->panels['right'][1] = 'new-f68dfd76-6edc-4461-9be7-22bed5b2c33c';
+    $pane->uuid = '416a930b-75d5-478f-9ff6-201b65266b60';
+    $display->content['new-416a930b-75d5-478f-9ff6-201b65266b60'] = $pane;
+    $display->panels['center'][1] = 'new-416a930b-75d5-478f-9ff6-201b65266b60';
+    $pane = new stdClass();
+    $pane->pid = 'new-9f58b387-e022-4e2f-ad97-4cd2b2e6bdc8';
+    $pane->panel = 'left';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => 'Most Requested',
+      'body' => '<div class="content bluebox">
+<ul>
+	<li><a href="#">Link one</a></li>
+	<li><a href="#">Link two</a></li>
+	<li><a href="#">Link three</a></li>
+</ul>
+</div>',
+      'format' => 'wysiwyg',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '9f58b387-e022-4e2f-ad97-4cd2b2e6bdc8';
+    $display->content['new-9f58b387-e022-4e2f-ad97-4cd2b2e6bdc8'] = $pane;
+    $display->panels['left'][0] = 'new-9f58b387-e022-4e2f-ad97-4cd2b2e6bdc8';
+    $pane = new stdClass();
+    $pane->pid = 'new-a9b7486b-e29a-4c0a-85d3-dfabf6e80f61';
+    $pane->panel = 'left';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Small region map',
+      'title' => 'Local Information',
+      'body' => '<p style="text-align:center">Click on map for local info</p>
+
+<ul id="regions">
+	<li id="regions-northwest"><a href="/regions/northwest/" title="Northwest">Northwest</a></li>
+	<li id="regions-olympic"><a href="/regions/olympic/" title="Olympic">Olympic</a></li>
+	<li id="regions-southwest"><a href="/regions/southwest/" title="Southwest">Southwest</a></li>
+	<li id="regions-southcentral"><a href="/regions/south-central/" title="South Central">South Central</a></li>
+	<li id="regions-northcentral"><a href="/regions/north-central/" title="North Central">North Central</a></li>
+	<li id="regions-eastern"><a href="/regions/eastern/" title="Eastern">Eastern</a></li>
+</ul>
+
+<p style="text-align:center"><a href="/regions/map">View larger map for<br />
+more local links</a></p>
+',
+      'format' => 'wysiwyg',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'a9b7486b-e29a-4c0a-85d3-dfabf6e80f61';
+    $display->content['new-a9b7486b-e29a-4c0a-85d3-dfabf6e80f61'] = $pane;
+    $display->panels['left'][1] = 'new-a9b7486b-e29a-4c0a-85d3-dfabf6e80f61';
+    $pane = new stdClass();
+    $pane->pid = 'new-585b5a0a-8b2a-483d-8abb-0e9d3aef705e';
+    $pane->panel = 'left';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => 'Contact Us',
+      'body' => '<p>Your contact information</p>
+',
+      'format' => 'wysiwyg',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '585b5a0a-8b2a-483d-8abb-0e9d3aef705e';
+    $display->content['new-585b5a0a-8b2a-483d-8abb-0e9d3aef705e'] = $pane;
+    $display->panels['left'][2] = 'new-585b5a0a-8b2a-483d-8abb-0e9d3aef705e';
+    $pane = new stdClass();
+    $pane->pid = 'new-3e3a2e7d-e994-412a-a5cb-acbdfc9c7847';
+    $pane->panel = 'right';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => 'Projects',
+      'body' => '<ul>
+	<li><a href="/projects/">Statewide Projects</a></li>
+</ul>
+',
+      'format' => 'wysiwyg',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '3e3a2e7d-e994-412a-a5cb-acbdfc9c7847';
+    $display->content['new-3e3a2e7d-e994-412a-a5cb-acbdfc9c7847'] = $pane;
+    $display->panels['right'][0] = 'new-3e3a2e7d-e994-412a-a5cb-acbdfc9c7847';
+    $pane = new stdClass();
+    $pane->pid = 'new-a02c5977-ac62-49be-8118-485016207376';
+    $pane->panel = 'right';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => 'Local Information',
+      'body' => '<ul>
+	<li><a href="#">Links to local content</a></li>
+</ul>
+',
+      'format' => 'wysiwyg',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'a02c5977-ac62-49be-8118-485016207376';
+    $display->content['new-a02c5977-ac62-49be-8118-485016207376'] = $pane;
+    $display->panels['right'][1] = 'new-a02c5977-ac62-49be-8118-485016207376';
+    $pane = new stdClass();
+    $pane->pid = 'new-df2e38e8-932c-4c6e-ac0a-abcbdb5fc358';
+    $pane->panel = 'right';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => 'Stay Connected',
+      'body' => '<div class="widgetdata">
+<ul class="threecol_icons" style="list-style:none">
+	<li><a class="blogger" href="http://wsdotblog.blogspot.com/">Blogger</a></li>
+	<li><a class="flickr" href="http://www.flickr.com/photos/wsdot/">Flickr</a></li>
+	<li><a class="rss" href="http://www.wsdot.wa.gov/news/rss/">RSS</a></li>
+	<li><a class="twitter" href="http://twitter.com/wsdot">Twitter</a></li>
+	<li><a class="youtube" href="http://www.youtube.com/wsdot">YouTube</a></li>
+	<li><a class="facebook" href="http://www.facebook.com/wsdot">Facebook</a></li>
+</ul>
+
+<div class="cl">&nbsp;</div>
+</div>
+',
+      'format' => 'wysiwyg',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = 'df2e38e8-932c-4c6e-ac0a-abcbdb5fc358';
+    $display->content['new-df2e38e8-932c-4c6e-ac0a-abcbdb5fc358'] = $pane;
+    $display->panels['right'][2] = 'new-df2e38e8-932c-4c6e-ac0a-abcbdb5fc358';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-1119018d-ff76-4a70-809c-32f17dc35f31';
+  $display->title_pane = '0';
   $panelizer->display = $display;
   $export['taxonomy_term:regions:default'] = $panelizer;
 
@@ -130,7 +399,7 @@ function wsdot_taxonomy_term_panels_panelizer_defaults() {
   $panelizer->no_blocks = FALSE;
   $panelizer->css_id = '';
   $panelizer->css = '';
-  $panelizer->pipeline = 'ipe';
+  $panelizer->pipeline = 'standard';
   $panelizer->contexts = array();
   $panelizer->relationships = array();
   $panelizer->access = array();

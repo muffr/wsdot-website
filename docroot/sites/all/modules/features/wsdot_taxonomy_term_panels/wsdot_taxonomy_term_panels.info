@@ -1,8 +1,8 @@
-name = WSDOT Taxonomy term Panels
+name = WSDOT Taxonomy Term Panels
 description = This feature manages Panel variants used to display taxonomy terms
 core = 7.x
 package = WSDOT Panels
-version = 7.x-1.2
+version = 7.x-1.3
 project = wsdot_taxonomy_term_panels
 dependencies[] = ctools
 dependencies[] = page_manager

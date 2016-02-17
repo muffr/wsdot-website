@@ -23,9 +23,9 @@ function wsdot_taxonomy_term_panels_strongarm() {
         'choice' => 1,
       ),
       'default' => array(
-        'status' => 1,
+        'status' => 0,
         'default' => 1,
-        'choice' => 1,
+        'choice' => 0,
       ),
     ),
   );
