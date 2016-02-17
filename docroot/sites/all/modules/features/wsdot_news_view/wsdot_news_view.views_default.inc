@@ -116,6 +116,21 @@ function wsdot_news_view_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Field: Regions (field_regions) */
+  $handler->display->display_options['arguments']['field_regions_tid']['id'] = 'field_regions_tid';
+  $handler->display->display_options['arguments']['field_regions_tid']['table'] = 'field_data_field_regions';
+  $handler->display->display_options['arguments']['field_regions_tid']['field'] = 'field_regions_tid';
+  $handler->display->display_options['arguments']['field_regions_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_regions_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_regions_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_regions_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_regions_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_regions_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_regions_tid']['validate_options']['vocabularies'] = array(
+    'regions' => 'regions',
+  );
+  $handler->display->display_options['arguments']['field_regions_tid']['validate_options']['type'] = 'convert';
+  $handler->display->display_options['arguments']['field_regions_tid']['validate_options']['transform'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -137,6 +152,7 @@ function wsdot_news_view_views_default_views() {
   $handler->display->display_options['filters']['date_filter']['id'] = 'date_filter';
   $handler->display->display_options['filters']['date_filter']['table'] = 'node';
   $handler->display->display_options['filters']['date_filter']['field'] = 'date_filter';
+  $handler->display->display_options['filters']['date_filter']['group'] = 1;
   $handler->display->display_options['filters']['date_filter']['exposed'] = TRUE;
   $handler->display->display_options['filters']['date_filter']['expose']['operator_id'] = 'date_filter_op';
   $handler->display->display_options['filters']['date_filter']['expose']['operator'] = 'date_filter_op';
@@ -175,10 +191,21 @@ function wsdot_news_view_views_default_views() {
   /* Display: Region Content pane */
   $handler = $view->new_display('panel_pane', 'Region Content pane', 'panel_pane_2');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'bluebox';
   $handler->display->display_options['display_description'] = 'News on Region pages';
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'More news...';
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'custom_url';
+  $handler->display->display_options['link_url'] = '/news/%1';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '15';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'list';
