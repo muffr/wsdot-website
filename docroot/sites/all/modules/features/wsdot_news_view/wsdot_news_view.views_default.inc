@@ -107,6 +107,8 @@ function wsdot_news_view_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -178,7 +180,7 @@ function wsdot_news_view_views_default_views() {
   $handler->display->display_options['allow']['fields_override'] = 0;
   $handler->display->display_options['argument_input'] = array(
     'field_regions_tid' => array(
-      'type' => 'context',
+      'type' => 'panel',
       'context' => 'entity:taxonomy_term.name',
       'context_optional' => 0,
       'panel' => '0',
@@ -186,7 +188,7 @@ function wsdot_news_view_views_default_views() {
       'label' => 'Content: Regions (field_regions)',
     ),
   );
-  $handler->display->display_options['inherit_panels_path'] = '1';
+  $handler->display->display_options['inherit_panels_path'] = '0';
 
   /* Display: Region Content pane */
   $handler = $view->new_display('panel_pane', 'Region Content pane', 'panel_pane_2');
@@ -202,7 +204,7 @@ function wsdot_news_view_views_default_views() {
   $handler->display->display_options['use_more_text'] = 'More news...';
   $handler->display->display_options['defaults']['link_display'] = FALSE;
   $handler->display->display_options['link_display'] = 'custom_url';
-  $handler->display->display_options['link_url'] = '/news/%1';
+  $handler->display->display_options['link_url'] = '/news/';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '4';
@@ -215,6 +217,23 @@ function wsdot_news_view_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Field: Regions (field_regions) */
+  $handler->display->display_options['arguments']['field_regions_tid']['id'] = 'field_regions_tid';
+  $handler->display->display_options['arguments']['field_regions_tid']['table'] = 'field_data_field_regions';
+  $handler->display->display_options['arguments']['field_regions_tid']['field'] = 'field_regions_tid';
+  $handler->display->display_options['arguments']['field_regions_tid']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['field_regions_tid']['title'] = '%1 Region News';
+  $handler->display->display_options['arguments']['field_regions_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_regions_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_regions_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_regions_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_regions_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_regions_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_regions_tid']['validate_options']['vocabularies'] = array(
+    'regions' => 'regions',
+  );
+  $handler->display->display_options['arguments']['field_regions_tid']['validate_options']['type'] = 'convert';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
