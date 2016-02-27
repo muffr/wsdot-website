@@ -188,7 +188,8 @@ function wsdot_news_view_views_default_views() {
       'label' => 'Content: Regions (field_regions)',
     ),
   );
-  $handler->display->display_options['inherit_panels_path'] = '0';
+  $handler->display->display_options['link_to_view'] = '0';
+  $handler->display->display_options['inherit_panels_path'] = '1';
 
   /* Display: Region Content pane */
   $handler = $view->new_display('panel_pane', 'Region Content pane', 'panel_pane_2');
