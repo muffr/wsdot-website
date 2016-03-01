@@ -274,6 +274,42 @@ function wsdot_home_panel_default_page_manager_pages() {
     $display->content['new-9a284c11-52c3-4f0c-bf13-2bf263113892'] = $pane;
     $display->panels['middle'][2] = 'new-9a284c11-52c3-4f0c-bf13-2bf263113892';
     $pane = new stdClass();
+    $pane->pid = 'new-94916838-4925-4358-8191-f56716b7da81';
+    $pane->panel = 'middle';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Projects (Static)',
+      'title' => 'Projects',
+      'body' => '<div class="widgetdata">
+<ul class="content">
+	<li><a href="http://www.wsdot.wa.gov/projects/">Find a Project</a></li>
+	<li><a href="http://www.wsdot.wa.gov/Projects/I90/SnoqualmiePassEast/">I-90 Snoqualmie Pass East </a></li>
+	<li><a href="http://www.wsdot.wa.gov/projects/viaduct">SR 99 - Alaskan Way Viaduct Replacement</a></li>
+	<li><a href="http://www.wsdot.wa.gov/Projects/SR520Bridge/">SR 520 - Bridge Replacement and HOV Program</a></li>
+	<li><a href="http://www.wsdot.wa.gov/construction/pugetsound/today.htm">What\'s Happening in the Puget Sound Area</a></li>
+	<li><a href="http://www.wsdot.wa.gov/Projects/I5/JBLMImprovements/default.htm">I-5 JBLM Corridor Improvements</a></li>
+	<li><a href="http://www.wsdot.wa.gov/Projects/FishPassage/default.htm">Fish Passage</a></li>
+</ul>
+</div>
+',
+      'format' => 'wysiwyg',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '94916838-4925-4358-8191-f56716b7da81';
+    $display->content['new-94916838-4925-4358-8191-f56716b7da81'] = $pane;
+    $display->panels['middle'][3] = 'new-94916838-4925-4358-8191-f56716b7da81';
+    $pane = new stdClass();
     $pane->pid = 'new-27a2d63f-2166-46b7-bc39-d6af2c85e778';
     $pane->panel = 'right';
     $pane->type = 'views_panes';
