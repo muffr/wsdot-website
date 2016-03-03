@@ -44,6 +44,19 @@ function wsdot_text_formats_filter_default_formats() {
         'status' => 1,
         'settings' => array(),
       ),
+      'pathologic' => array(
+        'weight' => 50,
+        'status' => 1,
+        'settings' => array(
+          'settings_source' => 'global',
+          'local_paths' => '',
+          'protocol_style' => 'full',
+          'local_settings' => array(
+            'protocol_style' => 'full',
+            'local_paths' => '',
+          ),
+        ),
+      ),
     ),
   );
 
@@ -82,6 +95,19 @@ function wsdot_text_formats_filter_default_formats() {
         'status' => 1,
         'settings' => array(),
       ),
+      'pathologic' => array(
+        'weight' => 50,
+        'status' => 1,
+        'settings' => array(
+          'settings_source' => 'global',
+          'local_paths' => '',
+          'protocol_style' => 'full',
+          'local_settings' => array(
+            'protocol_style' => 'full',
+            'local_paths' => '',
+          ),
+        ),
+      ),
     ),
   );
 
@@ -109,6 +135,19 @@ function wsdot_text_formats_filter_default_formats() {
         'weight' => 2,
         'status' => 1,
         'settings' => array(),
+      ),
+      'pathologic' => array(
+        'weight' => 50,
+        'status' => 1,
+        'settings' => array(
+          'settings_source' => 'global',
+          'local_paths' => '',
+          'protocol_style' => 'full',
+          'local_settings' => array(
+            'protocol_style' => 'full',
+            'local_paths' => '',
+          ),
+        ),
       ),
     ),
   );
@@ -355,6 +394,19 @@ table[style|cellspacing|cellpadding|border|bordercolor|align],thead,tbody,captio
         'weight' => -43,
         'status' => 1,
         'settings' => array(),
+      ),
+      'pathologic' => array(
+        'weight' => 50,
+        'status' => 1,
+        'settings' => array(
+          'settings_source' => 'global',
+          'local_paths' => '',
+          'protocol_style' => 'full',
+          'local_settings' => array(
+            'protocol_style' => 'full',
+            'local_paths' => '',
+          ),
+        ),
       ),
     ),
   );

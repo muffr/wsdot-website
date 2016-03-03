@@ -1,0 +1,12 @@
+name = WSDOT Pathologic
+description = Manages pathologic module URL format and base paths for site
+core = 7.x
+package = WSDOT Configurations
+version = 7.x-1.0
+dependencies[] = ctools
+dependencies[] = pathologic
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[variable][] = pathologic_local_paths
+features[variable][] = pathologic_protocol_style
