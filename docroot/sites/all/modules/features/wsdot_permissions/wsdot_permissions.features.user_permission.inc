@@ -52,6 +52,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['access ckeditor link'] = array(
     'name' => 'access ckeditor link',
     'roles' => array(
+      'News Editor' => 'News Editor',
       'administrator' => 'administrator',
     ),
     'module' => 'ckeditor_link',
@@ -93,15 +94,6 @@ function wsdot_permissions_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'dashboard',
-  );
-
-  // Exported permission: 'access devel information'.
-  $permissions['access devel information'] = array(
-    'name' => 'access devel information',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'devel',
   );
 
   // Exported permission: 'access flood unblock'.
@@ -1240,6 +1232,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['create files'] = array(
     'name' => 'create files',
     'roles' => array(
+      'News Editor' => 'News Editor',
       'administrator' => 'administrator',
     ),
     'module' => 'file_entity',
@@ -2020,6 +2013,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['edit any document files'] = array(
     'name' => 'edit any document files',
     'roles' => array(
+      'News Editor' => 'News Editor',
       'administrator' => 'administrator',
     ),
     'module' => 'file_entity',
@@ -2470,15 +2464,6 @@ function wsdot_permissions_user_default_permissions() {
     'module' => 'webform',
   );
 
-  // Exported permission: 'execute php code'.
-  $permissions['execute php code'] = array(
-    'name' => 'execute php code',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'devel',
-  );
-
   // Exported permission: 'flush caches'.
   $permissions['flush caches'] = array(
     'name' => 'flush caches',
@@ -2748,15 +2733,6 @@ function wsdot_permissions_user_default_permissions() {
     'module' => 'shortcut',
   );
 
-  // Exported permission: 'switch users'.
-  $permissions['switch users'] = array(
-    'name' => 'switch users',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'devel',
-  );
-
   // Exported permission: 'tamper wsdot_public_default_import'.
   $permissions['tamper wsdot_public_default_import'] = array(
     'name' => 'tamper wsdot_public_default_import',
@@ -2937,7 +2913,6 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
     ),
     'module' => 'filter',
   );
@@ -2955,9 +2930,9 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['use text format wysiwyg'] = array(
     'name' => 'use text format wysiwyg',
     'roles' => array(
+      'News Editor' => 'News Editor',
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
     ),
     'module' => 'filter',
   );
