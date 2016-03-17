@@ -2715,16 +2715,6 @@ function wsdot_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'schedule (un)publishing of nodes'.
-  $permissions['schedule (un)publishing of nodes'] = array(
-    'name' => 'schedule (un)publishing of nodes',
-    'roles' => array(
-      'News Editor' => 'News Editor',
-      'administrator' => 'administrator',
-    ),
-    'module' => 'scheduler',
-  );
-
   // Exported permission: 'search content'.
   $permissions['search content'] = array(
     'name' => 'search content',
