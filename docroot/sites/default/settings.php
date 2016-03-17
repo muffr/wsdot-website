@@ -582,3 +582,7 @@ if (isset($_SERVER['DEVDESKTOP_DRUPAL_SETTINGS_DIR']) && file_exists($_SERVER['D
   require $_SERVER['DEVDESKTOP_DRUPAL_SETTINGS_DIR'] . '/cld_prod_wsdot_dev_default.inc';
 }
 // </DDSETTINGS>
+if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
+  $files_private_conf_path = conf_path();
+  $conf['file_private_path'] = '/mnt/files/' . $_ENV['AH_SITE_GROUP'] . '.' . $_ENV['AH_SITE_ENVIRONMENT'] . '/' . $files_private_conf_path . '/files-private';
+}
