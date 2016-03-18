@@ -174,7 +174,7 @@ function wsdot_slideshow_content_type_field_default_field_instances() {
         'title' => '',
       ),
       'display' => array(
-        'url_cutoff' => 80,
+        'url_cutoff' => '',
       ),
       'enable_tokens' => 1,
       'rel_remove' => 'default',
@@ -193,6 +193,7 @@ function wsdot_slideshow_content_type_field_default_field_instances() {
       'type' => 'link_field',
       'weight' => 1,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Translatables
