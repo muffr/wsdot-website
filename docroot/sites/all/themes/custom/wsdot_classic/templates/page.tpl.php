@@ -10,8 +10,8 @@
     </ul>
   </div>
   <div class="logo">
-    <h1> <a href="/"><img src="http://www.wsdot.wa.gov/media/images/blacklogo.gif" alt="WSDOT" /></a> </h1>
-    <div class="emailupdates"><a href="http://service.govdelivery.com/service/multi_subscribe.html?code=WADOT" onclick="window.open('http://service.govdelivery.com/service/multi_subscribe.html?code=WADOT','Popup','width=780,height=440,toolbar=no,scrollbars=yes,resizable=yes'); return false" title="Sign up for email updates">Email updates</a></div>
+    <h1> <a href="/"><img src="/sites/all/themes/custom/wsdot_classic/images/blacklogo.gif" alt="WSDOT" /></a> </h1>
+    <div class="emailupdates"><a href="http://service.govdelivery.com/service/multi_subscribe.html?code=WADOT" onclick="window.open('https://service.govdelivery.com/service/multi_subscribe.html?code=WADOT','Popup','width=780,height=440,toolbar=no,scrollbars=yes,resizable=yes'); return false" title="Sign up for email updates">Email updates</a></div>
   </div>
 
   <div class="mainban">
@@ -26,9 +26,10 @@
       </ul>
 
       <div class="search">
-        <form id="searchform" method="get" action="http://www.wsdot.wa.gov/search/">
+        <form id="searchform" method="get" action="https://search.usa.gov/search">
           <fieldset>
-            <input type="text" name="q" id="query-field" class="search-text" />
+            <input type="hidden" id="affiliate" name="affiliate" value="WSDOT" />
+            <input type="text" name="query" id="query" class="search-text" />
             <input type="submit" value="Search" class="searchButton" />
           </fieldset>
         </form>
