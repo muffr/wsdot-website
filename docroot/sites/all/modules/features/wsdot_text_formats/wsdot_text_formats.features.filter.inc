@@ -164,7 +164,7 @@ function wsdot_text_formats_filter_default_formats() {
         'weight' => -48,
         'status' => 1,
         'settings' => array(
-          'valid_elements' => 'a[!href|target<_blank|title],
+          'valid_elements' => 'a[href|target<_blank|title|name],
 div[align<center?justify?left?right],
 p[align<center?justify?left?right],
 img[src|alt|title|width|height], @[class|style|id],
@@ -182,9 +182,9 @@ table[style|cellspacing|cellpadding|border|bordercolor|align],thead,tbody,captio
             0 => 'wsdot.dev.dd',
           ),
           'style_color' => array(
+            'background-color' => 'background-color',
             'color' => 0,
             'background' => 0,
-            'background-color' => 0,
             'background-image' => 0,
             'background-repeat' => 0,
             'background-attachment' => 0,
