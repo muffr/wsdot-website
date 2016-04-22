@@ -175,7 +175,7 @@ div.nav a {background:transparent url(../images/back/navigator.png) no-repeat sc
 .copyright{padding:10px 0px;font-size:1em;color:#636363;text-align:center;}
 
 /*** Main content ***/
-#main {display: table-cell; width: inherit; padding: 15px 10px 10px 10px;}
+#main {display: table-cell; min-width: inherit; padding: 15px 10px 10px 10px;}
 #main ul ul, ol ol, ul ol, ol ul, ol p, ul p {font-size: 1em;}
 #main li {line-height:1.5em;font-size: 1.2em;}
 #main p {margin: 1em 0;line-height:1.5em;font-size: 1.2em;}
