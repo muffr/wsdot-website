@@ -395,6 +395,15 @@ function wsdot_permissions_user_default_permissions() {
     'module' => 'context_ui',
   );
 
+  // Exported permission: 'administer devel menu items'.
+  $permissions['administer devel menu items'] = array(
+    'name' => 'administer devel menu items',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'menu_admin_per_menu',
+  );
+
   // Exported permission: 'administer features'.
   $permissions['administer features'] = array(
     'name' => 'administer features',
@@ -402,6 +411,15 @@ function wsdot_permissions_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'features',
+  );
+
+  // Exported permission: 'administer features menu items'.
+  $permissions['administer features menu items'] = array(
+    'name' => 'administer features menu items',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'menu_admin_per_menu',
   );
 
   // Exported permission: 'administer feeds'.
@@ -498,6 +516,36 @@ function wsdot_permissions_user_default_permissions() {
     'module' => 'image',
   );
 
+  // Exported permission: 'administer main-menu menu items'.
+  $permissions['administer main-menu menu items'] = array(
+    'name' => 'administer main-menu menu items',
+    'roles' => array(
+      'ER Project Author' => 'ER Project Author',
+      'ER Project Editor' => 'ER Project Editor',
+      'NC Project Author' => 'NC Project Author',
+      'NC Project Editor' => 'NC Project Editor',
+      'NW Project Author' => 'NW Project Author',
+      'NW Project Editor' => 'NW Project Editor',
+      'OR Project Author' => 'OR Project Author',
+      'OR Project Editor' => 'OR Project Editor',
+      'SC Project Author' => 'SC Project Author',
+      'SC Project Editors' => 'SC Project Editors',
+      'SW Project Author' => 'SW Project Author',
+      'SW Project Editor' => 'SW Project Editor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'menu_admin_per_menu',
+  );
+
+  // Exported permission: 'administer management menu items'.
+  $permissions['administer management menu items'] = array(
+    'name' => 'administer management menu items',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'menu_admin_per_menu',
+  );
+
   // Exported permission: 'administer masquerade'.
   $permissions['administer masquerade'] = array(
     'name' => 'administer masquerade',
@@ -534,6 +582,15 @@ function wsdot_permissions_user_default_permissions() {
     'module' => 'menu',
   );
 
+  // Exported permission: 'administer menu-flexslider-example menu items'.
+  $permissions['administer menu-flexslider-example menu items'] = array(
+    'name' => 'administer menu-flexslider-example menu items',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'menu_admin_per_menu',
+  );
+
   // Exported permission: 'administer mini panels'.
   $permissions['administer mini panels'] = array(
     'name' => 'administer mini panels',
@@ -559,6 +616,15 @@ function wsdot_permissions_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'system',
+  );
+
+  // Exported permission: 'administer navigation menu items'.
+  $permissions['administer navigation menu items'] = array(
+    'name' => 'administer navigation menu items',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'menu_admin_per_menu',
   );
 
   // Exported permission: 'administer nodequeue'.
@@ -1121,6 +1187,15 @@ function wsdot_permissions_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'path',
+  );
+
+  // Exported permission: 'administer user-menu menu items'.
+  $permissions['administer user-menu menu items'] = array(
+    'name' => 'administer user-menu menu items',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'menu_admin_per_menu',
   );
 
   // Exported permission: 'administer users'.
