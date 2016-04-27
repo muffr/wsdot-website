@@ -41,3 +41,7 @@ features[] = secondary_menu
 ; ---------------------
 stylesheets[all][] = css/styles.css
 stylesheets[print][] = css/print.css
+
+; JavaScript
+; ---------------------
+scripts[] = js/main.js

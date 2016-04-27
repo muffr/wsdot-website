@@ -573,3 +573,11 @@ h4.RoadworkTitle {
 .widgets-element-horizontal,.widgets-style-horizontal {
 	margin-right: 1em;	
 }
+
+/* home page promo */
+#promo{position:fixed;width:448px;height:448px;right:0;bottom:-448px;z-index:9999;transition-property:bottom;transition-duration:0.45s;transition-timing-function:ease;}
+#promo.raised{bottom:0;}
+#promo div{position:relative;}
+#promo div #close{position:absolute;top:97px;right:30px;width:38px;height:38px;cursor:pointer;}
+#app-store-link{position:absolute;top:218px;right:30px;width:150px;height:45px;}
+#play-store-link{position:absolute;top:278px;right:30px;width:150px;height:52px;}
