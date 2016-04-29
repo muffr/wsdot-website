@@ -200,17 +200,18 @@ function wsdot_news_panel_default_page_manager_pages() {
       'admin_title' => '',
       'title' => 'What\'s Going On?',
       'body' => '<div class="content bluebox">
-<ul style="list-style:none;">
+<ul style="list-style:none">
 	<li style="padding-left:0px"><a class="twitter" href="http://twitter.com/wsdot" title="Main account">@wsdot</a></li>
 	<li style="padding-left:0px"><a class="twitter" href="http://twitter.com/wsdot_traffic" title="Puget Sound traffic reports">@wsdot_traffic</a></li>
 	<li style="padding-left:0px"><a class="twitter" href="https://twitter.com/goodtogowsdot" title="Good To Go! and tolling information">@GoodToGoWSDOT</a></li>
 	<li style="padding-left:0px"><a class="twitter" href="http://twitter.com/wsdot_passes" title="Mountain pass reports">@wsdot_passes</a></li>
 	<li style="padding-left:0px"><a class="twitter" href="http://twitter.com/wsdot_tacoma" title="Tacoma traffic">@wsdot_tacoma</a></li>
 	<li style="padding-left:0px"><a class="twitter" href="http://twitter.com/wsdot_520" title="520 Project">@wsdot_520</a></li>
-	<li style="padding-left:0px"><a class="twitter" href="mailto:b@berthadigssr99" title="Bertha">@berthadigssr99</a></li>
+	<li style="padding-left:0px"><a class="twitter" href="http://twitter.com/berthadigssr99" title="Bertha">@berthadigssr99</a></li>
 	<li style="padding-left:0px"><a class="twitter" href="http://twitter.com/wsdot_east" title="Tweets from east of the cascades">@wsdot_east</a></li>
 	<li style="padding-left:0px"><a class="twitter" href="http://twitter.com/snoqualmiepass" title="Snoqualmie Pass">@SnoqualmiePass</a></li>
 	<li style="padding-left:0px"><a class="twitter" href="http://twitter.com/wsferries" title="Washington Sate Ferries">@wsferries</a></li>
+	<li style="padding-left:0px"><a class="twitter" href="http://twitter.com/wsdotjobs">@wsdotjobs</a></li>
 </ul>
 </div>
 ',
@@ -237,12 +238,13 @@ function wsdot_news_panel_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'admin_title' => '',
-      'title' => 'Blogs',
+      'title' => 'Follow Along',
       'body' => '<div class="content">
 <ul>
 	<li><a href="http://wsdotblog.blogspot.com/">The WSDOT Blog</a></li>
-	<li><a href="http://wsdotferries.blogspot.com/">Washington State Ferries Blog</a></li>
 	<li><a href="http://facebook.com/wsdot">Facebook</a></li>
+	<li><a href="http://flickr.com/wsdot">Flickr</a></li>
+	<li><a href="http://youtube.com/wsdot">YouTube</a></li>
 </ul>
 </div>
 ',
@@ -265,7 +267,7 @@ function wsdot_news_panel_default_page_manager_pages() {
     $pane->panel = 'right';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'admin_title' => '',
