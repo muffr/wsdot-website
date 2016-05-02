@@ -255,41 +255,11 @@ function wsdot_home_panel_default_page_manager_pages() {
     $display->content['new-2d3450f1-4f4d-4a7c-8462-d25c9894586e'] = $pane;
     $display->panels['middle'][1] = 'new-2d3450f1-4f4d-4a7c-8462-d25c9894586e';
     $pane = new stdClass();
-    $pane->pid = 'new-3fc38517-7530-44c6-a97c-a05885d4d5b2';
-    $pane->panel = 'middle';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Blog',
-      'title' => 'Blog',
-      'body' => '<div class="widgetdata">
-<ul class="content">
-	<li><a href="http://wsdotblog.blogspot.com/">WSDOT Blog</a></li>
-</ul>
-</div>
-',
-      'format' => 'wysiwyg',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = '3fc38517-7530-44c6-a97c-a05885d4d5b2';
-    $display->content['new-3fc38517-7530-44c6-a97c-a05885d4d5b2'] = $pane;
-    $display->panels['middle'][2] = 'new-3fc38517-7530-44c6-a97c-a05885d4d5b2';
-    $pane = new stdClass();
     $pane->pid = 'new-9a284c11-52c3-4f0c-bf13-2bf263113892';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
     $pane->subtype = 'nodequeue_6-panel_pane_1';
-    $pane->shown = FALSE;
+    $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
     $pane->cache = array();
@@ -298,11 +268,11 @@ function wsdot_home_panel_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '9a284c11-52c3-4f0c-bf13-2bf263113892';
     $display->content['new-9a284c11-52c3-4f0c-bf13-2bf263113892'] = $pane;
-    $display->panels['middle'][3] = 'new-9a284c11-52c3-4f0c-bf13-2bf263113892';
+    $display->panels['middle'][2] = 'new-9a284c11-52c3-4f0c-bf13-2bf263113892';
     $pane = new stdClass();
     $pane->pid = 'new-94916838-4925-4358-8191-f56716b7da81';
     $pane->panel = 'middle';
@@ -334,11 +304,11 @@ function wsdot_home_panel_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 4;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = '94916838-4925-4358-8191-f56716b7da81';
     $display->content['new-94916838-4925-4358-8191-f56716b7da81'] = $pane;
-    $display->panels['middle'][4] = 'new-94916838-4925-4358-8191-f56716b7da81';
+    $display->panels['middle'][3] = 'new-94916838-4925-4358-8191-f56716b7da81';
     $pane = new stdClass();
     $pane->pid = 'new-27a2d63f-2166-46b7-bc39-d6af2c85e778';
     $pane->panel = 'right';
