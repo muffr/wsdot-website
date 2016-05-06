@@ -55,7 +55,7 @@
   <?php endif; ?>
 
   <div id="main">
-    <h2><?php print $title; ?></h2>
+    <?php if(isset($title)&&$title!==""){print "<h2>".$title."</h2>";} ?>
     <?php print render($page['help']); ?>
     <?php print render($page['content']) ?>
   </div>
