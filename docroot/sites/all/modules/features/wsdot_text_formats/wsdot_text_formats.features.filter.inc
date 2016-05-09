@@ -175,7 +175,7 @@ blockquote,pre,address,sub,sup,
 ul,ol,
 li[id],
 hr,br,
-table[style|cellspacing|cellpadding|border|bordercolor|align],thead,tbody,caption,tr,td[align|width]',
+table[style|cellspacing|cellpadding|border|bordercolor|align],thead,tbody,caption,tr[class],td[align|width],th[align|valign|class]',
           'allow_comments' => 0,
           'nofollow_policy' => 'disabled',
           'nofollow_domains' => array(
