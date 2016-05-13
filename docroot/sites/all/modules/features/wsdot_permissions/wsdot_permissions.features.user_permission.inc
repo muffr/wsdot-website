@@ -3359,6 +3359,28 @@ function wsdot_permissions_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'schedule publishing of nodes'.
+  $permissions['schedule publishing of nodes'] = array(
+    'name' => 'schedule publishing of nodes',
+    'roles' => array(
+      'ER Project Author' => 'ER Project Author',
+      'ER Project Editor' => 'ER Project Editor',
+      'NC Project Author' => 'NC Project Author',
+      'NC Project Editor' => 'NC Project Editor',
+      'NW Project Author' => 'NW Project Author',
+      'NW Project Editor' => 'NW Project Editor',
+      'News Editor' => 'News Editor',
+      'OR Project Author' => 'OR Project Author',
+      'OR Project Editor' => 'OR Project Editor',
+      'SC Project Author' => 'SC Project Author',
+      'SC Project Editors' => 'SC Project Editors',
+      'SW Project Author' => 'SW Project Author',
+      'SW Project Editor' => 'SW Project Editor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'scheduler',
+  );
+
   // Exported permission: 'search content'.
   $permissions['search content'] = array(
     'name' => 'search content',
