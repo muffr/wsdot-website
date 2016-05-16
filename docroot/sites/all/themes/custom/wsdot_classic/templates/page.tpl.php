@@ -97,4 +97,3 @@
 
   <div class="copyright">Copyright WSDOT &copy; <?php echo date("Y") ?></div>
 </div>
-<div id="promo"><div><a id="close"></a><a href="http://itunes.apple.com/us/app/wsdot/id387209224?mt=8" id="app-store-link"></a><a href="https://play.google.com/store/apps/details?id=gov.wa.wsdot.android.wsdot" id="play-store-link"></a><img src="/sites/all/themes/custom/wsdot_classic/images/app-links.png" /></div></div>

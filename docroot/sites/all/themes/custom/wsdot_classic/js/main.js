@@ -2,7 +2,7 @@
     Drupal.behaviors.appPromo = {
         attach: function (context, settings) {
 			//show ad if cookie is not set
-			if(getCookie("WSDOT-app-promotion")==""){
+			if(navigator.cookieEnabled&&getCookie("WSDOT-app-promotion")==""){
 				if(jQuery('#promo').length){setTimeout("jQuery('#promo').toggleClass('raised');",1000);}
 				//set ad cookie
 				date = new Date(+new Date + 12096e5);
