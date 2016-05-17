@@ -202,7 +202,7 @@ function wsdot_ckeditor_profiles_ckeditor_profile_defaults() {
         'ss' => 2,
         'toolbar' => '[
     [\'Source\'],
-    [\'Cut\',\'Copy\',\'Paste\',\'PasteText\',\'PasteFromWord\',\'-\',\'SpellChecker\',\'Scayt\'],
+    [\'Cut\',\'Copy\',\'Paste\',\'PasteText\',\'-\',\'SpellChecker\',\'Scayt\'],
     [\'Undo\',\'Redo\',\'Find\',\'Replace\',\'-\',\'SelectAll\'],
     [\'Table\',\'HorizontalRule\',\'SpecialChar\'],
     [\'Maximize\',\'ShowBlocks\'],
