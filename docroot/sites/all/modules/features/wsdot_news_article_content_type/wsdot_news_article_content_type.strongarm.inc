@@ -50,7 +50,13 @@ function wsdot_news_article_content_type_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '8',
+          'weight' => '9',
+        ),
+        'redirect' => array(
+          'weight' => '12',
+        ),
+        'workbench_access' => array(
+          'weight' => '1',
         ),
       ),
       'display' => array(),
