@@ -55,8 +55,12 @@
   <?php endif; ?>
 
   <div id="main">
-    <?php if(isset($title)&&$title!==""){print "<h2>".$title."</h2>";} ?>
+    <?php print render($title_prefix); ?>
+    <?php if ($title): ?><h2 class="title" id="page-title"><?php print $title; ?></h2><?php endif; ?>
+    <?php print render($title_suffix); ?>
+    <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
     <?php print render($page['help']); ?>
+    <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
     <?php print render($page['content']) ?>
   </div>
   <div class="cl"></div>
