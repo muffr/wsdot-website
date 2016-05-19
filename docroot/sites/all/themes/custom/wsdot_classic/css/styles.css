@@ -665,3 +665,8 @@ form.webform-client-form textarea {
     width: 498px;
     max-width: calc(100% - 2px);
 }
+
+/* Workbench info block on content nodes */
+div.workbench-info-block {
+  font-size: 1.2em;
+}
