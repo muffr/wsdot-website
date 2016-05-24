@@ -3,9 +3,9 @@
   <div class="topban">
     <ul class="topnav">
       <li><a href="/">WSDOT Home</a></li>
-      <li><a href="/contact/contact-us">Contact Us</a></li>
-      <li><a href="http://www.wsdot.wa.gov/goodtogo/">Good To Go!</a></li>
-      <li><a href="http://www.wsdot.wa.gov/employment/">Employment</a></li>
+      <li><a href="/contact">Contact Us</a></li>
+      <li><a href="/goodtogo">Good To Go!</a></li>
+      <li><a href="/employment">Employment</a></li>
       <li class="first"><a href="/news">News</a></li>
     </ul>
   </div>
@@ -18,11 +18,11 @@
     <div class="mainnav">
 
       <ul>
-        <li><a href="http://www.wsdot.wa.gov/traffic/" title="Statewide Traveler Information">Traffic &amp; Cameras</a></li>
-        <li><a href="http://www.wsdot.wa.gov/projects/" title="Highway, Ferry and Rail Construction Projects">Projects</a></li>
-        <li><a href="http://www.wsdot.wa.gov/business/" title="Information on Doing Business with WSDOT">Business</a></li>
-        <li><a href="http://www.wsdot.wa.gov/environment/" title="What does WSDOT do for the environment?">Environment</a></li>
-        <li><a href="http://www.wsdot.wa.gov/mapsdata.htm" title="Maps, Publications and Transportation Data">Maps &amp; Data</a></li>
+        <li><a href="/traffic" title="Statewide Traveler Information">Traffic &amp; Cameras</a></li>
+        <li><a href="/projects" title="Highway, Ferry and Rail Construction Projects">Projects</a></li>
+        <li><a href="/business" title="Information on Doing Business with WSDOT">Business</a></li>
+        <li><a href="/environment" title="What does WSDOT do for the environment?">Environment</a></li>
+        <li><a href="/mapsdata.htm" title="Maps, Publications and Transportation Data">Maps &amp; Data</a></li>
       </ul>
 
       <div class="search">
