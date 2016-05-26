@@ -116,68 +116,6 @@ function wsdot_news_article_content_type_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_article-field_file'.
-  $field_instances['node-news_article-field_file'] = array(
-    'bundle' => 'news_article',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'file',
-        'settings' => array(),
-        'type' => 'file_default',
-        'weight' => 1,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_file',
-    'label' => 'Attachments',
-    'required' => 0,
-    'settings' => array(
-      'description_field' => 1,
-      'file_directory' => '',
-      'file_extensions' => 'pdf',
-      'filefield_paths' => array(
-        'active_updating' => 0,
-        'file_name' => array(
-          'options' => array(
-            'pathauto' => 0,
-            'transliterate' => 0,
-          ),
-          'value' => '[file:ffp-name-only-original].[file:ffp-extension-original]',
-        ),
-        'file_path' => array(
-          'options' => array(
-            'pathauto' => 0,
-            'transliterate' => 0,
-          ),
-          'value' => '[node:created:custom:Y]/[node:created:custom:m]/[node:created:custom:d]',
-        ),
-        'retroactive_update' => 0,
-      ),
-      'filefield_paths_enabled' => 1,
-      'max_filesize' => '5 MB',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'file',
-      'settings' => array(
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'file_generic',
-      'weight' => 10,
-    ),
-  );
-
   // Exported field_instance: 'node-news_article-field_highways'.
   $field_instances['node-news_article-field_highways'] = array(
     'bundle' => 'news_article',
@@ -222,80 +160,6 @@ function wsdot_news_article_content_type_field_default_field_instances() {
       'type' => 'options_select',
       'weight' => 2,
     ),
-  );
-
-  // Exported field_instance: 'node-news_article-field_images'.
-  $field_instances['node-news_article-field_images'] = array(
-    'bundle' => 'news_article',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
-        'weight' => 2,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_images',
-    'label' => 'Images',
-    'required' => 0,
-    'settings' => array(
-      'alt_field' => 1,
-      'default_image' => 0,
-      'file_directory' => '',
-      'file_extensions' => 'png gif jpg jpeg',
-      'filefield_paths' => array(
-        'active_updating' => 0,
-        'file_name' => array(
-          'options' => array(
-            'pathauto' => 0,
-            'slashes' => 0,
-            'transliterate' => 0,
-          ),
-          'value' => '[file:ffp-name-only-original].[file:ffp-extension-original]',
-        ),
-        'file_path' => array(
-          'options' => array(
-            'pathauto' => 0,
-            'slashes' => 0,
-            'transliterate' => 0,
-          ),
-          'value' => '[node:created:custom:Y]/[node:created:custom:m]/[node:created:custom:d]',
-        ),
-        'redirect' => 0,
-        'retroactive_update' => 0,
-      ),
-      'filefield_paths_enabled' => 1,
-      'max_filesize' => '5 MB',
-      'max_resolution' => '',
-      'min_resolution' => '',
-      'title_field' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'image',
-      'settings' => array(
-        'preview_image_style' => 'thumbnail',
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'image_image',
-      'weight' => 11,
-    ),
-    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-news_article-field_mountain_passes'.
@@ -432,11 +296,9 @@ function wsdot_news_article_content_type_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Attachments');
   t('Body');
   t('Cities');
   t('Highways');
-  t('Images');
   t('Mountain Passes');
   t('Organization');
   t('Regions');
