@@ -3306,6 +3306,14 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['moderate content from needs_moderation to draft'] = array(
     'name' => 'moderate content from needs_moderation to draft',
     'roles' => array(
+      'ER Project Editor' => 'ER Project Editor',
+      'HQ Communication Editor' => 'HQ Communication Editor',
+      'NC Project Editor' => 'NC Project Editor',
+      'NW Project Editor' => 'NW Project Editor',
+      'News Editor' => 'News Editor',
+      'OR Project Editor' => 'OR Project Editor',
+      'SC Project Editor' => 'SC Project Editor',
+      'SW Project Editor' => 'SW Project Editor',
       'administrator' => 'administrator',
     ),
     'module' => 'workbench_moderation',
@@ -3347,6 +3355,14 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['moderate content from needs_review to needs_moderation'] = array(
     'name' => 'moderate content from needs_review to needs_moderation',
     'roles' => array(
+      'ER Project Editor' => 'ER Project Editor',
+      'HQ Communication Editor' => 'HQ Communication Editor',
+      'NC Project Editor' => 'NC Project Editor',
+      'NW Project Editor' => 'NW Project Editor',
+      'News Editor' => 'News Editor',
+      'OR Project Editor' => 'OR Project Editor',
+      'SC Project Editor' => 'SC Project Editor',
+      'SW Project Editor' => 'SW Project Editor',
       'administrator' => 'administrator',
     ),
     'module' => 'workbench_moderation',
