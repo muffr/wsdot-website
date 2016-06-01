@@ -1003,44 +1003,9 @@ function wsdot_permissions_user_default_permissions() {
     'module' => 'panelizer',
   );
 
-  // Exported permission: 'administer panelizer taxonomy_term regions content'.
-  $permissions['administer panelizer taxonomy_term regions content'] = array(
-    'name' => 'administer panelizer taxonomy_term regions content',
-    'roles' => array(),
-    'module' => 'panelizer',
-  );
-
-  // Exported permission: 'administer panelizer taxonomy_term regions context'.
-  $permissions['administer panelizer taxonomy_term regions context'] = array(
-    'name' => 'administer panelizer taxonomy_term regions context',
-    'roles' => array(),
-    'module' => 'panelizer',
-  );
-
   // Exported permission: 'administer panelizer taxonomy_term regions defaults'.
   $permissions['administer panelizer taxonomy_term regions defaults'] = array(
     'name' => 'administer panelizer taxonomy_term regions defaults',
-    'roles' => array(),
-    'module' => 'panelizer',
-  );
-
-  // Exported permission: 'administer panelizer taxonomy_term regions layout'.
-  $permissions['administer panelizer taxonomy_term regions layout'] = array(
-    'name' => 'administer panelizer taxonomy_term regions layout',
-    'roles' => array(),
-    'module' => 'panelizer',
-  );
-
-  // Exported permission: 'administer panelizer taxonomy_term regions overview'.
-  $permissions['administer panelizer taxonomy_term regions overview'] = array(
-    'name' => 'administer panelizer taxonomy_term regions overview',
-    'roles' => array(),
-    'module' => 'panelizer',
-  );
-
-  // Exported permission: 'administer panelizer taxonomy_term regions settings'.
-  $permissions['administer panelizer taxonomy_term regions settings'] = array(
-    'name' => 'administer panelizer taxonomy_term regions settings',
     'roles' => array(),
     'module' => 'panelizer',
   );
