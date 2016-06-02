@@ -1,6 +1,6 @@
 /* WSDOT CSS style document */
 html{font-size:100%;}
-body{font-family:Verdana, Arial, Helvetica, sans-serif;font-size:62.5%;margin:0em;padding:0em;background-color:#f2f2f2;}
+body{font-family:'Lato',Verdana, Arial, Helvetica, sans-serif;font-size:69%;margin:0em;padding:0em;background-color:#f2f2f2;}
 a{color:#036;}
 a:hover{text-decoration:none;}
 a:visited{color:#017359;}
@@ -66,17 +66,17 @@ a.facebook{background: url(../images/back/facebook.png) top left no-repeat;paddi
 .censusbg a{background:url(../images/back/Census2010.gif) no-repeat left top;display:block;height:71px;overflow:hidden;text-decoration:none;width:125px;}
 
 /*** Header and branding ***/
-#header {height:12.5em; background: #fff;}
+#header {background: #fff;}
 #header .topban {background: #017359;height:2.5em;}
-.topnav {margin: 0 auto; padding:6px 0 0 0; width: 955px;}
+.topnav {margin: 0 auto; padding:8px 0 0 0; width: 955px;}
 .topnav a{color:#ffffff;text-decoration: none;}
 .topnav a:hover{text-decoration:underline;color:#ffffff;}
 .topnav a:visited{color:#ffffff;}
 .topnav ul {list-style:none;}
-.topnav li{list-style:none;font-size:.95em; float:right; border-left:1px dotted #ffffff;padding:0em .6em 0em .6em;}
+.topnav li{list-style:none;font-size:.75em; float:right; border-left:1px dotted #ffffff;padding:0em .6em 0em .6em;}
 .topnav li.first{border-left:none;}
 .logo {height: 5em; margin: 0 auto; width: 955px;}
-.logo h1 {border: none; display: inline; float: left; margin: 8px 0 0 15px; padding: 0;}
+.logo h1 {border: none; display: inline; float: left; margin: 9px 0 0 15px; padding: 0;}
 .logo h1 a {background: transparent url(../images/back/greenlogo.png) no-repeat; display: block; width: 240px; height: 39px; text-indent: -999em;}
 
 /**Header and branding changes for travel map page**/
@@ -103,10 +103,10 @@ input.searchButton {height: 23px;margin: 0;font-family: "trebuchet ms",helvetica
 
 .mainban {background: #f2f2f2 url(../images/back/tabs_bg.png) repeat-x left top;}
 .mainnav {width:955px;margin:0 auto;}
-.mainnav ul {list-style:none;background: transparent url(../images/back/tabs_div.png) no-repeat 0 8px;margin:0 auto;padding:6px 0 0 2px;width:955px;height:48px;font-size:1.1em;}
+.mainnav ul {list-style:none;background: transparent url(../images/back/tabs_div.png) no-repeat 0 8px;margin:0 auto;padding:5px 0 0 2px;width:955px;height:48px;}
 .mainnav ul li {float:left;font-weight:bold;margin-top:2px;height:40px;position:relative;}
-.mainnav ul li a {background:transparent url(../images/back/tabs_link_bg.png) no-repeat right top;color:#017359;display:block;height:17px;line-height:1.5em;padding:7px 13px 6px 7px;text-decoration:none;float:left;}
-.mainnav ul li a:hover {background-position: right -30px;color: #017359;text-decoration: none;}
+.mainnav ul li a {background:transparent url(../images/back/tabs_link_bg.png) no-repeat right top 1px;color:#017359;display:block;height:18px;font-size:13px;line-height:1.5em;padding:7px 13px 6px 7px;text-decoration:none;float:left;}
+.mainnav ul li a:hover {background-position: right -29px;color: #017359;text-decoration: none;}
 
 #wrapper {width:955px;margin:0em auto;padding:5px;background:#fff url(../images/back/corners.png) no-repeat -965px top;height:auto;}
 .corners-top {width:955px;margin:5px auto 0px auto;padding:5px;background:#fff url(../images/back/corners.png) no-repeat -965px top;height:auto;}
@@ -182,7 +182,7 @@ div.nav a {background:transparent url(../images/back/navigator.png) no-repeat sc
 #main pre {margin: 1em 0;line-height:1.5em;font-size: 1.5em;}
 #main .contentbox .content p {margin: 0.5em 0;line-height:1.5em;}
 #main td p {margin:0;}
-#main h2 {font-size:1.7em; margin-bottom: 15px;}
+#main h2 {max-width:750px;font-size:1.65em; margin-bottom: 15px;}
 #main h4{font-weight:bold;color:#036;}
 #main h5 {font-weight:bold;color:#000;}
 /*#main dl, ul {list-style:none;margin:1.5em 2em;padding:0em;}*/
@@ -229,12 +229,12 @@ div.nav a {background:transparent url(../images/back/navigator.png) no-repeat sc
 /* Widget boxes */
 .widget {margin: 10px 0 0 10px;display:inline;float:left;width:306px;color:#000;position:relative;z-index:1;background:#fff url(../images/back/gradients_bg.png) repeat-x left 0px;}
 .widgetcol {float:left;width:315px;}
-.widget h2 {font-size:1.5em;margin:0;padding:9px 30px;color:#000;}
-.static h2 {font-size:1.5em;margin:0;padding:9px 10px;color:#000;}
+.widget h2 {font-size:1.5em;margin:0;padding:8px 30px;color:#000;}
+.static h2 {font-size:1.5em;margin:0;padding:8px 10px;color:#000;}
 .widget h2 a {font-weight:bold;color:#000;text-decoration:none;}
 .widget h2 a:hover {text-decoration:none;color:#898989;}
 .widgetdata {padding:10px;}
-.widgetdata h3 {padding:5px 10px;background-color:#eee;font-size:1em;text-transform:uppercase;border-top:1px solid #fff;font-weight:bold;}
+.widgetdata h3 {padding:5px 10px;background-color:#eee;font-size:1.1em;text-transform:uppercase;border-top:1px solid #fff;font-weight:bold;}
 .widgetdata h4 {padding:10px 0px;font-size:1em;text-transform:uppercase;font-weight:bold;}
 .widgetdata h3 a {color:#000;padding-left:0px;text-decoration:underline;}
 .widgetdata h3 a:hover {text-decoration:none;}
@@ -285,7 +285,7 @@ div.nav a {background:transparent url(../images/back/navigator.png) no-repeat sc
 #lightbox-nav-btnPrev, #lightbox-nav-btnNext {width: 49%;height: 100%;zoom: 1;display: block;}
 #lightbox-nav-btnPrev {left: 0;float: left;}
 #lightbox-nav-btnNext {right: 0;float: right;}
-#lightbox-container-image-data-box {font: 10px Verdana, Helvetica, sans-serif;background-color: #fff;margin: 0 auto;line-height: 1.4em;overflow: auto;width: 100%;padding: 0 10px 0;}
+#lightbox-container-image-data-box {font: 10px 'Lato', Verdana, Helvetica, sans-serif;background-color: #fff;margin: 0 auto;line-height: 1.4em;overflow: auto;width: 100%;padding: 0 10px 0;}
 #lightbox-container-image-data {padding: 0 10px;color: #666;}
 #lightbox-container-image-data #lightbox-image-details {width: 70%;float: left;text-align: left;}	
 #lightbox-image-details-caption {font-weight: bold;}
