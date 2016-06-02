@@ -49,7 +49,7 @@
 <head profile="<?php print $grddl_profile; ?>">
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400italic,700italic,900italic,400,700,900">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:400italic,700italic,900italic,400,700,900" />
   <?php print $styles; ?>
   <?php print $scripts; ?>
 </head>
