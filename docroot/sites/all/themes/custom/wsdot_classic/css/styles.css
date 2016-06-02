@@ -73,7 +73,7 @@ a.facebook{background: url(../images/back/facebook.png) top left no-repeat;paddi
 .topnav a:hover{text-decoration:underline;color:#ffffff;}
 .topnav a:visited{color:#ffffff;}
 .topnav ul {list-style:none;}
-.topnav li{list-style:none;font-size:.75em; float:right; border-left:1px dotted #ffffff;padding:0em .6em 0em .6em;}
+.topnav li{list-style:none;font-size:11px;float:right;border-left:1px dotted #ffffff;padding:0em .6em 0em .6em;}
 .topnav li.first{border-left:none;}
 .logo {height: 5em; margin: 0 auto; width: 955px;}
 .logo h1 {border: none; display: inline; float: left; margin: 9px 0 0 15px; padding: 0;}
