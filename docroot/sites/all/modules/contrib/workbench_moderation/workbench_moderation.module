@@ -406,6 +406,9 @@ function workbench_moderation_permission() {
   $permissions['use workbench_moderation needs review tab'] = array(
     'title' => t('Use "Needs review" workbench tab')
   );
+  $permissions['use workbench_moderation needs moderation tab'] = array(
+    'title' => t('Use "Needs moderation" workbench tab')
+  );
 
   // Per-node-type, per-transition permissions. Used by workbench_moderation_state_allowed().
   $node_types = workbench_moderation_moderate_node_types();
