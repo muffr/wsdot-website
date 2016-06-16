@@ -1111,9 +1111,9 @@ function workbench_email_get_workbench_access_editors($rid, $sections) {
   if ($active_scheme == 'taxonomy') {
     $sections = workbench_email_scheme_taxonomy_get_parents($sections);
   }
-  else if ($active_scheme == 'menu') {
-      $sections = workbench_email_scheme_menu_get_parents($sections);
-    }
+  elseif ($active_scheme == 'menu') {
+    $sections = workbench_email_scheme_menu_get_parents($sections);
+  }
   $role = workbench_email_get_role_by_rid($rid);
   // Get all the editors of workbench access section.
   $editors = workbench_email_get_editors($role, $sections);
