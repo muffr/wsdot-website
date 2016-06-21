@@ -48,6 +48,7 @@
 
 <head profile="<?php print $grddl_profile; ?>">
   <?php print $head; ?>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title><?php print $head_title; ?></title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400italic,700italic,900italic,400,700,900" />
   <?php print $styles; ?>
