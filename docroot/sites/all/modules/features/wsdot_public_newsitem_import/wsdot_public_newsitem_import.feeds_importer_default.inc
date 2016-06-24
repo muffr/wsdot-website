@@ -183,6 +183,8 @@ function wsdot_public_newsitem_import_feeds_importer_default() {
         'input_format' => 'wysiwyg',
         'skip_hash_check' => 0,
         'bundle' => 'news_article',
+        'insert_new' => 1,
+        'language' => 'und',
       ),
     ),
     'content_type' => '',

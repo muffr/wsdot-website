@@ -259,7 +259,6 @@ config.allowedContent = true;',
             'name' => 'drupal_path',
             'desc' => 'CKEditor Link - A plugin to easily create links to Drupal internal paths',
             'path' => '%base_path%sites/all/modules/contrib/ckeditor_link/plugins/link/',
-            'buttons' => FALSE,
           ),
           'dialog' => array(
             'name' => 'dialog',
@@ -289,19 +288,19 @@ config.allowedContent = true;',
           ),
           'media' => array(
             'name' => 'media',
-            'desc' => 'Plugin for inserting images from Drupal media module',
-            'path' => '%plugin_dir%media/',
+            'desc' => 'Plugin for embedding files using Media CKEditor',
+            'path' => '%base_path%sites/all/modules/contrib/media_ckeditor/js/plugins/media/',
             'buttons' => array(
               'Media' => array(
-                'label' => 'Media',
                 'icon' => 'images/icon.gif',
+                'label' => 'Add media',
               ),
             ),
             'default' => 'f',
           ),
           'mediaembed' => array(
             'name' => 'mediaembed',
-            'desc' => 'Plugin for inserting Drupal embeded media',
+            'desc' => 'Plugin for embedding HTML snippets',
             'path' => '%plugin_dir%mediaembed/',
             'buttons' => array(
               'MediaEmbed' => array(
