@@ -1,8 +1,8 @@
 name = WSDOT News View
-description = Manages the WSDOT News View
+description = Manages the WSDOT News View and RSS Feed
 core = 7.x
 package = WSDOT Views
-version = 7.x-1.13
+version = 7.x-1.14
 project = wsdot_news_view
 dependencies[] = ctools
 dependencies[] = date_views
