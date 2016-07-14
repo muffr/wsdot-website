@@ -52,6 +52,9 @@ function wsdot_news_panel_default_page_manager_pages() {
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
+    'access' => array(
+      'logic' => 'and',
+    ),
   );
   $display = new panels_display();
   $display->layout = 'threecol_25_50_25';
@@ -122,7 +125,6 @@ function wsdot_news_panel_default_page_manager_pages() {
       'body' => '<div class="content">
 <ul>
 	<li><a class="rss" href="/news/rss.xml">RSS</a></li>
-	<li><a href="/news/rss/">What is RSS?</a></li>
 	<li><a href="http://service.govdelivery.com/service/multi_subscribe.html?code=WADOT" title="Sign up for e-mail updates">E-mail updates</a></li>
 </ul>
 </div>

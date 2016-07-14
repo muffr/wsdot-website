@@ -289,7 +289,7 @@ function wsdot_home_panel_default_page_manager_pages() {
 	<li><a href="http://www.wsdot.wa.gov/Projects/I90/SnoqualmiePassEast/">I-90 Snoqualmie Pass East </a></li>
 	<li><a href="http://www.wsdot.wa.gov/projects/viaduct">SR 99 - Alaskan Way Viaduct Replacement</a></li>
 	<li><a href="http://www.wsdot.wa.gov/Projects/SR520Bridge/">SR 520 - Bridge Replacement and HOV Program</a></li>
-	<li><a href="http://www.wsdot.wa.gov/construction/pugetsound/today.htm">What\'s Happening in the Puget Sound Area</a></li>
+	<li><a href="http://www.wsdot.wa.gov/construction/pugetsound/today.htm">Seattle Area Construction</a></li>
 	<li><a href="http://www.wsdot.wa.gov/Projects/I5/JBLMImprovements/default.htm">I-5 JBLM Corridor Improvements</a></li>
 	<li><a href="http://www.wsdot.wa.gov/Projects/FishPassage/default.htm">Fish Passage</a></li>
 </ul>
