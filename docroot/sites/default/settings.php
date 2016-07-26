@@ -585,4 +585,12 @@ if (isset($_SERVER['DEVDESKTOP_DRUPAL_SETTINGS_DIR']) && file_exists($_SERVER['D
 if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
   $files_private_conf_path = conf_path();
   $conf['file_private_path'] = '/mnt/files/' . $_ENV['AH_SITE_GROUP'] . '.' . $_ENV['AH_SITE_ENVIRONMENT'] . '/' . $files_private_conf_path . '/files-private';
+
+  if ($_ENV['AH_SITE_ENVIRONMENT'] != 'prod') {
+    // For sites that are hosted in Acquia Cloud and are not the production instance
+    $conf['apachesolr_read_only'] = "1";
+  }
+} else {
+  // For sites that aren't hosted in Acquia Cloud (like a local installation)
+  $conf['apachesolr_read_only'] = "1";
 }
