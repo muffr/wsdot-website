@@ -22,6 +22,12 @@ function wsdot_roles_user_default_roles() {
     'weight' => 11,
   );
 
+  // Exported role: Good To Go Editor.
+  $roles['Good To Go Editor'] = array(
+    'name' => 'Good To Go Editor',
+    'weight' => 19,
+  );
+
   // Exported role: HQ Communication Editor.
   $roles['HQ Communication Editor'] = array(
     'name' => 'HQ Communication Editor',
@@ -98,6 +104,12 @@ function wsdot_roles_user_default_roles() {
   $roles['SW Project Editor'] = array(
     'name' => 'SW Project Editor',
     'weight' => 15,
+  );
+
+  // Exported role: Tolling Editor.
+  $roles['Tolling Editor'] = array(
+    'name' => 'Tolling Editor',
+    'weight' => 18,
   );
 
   // Exported role: administrator.
