@@ -22,7 +22,9 @@ https://wsdotstg.prod.acquia-sites.com/
 http://wsdot.prod.acquia-sites.com/
 https://wsdot.prod.acquia-sites.com/
 http://www.wsdot.wa.gov/
-https://www.wsdot.wa.gov/';
+https://www.wsdot.wa.gov/
+http://wsdot.wa.gov/
+https://wsdot.wa.gov/';
   $export['pathologic_local_paths'] = $strongarm;
 
   $strongarm = new stdClass();
