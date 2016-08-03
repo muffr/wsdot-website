@@ -1,30 +1,34 @@
 (function($){
-    Drupal.behaviors.appPromo = {
+    Drupal.behaviors.YouTubePlayer = {
         attach: function (context, settings) {
-			//show ad if cookie is not set
-			if(navigator.cookieEnabled&&getCookie("WSDOT-app-promotion")==""){
-				if(jQuery('#promo').length){setTimeout("jQuery('#promo').toggleClass('raised');",1000);}
-				//set ad cookie
-				date = new Date(+new Date + 12096e5);
-				expiry_date = date.toUTCString();
-				document.cookie = "WSDOT-app-promotion=displayed; expires="+expiry_date+";";
+			var v = document.getElementsByClassName("youtube-player");
+			for (var n = 0; n < v.length; n++) {
+				var temp_id = v[n].getElementsByTagName("div")[0].textContent;
+				v[n].setAttribute("data-id", temp_id.trim());
+				v[n].innerHTML = "";
+				temp_id = "";
+				var p = document.createElement("div");
+				p.innerHTML = createThumb(v[n].dataset.id);
+				p.onclick = createIframe;
+				v[n].appendChild(p);
 			}
-			//close ad
-			jQuery(document).click(function(){if(jQuery('#promo').hasClass('raised')){jQuery('#promo').removeClass('raised');}});
-			//get cookie function
-			function getCookie(cname){
-				var name = cname + "=";
-				var ca = document.cookie.split(';');
-				for(var i=0; i<ca.length; i++){
-					var c = ca[i];
-					while(c.charAt(0)==' ') c = c.substring(1);
-					if(c.indexOf(name) == 0) return c.substring(name.length,c.length);
-				}
-				return "";
-			}
-			//app link clicks
-			jQuery("#app-store-link").click(function(){ga('send','event','App promo','App Store link click - App promo','Get iPhone app - App promo');});
-			jQuery("#play-store-link").click(function(){ga('send','event','App Promo','Google Play link click - App promo','Get Android app - App promo');});
         }
     };
 })(jQuery);
+
+function createThumb(id) {
+	return '<img class="youtube-thumb" src="//i.ytimg.com/vi/' + id + '/hqdefault.jpg"><div class="play-button"></div>';
+}
+
+function createIframe() {
+	var ytPlayers = document.getElementsByClassName("youtube-iframe");
+	var i;
+	for(i=0;i<ytPlayers.length;i++){
+		ytPlayers[i].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+	}             
+	var iframe = document.createElement("iframe");
+	iframe.setAttribute("src", "//www.youtube.com/embed/" + this.parentNode.dataset.id + "?autoplay=1&autohide=2&border=0&wmode=opaque&enablejsapi=1&controls=0&showinfo=0");
+	iframe.setAttribute("frameborder", "0");
+	iframe.setAttribute("class", "youtube-iframe");
+	this.parentNode.replaceChild(iframe, this);
+}

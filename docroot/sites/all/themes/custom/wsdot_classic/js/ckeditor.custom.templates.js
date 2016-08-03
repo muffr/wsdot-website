@@ -12,5 +12,13 @@ CKEDITOR.addTemplates('default', {
               '</ul>' +
             '</div>' +
           '</div>'
+  },
+  {
+  title: 'YouTube Placeholder',
+    image: 'video-player.png',
+    description: 'Creates a full-width YouTube video placeholder.',
+    html: '<div class="youtube-container">' +
+		    '<div class="youtube-player youtube-player-placeholder" data-id="">YouTube video ID<div></div></div>' +
+          '</div>'
   } ]
 });
