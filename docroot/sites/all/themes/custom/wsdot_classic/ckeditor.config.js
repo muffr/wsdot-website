@@ -34,8 +34,6 @@ CKEDITOR.editorConfig = function(config) {
     * config.extraCss = 'body {color:#FF0000;}';
     */
   config.extraCss = '';
-  config.extraCss += ".youtube-player-placeholder{width:130px;height:65px;padding-top:15px;padding-left:95px;font-size:13px;font-weight:bold;background:#eee url(/sites/all/themes/custom/wsdot_classic/images/youtube-logo.png) left center no-repeat;}";
-  config.extraCSS += ".youtube-player-placeholder div{width:100px;padding:3px 6px;background:#fff;border:1px solid #bbb;font-weight:normal;}";
   /**
     * Sample extraCss code for the "marinelli" theme.
     */
@@ -66,7 +64,6 @@ CKEDITOR.editorConfig = function(config) {
    * Custom template files specific to WSDOT site
    */
   config.templates_files = [Drupal.settings.basePath + 'sites/all/themes/custom/wsdot_classic/js/ckeditor.custom.templates.js'];
-  config.templates_replaceContent = false;
 }
 
 /*
