@@ -46,3 +46,4 @@ stylesheets[print][] = css/print.css
 ; ---------------------
 scripts[] = js/jquery.tablesorter.min.js
 scripts[] = js/tablesorter.js
+scripts[] = js/main.js
