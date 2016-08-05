@@ -31,7 +31,13 @@ function createIframe() {
     ytPlayers[i].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
   }
   var iframe = document.createElement("iframe");
-  iframe.setAttribute("src", "//www.youtube.com/embed/" + this.parentNode.dataset.id + "?autoplay=1&autohide=2&border=0&wmode=opaque&enablejsapi=1&controls=0&showinfo=0");
+  var videoId;
+  if (this.parentNode.dataset !== undefined) {
+    videoId = this.parentNode.dataset.id;
+  } else {
+    videoId = this.parentNode.getAttribute("data-id"); // For IE 10
+  }
+  iframe.setAttribute("src", "//www.youtube.com/embed/" + videoId + "?autoplay=1&autohide=2&border=0&wmode=opaque&enablejsapi=1&controls=0&showinfo=0");
   iframe.setAttribute("frameborder", "0");
   iframe.setAttribute("class", "youtube-iframe");
   this.parentNode.replaceChild(iframe, this);
