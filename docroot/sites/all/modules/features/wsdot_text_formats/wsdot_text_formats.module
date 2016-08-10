@@ -1,5 +1,12 @@
 <?php
 /**
- * @file
- * Drupal needs this blank file.
+ * Implements hook_wysiwyg_filter_elements_blacklist_alter().
  */
+function wsdot_text_formats_wysiwyg_filter_elements_blacklist_alter(&$blacklist) {
+  if (($key = array_search('area', $blacklist)) !== false) {
+    unset($blacklist[$key]);
+  }
+  if (($key = array_search('map', $blacklist)) !== false) {
+    unset($blacklist[$key]);
+  }
+}
