@@ -16,6 +16,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -41,6 +42,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -84,6 +86,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -120,6 +123,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -172,6 +176,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -197,6 +202,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -267,6 +273,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -292,6 +299,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -497,6 +505,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -549,6 +558,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -1406,6 +1416,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -1463,6 +1474,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -1645,6 +1657,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -1670,6 +1683,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -1716,6 +1730,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -1750,6 +1765,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -1859,6 +1875,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -1921,6 +1938,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -1946,6 +1964,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -1992,6 +2011,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -2026,6 +2046,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -2135,6 +2156,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -2301,6 +2323,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -2326,6 +2349,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -2351,6 +2375,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -2376,6 +2401,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -2401,6 +2427,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -2426,6 +2453,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -2451,6 +2479,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -2476,6 +2505,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -2533,6 +2563,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -2558,6 +2589,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -2604,6 +2636,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -2638,6 +2671,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -2747,6 +2781,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -2809,6 +2844,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -2834,6 +2870,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -2880,6 +2917,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -2914,6 +2952,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -3023,6 +3062,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -3321,6 +3361,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -3345,6 +3386,7 @@ function wsdot_permissions_user_default_permissions() {
     'name' => 'moderate content from needs_moderation to draft',
     'roles' => array(
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Editor' => 'NC Project Editor',
@@ -3374,6 +3416,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -3398,6 +3441,7 @@ function wsdot_permissions_user_default_permissions() {
     'name' => 'moderate content from needs_review to needs_moderation',
     'roles' => array(
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Editor' => 'NC Project Editor',
@@ -3445,6 +3489,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -3470,6 +3515,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -3651,6 +3697,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -3739,6 +3786,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -3773,6 +3821,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -3798,6 +3847,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -3823,6 +3873,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -3859,6 +3910,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -3884,6 +3936,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -3909,6 +3962,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -3943,6 +3997,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -3986,6 +4041,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -4011,6 +4067,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -4036,6 +4093,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
@@ -4061,6 +4119,7 @@ function wsdot_permissions_user_default_permissions() {
     'roles' => array(
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
+      'Equal Opportunity Editor' => 'Equal Opportunity Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
       'NC Project Author' => 'NC Project Author',
