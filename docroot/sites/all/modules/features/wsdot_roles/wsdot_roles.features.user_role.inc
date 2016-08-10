@@ -22,6 +22,12 @@ function wsdot_roles_user_default_roles() {
     'weight' => 11,
   );
 
+  // Exported role: Equal Opportunity Editor.
+  $roles['Equal Opportunity Editor'] = array(
+    'name' => 'Equal Opportunity Editor',
+    'weight' => 20,
+  );
+
   // Exported role: Good To Go Editor.
   $roles['Good To Go Editor'] = array(
     'name' => 'Good To Go Editor',
