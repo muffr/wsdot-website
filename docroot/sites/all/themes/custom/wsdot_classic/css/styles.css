@@ -6,14 +6,14 @@ a:hover{text-decoration:none;}
 a:visited{color:#017359;}
 h1,h2,h3,h4,h5,h6{padding:0em;margin:0em;}
 h1{font-family:Arial,Helvetica,sans-serif;font-size:1.8em;line-height:1.5em;}
-h1 a{color:#000000;text-decoration:none;}
+h1 a{color:#000;text-decoration:none;}
 h1 a:hover {text-decoration: underline;}
-h1 a:visited {color:#000000;}
-h2{font-size:1.6em;color:#003366;}
-h2.title{font-size:1.65em;color:#003366;}
-h3{font-size:1.4em;font-weight:bold;color:#003366;}
-h4{font-size:1.3em;line-height:1em;font-weight:bold;color:#003366;}
-h5 {font-size:1.2em;line-height:1.5em;font-weight:bold;}
+h1 a:visited {color:#000;}
+h2{font-size:1.6em;color:#000;}
+h2.title{font-size:1.65em;color:#000;}
+h3{font-size:1.4em;font-weight:bold;color:#000;}
+h4{font-size:1.3em;line-height:1em;font-weight:bold;color:#000;}
+h5 {font-size:1.2em;line-height:1.5em;font-weight:bold;color:#000;}
 
 .bold {font-weight:bold;}
 .row{clear:both;margin-top:15px;}
@@ -132,6 +132,8 @@ input.searchButton {height: 23px;margin: 0;font-family: "trebuchet ms",helvetica
 .leftnavbox .content a{color:#036;}
 .leftnavbox .content a:hover{text-decoration:none;}
 .leftnavbox .content a:visited{color:#017359;}
+.leftnavbox .content ul li {padding:0.2em 0 0.3em 0;}
+.leftnavbox .content ul li.active-trail a.active {font-weight:bold;color:#000;text-decoration:none;}
 
 #block-views-static-left-navigation-block .content,
 #block-views-project-pin-report-block .content {width:160px; padding:0px;}
@@ -183,10 +185,8 @@ div.nav a {background:transparent url(../images/back/navigator.png) no-repeat sc
 #main .contentbox .content p {margin: 0.5em 0;line-height:1.5em;}
 #main td p {margin:0;}
 #main h2 {max-width:750px;font-size:1.65em; margin-bottom: 15px;}
-#main h4{font-weight:bold;color:#036;}
+#main h4{font-weight:bold;color:#000;}
 #main h5 {font-weight:bold;color:#000;}
-/*#main dl, ul {list-style:none;margin:1.5em 2em;padding:0em;}*/
-/*#main ul li {background:url(http://www.wsdot.wa.gov/media/images/back/bullet.gif) no-repeat 0em .8em;padding:.1em 0em .3em .75em;}*/
 
 .bluebox2px{border-right:1px solid #98a1ab;border-bottom:1px solid #98a1ab;	border-left:1px solid #98a1ab;	background-color:#E2E8ED;width:360px;}
 .widgetdata .content li {margin: 0 0 0.25em 1.5em; padding: 0;}
