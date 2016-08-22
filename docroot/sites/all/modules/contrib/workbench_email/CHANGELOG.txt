@@ -1,3 +1,11 @@
+Workbench Email 7.x-3.11, 2016-08-19
+-----------------------------------
+by jstoller, frosev: Issue 2758079: Invalid argument supplied for foreach() workbench_email.features.inc:94
+by Tunprog: Issue 2770787: Error message displayed for filtered emails
+by szeidler: Issue 2775607: Modules tokens are missing in token browser
+by Abdulla Abu-Zakham: Issue 2649368: Make email body and subject translatable before replace tokens
+by joppy: Issue 2781033: Validate Workbench Access Configuration: does not check enabled content type for node operation
+
 Workbench Email 7.x-3.10, 2016-06-06
 -----------------------------------
 by bmonizzle: Issue 2501321: Fixed Add email subject and message to Features
