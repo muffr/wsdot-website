@@ -189,13 +189,13 @@ div.nav a {background:transparent url(../images/back/navigator.png) no-repeat sc
 #main h4{font-weight:bold;color:#000;}
 #main h5 {font-weight:bold;color:#000;}
 
-#main .col-2 {
+#main .columns-2 {
     -webkit-columns: 2 200px;
     -moz-columns: 2 200px;
     columns: 2 200px;
 }
 
-#main .col-3 {
+#main .columns-3 {
     -webkit-columns: 3 200px;
     -moz-columns: 3 200px;
     columns: 3 200px;
