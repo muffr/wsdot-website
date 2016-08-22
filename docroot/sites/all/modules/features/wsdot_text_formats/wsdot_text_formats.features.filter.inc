@@ -367,6 +367,8 @@ map[name]',
             132 => 'youtube-container',
             134 => 'youtube-player',
             136 => 'youtube-player-placeholder',
+            138 => 'col-2',
+            140 => 'col-3',
           ),
           'rule_valid_ids' => array(
             0 => 'regions*',
