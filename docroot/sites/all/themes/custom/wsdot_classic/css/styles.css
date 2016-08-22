@@ -185,8 +185,21 @@ div.nav a {background:transparent url(../images/back/navigator.png) no-repeat sc
 #main .contentbox .content p {margin: 0.5em 0;line-height:1.5em;}
 #main td p {margin:0;}
 #main h2 {max-width:750px;font-size:1.65em; margin-bottom: 15px;}
+#main h3 {line-height: 2.0;}
 #main h4{font-weight:bold;color:#000;}
 #main h5 {font-weight:bold;color:#000;}
+
+#main .col-2 {
+    -webkit-columns: 2 200px;
+    -moz-columns: 2 200px;
+    columns: 2 200px;
+}
+
+#main .col-3 {
+    -webkit-columns: 3 200px;
+    -moz-columns: 3 200px;
+    columns: 3 200px;
+}
 
 .bluebox2px{border-right:1px solid #98a1ab;border-bottom:1px solid #98a1ab;	border-left:1px solid #98a1ab;	background-color:#E2E8ED;width:360px;}
 .widgetdata .content li {margin: 0 0 0.25em 1.5em; padding: 0;}
