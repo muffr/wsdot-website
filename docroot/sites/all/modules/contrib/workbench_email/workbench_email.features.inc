@@ -91,11 +91,13 @@ function workbench_email_features_revert($module) {
  */
 function workbench_email_features_rebuild($module) {
   $defaults = features_get_default('workbench_email', $module);
-  foreach ($defaults as $machine_name => $transition) {
-    $role = workbench_email_get_role_by_name($transition['role']);
-    $subject = !empty($transition['subject']) ? $transition['subject'] : NULL;
-    $message = !empty($transition['message']) ? $transition['message'] : NULL;
-    workbench_email_save((object) $transition, $role->rid, $subject, $message, $transition['author'], $transition['automatic']);
+  if (is_array($defaults)) {
+    foreach ($defaults as $machine_name => $transition) {
+      $role = workbench_email_get_role_by_name($transition['role']);
+      $subject = !empty($transition['subject']) ? $transition['subject'] : NULL;
+      $message = !empty($transition['message']) ? $transition['message'] : NULL;
+      workbench_email_save((object) $transition, $role->rid, $subject, $message, $transition['author'], $transition['automatic']);
+    }
   }
   drupal_static_reset('workbench_email');
 }
