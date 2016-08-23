@@ -81,12 +81,13 @@ function wsdot_basic_page_content_type_field_default_field_instances() {
     'settings' => array(
       'description_field' => 1,
       'file_directory' => '',
-      'file_extensions' => 'pdf',
+      'file_extensions' => 'pdf doc docx xls xlsx',
       'filefield_paths' => array(
         'active_updating' => 0,
         'file_name' => array(
           'options' => array(
             'pathauto' => 0,
+            'slashes' => 0,
             'transliterate' => 0,
           ),
           'value' => '[file:ffp-name-only-original].[file:ffp-extension-original]',
@@ -94,10 +95,12 @@ function wsdot_basic_page_content_type_field_default_field_instances() {
         'file_path' => array(
           'options' => array(
             'pathauto' => 1,
+            'slashes' => 0,
             'transliterate' => 0,
           ),
           'value' => '[node:created:custom:Y]/[node:created:custom:m]/[node:created:custom:d]',
         ),
+        'redirect' => 0,
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
@@ -113,6 +116,7 @@ function wsdot_basic_page_content_type_field_default_field_instances() {
       'type' => 'file_generic',
       'weight' => 4,
     ),
+    'workbench_access_field' => 0,
   );
 
   // Exported field_instance: 'node-page-field_images'.
