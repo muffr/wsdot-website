@@ -6,9 +6,9 @@ configure = admin/config/system/acquia-agent
 files[] = tests/acquia_agent.test
 php = 5.2
 
-; Information added by Drupal.org packaging script on 2016-07-13
-version = "7.x-3.0-alpha2"
+; Information added by Drupal.org packaging script on 2016-08-23
+version = "7.x-3.0-alpha3"
 core = "7.x"
 project = "acquia_connector"
-datestamp = "1468434443"
+datestamp = "1471975216"
 
