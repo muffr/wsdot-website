@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function wsdot_publication_content_type_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -21,7 +21,7 @@ function wsdot_publication_content_type_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Core Metadata',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_chapter',
       1 => 'field_number_of_pages',
@@ -42,7 +42,7 @@ function wsdot_publication_content_type_field_group_info() {
       ),
     ),
   );
-  $export['group_core_metadata|node|publication|form'] = $field_group;
+  $field_groups['group_core_metadata|node|publication|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -55,7 +55,7 @@ function wsdot_publication_content_type_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Manuals Specific Metadata',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_contact_info',
     ),
@@ -70,7 +70,7 @@ function wsdot_publication_content_type_field_group_info() {
       'formatter' => 'collapsed',
     ),
   );
-  $export['group_manuals_metadata|node|publication|form'] = $field_group;
+  $field_groups['group_manuals_metadata|node|publication|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -83,7 +83,7 @@ function wsdot_publication_content_type_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Research Reports Metadata',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
       0 => 'field_authors',
     ),
@@ -98,7 +98,13 @@ function wsdot_publication_content_type_field_group_info() {
       'formatter' => 'collapsed',
     ),
   );
-  $export['group_research_reports_metadata|node|publication|form'] = $field_group;
+  $field_groups['group_research_reports_metadata|node|publication|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Core Metadata');
+  t('Manuals Specific Metadata');
+  t('Research Reports Metadata');
+
+  return $field_groups;
 }
