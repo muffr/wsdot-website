@@ -55,9 +55,9 @@ function wsdot_publication_content_type_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Manuals Specific Metadata',
-    'weight' => '5',
+    'weight' => '9',
     'children' => array(
-      0 => 'field_contact_info',
+      0 => 'field_managers',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -83,7 +83,7 @@ function wsdot_publication_content_type_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Research Reports Metadata',
-    'weight' => '6',
+    'weight' => '10',
     'children' => array(
       0 => 'field_authors',
     ),

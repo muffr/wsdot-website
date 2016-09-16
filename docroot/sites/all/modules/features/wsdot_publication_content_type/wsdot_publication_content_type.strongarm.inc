@@ -20,7 +20,7 @@ function wsdot_publication_content_type_strongarm() {
         'custom_settings' => TRUE,
       ),
       'full' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'rss' => array(
         'custom_settings' => FALSE,
@@ -53,10 +53,10 @@ function wsdot_publication_content_type_strongarm() {
           'weight' => '2',
         ),
         'metatags' => array(
-          'weight' => '11',
+          'weight' => '21',
         ),
         'redirect' => array(
-          'weight' => '10',
+          'weight' => '20',
         ),
         'workbench_access' => array(
           'weight' => '0',

@@ -23,7 +23,7 @@ function wsdot_publication_content_type_ds_field_settings_info() {
       'format' => 'default',
     ),
     'changed_date' => array(
-      'weight' => '10',
+      'weight' => '9',
       'label' => 'inline',
       'format' => 'ds_post_date_long',
     ),
