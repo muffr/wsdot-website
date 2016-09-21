@@ -61,6 +61,7 @@ function wsdot_metatag_metatag_export_default() {
   // Exported Metatag config instance: global:frontpage.
   $config['global:frontpage'] = array(
     'instance' => 'global:frontpage',
+    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[site:name]',
@@ -99,6 +100,16 @@ function wsdot_metatag_metatag_export_default() {
       ),
       'description' => array(
         'value' => '[node:summary]',
+      ),
+    ),
+  );
+
+  // Exported Metatag config instance: node:publication.
+  $config['node:publication'] = array(
+    'instance' => 'node:publication',
+    'config' => array(
+      'title' => array(
+        'value' => '[node:field-site-structure:0:root] - [node:title] | [current-page:pager][site:name]',
       ),
     ),
   );

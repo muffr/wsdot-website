@@ -180,7 +180,7 @@ function wsdot_publication_view_views_default_views() {
   $handler->display->display_options['fields']['field_originator']['id'] = 'field_originator';
   $handler->display->display_options['fields']['field_originator']['table'] = 'field_data_field_originator';
   $handler->display->display_options['fields']['field_originator']['field'] = 'field_originator';
-  /* Field: Field: Publication Date */
+  /* Field: Field: Date */
   $handler->display->display_options['fields']['field_date_1']['id'] = 'field_date_1';
   $handler->display->display_options['fields']['field_date_1']['table'] = 'field_data_field_date';
   $handler->display->display_options['fields']['field_date_1']['field'] = 'field_date';
@@ -207,12 +207,13 @@ function wsdot_publication_view_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'publication' => 'publication',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Publication Type (field_publication_type) */
   $handler->display->display_options['filters']['field_publication_type_value']['id'] = 'field_publication_type_value';
   $handler->display->display_options['filters']['field_publication_type_value']['table'] = 'field_data_field_publication_type';
   $handler->display->display_options['filters']['field_publication_type_value']['field'] = 'field_publication_type_value';
   $handler->display->display_options['filters']['field_publication_type_value']['value'] = array(
-    'Research Reports' => 'Research Reports',
+    'research' => 'research',
   );
   $handler->display->display_options['path'] = 'research/reports';
 
@@ -265,7 +266,7 @@ function wsdot_publication_view_views_default_views() {
   $handler->display->display_options['filters']['field_publication_type_value']['table'] = 'field_data_field_publication_type';
   $handler->display->display_options['filters']['field_publication_type_value']['field'] = 'field_publication_type_value';
   $handler->display->display_options['filters']['field_publication_type_value']['value'] = array(
-    'Engineering Manuals' => 'Engineering Manuals',
+    'engineering' => 'engineering',
   );
   $handler->display->display_options['path'] = 'publications/manuals';
   $export['publication'] = $view;

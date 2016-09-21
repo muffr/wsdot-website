@@ -757,3 +757,22 @@ div.workbench-info-block {
 .youtube-player {display:block;position:relative;width:100%;height:100%;padding-bottom:56.25%;overflow:hidden;cursor:pointer;font-size:0;}
 img.youtube-thumb {display:block;position:absolute;top:0;right:0;bottom:0;left:0;max-width:100%;width:100%;height:auto;margin:auto;}
 div.play-button {position:absolute;top:50%;left:50%;width:100px;height:100px;margin-top:-50px;margin-left:-50px;background:url(../images/play.png) no-repeat;background-size:100%;}
+
+/* Publications content type */
+.field-name-field-publication-date {margin: 5px 0;font-size: 1.2em;}
+.field-name-field-publication-number {margin: 5px 0;font-size: 1.2em;}
+.field-name-field-publication-url {margin: 5px 0;font-size: 1.2em;}
+.field-name-changed-date {margin: 5px 0;font-size: 1.2em;}
+.field-name-field-publication-version {margin: 5px 0;font-size: 1.2em;}
+.field-name-field-managers {margin: 5px 0;font-size: 1.2em;}
+.field-name-field-authors {margin: 5px 0;font-size: 1.2em;}
+.field-name-field-originator {margin: 5px 0;font-size: 1.2em;}
+.field-name-field-number-of-pages {margin: 5px 0;font-size: 1.2em;}
+.field-name-field-subject {margin:10px 0 5px 0;font-size: 1.2em;}
+.field-name-field-tags {margin: 10px 0 5px 0;font-size: 1.2em;}
+.field-name-field-related-publications {margin: 10px 0 0 0;font-size: 1.2em;}
+#main .field-name-field-related-publications p {font-size: 1.0em;}
+#main .field-name-field-related-publications li {font-size: 1.0em;}
+.node-publication {margin-bottom: 15px;}
+
+#main .wsdot-field-name-body-summary > p {margin-top: 0;}

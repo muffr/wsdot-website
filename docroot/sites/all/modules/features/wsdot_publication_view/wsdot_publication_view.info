@@ -1,8 +1,8 @@
 name = WSDOT Publication View
-description = View for Publication Content Type 
+description = View for Publication Content Type
 core = 7.x
 package = WSDOT Views
-version = 7.x-1.0
+version = 7.x-1.1
 project = wsdot_publication_view
 dependencies[] = ctools
 dependencies[] = entityreference
