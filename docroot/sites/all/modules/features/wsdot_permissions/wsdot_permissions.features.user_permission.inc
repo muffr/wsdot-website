@@ -694,15 +694,6 @@ function wsdot_permissions_user_default_permissions() {
     'module' => 'page_manager',
   );
 
-  // Exported permission: 'administer page titles'.
-  $permissions['administer page titles'] = array(
-    'name' => 'administer page titles',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'page_title',
-  );
-
   // Exported permission: 'administer pane access'.
   $permissions['administer pane access'] = array(
     'name' => 'administer pane access',
@@ -1496,17 +1487,10 @@ function wsdot_permissions_user_default_permissions() {
   // Exported permission: 'create panel content'.
   $permissions['create panel content'] = array(
     'name' => 'create panel content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'create panel-nodes'.
-  $permissions['create panel-nodes'] = array(
-    'name' => 'create panel-nodes',
     'roles' => array(
       'administrator' => 'administrator',
     ),
-    'module' => 'panels_node',
+    'module' => 'node',
   );
 
   // Exported permission: 'create park_and_ride_lots content'.
@@ -1787,17 +1771,10 @@ function wsdot_permissions_user_default_permissions() {
   // Exported permission: 'delete any panel content'.
   $permissions['delete any panel content'] = array(
     'name' => 'delete any panel content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete any panel-nodes'.
-  $permissions['delete any panel-nodes'] = array(
-    'name' => 'delete any panel-nodes',
     'roles' => array(
       'administrator' => 'administrator',
     ),
-    'module' => 'panels_node',
+    'module' => 'node',
   );
 
   // Exported permission: 'delete any park_and_ride_lots content'.
@@ -2068,17 +2045,10 @@ function wsdot_permissions_user_default_permissions() {
   // Exported permission: 'delete own panel content'.
   $permissions['delete own panel content'] = array(
     'name' => 'delete own panel content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own panel-nodes'.
-  $permissions['delete own panel-nodes'] = array(
-    'name' => 'delete own panel-nodes',
     'roles' => array(
       'administrator' => 'administrator',
     ),
-    'module' => 'panels_node',
+    'module' => 'node',
   );
 
   // Exported permission: 'delete own park_and_ride_lots content'.
@@ -2693,17 +2663,10 @@ function wsdot_permissions_user_default_permissions() {
   // Exported permission: 'edit any panel content'.
   $permissions['edit any panel content'] = array(
     'name' => 'edit any panel content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit any panel-nodes'.
-  $permissions['edit any panel-nodes'] = array(
-    'name' => 'edit any panel-nodes',
     'roles' => array(
       'administrator' => 'administrator',
     ),
-    'module' => 'panels_node',
+    'module' => 'node',
   );
 
   // Exported permission: 'edit any park_and_ride_lots content'.
@@ -2974,17 +2937,10 @@ function wsdot_permissions_user_default_permissions() {
   // Exported permission: 'edit own panel content'.
   $permissions['edit own panel content'] = array(
     'name' => 'edit own panel content',
-    'roles' => array(),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit own panel-nodes'.
-  $permissions['edit own panel-nodes'] = array(
-    'name' => 'edit own panel-nodes',
     'roles' => array(
       'administrator' => 'administrator',
     ),
-    'module' => 'panels_node',
+    'module' => 'node',
   );
 
   // Exported permission: 'edit own park_and_ride_lots content'.
@@ -3551,15 +3507,6 @@ function wsdot_permissions_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'user',
-  );
-
-  // Exported permission: 'set page title'.
-  $permissions['set page title'] = array(
-    'name' => 'set page title',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'page_title',
   );
 
   // Exported permission: 'switch shortcut sets'.
