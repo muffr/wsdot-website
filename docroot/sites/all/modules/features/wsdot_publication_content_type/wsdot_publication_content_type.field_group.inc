@@ -13,40 +13,6 @@ function wsdot_publication_content_type_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_core_metadata|node|publication|form';
-  $field_group->group_name = 'group_core_metadata';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'publication';
-  $field_group->mode = 'form';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Core Metadata',
-    'weight' => '4',
-    'children' => array(
-      0 => 'field_chapter',
-      1 => 'field_number_of_pages',
-      2 => 'field_originator',
-      3 => 'field_publication_date',
-      4 => 'field_publication_number',
-      5 => 'field_publication_version',
-      6 => 'field_related_publications',
-      7 => 'body',
-    ),
-    'format_type' => 'fieldset',
-    'format_settings' => array(
-      'formatter' => 'collapsible',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-core-metadata field-group-fieldset',
-        'required_fields' => 1,
-      ),
-    ),
-  );
-  $field_groups['group_core_metadata|node|publication|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
   $field_group->identifier = 'group_manuals_metadata|node|publication|form';
   $field_group->group_name = 'group_manuals_metadata';
   $field_group->entity_type = 'node';
@@ -102,7 +68,6 @@ function wsdot_publication_content_type_field_group_info() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Core Metadata');
   t('Manuals Specific Metadata');
   t('Research Reports Metadata');
 
