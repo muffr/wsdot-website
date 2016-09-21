@@ -774,3 +774,5 @@ div.play-button {position:absolute;top:50%;left:50%;width:100px;height:100px;mar
 #main .field-name-field-related-publications p {font-size: 1.0em;}
 #main .field-name-field-related-publications li {font-size: 1.0em;}
 .node-publication {margin-bottom: 15px;}
+
+#main .wsdot-field-name-body-summary > p {margin-top: 0;}
