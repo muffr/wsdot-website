@@ -759,16 +759,17 @@ img.youtube-thumb {display:block;position:absolute;top:0;right:0;bottom:0;left:0
 div.play-button {position:absolute;top:50%;left:50%;width:100px;height:100px;margin-top:-50px;margin-left:-50px;background:url(../images/play.png) no-repeat;background-size:100%;}
 
 /* Publications content type */
-.field-name-field-publication-date {margin: 5px 0;font-size: 1.2em;}
-.field-name-field-publication-number {margin: 5px 0;font-size: 1.2em; font-weight: bold;}
-.field-name-field-publication-url {margin: 5px 0;font-size: 1.2em;}
-.field-name-changed-date {margin: 5px 0;font-size: 1.2em;}
-.field-name-field-publication-version {margin: 5px 0;font-size: 1.2em;}
-.field-name-field-managers {margin: 5px 0;font-size: 1.2em;}
-.field-name-field-authors {margin: 5px 0;font-size: 1.2em;}
-.field-name-field-originator {margin: 5px 0;font-size: 1.2em;}
-.field-name-field-number-of-pages {margin: 5px 0;font-size: 1.2em;}
-.field-name-field-subject {margin:10px 0 5px 0;font-size: 1.2em;}
+.field-name-field-publication-date {line-height: 1.5em; font-size: 1.2em;}
+.field-name-field-publication-number {line-height: 1.5em ;font-size: 1.2em; font-weight: bold;}
+.field-name-title {line-height: 1.5em; font-size: 1.2em; font-weight: bold;}
+.field-name-field-publication-url {line-height: 1.5em; font-size: 1.2em;}
+.field-name-changed-date {line-height: 1.5em; font-size: 1.2em;}
+.field-name-field-publication-version {line-height: 1.5em; font-size: 1.2em;}
+.field-name-field-managers {line-height: 1.5em; font-size: 1.2em;}
+.field-name-field-authors {line-height: 1.5em; font-size: 1.2em;}
+.field-name-field-originator {line-height: 1.5em; font-size: 1.2em;}
+.field-name-field-number-of-pages {line-height: 1.5em; font-size: 1.2em;}
+.field-name-field-subject {line-height: 1.5em; font-size: 1.2em;}
 .field-name-field-tags {margin: 10px 0 5px 0;font-size: 1.2em;}
 .field-name-field-related-publications {margin: 10px 0 0 0;font-size: 1.2em;}
 #main .field-name-field-related-publications p {font-size: 1.0em;}
