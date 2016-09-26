@@ -129,12 +129,12 @@ function wsdot_publication_content_type_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '0',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
         'link' => '1',
-        'wrapper' => 'h3',
+        'wrapper' => '',
         'class' => '',
         'ft' => array(
           'func' => 'theme_field',
@@ -166,20 +166,6 @@ function wsdot_publication_content_type_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_field',
-        ),
-      ),
-    ),
-    'body' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'fi' => TRUE,
-          'fi-el' => 'div',
-          'fi-cl' => 'wsdot-field-name-body-summary',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-          'fi-first-last' => FALSE,
         ),
       ),
     ),
@@ -267,19 +253,17 @@ function wsdot_publication_content_type_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'title',
-        1 => 'body',
-        2 => 'field_publication_number',
-        3 => 'field_publication_url',
-        4 => 'field_authors',
-        5 => 'field_originator',
-        6 => 'field_publication_date',
+        0 => 'field_publication_number',
+        1 => 'title',
+        2 => 'field_publication_url',
+        3 => 'field_authors',
+        4 => 'field_originator',
+        5 => 'field_publication_date',
       ),
     ),
     'fields' => array(
-      'title' => 'ds_content',
-      'body' => 'ds_content',
       'field_publication_number' => 'ds_content',
+      'title' => 'ds_content',
       'field_publication_url' => 'ds_content',
       'field_authors' => 'ds_content',
       'field_originator' => 'ds_content',
