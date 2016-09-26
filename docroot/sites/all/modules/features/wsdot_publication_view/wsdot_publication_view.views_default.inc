@@ -79,11 +79,11 @@ function wsdot_publication_view_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = 'Publication Title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Content: Publication Number (field_publication_number) */
+  $handler->display->display_options['sorts']['field_publication_number_value']['id'] = 'field_publication_number_value';
+  $handler->display->display_options['sorts']['field_publication_number_value']['table'] = 'field_data_field_publication_number';
+  $handler->display->display_options['sorts']['field_publication_number_value']['field'] = 'field_publication_number_value';
+  $handler->display->display_options['sorts']['field_publication_number_value']['order'] = 'DESC';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -111,85 +111,66 @@ function wsdot_publication_view_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Research Reports Index';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['columns'] = array(
-    'field_publication_number' => 'field_publication_number',
-    'title' => 'title',
-    'field_authors' => 'field_authors',
-    'field_originator' => 'field_originator',
-    'field_date_1' => 'field_date_1',
-  );
-  $handler->display->display_options['style_options']['default'] = 'field_publication_number';
-  $handler->display->display_options['style_options']['info'] = array(
-    'field_publication_number' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
-      'align' => 'views-align-left',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'title' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
-      'align' => 'views-align-left',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_authors' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => 'views-align-left',
-      'separator' => '',
-      'empty_column' => 1,
-    ),
-    'field_originator' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => 'views-align-left',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_date_1' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
-      'align' => 'views-align-left',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'view-research-reports-index';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'field_authors' => 'field_authors',
+    'field_originator' => 'field_originator',
+    'field_publication_date' => 'field_publication_date',
+  );
+  $handler->display->display_options['row_options']['separator'] = '<br />';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Publication Number */
   $handler->display->display_options['fields']['field_publication_number']['id'] = 'field_publication_number';
   $handler->display->display_options['fields']['field_publication_number']['table'] = 'field_data_field_publication_number';
   $handler->display->display_options['fields']['field_publication_number']['field'] = 'field_publication_number';
+  $handler->display->display_options['fields']['field_publication_number']['label'] = '';
+  $handler->display->display_options['fields']['field_publication_number']['element_type'] = 'strong';
+  $handler->display->display_options['fields']['field_publication_number']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = 'Publication Title';
+  $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'strong';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Publication URL */
+  $handler->display->display_options['fields']['field_publication_url']['id'] = 'field_publication_url';
+  $handler->display->display_options['fields']['field_publication_url']['table'] = 'field_data_field_publication_url';
+  $handler->display->display_options['fields']['field_publication_url']['field'] = 'field_publication_url';
+  $handler->display->display_options['fields']['field_publication_url']['label'] = '';
+  $handler->display->display_options['fields']['field_publication_url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_publication_url']['click_sort_column'] = 'url';
   /* Field: Content: Authors */
   $handler->display->display_options['fields']['field_authors']['id'] = 'field_authors';
   $handler->display->display_options['fields']['field_authors']['table'] = 'field_data_field_authors';
   $handler->display->display_options['fields']['field_authors']['field'] = 'field_authors';
+  $handler->display->display_options['fields']['field_authors']['element_label_type'] = 'strong';
   /* Field: Content: Originator */
   $handler->display->display_options['fields']['field_originator']['id'] = 'field_originator';
   $handler->display->display_options['fields']['field_originator']['table'] = 'field_data_field_originator';
   $handler->display->display_options['fields']['field_originator']['field'] = 'field_originator';
-  /* Field: Field: Date */
-  $handler->display->display_options['fields']['field_date_1']['id'] = 'field_date_1';
-  $handler->display->display_options['fields']['field_date_1']['table'] = 'field_data_field_date';
-  $handler->display->display_options['fields']['field_date_1']['field'] = 'field_date';
-  $handler->display->display_options['fields']['field_date_1']['settings'] = array(
-    'format_type' => 'long',
+  $handler->display->display_options['fields']['field_originator']['element_label_type'] = 'strong';
+  /* Field: Content: Publication Date */
+  $handler->display->display_options['fields']['field_publication_date']['id'] = 'field_publication_date';
+  $handler->display->display_options['fields']['field_publication_date']['table'] = 'field_data_field_publication_date';
+  $handler->display->display_options['fields']['field_publication_date']['field'] = 'field_publication_date';
+  $handler->display->display_options['fields']['field_publication_date']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_publication_date']['settings'] = array(
+    'format_type' => 'short',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
+    'show_remaining_days' => 0,
   );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
