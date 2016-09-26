@@ -760,7 +760,7 @@ div.play-button {position:absolute;top:50%;left:50%;width:100px;height:100px;mar
 
 /* Publications content type */
 .field-name-field-publication-date {margin: 5px 0;font-size: 1.2em;}
-.field-name-field-publication-number {margin: 5px 0;font-size: 1.2em;}
+.field-name-field-publication-number {margin: 5px 0;font-size: 1.2em; font-weight: bold;}
 .field-name-field-publication-url {margin: 5px 0;font-size: 1.2em;}
 .field-name-changed-date {margin: 5px 0;font-size: 1.2em;}
 .field-name-field-publication-version {margin: 5px 0;font-size: 1.2em;}
@@ -774,5 +774,5 @@ div.play-button {position:absolute;top:50%;left:50%;width:100px;height:100px;mar
 #main .field-name-field-related-publications p {font-size: 1.0em;}
 #main .field-name-field-related-publications li {font-size: 1.0em;}
 .node-publication {margin-bottom: 15px;}
-
+.view-research-reports-index {font-size: 1.2em; line-height: 1.5em; margin-bottom: 1.5em;}
 #main .wsdot-field-name-body-summary > p {margin-top: 0;}
