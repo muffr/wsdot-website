@@ -22,7 +22,7 @@ function wsdot_publication_view_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Manuals';
+  $handler->display->display_options['title'] = 'Research Reports';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -98,16 +98,9 @@ function wsdot_publication_view_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'publication' => 'publication',
   );
-  /* Filter criterion: Broken/missing handler */
-  $handler->display->display_options['filters']['field_document_type_value']['id'] = 'field_document_type_value';
-  $handler->display->display_options['filters']['field_document_type_value']['table'] = 'field_data_field_document_type';
-  $handler->display->display_options['filters']['field_document_type_value']['field'] = 'field_document_type_value';
-  $handler->display->display_options['filters']['field_document_type_value']['value'] = array(
-    'Research Reports' => 'Research Reports',
-  );
 
-  /* Display: Research Reports Index */
-  $handler = $view->new_display('page', 'Research Reports Index', 'page');
+  /* Display: Research Reports */
+  $handler = $view->new_display('page', 'Research Reports', 'page');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Research Reports Index';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
@@ -196,10 +189,12 @@ function wsdot_publication_view_views_default_views() {
   $handler->display->display_options['filters']['field_publication_type_value']['value'] = array(
     'research' => 'research',
   );
-  $handler->display->display_options['path'] = 'research/reports';
+  $handler->display->display_options['path'] = 'research/reports/default.htm';
 
   /* Display: Manuals */
   $handler = $view->new_display('page', 'Manuals', 'page_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Manuals';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
