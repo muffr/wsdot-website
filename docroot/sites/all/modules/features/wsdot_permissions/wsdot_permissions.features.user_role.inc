@@ -13,25 +13,31 @@ function wsdot_permissions_user_default_roles() {
   // Exported role: ER Editor.
   $roles['ER Editor'] = array(
     'name' => 'ER Editor',
-    'weight' => 25,
+    'weight' => 26,
+  );
+
+  // Exported role: Finance Editor.
+  $roles['Finance Editor'] = array(
+    'name' => 'Finance Editor',
+    'weight' => 23,
   );
 
   // Exported role: NC Editor.
   $roles['NC Editor'] = array(
     'name' => 'NC Editor',
-    'weight' => 24,
+    'weight' => 25,
   );
 
   // Exported role: NW Editor.
   $roles['NW Editor'] = array(
     'name' => 'NW Editor',
-    'weight' => 23,
+    'weight' => 24,
   );
 
   // Exported role: OR Editor.
   $roles['OR Editor'] = array(
     'name' => 'OR Editor',
-    'weight' => 28,
+    'weight' => 29,
   );
 
   // Exported role: Policy Editor.
@@ -49,13 +55,13 @@ function wsdot_permissions_user_default_roles() {
   // Exported role: SC Editor.
   $roles['SC Editor'] = array(
     'name' => 'SC Editor',
-    'weight' => 26,
+    'weight' => 27,
   );
 
   // Exported role: SW Editor.
   $roles['SW Editor'] = array(
     'name' => 'SW Editor',
-    'weight' => 27,
+    'weight' => 28,
   );
 
   return $roles;
