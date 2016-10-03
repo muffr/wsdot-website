@@ -1112,6 +1112,20 @@ function wsdot_permissions_user_default_permissions() {
     'module' => 'panelizer',
   );
 
+  // Exported permission: 'administer panelizer taxonomy_term site_structure content'.
+  $permissions['administer panelizer taxonomy_term site_structure content'] = array(
+    'name' => 'administer panelizer taxonomy_term site_structure content',
+    'roles' => array(
+      'ER Editor' => 'ER Editor',
+      'NC Editor' => 'NC Editor',
+      'NW Editor' => 'NW Editor',
+      'OR Editor' => 'OR Editor',
+      'SC Editor' => 'SC Editor',
+      'SW Editor' => 'SW Editor',
+    ),
+    'module' => 'panelizer',
+  );
+
   // Exported permission: 'administer panelizer taxonomy_term site_structure defaults'.
   $permissions['administer panelizer taxonomy_term site_structure defaults'] = array(
     'name' => 'administer panelizer taxonomy_term site_structure defaults',
