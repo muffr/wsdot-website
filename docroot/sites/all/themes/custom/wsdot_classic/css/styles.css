@@ -33,20 +33,20 @@ table,td{font-size:1em;}
 .RadEContentBordered, .RadEContent {background-color:#ffffff;}
 
 /* Striped alternating colored table style */
-table.zebra {border-collapse: collapse; border: 1px solid #036;}
-table.zebra th {background: #036;color: #fff;font-weight: bold;}
-table.zebra td {vertical-align: top;padding: 5px;}
-table.zebra tr.alt td {background: #dee9fc;}
+#main table.zebra {border-collapse: collapse; border: 1px solid #036;}
+#main table.zebra th {background: #036;color: #fff;font-weight: bold;}
+#main table.zebra td {vertical-align: top;padding: 5px;}
+#main table.zebra tr.alt td {background: #dee9fc;}
 
 /* Styles for use with the tablesorter */
-table.tablesorter {background-color:#036;margin:10px 0pt 15px;font-size: 1.2em;width: 100%;text-align: left;border: 1px solid #036;border-collapse:separate;}
-table.tablesorter thead tr th, table.tablesorter tfoot tr th {background-color: #036;color: #fff;font-weight: bold;border:1px solid #fff;}
-table.tablesorter thead tr .header {background: url(../images/back/bg.gif) no-repeat center right;cursor: pointer;}
-table.tablesorter tbody td {color: #3D3D3D;padding: 4px;background-color: #fff;vertical-align: top;}
-table.tablesorter tbody tr.odd td {background-color: #dee9fc;}
-table.tablesorter thead tr .headerSortUp {background-image: url(../images/back/asc.gif);}
-table.tablesorter thead tr .headerSortDown {background-image: url(../images/back/desc.gif);}
-table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {background-color:#fff;color:#000;}
+#main table.tablesorter {background-color:#036;margin:10px 0pt 15px;font-size: 1.2em;width: 100%;text-align: left;border: 1px solid #036;border-collapse:separate;}
+#main table.tablesorter thead tr th, table.tablesorter tfoot tr th {background-color: #036;color: #fff;font-weight: bold;border:1px solid #fff;}
+#main table.tablesorter thead tr .header {background: url(../images/back/bg.gif) no-repeat center right;cursor: pointer;}
+#main table.tablesorter tbody td {color: #3D3D3D;padding: 4px;background-color: #fff;vertical-align: top;}
+#main table.tablesorter tbody tr.odd td {background-color: #dee9fc;}
+#main table.tablesorter thead tr .headerSortUp {background-image: url(../images/back/asc.gif);}
+#main table.tablesorter thead tr .headerSortDown {background-image: url(../images/back/desc.gif);}
+#main table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {background-color:#fff;color:#000;}
 
 /* Background logo images */
 a.blogger{background: url(../images/back/blogger.png) top left no-repeat;padding:0px 0px 5px 20px;}
@@ -188,6 +188,7 @@ div.nav a {background:transparent url(../images/back/navigator.png) no-repeat sc
 #main h3 {line-height: 2.0;}
 #main h4{font-weight:bold;color:#000;}
 #main h5 {font-weight:bold;color:#000;}
+#main table {border-collapse: separate;}
 
 #main .columns-2 {
     -webkit-columns: 2 200px;
