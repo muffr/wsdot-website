@@ -660,7 +660,7 @@ form.webform-client-form textarea {
     color: #222;
 }
 .label-top label{
-	display: inline-block;
+	display: block;
 	font-size: 1.2em;
 	margin-bottom: 1em;
 }
