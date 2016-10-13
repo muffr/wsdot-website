@@ -104,7 +104,7 @@ function wsdot_basic_page_content_type_field_default_field_instances() {
         'retroactive_update' => 0,
       ),
       'filefield_paths_enabled' => 1,
-      'max_filesize' => '5 MB',
+      'max_filesize' => '64 MB',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
