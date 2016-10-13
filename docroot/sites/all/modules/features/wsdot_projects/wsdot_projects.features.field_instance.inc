@@ -10,7 +10,7 @@
 function wsdot_projects_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-project-body'
+  // Exported field_instance: 'node-project-body'.
   $field_instances['node-project-body'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
@@ -80,7 +80,7 @@ function wsdot_projects_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-project-field_cities'
+  // Exported field_instance: 'node-project-field_cities'.
   $field_instances['node-project-field_cities'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
@@ -139,7 +139,7 @@ function wsdot_projects_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-project-field_contact'
+  // Exported field_instance: 'node-project-field_contact'.
   $field_instances['node-project-field_contact'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
@@ -186,7 +186,7 @@ function wsdot_projects_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project-field_counties'
+  // Exported field_instance: 'node-project-field_counties'.
   $field_instances['node-project-field_counties'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
@@ -245,7 +245,7 @@ function wsdot_projects_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-project-field_design_build'
+  // Exported field_instance: 'node-project-field_design_build'.
   $field_instances['node-project-field_design_build'] = array(
     'bundle' => 'project',
     'default_value' => array(
@@ -300,7 +300,7 @@ function wsdot_projects_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project-field_file'
+  // Exported field_instance: 'node-project-field_file'.
   $field_instances['node-project-field_file'] = array(
     'bundle' => 'project',
     'deleted' => 0,
@@ -369,7 +369,7 @@ function wsdot_projects_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-project-field_funding_table'
+  // Exported field_instance: 'node-project-field_funding_table'.
   $field_instances['node-project-field_funding_table'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
@@ -418,7 +418,7 @@ function wsdot_projects_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-project-field_funding_types'
+  // Exported field_instance: 'node-project-field_funding_types'.
   $field_instances['node-project-field_funding_types'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
@@ -477,7 +477,7 @@ function wsdot_projects_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-project-field_highways'
+  // Exported field_instance: 'node-project-field_highways'.
   $field_instances['node-project-field_highways'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
@@ -537,7 +537,7 @@ function wsdot_projects_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-project-field_images'
+  // Exported field_instance: 'node-project-field_images'.
   $field_instances['node-project-field_images'] = array(
     'bundle' => 'project',
     'deleted' => 0,
@@ -626,7 +626,7 @@ function wsdot_projects_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-project-field_legacy_map'
+  // Exported field_instance: 'node-project-field_legacy_map'.
   $field_instances['node-project-field_legacy_map'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
@@ -674,7 +674,7 @@ function wsdot_projects_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-project-field_link'
+  // Exported field_instance: 'node-project-field_link'.
   $field_instances['node-project-field_link'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
@@ -751,7 +751,7 @@ function wsdot_projects_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-project-field_modes'
+  // Exported field_instance: 'node-project-field_modes'.
   $field_instances['node-project-field_modes'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
@@ -810,7 +810,7 @@ function wsdot_projects_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-project-field_pin_report'
+  // Exported field_instance: 'node-project-field_pin_report'.
   $field_instances['node-project-field_pin_report'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
@@ -859,7 +859,7 @@ function wsdot_projects_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-project-field_project_id'
+  // Exported field_instance: 'node-project-field_project_id'.
   $field_instances['node-project-field_project_id'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
@@ -919,7 +919,7 @@ function wsdot_projects_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-project-field_project_phase'
+  // Exported field_instance: 'node-project-field_project_phase'.
   $field_instances['node-project-field_project_phase'] = array(
     'bundle' => 'project',
     'default_value' => array(
@@ -989,7 +989,7 @@ function wsdot_projects_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project-field_regions'
+  // Exported field_instance: 'node-project-field_regions'.
   $field_instances['node-project-field_regions'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
@@ -1048,7 +1048,7 @@ function wsdot_projects_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-project-field_site_structure'
+  // Exported field_instance: 'node-project-field_site_structure'.
   $field_instances['node-project-field_site_structure'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
@@ -1093,7 +1093,7 @@ function wsdot_projects_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'node-project-field_static_left_navigation'
+  // Exported field_instance: 'node-project-field_static_left_navigation'.
   $field_instances['node-project-field_static_left_navigation'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
@@ -1140,7 +1140,7 @@ function wsdot_projects_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project-field_status'
+  // Exported field_instance: 'node-project-field_status'.
   $field_instances['node-project-field_status'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
@@ -1200,7 +1200,7 @@ function wsdot_projects_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project-field_tags'
+  // Exported field_instance: 'node-project-field_tags'.
   $field_instances['node-project-field_tags'] = array(
     'bundle' => 'project',
     'default_value' => NULL,
