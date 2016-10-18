@@ -40,6 +40,18 @@ function wsdot_permissions_user_default_roles() {
     'weight' => 29,
   );
 
+  // Exported role: Planning Author.
+  $roles['Planning Author'] = array(
+    'name' => 'Planning Author',
+    'weight' => 30,
+  );
+
+  // Exported role: Planning Editor.
+  $roles['Planning Editor'] = array(
+    'name' => 'Planning Editor',
+    'weight' => 31,
+  );
+
   // Exported role: Policy Editor.
   $roles['Policy Editor'] = array(
     'name' => 'Policy Editor',
@@ -62,6 +74,12 @@ function wsdot_permissions_user_default_roles() {
   $roles['SW Editor'] = array(
     'name' => 'SW Editor',
     'weight' => 28,
+  );
+
+  // Exported role: Tribal Editor.
+  $roles['Tribal Editor'] = array(
+    'name' => 'Tribal Editor',
+    'weight' => 32,
   );
 
   return $roles;
