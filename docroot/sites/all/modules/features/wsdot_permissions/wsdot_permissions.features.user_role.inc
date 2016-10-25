@@ -76,6 +76,12 @@ function wsdot_permissions_user_default_roles() {
     'weight' => 28,
   );
 
+  // Exported role: Transit Editor.
+  $roles['Transit Editor'] = array(
+    'name' => 'Transit Editor',
+    'weight' => 33,
+  );
+
   // Exported role: Tribal Editor.
   $roles['Tribal Editor'] = array(
     'name' => 'Tribal Editor',
