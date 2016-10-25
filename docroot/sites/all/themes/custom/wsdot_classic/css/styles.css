@@ -191,15 +191,15 @@ div.nav a {background:transparent url(../images/back/navigator.png) no-repeat sc
 #main table {border-collapse: separate;}
 
 #main .columns-2 {
-    -webkit-columns: 2 200px;
-    -moz-columns: 2 200px;
-    columns: 2 200px;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    columns: 2;
 }
 
 #main .columns-3 {
-    -webkit-columns: 3 200px;
-    -moz-columns: 3 200px;
-    columns: 3 200px;
+    -webkit-columns: 3;
+    -moz-columns: 3;
+    columns: 3;
 }
 
 .bluebox2px{border-right:1px solid #98a1ab;border-bottom:1px solid #98a1ab;	border-left:1px solid #98a1ab;	background-color:#E2E8ED;width:360px;}
