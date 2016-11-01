@@ -16,6 +16,18 @@ function wsdot_permissions_user_default_roles() {
     'weight' => 26,
   );
 
+  // Exported role: Employment Editor.
+  $roles['Employment Editor'] = array(
+    'name' => 'Employment Editor',
+    'weight' => 35,
+  );
+
+  // Exported role: Ferries Editor.
+  $roles['Ferries Editor'] = array(
+    'name' => 'Ferries Editor',
+    'weight' => 34,
+  );
+
   // Exported role: Finance Editor.
   $roles['Finance Editor'] = array(
     'name' => 'Finance Editor',
