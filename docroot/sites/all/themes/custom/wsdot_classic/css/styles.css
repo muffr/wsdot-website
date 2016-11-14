@@ -185,7 +185,7 @@ div.nav a {background:transparent url(../images/back/navigator.png) no-repeat sc
 #main .contentbox .content p {margin: 0.5em 0;line-height:1.5em;}
 #main td p {margin:0;}
 #main h2 {max-width:750px;font-size:1.65em; margin-bottom: 15px;}
-#main h3 {line-height: 2.0;}
+#main h3 {margin:1em 0;line-height:1.5;}
 #main h4{font-weight:bold;color:#000;}
 #main h5 {font-weight:bold;color:#000;}
 #main table {border-collapse: separate;}
@@ -194,12 +194,22 @@ div.nav a {background:transparent url(../images/back/navigator.png) no-repeat sc
     -webkit-columns: 2;
     -moz-columns: 2;
     columns: 2;
+	-webkit-column-gap: 2em;
+    -moz-column-gap: 2em;
+    column-gap: 2em;
 }
 
 #main .columns-3 {
     -webkit-columns: 3;
     -moz-columns: 3;
     columns: 3;
+	-webkit-column-gap: 2em;
+    -moz-column-gap: 2em;
+    column-gap: 2em;
+}
+
+#main .columns-2 :first-child,#main .columns-3 :first-child {
+	margin-top: 0;
 }
 
 .bluebox2px{border-right:1px solid #98a1ab;border-bottom:1px solid #98a1ab;	border-left:1px solid #98a1ab;	background-color:#E2E8ED;width:360px;}
