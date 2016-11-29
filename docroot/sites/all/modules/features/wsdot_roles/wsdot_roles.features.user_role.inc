@@ -10,6 +10,18 @@
 function wsdot_roles_user_default_roles() {
   $roles = array();
 
+  // Exported role: Asset Editor.
+  $roles['Asset Editor'] = array(
+    'name' => 'Asset Editor',
+    'weight' => 37,
+  );
+
+  // Exported role: ER Editor.
+  $roles['ER Editor'] = array(
+    'name' => 'ER Editor',
+    'weight' => 26,
+  );
+
   // Exported role: ER Project Author.
   $roles['ER Project Author'] = array(
     'name' => 'ER Project Author',
@@ -22,10 +34,28 @@ function wsdot_roles_user_default_roles() {
     'weight' => 11,
   );
 
+  // Exported role: Employment Editor.
+  $roles['Employment Editor'] = array(
+    'name' => 'Employment Editor',
+    'weight' => 35,
+  );
+
   // Exported role: Equal Opportunity Editor.
   $roles['Equal Opportunity Editor'] = array(
     'name' => 'Equal Opportunity Editor',
     'weight' => 20,
+  );
+
+  // Exported role: Ferries Editor.
+  $roles['Ferries Editor'] = array(
+    'name' => 'Ferries Editor',
+    'weight' => 34,
+  );
+
+  // Exported role: Finance Editor.
+  $roles['Finance Editor'] = array(
+    'name' => 'Finance Editor',
+    'weight' => 23,
   );
 
   // Exported role: Good To Go Editor.
@@ -46,6 +76,12 @@ function wsdot_roles_user_default_roles() {
     'weight' => 3,
   );
 
+  // Exported role: NC Editor.
+  $roles['NC Editor'] = array(
+    'name' => 'NC Editor',
+    'weight' => 25,
+  );
+
   // Exported role: NC Project Author.
   $roles['NC Project Author'] = array(
     'name' => 'NC Project Author',
@@ -56,6 +92,12 @@ function wsdot_roles_user_default_roles() {
   $roles['NC Project Editor'] = array(
     'name' => 'NC Project Editor',
     'weight' => 9,
+  );
+
+  // Exported role: NW Editor.
+  $roles['NW Editor'] = array(
+    'name' => 'NW Editor',
+    'weight' => 24,
   );
 
   // Exported role: NW Project Author.
@@ -76,6 +118,12 @@ function wsdot_roles_user_default_roles() {
     'weight' => 5,
   );
 
+  // Exported role: OR Editor.
+  $roles['OR Editor'] = array(
+    'name' => 'OR Editor',
+    'weight' => 29,
+  );
+
   // Exported role: OR Project Author.
   $roles['OR Project Author'] = array(
     'name' => 'OR Project Author',
@@ -88,6 +136,36 @@ function wsdot_roles_user_default_roles() {
     'weight' => 17,
   );
 
+  // Exported role: Planning Author.
+  $roles['Planning Author'] = array(
+    'name' => 'Planning Author',
+    'weight' => 30,
+  );
+
+  // Exported role: Planning Editor.
+  $roles['Planning Editor'] = array(
+    'name' => 'Planning Editor',
+    'weight' => 31,
+  );
+
+  // Exported role: Policy Editor.
+  $roles['Policy Editor'] = array(
+    'name' => 'Policy Editor',
+    'weight' => 21,
+  );
+
+  // Exported role: Research Editor.
+  $roles['Research Editor'] = array(
+    'name' => 'Research Editor',
+    'weight' => 22,
+  );
+
+  // Exported role: SC Editor.
+  $roles['SC Editor'] = array(
+    'name' => 'SC Editor',
+    'weight' => 27,
+  );
+
   // Exported role: SC Project Author.
   $roles['SC Project Author'] = array(
     'name' => 'SC Project Author',
@@ -98,6 +176,12 @@ function wsdot_roles_user_default_roles() {
   $roles['SC Project Editor'] = array(
     'name' => 'SC Project Editor',
     'weight' => 13,
+  );
+
+  // Exported role: SW Editor.
+  $roles['SW Editor'] = array(
+    'name' => 'SW Editor',
+    'weight' => 28,
   );
 
   // Exported role: SW Project Author.
@@ -116,6 +200,24 @@ function wsdot_roles_user_default_roles() {
   $roles['Tolling Editor'] = array(
     'name' => 'Tolling Editor',
     'weight' => 18,
+  );
+
+  // Exported role: Traffic Editor.
+  $roles['Traffic Editor'] = array(
+    'name' => 'Traffic Editor',
+    'weight' => 36,
+  );
+
+  // Exported role: Transit Editor.
+  $roles['Transit Editor'] = array(
+    'name' => 'Transit Editor',
+    'weight' => 33,
+  );
+
+  // Exported role: Tribal Editor.
+  $roles['Tribal Editor'] = array(
+    'name' => 'Tribal Editor',
+    'weight' => 32,
   );
 
   // Exported role: administrator.
