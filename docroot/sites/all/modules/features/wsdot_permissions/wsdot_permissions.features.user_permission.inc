@@ -14,6 +14,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['access administration menu'] = array(
     'name' => 'access administration menu',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -56,6 +57,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['access administration pages'] = array(
     'name' => 'access administration pages',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -116,6 +118,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['access ckeditor link'] = array(
     'name' => 'access ckeditor link',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -169,6 +172,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['access content overview'] = array(
     'name' => 'access content overview',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -238,6 +242,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['access media browser'] = array(
     'name' => 'access media browser',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -280,6 +285,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['access overlay'] = array(
     'name' => 'access overlay',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -367,6 +373,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['access workbench'] = array(
     'name' => 'access workbench',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -409,6 +416,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['access workbench access by role'] = array(
     'name' => 'access workbench access by role',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -631,6 +639,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['administer files'] = array(
     'name' => 'administer files',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -700,6 +709,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['administer main-menu menu items'] = array(
     'name' => 'administer main-menu menu items',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -1579,6 +1589,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['create files'] = array(
     'name' => 'create files',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -1653,6 +1664,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['create page content'] = array(
     'name' => 'create page content',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -1847,6 +1859,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['delete any audio files'] = array(
     'name' => 'delete any audio files',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -1889,6 +1902,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['delete any document files'] = array(
     'name' => 'delete any document files',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -1952,6 +1966,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['delete any image files'] = array(
     'name' => 'delete any image files',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -2003,6 +2018,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['delete any page content'] = array(
     'name' => 'delete any page content',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -2124,6 +2140,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['delete any video files'] = array(
     'name' => 'delete any video files',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -2203,6 +2220,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['delete own audio files'] = array(
     'name' => 'delete own audio files',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -2245,6 +2263,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['delete own document files'] = array(
     'name' => 'delete own document files',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -2308,6 +2327,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['delete own image files'] = array(
     'name' => 'delete own image files',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -2359,6 +2379,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['delete own page content'] = array(
     'name' => 'delete own page content',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -2480,6 +2501,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['delete own video files'] = array(
     'name' => 'delete own video files',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -2663,6 +2685,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['download any audio files'] = array(
     'name' => 'download any audio files',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -2705,6 +2728,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['download any document files'] = array(
     'name' => 'download any document files',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -2746,6 +2770,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['download any image files'] = array(
     'name' => 'download any image files',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -2788,6 +2813,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['download any video files'] = array(
     'name' => 'download any video files',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -2830,6 +2856,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['download own audio files'] = array(
     'name' => 'download own audio files',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -2872,6 +2899,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['download own document files'] = array(
     'name' => 'download own document files',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -2914,6 +2942,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['download own image files'] = array(
     'name' => 'download own image files',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -2956,6 +2985,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['download own video files'] = array(
     'name' => 'download own video files',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -3030,6 +3060,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['edit any audio files'] = array(
     'name' => 'edit any audio files',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -3072,6 +3103,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['edit any document files'] = array(
     'name' => 'edit any document files',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -3135,6 +3167,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['edit any image files'] = array(
     'name' => 'edit any image files',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -3186,6 +3219,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['edit any page content'] = array(
     'name' => 'edit any page content',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -3307,6 +3341,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['edit any video files'] = array(
     'name' => 'edit any video files',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -3386,6 +3421,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['edit own audio files'] = array(
     'name' => 'edit own audio files',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -3428,6 +3464,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['edit own document files'] = array(
     'name' => 'edit own document files',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -3491,6 +3528,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['edit own image files'] = array(
     'name' => 'edit own image files',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -3542,6 +3580,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['edit own page content'] = array(
     'name' => 'edit own page content',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -3663,6 +3702,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['edit own video files'] = array(
     'name' => 'edit own video files',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -3985,6 +4025,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['moderate content from draft to needs_review'] = array(
     'name' => 'moderate content from draft to needs_review',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -4027,6 +4068,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['moderate content from needs_moderation to draft'] = array(
     'name' => 'moderate content from needs_moderation to draft',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Editor' => 'ER Project Editor',
       'Employment Editor' => 'Employment Editor',
@@ -4071,6 +4113,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['moderate content from needs_review to draft'] = array(
     'name' => 'moderate content from needs_review to draft',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -4113,6 +4156,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['moderate content from needs_review to needs_moderation'] = array(
     'name' => 'moderate content from needs_review to needs_moderation',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Editor' => 'ER Project Editor',
       'Employment Editor' => 'Employment Editor',
@@ -4175,6 +4219,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['revert revisions'] = array(
     'name' => 'revert revisions',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -4217,6 +4262,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['schedule publishing of nodes'] = array(
     'name' => 'schedule publishing of nodes',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -4406,6 +4452,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['use media wysiwyg'] = array(
     'name' => 'use media wysiwyg',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -4517,6 +4564,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['use text format wysiwyg'] = array(
     'name' => 'use text format wysiwyg',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -4567,6 +4615,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['use workbench_moderation my drafts tab'] = array(
     'name' => 'use workbench_moderation my drafts tab',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -4609,6 +4658,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['use workbench_moderation needs review tab'] = array(
     'name' => 'use workbench_moderation needs review tab',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -4651,6 +4701,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['view all unpublished content'] = array(
     'name' => 'view all unpublished content',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -4704,6 +4755,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['view moderation history'] = array(
     'name' => 'view moderation history',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -4746,6 +4798,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['view moderation messages'] = array(
     'name' => 'view moderation messages',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -4788,6 +4841,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['view own files'] = array(
     'name' => 'view own files',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -4839,6 +4893,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['view own unpublished content'] = array(
     'name' => 'view own unpublished content',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -4899,6 +4954,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['view revisions'] = array(
     'name' => 'view revisions',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -4941,6 +4997,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['view scheduled content'] = array(
     'name' => 'view scheduled content',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -4983,6 +5040,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['view the administration theme'] = array(
     'name' => 'view the administration theme',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
@@ -5025,6 +5083,7 @@ function wsdot_permissions_user_default_permissions() {
   $permissions['view workbench access information'] = array(
     'name' => 'view workbench access information',
     'roles' => array(
+      'Asset Editor' => 'Asset Editor',
       'ER Editor' => 'ER Editor',
       'ER Project Author' => 'ER Project Author',
       'ER Project Editor' => 'ER Project Editor',
