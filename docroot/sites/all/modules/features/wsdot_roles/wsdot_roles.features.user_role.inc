@@ -10,6 +10,12 @@
 function wsdot_roles_user_default_roles() {
   $roles = array();
 
+  // Exported role: Asset Editor.
+  $roles['Asset Editor'] = array(
+    'name' => 'Asset Editor',
+    'weight' => 37,
+  );
+
   // Exported role: ER Editor.
   $roles['ER Editor'] = array(
     'name' => 'ER Editor',
