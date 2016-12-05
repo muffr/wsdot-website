@@ -4570,6 +4570,7 @@ function wsdot_permissions_user_default_permissions() {
       'ER Project Editor' => 'ER Project Editor',
       'Employment Editor' => 'Employment Editor',
       'Equal Opportunity Editor' => 'Equal Opportunity Editor',
+      'Ferries Editor' => 'Ferries Editor',
       'Finance Editor' => 'Finance Editor',
       'Good To Go Editor' => 'Good To Go Editor',
       'HQ Communication Editor' => 'HQ Communication Editor',
