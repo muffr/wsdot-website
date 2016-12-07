@@ -40,5 +40,6 @@ function createIframe() {
   iframe.setAttribute("src", "//www.youtube.com/embed/" + videoId + "?autoplay=1&autohide=2&border=0&wmode=opaque&enablejsapi=1&controls=2&showinfo=0");
   iframe.setAttribute("frameborder", "0");
   iframe.setAttribute("class", "youtube-iframe");
+  iframe.setAttribute("allowfullscreen", "allowfullscreen");
   this.parentNode.replaceChild(iframe, this);
 }
