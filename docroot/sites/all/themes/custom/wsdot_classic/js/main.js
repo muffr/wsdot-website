@@ -21,7 +21,7 @@
 })(jQuery);
 
 function createThumb(id) {
-  return '<img class="youtube-thumb" src="//i.ytimg.com/vi/' + id + '/hqdefault.jpg"><a class="play-button">Play video</a>';
+  return '<img class="youtube-thumb" src="//i.ytimg.com/vi/' + id + '/hqdefault.jpg" alt="YouTube video thumbnail"><a class="play-button">Play video</a>';
 }
 
 function createIframe() {
