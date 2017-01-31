@@ -674,7 +674,7 @@ form.webform-client-form textarea {
 .label-top label{
 	display: block;
 	font-size: 1.2em;
-	margin-bottom: 1em;
+	margin-bottom: 0.9em;
 }
 .label-inline label{
 	display: inline-block;
