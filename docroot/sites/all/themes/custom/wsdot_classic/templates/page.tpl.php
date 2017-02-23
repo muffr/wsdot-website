@@ -26,10 +26,9 @@
       </ul>
 
       <div class="search">
-        <form id="searchform" method="get" action="https://search.usa.gov/search">
+        <form id="searchform" method="get" action="https://www.wsdot.wa.gov/search/">
           <fieldset>
-            <input type="hidden" id="affiliate" name="affiliate" value="WSDOT" />
-            <input type="text" name="query" id="query" class="search-text" />
+            <input type="text" name="q" id="query-field" class="search-text" />
             <input type="submit" value="Search" class="searchButton" />
           </fieldset>
         </form>
