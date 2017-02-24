@@ -679,7 +679,7 @@ form.webform-client-form textarea {
 .label-inline label{
 	display: inline-block;
 	font-size: 13px;
-	margin-right: 1em;
+	margin: 0 1em 1em 0; 
 }
 .resizable-textarea .grippie {
     width: 498px;
