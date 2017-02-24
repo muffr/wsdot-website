@@ -687,12 +687,22 @@ form.webform-client-form textarea {
 }
 
 /* news */
-.container-inline-date .form-item .form-item {
+div.container-inline-date div.form-item div.form-item {
+	max-width: 47.5%;
 	margin-right: 1em;
+}
+div.date-month.form-select,div.date-year.form-select {
+	max-width: 100%;
+}
+div.container-inline-date div.form-item div.form-item:last-child {
+	margin-right: 0;
+}
+div.views-exposed-form div.form-item {
+	margin-right: 0;
 }
 div.views-exposed-form div.views-exposed-widget {
     float: left;
-    padding: 0.5em 0.5em 0 0;
+    padding: 0.5em 0 0 0;
 }
 div.views-exposed-form div.views-exposed-widgets {
 	padding-right: 0;
