@@ -12,9 +12,9 @@ required = TRUE
 files[] = tests/sqlsrv.schema.test
 files[] = tests/sqlsrv.select.test
 
-; Information added by Drupal.org packaging script on 2016-10-14
-version = "7.x-2.1"
+; Information added by Drupal.org packaging script on 2017-02-15
+version = "7.x-2.2"
 core = "7.x"
 project = "sqlsrv"
-datestamp = "1476434676"
+datestamp = "1487174295"
 

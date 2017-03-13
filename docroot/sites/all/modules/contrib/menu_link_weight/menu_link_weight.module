@@ -24,12 +24,9 @@ define('MENU_LINK_WEIGHT_MAX_DELTA', 50);
  * Implements hook_form_FORM_ID_alter().
  */
 function menu_link_weight_form_node_form_alter(&$form, &$form_state) {
-  if (module_exists('menu_admin_per_menu') && function_exists('_menu_admin_per_menu_filter_parent_options') && isset($form['menu']['link']['parent']) && !user_access('administer menu') && _menu_admin_per_menu_filter_parent_options($form['menu']['link'])) {
-    // Pass if the user does not have "administer menu" permission but does
-    // have permission through Menu Admin Per Menu.
-  }
-  elseif (!user_access('administer menu') || !isset($form['menu']['link'])) {
-    // Only allow users with "administer menu" permissions.
+  if (!isset($form['menu']) || !isset($form['menu']['link']) || (isset($form['menu']['#access']) && $form['menu']['#access'] === FALSE) || (isset($form['menu']['link']['parent']['#access']) && $form['menu']['link']['parent']['#access'] === FALSE)) {
+    // If there is no menu, or the user doesn't have access to the
+    // menu link options, then do nothing.
     return;
   }
 
