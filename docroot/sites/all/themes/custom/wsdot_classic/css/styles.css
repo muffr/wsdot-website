@@ -114,8 +114,8 @@ input.searchButton {height: 23px;margin: 0;font-family: "trebuchet ms",helvetica
 .corners-bottom {width:955px;margin:0em auto;padding:5px;background:#fff url(../images/back/corners.png) no-repeat left bottom;height:5px;}
 
 /* Left navigation column */
-.greyBg{background:#fff url(https://www.wsdot.wa.gov/media/images/back/gradients_bg.png) repeat-x left 0px;}
-.blueBg{background:#fff url(https://www.wsdot.wa.gov/media/images/back/gradients_bg.png) repeat-x left 0px;}
+.greyBg{background:#fff url(../images/back/gradients_bg.png) repeat-x left 0px;}
+.blueBg{background:#fff url(../images/back/gradients_bg.png) repeat-x left 0px;}
 .leftnav{display:block;width:168px;float:left;}
 .leftnavbox{width:150px;margin-bottom:0px;}
 .leftnavbox p{line-height:1.5em;}
