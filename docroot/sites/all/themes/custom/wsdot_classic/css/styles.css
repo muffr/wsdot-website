@@ -143,6 +143,7 @@ input.searchButton {height: 23px;margin: 0;font-family: "trebuchet ms",helvetica
 .leftnavbox .header a:visited{color:#000;}
 .leftnavbox > ul {width: 100%;box-sizing: border-box;padding: 0 0 0 1em;}
 .leftnav #block-masquerade-masquerade .content {padding:0.5em 0 0.25em 1em;}
+.leftnavbox .content #edit-masquerade-user-field {width:130px;margin-bottom:0.5em;}
 
 #block-views-static-left-navigation-block .content,
 #block-views-project-pin-report-block .content {width:150px; padding:0px;}
