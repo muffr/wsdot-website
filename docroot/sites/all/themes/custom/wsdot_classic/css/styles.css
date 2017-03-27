@@ -722,6 +722,29 @@ div.views-exposed-form div.views-exposed-widgets {
 	margin: 1em 0;
 }
 
+/* highlighted home page message */
+div#highlight div.widgetdata {
+	margin-top: -1px;
+	padding: 0;
+}
+
+div#highlight div.widgetdata > div {
+	padding: 10px;
+}
+
+div#highlight div.widgetdata h3 {
+	margin: 0;
+	padding:0.33em 0.66em;
+    line-height: 1.6;
+    color: #fff;
+    background-color: #017359;
+    border-radius: 2px;	
+}
+
+div#highlight ul.content {
+	margin-bottom: 0;
+}
+
 /* Workbench info block on content nodes */
 div.workbench-info-block {
   font-size: 1.2em;
