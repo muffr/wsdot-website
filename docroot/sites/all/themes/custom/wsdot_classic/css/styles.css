@@ -14,7 +14,7 @@ h2.title{font-size:1.65em;color:#000;}
 h3{font-size:1.4em;font-weight:bold;color:#000;}
 h4{font-size:1.3em;line-height:1em;font-weight:bold;color:#000;}
 h5 {font-size:1.2em;line-height:1.5em;font-weight:bold;color:#000;}
-#main hr{border:none;height:4px;margin:3em 0;color:#eee;background-color:#eee;}
+#main hr:not(td tr){border:none;height:4px;margin:3em 0;color:#eee;background-color:#eee;}
 
 .bold {font-weight:bold;}
 .row{clear:both;margin-top:15px;}
