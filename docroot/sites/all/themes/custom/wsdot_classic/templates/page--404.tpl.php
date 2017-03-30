@@ -26,10 +26,9 @@
       </ul>
 
       <div class="search">
-        <form id="searchform" method="get" action="https://search.usa.gov/search">
+        <form id="searchform" method="get" action="https://www.wsdot.wa.gov/search/">
           <fieldset>
-            <input type="hidden" id="affiliate" name="affiliate" value="WSDOT" />
-            <input type="text" name="query" id="query" class="search-text" />
+            <input type="text" name="q" id="query-field" class="search-text" />
             <input type="submit" value="Search" class="searchButton" />
           </fieldset>
         </form>
@@ -48,10 +47,9 @@
       <h2 id="off_the_map">You're off the map!</h2>
       <p id="drivers_seat">But you're still in the driver's seat....</p>
       <br>
-      <form id="searchform" method="get" action="https://search.usa.gov/search">
-        <input type="hidden" id="affiliate" name="affiliate" value="WSDOT" />
+      <form id="searchform" method="get" action="https://www.wsdot.wa.gov/search/">
         <input type="submit" value="Search" id="search_button_404" />
-        <input type="text" autocomplete="off" name="query" class="search_box_404" alt="Insert search text" />
+        <input type="text" autocomplete="off" name="q" class="search_box_404" alt="Insert search text" />
       </form>
     </div>
   </div>
