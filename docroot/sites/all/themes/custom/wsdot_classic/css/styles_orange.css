@@ -1,10 +1,10 @@
 /* Orange */
 a {color:#cc3300;}
 a:visited {color:#6a1a00;}
-#header .topban {background-color: #ff6600;height:2.5em;}
-input.searchButton {color:#ffffff;font-family:'trebuchet ms',helvetica,sans-serif;font-size:1.1em;font-weight:bold;background-color:#ff6600;border:1px solid;border-top-color:#bdbdbd;border-left-color:#bdbdbd;border-right-color:#CC3333;border-bottom-color:#cc3300;}
+#header .topban {background-color:#ff6600;}
+input.searchButton {background-color:#ff6600;border:1px solid;border-top-color:#bdbdbd;border-left-color:#bdbdbd;border-right-color:#cc3333;border-bottom-color:#cc3300;}
 .leftnavbox .content a {color:#cc3300;}
 .leftnavbox .content a:visited {color:#6a1a00;}
-.logo h1 a {background: transparent url(../images/OrangeLogo.gif) no-repeat; display: block; width: 250px; height: 39px; text-indent: -999em;}
-.mainnav ul li a {background:transparent url(../images/back/tabs_link_bg.png) no-repeat right top;color:#ff6600;display:block;height:17px;line-height:1.5em;padding:7px 13px 6px 7px;text-decoration:none;float:left;}
-.mainnav ul li a:hover {background-position: right -30px;color: #ff6600;text-decoration: none;}
+.logo h1 a {background:transparent url(../images/OrangeLogo.gif) no-repeat;}
+.mainnav ul li a {color:#ff6600;}
+.mainnav ul li a:hover {color: #ff6600;}
