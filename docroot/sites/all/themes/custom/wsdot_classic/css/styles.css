@@ -58,6 +58,8 @@ a.rss{background: url(../images/back/feed.png) top left no-repeat;padding:0px 0p
 a.slideshare{background: url(../images/back/slideshare.png) top left no-repeat;padding:0px 0px 5px 20px;}
 a.friendfeed{background: url(../images/back/friendfeed.png) top left no-repeat;padding:0px 0px 5px 20px;}
 a.facebook{background: url(../images/back/facebook.png) top left no-repeat;padding:0px 0px 5px 20px;}
+a.instagram{background: url(../images/back/instagram.png) top left no-repeat;padding:0px 0px 5px 20px;}
+a.linkedin{background: url(../images/back/linkedin.png) top left no-repeat;padding:0px 0px 5px 20px;}
 .jobsnowbg {margin-left:40px;width:113px;float:left;padding-top:8px;padding-bottom:7px;}
 .jobsnowbg a{background:url(../images/back/jobsnow_sm.gif) no-repeat left top;display:block;height:81px;overflow:hidden;text-decoration:none;width:113px;}
 .arrabg {margin-right:40px;width:81px;float:right;padding-top:8px;padding-bottom:7px;}
