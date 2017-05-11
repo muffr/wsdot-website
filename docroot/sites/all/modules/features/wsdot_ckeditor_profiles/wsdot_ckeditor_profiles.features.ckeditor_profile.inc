@@ -208,7 +208,7 @@ function wsdot_ckeditor_profiles_ckeditor_profile_defaults() {
     [\'Maximize\',\'ShowBlocks\'],
     \'/\',
     [\'Format\'],
-    [\'Bold\',\'-\',\'RemoveFormat\'],
+    [\'Bold\',\'Italic\',\'-\',\'RemoveFormat\'],
     [\'NumberedList\',\'BulletedList\',\'-\',\'Blockquote\'],
     [\'Link\',\'Unlink\',\'Anchor\'],
     [\'Media\',\'MediaEmbed\'],

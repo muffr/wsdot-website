@@ -64,7 +64,7 @@ function wsdot_metatag_metatag_export_default() {
     'disabled' => FALSE,
     'config' => array(
       'title' => array(
-        'value' => '[site:name]',
+        'value' => 'Washington State Department of Transportation',
       ),
       'description' => array(
         'value' => 'The official home page for WSDOT. Take a look at how we keep people, businesses and the economy moving by operating and improving the state\'s transportation systems.',
@@ -101,12 +101,19 @@ function wsdot_metatag_metatag_export_default() {
       'description' => array(
         'value' => '[node:summary]',
       ),
+      'dcterms.created' => array(
+        'value' => '[node:created:custom:Y-m-d\\TH:i:s.000\\Z]',
+      ),
+      'dcterms.modified' => array(
+        'value' => '[node:changed:custom:Y-m-d\\TH:i:s.000\\Z]',
+      ),
     ),
   );
 
   // Exported Metatag config instance: node:publication.
   $config['node:publication'] = array(
     'instance' => 'node:publication',
+    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[node:field-site-structure:0:root] - [node:title] | [current-page:pager][site:name]',

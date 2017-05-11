@@ -222,12 +222,12 @@ function wsdot_news_article_content_type_panelizer_defaults() {
     'title' => 'Stay Connected',
     'body' => '<div class="widgetdata brownbg">
 <ul class="threecol_icons" style="list-style:none">
-	<li><a class="blogger" href="http://wsdotblog.blogspot.com/" rel="nofollow">Blogger</a></li>
-	<li><a class="flickr" href="http://www.flickr.com/photos/wsdot/" rel="nofollow">Flickr</a></li>
-	<li><a class="rss" href="http://www.wsdot.wa.gov/news/rss/" rel="nofollow">RSS</a></li>
-	<li><a class="twitter" href="http://twitter.com/wsdot" rel="nofollow">Twitter</a></li>
-	<li><a class="youtube" href="http://www.youtube.com/wsdot" rel="nofollow">YouTube</a></li>
-	<li><a class="facebook" href="http://www.facebook.com/wsdot" rel="nofollow">Facebook</a></li>
+	<li><a class="blogger" href="http://wsdotblog.blogspot.com/">Blogger</a></li>
+	<li><a class="flickr" href="http://www.flickr.com/photos/wsdot/">Flickr</a></li>
+	<li><a class="rss" href="http://www.wsdot.wa.gov/news/rss.xml">RSS</a></li>
+	<li><a class="twitter" href="http://twitter.com/wsdot">Twitter</a></li>
+	<li><a class="youtube" href="http://www.youtube.com/wsdot">YouTube</a></li>
+	<li><a class="facebook" href="http://www.facebook.com/wsdot">Facebook</a></li>
 </ul>
 
 <div class="cl">&nbsp;</div>
@@ -235,6 +235,7 @@ function wsdot_news_article_content_type_panelizer_defaults() {
 ',
     'format' => 'wysiwyg',
     'substitute' => 0,
+    'title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
