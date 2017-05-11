@@ -15,7 +15,7 @@ function wsdot_taxonomies_taxonomy_default_vocabularies() {
       'description' => 'Rest Area Amenities',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -9,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -38,7 +38,7 @@ function wsdot_taxonomies_taxonomy_default_vocabularies() {
       'description' => 'Cities are places where humans live. If dogs build cities, we\'re in trouble.',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -8,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -61,7 +61,7 @@ function wsdot_taxonomies_taxonomy_default_vocabularies() {
       'description' => '',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -7,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -84,7 +84,7 @@ function wsdot_taxonomies_taxonomy_default_vocabularies() {
       'description' => 'Funding can come from many places. Free money is the best.',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -6,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -107,7 +107,7 @@ function wsdot_taxonomies_taxonomy_default_vocabularies() {
       'description' => '',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -5,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -130,7 +130,7 @@ function wsdot_taxonomies_taxonomy_default_vocabularies() {
       'description' => 'A list of modes of transportation. Like walking. Silly walking.',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -4,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -153,7 +153,7 @@ function wsdot_taxonomies_taxonomy_default_vocabularies() {
       'description' => 'Mountain Passes',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -3,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -176,7 +176,7 @@ function wsdot_taxonomies_taxonomy_default_vocabularies() {
       'description' => 'Organizations include people. And gerbils.',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -2,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -199,7 +199,7 @@ function wsdot_taxonomies_taxonomy_default_vocabularies() {
       'description' => 'Hierarchical Taxonomy of WSDOT Project Categories',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -1,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -245,7 +245,7 @@ function wsdot_taxonomies_taxonomy_default_vocabularies() {
       'description' => 'Regions',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => 2,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -266,9 +266,9 @@ function wsdot_taxonomies_taxonomy_default_vocabularies() {
       'name' => 'Site Structure',
       'machine_name' => 'site_structure',
       'description' => 'Hierarchical term list based on WSDOT classic Web site structure.',
-      'hierarchy' => 0,
+      'hierarchy' => 1,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => -10,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -291,7 +291,7 @@ function wsdot_taxonomies_taxonomy_default_vocabularies() {
       'description' => 'Use tags to group articles on similar topics into categories.',
       'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => 4,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
