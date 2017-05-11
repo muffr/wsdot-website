@@ -57,11 +57,10 @@ function wsdot_roadwork_view_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Content: Highways */
+  /* Field: Content: Highway */
   $handler->display->display_options['fields']['field_highways']['id'] = 'field_highways';
   $handler->display->display_options['fields']['field_highways']['table'] = 'field_data_field_highways';
   $handler->display->display_options['fields']['field_highways']['field'] = 'field_highways';
-  $handler->display->display_options['fields']['field_highways']['label'] = 'Highway';
   $handler->display->display_options['fields']['field_highways']['element_label_type'] = 'strong';
   /* Field: Field: Counties */
   $handler->display->display_options['fields']['field_counties']['id'] = 'field_counties';
@@ -90,7 +89,7 @@ function wsdot_roadwork_view_views_default_views() {
   $handler->display->display_options['fields']['field_user_reference']['settings'] = array(
     'link' => 0,
   );
-  /* Field: Field: Project */
+  /* Field: Content: Project */
   $handler->display->display_options['fields']['field_project_ref']['id'] = 'field_project_ref';
   $handler->display->display_options['fields']['field_project_ref']['table'] = 'field_data_field_project_ref';
   $handler->display->display_options['fields']['field_project_ref']['field'] = 'field_project_ref';
@@ -106,7 +105,7 @@ function wsdot_roadwork_view_views_default_views() {
   $handler->display->display_options['fields']['field_external_project']['element_label_type'] = 'strong';
   $handler->display->display_options['fields']['field_external_project']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_external_project']['click_sort_column'] = 'url';
-  /* Field: Field: External contact */
+  /* Field: Field: Alternate contact */
   $handler->display->display_options['fields']['field_contact_info']['id'] = 'field_contact_info';
   $handler->display->display_options['fields']['field_contact_info']['table'] = 'field_data_field_contact_info';
   $handler->display->display_options['fields']['field_contact_info']['field'] = 'field_contact_info';
@@ -155,7 +154,7 @@ function wsdot_roadwork_view_views_default_views() {
   );
   $handler->display->display_options['filters']['field_regions_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_regions_tid']['vocabulary'] = 'regions';
-  /* Filter criterion: Content: Highways (field_highways) */
+  /* Filter criterion: Content: Highway (field_highways) */
   $handler->display->display_options['filters']['field_highways_tid']['id'] = 'field_highways_tid';
   $handler->display->display_options['filters']['field_highways_tid']['table'] = 'field_data_field_highways';
   $handler->display->display_options['filters']['field_highways_tid']['field'] = 'field_highways_tid';
@@ -251,11 +250,10 @@ function wsdot_roadwork_view_views_default_views() {
   $handler->display->display_options['fields']['title']['element_type'] = 'h4';
   $handler->display->display_options['fields']['title']['element_class'] = '.RoadworkTitle';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Highways */
+  /* Field: Content: Highway */
   $handler->display->display_options['fields']['field_highways']['id'] = 'field_highways';
   $handler->display->display_options['fields']['field_highways']['table'] = 'field_data_field_highways';
   $handler->display->display_options['fields']['field_highways']['field'] = 'field_highways';
-  $handler->display->display_options['fields']['field_highways']['label'] = 'Highway';
   /* Field: Field: Regions */
   $handler->display->display_options['fields']['field_regions']['id'] = 'field_regions';
   $handler->display->display_options['fields']['field_regions']['table'] = 'field_data_field_regions';
@@ -306,7 +304,7 @@ function wsdot_roadwork_view_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Field: Project */
+  /* Field: Content: Project */
   $handler->display->display_options['fields']['field_project_ref']['id'] = 'field_project_ref';
   $handler->display->display_options['fields']['field_project_ref']['table'] = 'field_data_field_project_ref';
   $handler->display->display_options['fields']['field_project_ref']['field'] = 'field_project_ref';
@@ -333,7 +331,7 @@ function wsdot_roadwork_view_views_default_views() {
   $handler->display->display_options['fields']['field_external_project']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_external_project']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_external_project']['click_sort_column'] = 'url';
-  /* Field: Field: External contact */
+  /* Field: Field: Alternate contact */
   $handler->display->display_options['fields']['field_contact_info']['id'] = 'field_contact_info';
   $handler->display->display_options['fields']['field_contact_info']['table'] = 'field_data_field_contact_info';
   $handler->display->display_options['fields']['field_contact_info']['field'] = 'field_contact_info';
