@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WSDOT Webform Content Type feature.
+ */
+
+include_once 'wsdot_webform_content_type.features.inc';
