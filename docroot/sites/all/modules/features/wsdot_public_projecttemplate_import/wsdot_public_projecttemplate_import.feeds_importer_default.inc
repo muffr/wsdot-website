@@ -26,6 +26,7 @@ function wsdot_public_projecttemplate_import_feeds_importer_default() {
         'allowed_schemes' => array(
           'public' => 'public',
         ),
+        'delete_uploaded_file' => FALSE,
       ),
     ),
     'parser' => array(
@@ -152,6 +153,18 @@ function wsdot_public_projecttemplate_import_feeds_importer_default() {
             'debug' => 0,
             'weight' => '19',
           ),
+          'status' => array(
+            'name' => 'Status',
+            'value' => 'status',
+            'debug' => 0,
+            'weight' => '20',
+          ),
+          'organization' => array(
+            'name' => 'Organization',
+            'value' => 'organization',
+            'debug' => 0,
+            'weight' => '21',
+          ),
         ),
         'context' => array(
           'value' => '$.*',
@@ -260,6 +273,7 @@ function wsdot_public_projecttemplate_import_feeds_importer_default() {
             'hierarchy_separator' => '>>',
             'auto_create_terms' => 1,
             'save_term_lineage' => 0,
+            'language' => 'und',
           ),
           15 => array(
             'source' => 'funding',
@@ -282,6 +296,18 @@ function wsdot_public_projecttemplate_import_feeds_importer_default() {
           18 => array(
             'source' => 'counties',
             'target' => 'field_counties',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          19 => array(
+            'source' => 'status',
+            'target' => 'field_project_status',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          20 => array(
+            'source' => 'organization',
+            'target' => 'field_organization_term_ref',
             'unique' => FALSE,
             'language' => 'und',
           ),

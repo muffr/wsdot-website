@@ -45,6 +45,7 @@ features[field_instance][] = node-project-field_images
 features[field_instance][] = node-project-field_legacy_map
 features[field_instance][] = node-project-field_link
 features[field_instance][] = node-project-field_modes
+features[field_instance][] = node-project-field_organization_term_ref
 features[field_instance][] = node-project-field_pin_report
 features[field_instance][] = node-project-field_project_id
 features[field_instance][] = node-project-field_project_phase

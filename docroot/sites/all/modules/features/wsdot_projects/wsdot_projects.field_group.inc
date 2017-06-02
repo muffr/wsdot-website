@@ -37,6 +37,7 @@ function wsdot_projects_field_group_info() {
       11 => 'field_funding_table',
       12 => 'field_pin_report',
       13 => 'field_project_status',
+      14 => 'field_organization_term_ref',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
