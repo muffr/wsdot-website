@@ -11,7 +11,7 @@
   </div>
   <div class="logo">
     <h1> <a href="/"><img src="/sites/all/themes/custom/wsdot_classic/images/blacklogo.gif" alt="WSDOT" /></a> </h1>
-    <div class="emailupdates"><a href="https://service.govdelivery.com/service/multi_subscribe.html?code=WADOT" onclick="window.open('https://service.govdelivery.com/service/multi_subscribe.html?code=WADOT','Popup','width=780,height=440,toolbar=no,scrollbars=yes,resizable=yes'); return false" title="Sign up for email updates">Email updates</a></div>
+    <div class="emailupdates"><a href="https://service.govdelivery.com/service/multi_subscribe.html?code=WADOT" onclick="window.open('https://service.govdelivery.com/service/multi_subscribe.html?code=WADOT','Popup','width=780,height=440,toolbar=no,scrollbars=yes,resizable=yes'); return false" title="Sign up for email updates">Email/text updates</a></div>
   </div>
 
   <div class="mainban">
