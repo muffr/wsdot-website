@@ -78,7 +78,7 @@ a.linkedin{background: url(../images/back/linkedin.png) top left no-repeat;paddi
 .topnav li{list-style:none;font-size:11px;float:right;border-left:1px dotted #ffffff;padding:0em .6em 0em .6em;}
 .topnav li.first{border-left:none;}
 .logo {position:relative;margin:0 auto;width:955px;z-index:2;}
-.logo h1 {border: none; display: inline; float: left; margin: 1em 0 1em 11px; padding: 0;}
+.logo h1 {border: none; display: inline; float: left; margin: 15px 0 15px 11px; padding: 0;}
 .logo h1 a {background: transparent url(../images/back/greenlogo.png) no-repeat; display: block; width: 240px; height: 39px; text-indent: -999em;}
 
 /**Header and branding changes for travel map page**/
@@ -96,18 +96,18 @@ a.linkedin{background: url(../images/back/linkedin.png) top left no-repeat;paddi
 .m_emailupdates {float:right;}
 .m_emailupdates a {font-size:1em;background: url(../images/back/email.gif) center right no-repeat;padding:0px 19px 0px 0px;}
 
-.emailupdates {position:absolute;top:88px;right:19px;}
+.emailupdates {position:absolute;top:81px;right:19px;}
 .emailupdates a {padding-left:30px;background:url(../images/email-envelope.png) no-repeat left center;font-size:13px;font-weight:bold;color:#222;text-decoration:none;}
 .emailupdates a:hover {color:#017359;text-decoration:none;}
 
-.search {position:absolute;right:28px;top:-52px;}
+.search {position:absolute;right:28px;top:-47px;}
 .search-text {width: 248px;height: 17px;margin: 0px 8px 0 0;padding: 2px;float: left;border: 1px solid #ccc;}
 input.searchButton {height: 23px;margin: 0;font-family: "trebuchet ms",helvetica,sans-serif;font-size: 12px;font-weight: bold;color: #fff;background-color: #017359;border: none;}
 
 .mainban {clear:both;border-top: 1px solid #ccc;border-bottom: 1px solid #ccc;}
 .mainnav {position:relative;width:965px;margin:0 auto;padding-left:7px;z-index:1;}
-.mainnav ul {margin:0;padding:0;list-style:none;}
-.mainnav ul li {display:inline-block;position:relative;padding:0.75em 0;vertical-align:top;font-weight:bold;}
+.mainnav ul {height:28px;margin:0;padding:10px 0 0;list-style:none;}
+.mainnav ul li {display:inline;position:relative;padding:10px 0;font-weight:bold;}
 .mainnav ul li a {padding: 0 1em;border-right:1px solid #666;font-size:13px;font-weight:bold;line-height:1.5em;color:#222;text-decoration:none;}
 .mainnav ul li:last-child a {border:none;}
 .mainnav ul li a:hover {color:#017359;text-decoration:none;}
