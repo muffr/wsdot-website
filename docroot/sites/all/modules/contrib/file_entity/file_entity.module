@@ -2136,6 +2136,10 @@ function file_entity_file_default_types() {
       'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
       'application/vnd.openxmlformats-officedocument.presentationml.presentation',
       'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+      'application/zip',
+      'application/x-7z-compressed',
+      'application/x-tar',
+      'application/gzip',
     ),
   );
 
@@ -2488,27 +2492,6 @@ function file_entity_fnmatch($pattern, $string) {
     return preg_match("#^" . strtr(preg_quote($pattern, '#'), array('\*' => '.*', '\?' => '.', '\[' => '[', '\]' => ']')) . "$#", $string);
   }
   return fnmatch($pattern, $string);
-}
-
-/**
- * Implements hook_form_FORMID_alter() for system_file_system_settings().
- */
-function file_entity_form_system_file_system_settings_alter(&$form, &$form_state) {
-  // Add a default file directory setting to the file system form.
-  $form['file_entity_default_file_directory'] = array(
-    '#type' => 'textfield',
-    '#title' => t("File entity: Default file directory"),
-    '#default_value' => variable_get('file_entity_default_file_directory', ''),
-    '#description' => t('Optional subdirectory within the upload destination where files will be stored if the file is uploaded through the file entity overview page and the directory is not specified otherwise. Do not include preceding or trailing slashes.'),
-  );
-
-  if (module_exists('token')) {
-    $form['file_entity_default_file_directory']['#description'] .= t(' This field supports tokens.');
-    $form['tokens'] = array(
-      '#theme' => 'token_tree_link',
-      '#dialog' => TRUE,
-    );
-  }
 }
 
 /**
