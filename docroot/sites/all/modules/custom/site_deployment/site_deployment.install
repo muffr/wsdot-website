@@ -54,3 +54,10 @@ function site_deployment_update_7003() {
 function site_deployment_update_7004() {
   module_enable(array('chosen'));
 }
+
+/**
+ * 6th Deployment: Services and related server modules.
+ */
+function site_deployment_update_7005() {
+  module_enable(array('serices', 'services_views', 'rest_server', 'xmlrpc_server'));
+}
