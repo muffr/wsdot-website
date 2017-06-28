@@ -71,16 +71,16 @@ function wsdot_projects_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '1',
-        ),
-        'workbench_access' => array(
           'weight' => '2',
         ),
+        'workbench_access' => array(
+          'weight' => '1',
+        ),
         'metatags' => array(
-          'weight' => '40',
+          'weight' => '14',
         ),
         'redirect' => array(
-          'weight' => '30',
+          'weight' => '13',
         ),
       ),
       'display' => array(),
@@ -109,7 +109,8 @@ function wsdot_projects_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_project';
   $strongarm->value = array(
-    0 => 'status',
+    0 => 'moderation',
+    1 => 'revision',
   );
   $export['node_options_project'] = $strongarm;
 
@@ -133,30 +134,42 @@ function wsdot_projects_strongarm() {
   $strongarm->name = 'panelizer_defaults_node_project';
   $strongarm->value = array(
     'status' => 1,
+    'help' => '',
     'view modes' => array(
       'page_manager' => array(
         'status' => 0,
+        'substitute' => 0,
         'default' => 0,
         'choice' => 0,
       ),
       'default' => array(
         'status' => 1,
+        'substitute' => '',
         'default' => 1,
         'choice' => 0,
       ),
       'teaser' => array(
         'status' => 0,
+        'substitute' => 0,
         'default' => 0,
         'choice' => 0,
       ),
       'featured' => array(
         'status' => 0,
+        'substitute' => 0,
         'default' => 0,
         'choice' => 0,
       ),
     ),
   );
   $export['panelizer_defaults_node_project'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'panelizer_node:project:default_selection';
+  $strongarm->value = 'node:project:default:default';
+  $export['panelizer_node:project:default_selection'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
