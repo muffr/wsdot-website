@@ -1,0 +1,15 @@
+name = WSDOT Services API
+description = API endpoint providing JSON and XML RESTful web services
+core = 7.x
+package = WSDOT Services
+version = 7.x-1.0
+dependencies[] = rest_server
+dependencies[] = services
+dependencies[] = services_views
+dependencies[] = views
+features[ctools][] = services:services:3
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[services_endpoint][] = wsdot_api_v1
+features[views_view][] = services_projects
+features_exclude[dependencies][ctools] = ctools

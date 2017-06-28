@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WSDOT Services API feature.
+ */
+
+include_once 'wsdot_services_api.features.inc';
