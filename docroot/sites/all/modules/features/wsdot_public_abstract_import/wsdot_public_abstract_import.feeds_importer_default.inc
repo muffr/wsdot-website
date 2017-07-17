@@ -26,6 +26,7 @@ function wsdot_public_abstract_import_feeds_importer_default() {
         'allowed_schemes' => array(
           'public' => 'public',
         ),
+        'delete_uploaded_file' => FALSE,
       ),
     ),
     'parser' => array(
@@ -71,57 +72,69 @@ function wsdot_public_abstract_import_feeds_importer_default() {
             'debug' => 0,
             'weight' => '5',
           ),
+          'main_content' => array(
+            'name' => 'Main Content',
+            'value' => 'mainContent',
+            'debug' => 0,
+            'weight' => '6',
+          ),
           'legacy_url' => array(
             'name' => 'Legacy URL',
             'value' => 'legacyURL',
             'debug' => 0,
-            'weight' => '6',
+            'weight' => '7',
           ),
           'left_navigation' => array(
             'name' => 'Left Navigation',
             'value' => 'leftNav',
             'debug' => 0,
-            'weight' => '9',
+            'weight' => '8',
           ),
           'site_structure' => array(
             'name' => 'Site Structure',
             'value' => 'location',
             'debug' => 0,
-            'weight' => '10',
+            'weight' => '9',
           ),
           'related_publications' => array(
             'name' => 'Related Publications',
             'value' => 'relatedPublications',
             'debug' => 0,
-            'weight' => '11',
+            'weight' => '10',
           ),
           'publication_url' => array(
             'name' => 'Publication URL',
             'value' => 'publicationURL',
             'debug' => 0,
-            'weight' => '12',
+            'weight' => '11',
           ),
           'publish_date' => array(
             'name' => 'Publish Date',
             'value' => 'publishDate',
             'debug' => 0,
-            'weight' => '13',
+            'weight' => '12',
           ),
           'publication_number' => array(
             'name' => 'Publication Number',
             'value' => 'publicationNumber',
             'debug' => 0,
-            'weight' => '14',
+            'weight' => '13',
           ),
           'last_modified' => array(
             'name' => 'Last Modified',
             'value' => 'lastModified',
             'debug' => 0,
-            'weight' => '15',
+            'weight' => '14',
           ),
           'version' => array(
             'name' => 'Version',
             'value' => 'version',
+            'debug' => 0,
+            'weight' => '15',
+          ),
+          'manager' => array(
+            'name' => 'Manager',
+            'value' => 'manager',
             'debug' => 0,
             'weight' => '16',
           ),
@@ -213,18 +226,24 @@ function wsdot_public_abstract_import_feeds_importer_default() {
             'language' => 'und',
           ),
           5 => array(
+            'source' => 'main_content',
+            'target' => 'field_details',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          6 => array(
             'source' => 'left_navigation',
             'target' => 'field_static_left_navigation',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          6 => array(
+          7 => array(
             'source' => 'legacy_url',
             'target' => 'path_alias',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          7 => array(
+          8 => array(
             'source' => 'site_structure',
             'target' => 'field_site_structure_hierarchical',
             'hierarchy_separator' => '>>',
@@ -232,74 +251,80 @@ function wsdot_public_abstract_import_feeds_importer_default() {
             'save_term_lineage' => 0,
             'language' => 'und',
           ),
-          8 => array(
+          9 => array(
             'source' => 'related_publications',
             'target' => 'field_related_publications',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          9 => array(
+          10 => array(
             'source' => 'publish_date',
             'target' => 'field_publication_date:start',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          10 => array(
+          11 => array(
             'source' => 'publication_number',
             'target' => 'field_publication_number',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          11 => array(
+          12 => array(
             'source' => 'version',
             'target' => 'field_publication_version',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          12 => array(
+          13 => array(
+            'source' => 'manager',
+            'target' => 'field_managers',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          14 => array(
             'source' => 'author',
             'target' => 'field_authors',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          13 => array(
+          15 => array(
             'source' => 'originiator',
             'target' => 'field_originator',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          14 => array(
+          16 => array(
             'source' => 'number_of_pages',
             'target' => 'field_number_of_pages',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          15 => array(
+          17 => array(
             'source' => 'subject',
             'target' => 'field_subject',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          16 => array(
+          18 => array(
             'source' => 'publication_type',
             'target' => 'field_publication_type',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          17 => array(
+          19 => array(
             'source' => 'meta_keywords',
             'target' => 'field_tags',
             'term_search' => '0',
             'autocreate' => 1,
             'language' => 'und',
           ),
-          18 => array(
+          20 => array(
             'source' => 'publication_url',
             'target' => 'field_publication_url:url',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          19 => array(
+          21 => array(
             'source' => 'publication_url_title',
             'target' => 'field_publication_url:title',
             'unique' => FALSE,
