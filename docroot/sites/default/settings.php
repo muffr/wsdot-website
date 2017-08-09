@@ -594,3 +594,8 @@ if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
   // For sites that aren't hosted in Acquia Cloud (like a local installation)
   $conf['apachesolr_read_only'] = "1";
 }
+if (isset($conf['memcache_servers'])) {
+  $conf['cache_backends'][] = './sites/all/modules/memcache/memcache.inc';
+  $conf['cache_default_class'] = 'MemCacheDrupal';
+  $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
+}
