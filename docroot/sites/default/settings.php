@@ -595,7 +595,7 @@ if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
   $conf['apachesolr_read_only'] = "1";
 }
 if (isset($conf['memcache_servers'])) {
-  $conf['cache_backends'][] = './sites/all/modules/memcache/memcache.inc';
+  $conf['cache_backends'][] = './sites/all/modules/contrib/memcache/memcache.inc';
   $conf['cache_default_class'] = 'MemCacheDrupal';
   $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
 }
