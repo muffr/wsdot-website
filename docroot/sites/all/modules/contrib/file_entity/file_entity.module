@@ -2507,27 +2507,6 @@ function file_entity_fnmatch($pattern, $string) {
 }
 
 /**
- * Implements hook_form_FORMID_alter() for system_file_system_settings().
- */
-function file_entity_form_system_file_system_settings_alter(&$form, &$form_state) {
-  // Add a default file directory setting to the file system form.
-  $form['file_entity_default_file_directory'] = array(
-    '#type' => 'textfield',
-    '#title' => t("File entity: Default file directory"),
-    '#default_value' => variable_get('file_entity_default_file_directory', ''),
-    '#description' => t('Optional subdirectory within the upload destination where files will be stored if the file is uploaded through the file entity overview page and the directory is not specified otherwise. Do not include preceding or trailing slashes.'),
-  );
-
-  if (module_exists('token')) {
-    $form['file_entity_default_file_directory']['#description'] .= t(' This field supports tokens.');
-    $form['tokens'] = array(
-      '#theme' => 'token_tree_link',
-      '#dialog' => TRUE,
-    );
-  }
-}
-
-/**
  * Return an URI for a file download.
  */
 function file_entity_download_uri($file) {
@@ -2664,3 +2643,14 @@ function file_entity_features_pipe_file_type_alter(&$pipe, $data, $export) {
   }
 }
 
+/**
+ * Implements hook_FORM_ID_alter().
+ */
+function file_entity_form_system_performance_settings_alter(&$form, &$form_state) {
+  $form['bandwidth_optimization']['file_entity_total_count_optimization'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Optimize the calculation of the total usage count of files in the files overview.'),
+    '#default_value' => variable_get('file_entity_total_count_optimization', FALSE),
+    '#description' => t('Recommended if the files admin page loads too slowly due to a high number of files.'),
+  );
+}
