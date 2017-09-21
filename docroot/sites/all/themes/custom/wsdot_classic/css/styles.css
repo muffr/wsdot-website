@@ -147,6 +147,8 @@ input.searchButton {height: 23px;margin: 0;font-family: "trebuchet ms",helvetica
 .leftnav #block-masquerade-masquerade .content {padding:0.5em 0 0.25em 1em;}
 .leftnavbox .content #edit-masquerade-user-field {width:130px;margin-bottom:0.5em;}
 .region-sidebar-first > #block-views-static-left-navigation-block:not(:nth-of-type(1)) .view-content .leftnavbox .content ul li:first-child {border-top:1px solid #ddd;}
+.region-sidebar-first > #block-views-static-left-navigation-block:not(:nth-of-type(1)) .view-content .leftnavbox .content h4 + ul li:first-child,
+.region-sidebar-first > #block-views-static-left-navigation-block:not(:nth-of-type(1)) .view-content .leftnavbox h4 + .content ul li:first-child {border-top: none;}
 
 #block-views-static-left-navigation-block .content,
 #block-views-project-pin-report-block .content {width:150px; padding:0px;}
