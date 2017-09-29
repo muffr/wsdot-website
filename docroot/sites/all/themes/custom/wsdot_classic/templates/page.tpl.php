@@ -1,4 +1,4 @@
-<a href="#skipnav" class="skip">Skip Top Navigation</a> <a href="#skiptocontent" class="skip">Skip to Content</a> <a name="top"></a>
+<a href="#skipnav" class="skip">Skip Top Navigation</a> <a name="top"></a>
 <div id="header">
   <div class="topban">
     <ul class="topnav">
@@ -45,6 +45,7 @@
 
   <?php if ($page['sidebar_first']): ?>
     <div class="leftnav">
+      <a name="skipnav"></a>
       <!-- Begin: Left navigation box -->
       <div class="leftnavbox">
         <?php print render($page['sidebar_first']); ?>    
@@ -54,6 +55,7 @@
   <?php endif; ?>
 
   <div id="main">
+    <a name="main-content"></a>
     <?php print render($title_prefix); ?>
     <?php if ($title): ?><h2 class="title" id="page-title"><?php print $title; ?></h2><?php endif; ?>
     <?php print render($title_suffix); ?>
