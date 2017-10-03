@@ -11,7 +11,7 @@
   </div>
   <div class="logo">
     <h1> <a href="/"><img src="/sites/all/themes/custom/wsdot_classic/images/blacklogo.gif" alt="WSDOT" /></a> </h1>
-    <div class="emailupdates"><a href="https://service.govdelivery.com/service/multi_subscribe.html?code=WADOT" onclick="window.open('https://service.govdelivery.com/service/multi_subscribe.html?code=WADOT','Popup','width=780,height=440,toolbar=no,scrollbars=yes,resizable=yes'); return false" title="Sign up for email updates">Email updates</a></div>
+    <div class="emailupdates"><a href="https://public.govdelivery.com/accounts/WADOT/subscriber/new" onclick="window.open('https://public.govdelivery.com/accounts/WADOT/subscriber/new','Popup','width=780,height=440,toolbar=no,scrollbars=yes,resizable=yes'); return false" title="Sign up for email updates">Email updates</a></div>
   </div>
 
   <div class="mainban">
@@ -38,21 +38,20 @@
 </div>
 
 <div id="wrapper">
-  <div id="main_404">
-    <img src="/sites/all/themes/custom/wsdot_classic/images/4.png">
-    <img src="/sites/all/themes/custom/wsdot_classic/images/wheel.png?v=2" id="wheel">
-    <img src="/sites/all/themes/custom/wsdot_classic/images/4.png">
+  <div id="main" class="main-404">
+    <img src="https://www.wsdot.wa.gov/media/images/4.png">
+    <img id="wheel">
+    <img src="https://www.wsdot.wa.gov/media/images/4.png">
     <div id="section">
       <br><br>
-      <h2 id="off_the_map">You're off the map!</h2>
-      <p id="drivers_seat">But you're still in the driver's seat....</p>
+      <h2 id="heading-404"></h2>
+      <p id="message-404"></p>
       <br>
-      <form id="searchform" method="get" action="https://www.wsdot.wa.gov/search/">
-        <input type="submit" value="Search" id="search_button_404" />
-        <input type="text" autocomplete="off" name="q" class="search_box_404" alt="Insert search text" />
+      <form id="search-form-404" method="get" action="https://www.wsdot.com/search/">
+        <input type="submit" value="Search" id="search-button-404" /><input type="text" autocomplete="off" name="q" class="search-box-404" alt="Insert search text" />
       </form>
+      </div>
     </div>
-  </div>
   <div class="cl"></div>
 </div>
 
@@ -78,28 +77,47 @@
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 <script>if(!window.jQuery){document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"><\/script>');}</script>
 <script>
-  $(window).on('load resize',function(){
-    $wheel = $('#wheel');
-    var offset = $wheel.offset();
-
-    function mouse(e){
-      var center_x = (offset.left)+($wheel.width()/2);
-      var center_y = (offset.top)+($wheel.height()/2);
-      var mouse_x = e.pageX;
-      var mouse_y = e.pageY;
-
-      var radians = Math.atan2(mouse_x-center_x,mouse_y-center_y);
-      var degree = (radians*(180/Math.PI)*-1)+180; 
-
-      $wheel.css({
-        "-moz-transform":"rotate("+degree+"deg)",
-        "-webkit-transform":"rotate("+degree+"deg)",
-        "-o-transform":"rotate("+degree+"deg)",
-        "-ms-transform":"rotate("+degree+"deg)",
-        "transform":"rotate("+degree+"deg)"
-      });
-    }
-
-    $(document).mousemove(mouse);
-  });
+  var random_number = Math.floor(Math.random()*(6));
+	
+	$(function(){
+	  var $heading = $('#heading-404');
+	  var $message = $('#message-404');
+	  var $wheel = $('#wheel');
+	  var wheels = ["aircraft","bicycle","bus-freight","car","ferry","pedestrian"];
+	  var heading_copy = ["Time to circle around!","You're off the map!","You missed the bus!","You're off the map!","You're a little off course!","Time to backtrack!"];
+	  var message_copy = ["For another run at the landing strip....","But there's a trail leading back....","But there's another one coming along....","But you're still in the driver's seat....","But you can see the shore from here....","Luckily there are no one-way sidewalks...."];
+	
+	  $wheel.attr("src","https://www.wsdot.wa.gov/sites/all/themes/custom/wsdot_classic/images/wheels/"+wheels[random_number]+".png");
+	  $heading.text(heading_copy[random_number]);
+	  $message.text(message_copy[random_number]);
+	
+	  var date = new Date();
+	  var year = date.getFullYear();
+	  $(".copyright").append(year);
+	});
+	
+	$(window).on('load resize',function(){
+	  var $wheel = $('#wheel');
+	  var offset = $wheel.offset();
+	
+	  function mouse(e){
+	    var center_x = (offset.left)+($wheel.width()/2);
+	    var center_y = (offset.top)+($wheel.height()/2);
+	    var mouse_x = e.pageX;
+	    var mouse_y = e.pageY;
+	
+	    var radians = Math.atan2(mouse_x-center_x,mouse_y-center_y);
+	    var degree = (radians*(180/Math.PI)*-1)+180; 
+	
+	    $wheel.css({
+	      "-moz-transform":"rotate("+degree+"deg)",
+		  "-webkit-transform":"rotate("+degree+"deg)",
+		  "-o-transform":"rotate("+degree+"deg)",
+		  "-ms-transform":"rotate("+degree+"deg)",
+		  "transform":"rotate("+degree+"deg)"
+	    });
+	  }
+	
+	  $(document).mousemove(mouse);
+	});
 </script>
