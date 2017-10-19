@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the WSDOT WSF Home Panel feature.
- */
-
-include_once 'wsdot_wsf_home_panel.features.inc';
