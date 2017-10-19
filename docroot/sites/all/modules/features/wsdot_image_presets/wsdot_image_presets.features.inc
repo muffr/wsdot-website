@@ -10,15 +10,15 @@
 function wsdot_image_presets_image_default_styles() {
   $styles = array();
 
-  // Exported image style: carousel.
-  $styles['carousel'] = array(
-    'label' => 'Carousel',
+  // Exported image style: project_map_thumbnail.
+  $styles['project_map_thumbnail'] = array(
+    'label' => 'Project map thumbnail',
     'effects' => array(
-      6 => array(
-        'name' => 'focal_point_scale_and_crop',
+      1 => array(
+        'name' => 'focal_point_crop',
         'data' => array(
-          'width' => 275,
-          'height' => 170,
+          'width' => 185,
+          'height' => 185,
           'focal_point_advanced' => array(
             'shift_x' => '',
             'shift_y' => '',
@@ -29,15 +29,15 @@ function wsdot_image_presets_image_default_styles() {
     ),
   );
 
-  // Exported image style: project_map_thumbnail.
-  $styles['project_map_thumbnail'] = array(
-    'label' => 'Project map thumbnail',
+  // Exported image style: slideshow_image.
+  $styles['slideshow_image'] = array(
+    'label' => 'Slideshow Image',
     'effects' => array(
-      1 => array(
-        'name' => 'focal_point_crop',
+      13 => array(
+        'name' => 'focal_point_scale_and_crop',
         'data' => array(
-          'width' => 185,
-          'height' => 185,
+          'width' => 303,
+          'height' => 187,
           'focal_point_advanced' => array(
             'shift_x' => '',
             'shift_y' => '',
