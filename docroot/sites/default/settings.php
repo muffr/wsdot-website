@@ -600,3 +600,6 @@ if (isset($conf['memcache_servers'])) {
   $conf['cache_default_class'] = 'MemCacheDrupal';
   $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
 }
+if (isset($_GET['q']) && strpos($_GET['q'], 'admin') === 0) { 
+    ini_set('memory_limit', '256M'); 
+}
