@@ -14,25 +14,15 @@ function wsdot_workflow_workbench_moderation_export_transitions() {
       'to_name' => 'needs_review',
       'name' => 'Submit for Review',
     ),
-    'needs_moderation:draft' => array(
-      'from_name' => 'needs_moderation',
-      'to_name' => 'draft',
-      'name' => 'Moderator Declined',
-    ),
-    'needs_moderation:published' => array(
-      'from_name' => 'needs_moderation',
-      'to_name' => 'published',
-      'name' => 'Publish',
-    ),
     'needs_review:draft' => array(
       'from_name' => 'needs_review',
       'to_name' => 'draft',
       'name' => 'Editor Declined',
     ),
-    'needs_review:needs_moderation' => array(
+    'needs_review:published' => array(
       'from_name' => 'needs_review',
-      'to_name' => 'needs_moderation',
-      'name' => 'Submit for Moderation',
+      'to_name' => 'published',
+      'name' => 'Publish',
     ),
   );
   return $items;

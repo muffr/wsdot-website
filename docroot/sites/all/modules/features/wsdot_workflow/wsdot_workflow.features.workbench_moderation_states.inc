@@ -15,12 +15,6 @@ function wsdot_workflow_workbench_moderation_export_states() {
       'description' => 'Work in progress',
       'weight' => -10,
     ),
-    'needs_moderation' => array(
-      'name' => 'needs_moderation',
-      'label' => 'Needs Moderation',
-      'description' => 'Ready for moderation',
-      'weight' => -8,
-    ),
     'needs_review' => array(
       'name' => 'needs_review',
       'label' => 'Needs Review',
