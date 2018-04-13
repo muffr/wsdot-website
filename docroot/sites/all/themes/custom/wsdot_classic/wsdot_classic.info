@@ -40,7 +40,7 @@ features[] = secondary_menu
 ; Stylesheets
 ; ---------------------
 stylesheets[all][] = css/styles.css
-stylesheets[all][] = css/styles_orange.css
+;stylesheets[all][] = css/styles_orange.css
 stylesheets[print][] = css/print.css
 
 ; JavaScript
