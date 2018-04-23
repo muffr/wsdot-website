@@ -821,6 +821,7 @@ div.workbench-info-block {
 /* YouTube player */
 a.play-button {position:absolute;top:50%;left:50%;width:100px;height:100px;margin-top:-50px;margin-left:-50px;text-indent: 100%;white-space: nowrap;overflow: hidden;background:url(../images/play.png) no-repeat;background-size:100%;}
 .youtube-container {display:block;width:510px;max-width:98%;margin:2em 0;}
+.panels-flexible-region-52-center .youtube-container {width:450px;}
 .youtube-iframe {position:absolute;top:0;left:0;width:100%;height:100%;}
 .youtube-player {display:block;position:relative;width:100%;height:100%;padding-bottom:56.25%;overflow:hidden;cursor:pointer;font-size:0;}
 img.youtube-thumb {display:block;position:absolute;top:0;right:0;bottom:0;left:0;max-width:100%;width:100%;height:auto;margin:auto;}

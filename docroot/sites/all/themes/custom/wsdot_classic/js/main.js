@@ -3,18 +3,19 @@
     attach: function (context, settings) {
       var v = document.getElementsByClassName("youtube-player");
       for (var n = 0; n < v.length; n++) {
-	var temp_id = v[n].getElementsByTagName("div")[0].textContent;
-	v[n].setAttribute("data-id", temp_id.trim());
-	v[n].innerHTML = "";
-	temp_id = "";
-	var p = document.createElement("div");
-        if (v[n].dataset !== undefined) {
-          p.innerHTML = createThumb(v[n].dataset.id);
-        } else {
-	  p.innerHTML = createThumb(v[n].getAttribute("data-id")); // For IE 10
-        }
-	p.onclick = createIframe;
-	v[n].appendChild(p);
+		var temp_id = v[n].getElementsByTagName("div")[0].textContent;
+		v[n].setAttribute("data-id", temp_id.trim());
+		v[n].innerHTML = "";
+		temp_id = "";
+		var p = document.createElement("div");
+		if (v[n].dataset !== undefined) {
+		  p.innerHTML = createThumb(v[n].dataset.id);
+		}
+		else {
+		  p.innerHTML = createThumb(v[n].getAttribute("data-id")); // For IE 10
+		}
+		p.onclick = createIframe;
+		v[n].appendChild(p);
       }
     }
   };
@@ -34,7 +35,8 @@ function createIframe() {
   var videoId;
   if (this.parentNode.dataset !== undefined) {
     videoId = this.parentNode.dataset.id;
-  } else {
+  } 
+  else {
     videoId = this.parentNode.getAttribute("data-id"); // For IE 10
   }
   iframe.setAttribute("src", "//www.youtube.com/embed/" + videoId + "?autoplay=1&autohide=2&border=0&wmode=opaque&enablejsapi=1&controls=2&showinfo=0");

@@ -34,8 +34,9 @@ CKEDITOR.editorConfig = function(config) {
     * config.extraCss = 'body {color:#FF0000;}';
     */
   config.extraCss = '';
-  config.extraCss += ".youtube-player-placeholder{width:130px;height:65px;padding-top:15px;padding-left:95px;font-size:13px;font-weight:bold;background:#eee url(https://www.wsdot.wa.gov/sites/all/themes/custom/wsdot_classic/images/youtube-logo.png) left center no-repeat;}";
+  config.extraCss += ".youtube-player-placeholder{position:relative;width:130px;height:65px;padding-top:15px;padding-left:95px;font-size:13px;font-weight:bold;background:#eee url(https://www.wsdot.wa.gov/sites/all/themes/custom/wsdot_classic/images/youtube-logo.png) left center no-repeat;}";
   config.extraCss += ".youtube-player-placeholder div{width:100px;height:20px;padding:3px 6px;background:#fff;border:1px solid #bbb;font-weight:normal;}";
+	config.extraCss += ".youtube-player-placeholder p{position:absolute;top:4.75rem;left:0;font-weight:normal;}";
   /**
     * Sample extraCss code for the "marinelli" theme.
     */

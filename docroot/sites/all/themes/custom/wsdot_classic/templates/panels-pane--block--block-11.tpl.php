@@ -27,7 +27,7 @@
 
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
-    <h4 <?php print $title_attributes; ?> style="color:#fff; background: #710101;">
+    <h4 <?php print $title_attributes; ?> style="color:#fff; background: #710101;border-radius: 0;">
       <?php print $title; ?>
     </h4>
   <?php endif; ?>
